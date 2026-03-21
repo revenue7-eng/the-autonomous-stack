@@ -1,21 +1,23 @@
 ---
 title: "WireGuard"
-category: "core/network"
+category: "network/vpn"
 status: "stable"
 license: "GPL-2.0"
 source: "https://www.wireguard.com"
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # WireGuard
 
 ## Brief Description
-Extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. Designed for ease of use and minimal attack surface.
+Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. Designed for ease of use and minimal attack surface.
 
 ## Architectural Role
-Network layer: provides secure, peer-to-peer VPN connections without a central server. Can be used to remotely access a private network.
+Network layer: provides secure, peer‑to‑peer VPN connections without a central server. Can be used to remotely access a private network.
 
 ## Technical Autonomy
-- ✅ Works without internet (once configured, it can establish local peer-to-peer links)
+- ✅ Works without internet (once configured, it can establish local peer‑to‑peer links)
 - ✅ Stores data locally (configuration files, keys)
 - ✅ Does not require external accounts
 - ✅ Allows data export (config files can be copied)
@@ -26,14 +28,14 @@ Network layer: provides secure, peer-to-peer VPN connections without a central s
 | Criterion | Status | Comments |
 |-----------|--------|----------|
 | **Pause** | ✅ | VPN can be stopped/started manually; no forced background activity. |
-| **Exit** | ✅ | Disabling VPN leaves your network untouched; no lock-in. |
+| **Exit** | ✅ | Disabling VPN leaves your network untouched; no lock‑in. |
 | **Recoverability** | ✅ | Configurations and keys can be backed up and restored. |
 | **Visibility** | ✅ | Open source, auditable, simple codebase. |
 | **External Dependencies** | ✅ | No central servers; works entirely offline. |
 
 ## Configuration (Minimal)
 
-### Server side (example `/etc/wireguard/wg0.conf`)
+Server side (example `/etc/wireguard/wg0.conf`):
 
 ```ini
 [Interface]
@@ -43,6 +45,7 @@ ListenPort = 51820
 
 [Peer]
 PublicKey = <client-public-key>
+AllowedIPs = 10.0.0.2/32
 AllowedIPs = 10.0.0.2/32
 ```
 
