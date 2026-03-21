@@ -1,9 +1,12 @@
+```yaml
 ---
 title: "TactiQ AI Platform"
 category: "applications/edge-ai"
 status: "stable"
 license: "Proprietary (Perpetual)"
 source: "https://tactiqedge.com"
+autonomy_level: "A2"
+transparency_level: "T1"
 ---
 
 # TactiQ AI Platform
