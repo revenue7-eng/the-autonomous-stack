@@ -1,15 +1,25 @@
+
+---
+
+### 🔹 Syncthing → `storage/sync`
+
+**Файл:** `docs/catalog/syncthing.md`
+
+```markdown
 ---
 title: "Syncthing"
 category: "storage/sync"
 status: "stable"
 license: "MPL-2.0"
 source: "https://syncthing.net"
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # Syncthing
 
 ## Brief Description
-Continuous file synchronization program that synchronizes files between two or more devices in real time, peer-to-peer, without a central server.
+Continuous file synchronization program that synchronizes files between two or more devices in real time, peer‑to‑peer, without a central server.
 
 ## Architectural Role
 Data synchronization layer: keeps folders in sync across devices (desktop, laptop, phone, server) without cloud intermediaries.
@@ -26,13 +36,12 @@ Data synchronization layer: keeps folders in sync across devices (desktop, lapto
 | Criterion | Status | Comments |
 |-----------|--------|----------|
 | **Pause** | ✅ | Sync can be paused or stopped via UI or CLI; no forced background activity. |
-| **Exit** | ✅ | Disabling sync leaves your files untouched. No lock-in; you can switch to any other tool. |
-| **Recoverability** | ✅ | File versioning is built-in (configurable); deleted or changed files can be restored. |
+| **Exit** | ✅ | Disabling sync leaves your files untouched. No lock‑in; you can switch to any other tool. |
+| **Recoverability** | ✅ | File versioning is built‑in (configurable); deleted or changed files can be restored. |
 | **Visibility** | ✅ | Open source, fully transparent architecture. |
 | **External Dependencies** | ✅ | No central server required; can run entirely offline. |
 
 ## Configuration (Minimal)
-
 Example `docker-compose.yml` snippet:
 
 ```yaml
@@ -40,8 +49,8 @@ services:
   syncthing:
     image: syncthing/syncthing:latest
     ports:
-      - "8384:8384"   # Web UI
-      - "22000:22000" # TCP sync
+      - "8384:8384"  # Web UI
+      - "22000:22000" # TCP
     volumes:
       - ./syncthing-config:/var/syncthing/config
       - ./data:/var/syncthing/data
