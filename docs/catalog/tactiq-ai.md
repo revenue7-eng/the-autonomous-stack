@@ -10,7 +10,8 @@ source: "https://tactiqedge.com"
 
 ## Brief Description
 
-A hardened edge-AI platform that operates completely offline, with zero-value-on-capture security. Designed for critical infrastructure, defence, and remote sites.
+A hardened edge‑AI platform that operates completely offline, with zero‑value‑on‑capture security. Designed for critical infrastructure, defence, and remote sites.  
+➡️ [Official website](https://tactiqedge.com)
 
 ## Architectural Role
 
@@ -61,5 +62,6 @@ Full hardware deployment requires a TactiQ Box or Edge module.
 
 ## Sources
 
+- [TactiQ Edge Official Website](https://tactiqedge.com)
 - TactiQ AI Commercial Overview
 - TactiQ OS Security Whitepaper
