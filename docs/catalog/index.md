@@ -28,16 +28,19 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 ## Applications
 
 ### Media
+
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Jellyfin](./jellyfin.md) | A3 | T2 | Self‑hosted media server without cloud. |
 
 ### Version Control
+
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Forgejo](./forgejo.md) | A3 | T2 | Lightweight self‑hosted Git with Actions. |
 
 ### Edge AI
+
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [TactiQ AI Platform](./tactiq-ai.md) | A2 | T1 | Hardened edge‑AI platform with zero‑value‑on‑capture. |
