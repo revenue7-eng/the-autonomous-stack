@@ -39,3 +39,31 @@ These principles come from the philosophy of *whose.world*, which asks: *Whose f
 ---
 
 ## Structure
+
+tas/
+├── README.md # this file
+├── CONTRIBUTING.md # guidelines for contributors
+├── LICENSE # MIT (code) + CC BY-SA 4.0 (docs)
+├── docs/
+│ ├── philosophy.md # core concepts from whose.world
+│ ├── catalog/ # technology cards
+│ │ ├── template-card.md
+│ │ └── tactiq-ai.md # example
+│ ├── recipes/ # tested builds
+│ │ └── minimal-server.md
+│ └── community/ # case studies, glossary (coming soon)
+└── code/ # example scripts & docker-compose files
+
+---
+
+## License
+
+- **Code** (scripts, Dockerfiles, etc.): [MIT](LICENSE)
+- **Documentation** (text, diagrams, etc.): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+---
+
+## Credits
+
+TAS is built on the philosophy of [whose.world](https://whose.world) and is maintained by the TAS community.  
+If you use TAS in your work, please link back to both projects.
