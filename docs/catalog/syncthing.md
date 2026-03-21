@@ -1,59 +1,59 @@
 
 ---
 
-### 🔹 Syncthing → `storage/sync`
+### 🔹 Jellyfin → `applications/media`
 
-**Файл:** `docs/catalog/syncthing.md`
+**Файл:** `docs/catalog/jellyfin.md`
 
 ```markdown
 ---
-title: "Syncthing"
-category: "storage/sync"
+title: "Jellyfin"
+category: "applications/media"
 status: "stable"
-license: "MPL-2.0"
-source: "https://syncthing.net"
+license: "GPL-2.0"
+source: "https://jellyfin.org"
 autonomy_level: "A3"
 transparency_level: "T2"
 ---
 
-# Syncthing
+# Jellyfin
 
 ## Brief Description
-Continuous file synchronization program that synchronizes files between two or more devices in real time, peer‑to‑peer, without a central server.
+Free software media server that streams your personal media collection without cloud dependencies. A full alternative to Plex/Emby.
 
 ## Architectural Role
-Data synchronization layer: keeps folders in sync across devices (desktop, laptop, phone, server) without cloud intermediaries.
+Media server: serves movies, TV shows, music, and photos to clients (TVs, phones, browsers) over the local network.
 
 ## Technical Autonomy
-- ✅ Works without internet (over local network)
-- ✅ Stores data locally (synced folders are ordinary files)
+- ✅ Works without internet (after initial setup)
+- ✅ Stores data locally (media files and metadata)
 - ✅ Does not require external accounts
-- ✅ Allows data export (files are already yours; can stop sync anytime)
+- ✅ Allows data export (media files are yours; metadata can be exported)
 - ✅ Provides offline updates (manual upgrade via packages or Docker)
 
 ## Philosophical Assessment (whose.world criteria)
 
 | Criterion | Status | Comments |
 |-----------|--------|----------|
-| **Pause** | ✅ | Sync can be paused or stopped via UI or CLI; no forced background activity. |
-| **Exit** | ✅ | Disabling sync leaves your files untouched. No lock‑in; you can switch to any other tool. |
-| **Recoverability** | ✅ | File versioning is built‑in (configurable); deleted or changed files can be restored. |
+| **Pause** | ✅ | User controls playback; can stop at any time. No auto‑playing content unless configured. |
+| **Exit** | ✅ | Data is stored as ordinary files; you can delete the server and keep all media. No lock‑in. |
+| **Recoverability** | ✅ | Media files are separate; configuration and metadata can be backed up and restored. |
 | **Visibility** | ✅ | Open source, fully transparent architecture. |
-| **External Dependencies** | ✅ | No central server required; can run entirely offline. |
+| **External Dependencies** | ✅ | No required external services; can run completely offline. |
 
 ## Configuration (Minimal)
+
 Example `docker-compose.yml` snippet:
 
 ```yaml
 services:
-  syncthing:
-    image: syncthing/syncthing:latest
+  jellyfin:
+    image: jellyfin/jellyfin:latest
     ports:
-      - "8384:8384"  # Web UI
-      - "22000:22000" # TCP
+      - "8096:8096"
     volumes:
-      - ./syncthing-config:/var/syncthing/config
-      - ./data:/var/syncthing/data
+      - ./jellyfin-config:/config
+      - ./media:/media
 ```
 
 ## Related Recipes
