@@ -6,3 +6,4 @@ This section contains technology cards evaluated against the three ethical crite
 - [Forgejo](./forgejo.md) – self‑hosted Git with open governance.
 - [TactiQ AI Platform](./tactiq-ai.md) – hardened edge‑AI platform with zero‑value‑on‑capture.
 - [Jellyfin](./jellyfin.md) – self‑hosted media server without cloud.
+- [Syncthing](./syncthing.md) – P2P file synchronization without cloud.
