@@ -1,6 +1,6 @@
 title: "The Autonomous Stack (TAS)"
 description: "Architectural guide for designing digital flows"
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 url: "https://revenue7-eng.github.io/the-autonomous-stack/"
 baseurl: ""
