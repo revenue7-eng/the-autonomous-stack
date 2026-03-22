@@ -73,11 +73,15 @@ Minimal Autonomous Server – can be extended with Vault for secrets management.
 ## Alternatives
 
 SOPS – simpler, file‑based, no API.
+
 Sealed Secrets – Kubernetes‑specific.
+
 Hashicorp Consul – includes key‑value store but not dedicated secrets.
 
 ## Sources
 
 Vault Official Website
+
 Vault Documentation
+
 GitHub Repository
