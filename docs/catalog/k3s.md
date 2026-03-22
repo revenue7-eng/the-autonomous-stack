@@ -10,6 +10,8 @@ docker_image: "-"
 community: "https://github.com/k3s-io/k3s/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+parent: Catalog
+nav_order: 9
 ---
 
 # K3s
