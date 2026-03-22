@@ -17,7 +17,6 @@ transparency_level: "T1"
 ## Brief Description
 
 A hardened edge‑AI platform that operates completely offline, with zero‑value‑on‑capture security. Designed for critical infrastructure, defence, and remote sites.  
-➡️ [Official website](https://tactiqedge.com)
 
 ## Architectural Role
 
@@ -58,7 +57,7 @@ Full hardware deployment requires a TactiQ Box or Edge module.
 
 ## Related Recipes
 
-- Minimal Autonomous Server – includes basic edge-AI integration.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – includes basic edge-AI integration.
 
 ## Alternatives
 
