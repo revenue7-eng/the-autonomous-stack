@@ -10,6 +10,8 @@ docker_image: "https://hub.docker.com/r/immich-app/immich-server"
 community: "https://github.com/immich-app/immich/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+parent: Catalog
+nav_order: 13
 ---
 
 # Immich
