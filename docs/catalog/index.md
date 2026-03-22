@@ -14,7 +14,6 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [WireGuard](./wireguard.md) | A3 | T2 | Simple, fast VPN without central servers. |
-| *AdGuard Home* | (coming) | | DNS‑level ad blocking (planned). |
 
 ---
 
@@ -40,7 +39,6 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Uptime Kuma](./uptime-kuma.md) | A3 | T2 | Self‑hosted monitoring dashboard. |
-| *Prometheus + Grafana* | (coming) | | Metrics and visualisation (planned). |
 
 ---
 
@@ -58,6 +56,12 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 |------------|----------|--------------|-------------|
 | [Forgejo](./forgejo.md) | A3 | T2 | Lightweight self‑hosted Git with Actions. |
 
+### Photos
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Immich](./immich.md) | A3 | T2 | Self‑hosted photo and video backup solution. |
+
 ### Edge AI
 
 | Technology | Autonomy | Transparency | Description |
@@ -66,11 +70,9 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 
 ### Documents (planned)
 
-*Paperless‑ngx* – document management system (coming).
-
-### Photos (planned)
-
-*Immich* – self‑hosted photo library (coming).
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| *Paperless‑ngx* | (coming) | | Document management system. |
 
 ---
 
