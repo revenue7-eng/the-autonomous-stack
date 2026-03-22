@@ -1,5 +1,4 @@
 ---
-
 title: "Forgejo"
 category: "applications/version-control"
 status: "stable"
