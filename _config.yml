@@ -1,38 +1,23 @@
+remote_theme: just-the-docs/just-the-docs
 title: "The Autonomous Stack (TAS)"
 description: "Architectural guide for designing digital flows"
-theme: just-the-docs
 
 url: "https://revenue7-eng.github.io/the-autonomous-stack/"
 baseurl: ""
 
-logo: "/docs/assets/images/logo.png"  # если будет лого, позже можно добавить
-
-# Enable or disable the site search
 search_enabled: true
 
-# Aux links for the upper right navigation
 aux_links:
   "GitHub":
     - "https://github.com/revenue7-eng/the-autonomous-stack"
   "whose.world":
     - "https://whose.world"
 
-# Footer content
 footer_content: "The Autonomous Stack (TAS) — built on the philosophy of whose.world. Licensed under MIT (code) and CC BY-SA 4.0 (docs)."
 
-# Color scheme
-color_scheme: dark  # optional, you can remove if you prefer default light
-
-# Enable heading anchors
+color_scheme: dark
 heading_anchors: true
-
-# Back to top link
 back_to_top: true
 back_to_top_text: "Back to top"
-
-# Footer last edited timestamp
 last_edit_timestamp: true
 last_edit_time_format: "%b %e %Y at %I:%M %p"
-
-# Google Analytics (optional, not needed now)
-ga_tracking: false
