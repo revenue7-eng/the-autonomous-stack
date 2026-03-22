@@ -3,6 +3,10 @@ autonomy_level: A3
 category: storage/backup
 license: Apache-2.0
 source: "https://kopia.io"
+repository: "https://github.com/kopia/kopia"
+documentation: "https://kopia.io/docs/"
+docker_image: "https://hub.docker.com/r/kopia/kopia"
+community: "https://github.com/kopia/kopia/discussions"
 status: stable
 title: Kopia
 transparency_level: T2
