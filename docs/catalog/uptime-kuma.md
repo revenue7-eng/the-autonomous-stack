@@ -1,43 +1,62 @@
 ---
-title: "Uptime Kuma"
-category: "observability/monitoring"
-status: "stable"
-license: "MIT"
+autonomy_level: A3
+category: observability/monitoring
+license: MIT
 source: "https://uptime.kuma.pet"
-autonomy_level: "A3"
-transparency_level: "T2"
+status: stable
+title: Uptime Kuma
+transparency_level: T2
 ---
 
 # Uptime Kuma
 
 ## Brief Description
-Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. Provides a clean dashboard, notifications, and status pages without cloud dependencies.
+
+Self-hosted monitoring tool that tracks the availability of websites,
+services, and network endpoints. Provides a clean dashboard,
+notifications, and status pages without cloud dependencies.
 
 ## Architectural Role
-Observability layer: monitors your services and alerts you when something goes wrong.
+
+Observability layer: monitors your services and alerts you when
+something goes wrong.
 
 ## Technical Autonomy
-- Works without internet (monitors local services)
-- Stores data locally (SQLite database)
-- Does not require external accounts
-- Allows data export (SQLite file, config export)
-- Provides offline updates (manual via Docker)
+
+-   Works without internet (monitors local services)
+-   Stores data locally (SQLite database)
+-   Does not require external accounts
+-   Allows data export (SQLite file, config export)
+-   Provides offline updates (manual via Docker)
 
 ## Philosophical Assessment (whose.world criteria)
 
-| Criterion | Status | Comments |
-|-----------|--------|----------|
-| Pause | Yes | Monitoring can be paused; alerts are user-controlled. |
-| Exit | Yes | Data can be exported; you can stop using it at any time. |
-| Recoverability | Yes | SQLite database can be backed up and restored. |
-| Visibility | Yes | Open source, fully transparent. |
-| External Dependencies | Yes | None; runs entirely offline. |
+  -----------------------------------------------------------------------
+  Criterion                  Status              Comments
+  -------------------------- ------------------- ------------------------
+  Pause                      Yes                 Monitoring can be
+                                                 paused; alerts are
+                                                 user-controlled.
+
+  Exit                       Yes                 Data can be exported;
+                                                 you can stop using it at
+                                                 any time.
+
+  Recoverability             Yes                 SQLite database can be
+                                                 backed up and restored.
+
+  Visibility                 Yes                 Open source, fully
+                                                 transparent.
+
+  External Dependencies      Yes                 None; runs entirely
+                                                 offline.
+  -----------------------------------------------------------------------
 
 ## Configuration (Minimal)
 
 Example docker-compose.yml snippet:
 
-```yaml
+``` yaml
 services:
   uptime-kuma:
     image: louislam/uptime-kuma:1
@@ -47,12 +66,19 @@ services:
     volumes:
       - ./kuma-data:/app/data
     restart: unless-stopped
-Related Recipes
-Minimal Autonomous Server – includes Uptime Kuma for monitoring.
-Alternatives
-Grafana + Prometheus – more complex and resource-heavy
-Nagios – older and harder to configure
-Healthchecks.io – cloud-based (not autonomous)
-Sources
-https://uptime.kuma.pet
-GitHub Repository
+```
+
+## Related Recipes
+
+Minimal Autonomous Server -- includes Uptime Kuma for monitoring.
+
+## Alternatives
+
+-   Grafana + Prometheus -- more complex and resource-heavy
+-   Nagios -- older and harder to configure
+-   Healthchecks.io -- cloud-based (not autonomous)
+
+## Sources
+
+-   https://uptime.kuma.pet
+-   GitHub Repository
