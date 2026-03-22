@@ -1,14 +1,15 @@
 ---
-
 title: "Jellyfin"
 category: "applications/media"
 status: "stable"
 license: "GPL-2.0"
-source: "https://syncthing.net"
-repository: "https://github.com/syncthing/syncthing"
-documentation: "https://docs.syncthing.net"
-docker_image: "https://hub.docker.com/r/syncthing/syncthing"
-community: "https://forum.syncthing.net"
+source: "https://jellyfin.org"
+repository: "https://github.com/jellyfin/jellyfin"
+documentation: "https://jellyfin.org/docs/"
+docker_image: "https://hub.docker.com/r/jellyfin/jellyfin"
+community: "https://github.com/jellyfin/jellyfin/discussions"
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # Jellyfin
@@ -66,5 +67,17 @@ services:
 
 ## Sources
 
-* Jellyfin Official Website
-* Jellyfin Documentation
+* Website
+https://jellyfin.org
+
+* Documentation
+https://jellyfin.org/docs/
+
+* Repository
+https://github.com/jellyfin/jellyfin
+
+* Docker image
+https://hub.docker.com/r/jellyfin/jellyfin
+
+* Community
+https://github.com/jellyfin/jellyfin/discussions
