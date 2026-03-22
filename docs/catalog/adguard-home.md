@@ -55,7 +55,7 @@ services:
       - ./adguard-work:/opt/adguardhome/work
       - ./adguard-conf:/opt/adguardhome/conf
     restart: unless-stopped
----
+```
 
 ## Related Recipes
 
