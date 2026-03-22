@@ -10,6 +10,8 @@ docker_image: "https://hub.docker.com/r/paperlessngx/paperless-ngx"
 community: "https://github.com/paperless-ngx/paperless-ngx/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+parent: Catalog
+nav_order: 15
 ---
 
 # Paperless-ngx
