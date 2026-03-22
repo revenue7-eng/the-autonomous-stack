@@ -1,3 +1,8 @@
+---
+title: "Philosophy"
+nav_order: 2
+---
+
 # Philosophy
 
 This guide is built on the philosophical framework of [whose.world](https://whose.world).  
