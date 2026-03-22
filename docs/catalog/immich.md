@@ -89,7 +89,7 @@ services:
 
 ## Related Recipes
 
-Minimal Autonomous Server -- can be extended with Immich for photo
+[Minimal Autonomous Server](../recipes/minimal-server.md) -- can be extended with Immich for photo
 backup.
 
 ## Alternatives
