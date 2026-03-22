@@ -3,6 +3,10 @@ autonomy_level: A3
 category: observability/monitoring
 license: MIT
 source: "https://uptime.kuma.pet"
+repository: "https://github.com/louislam/uptime-kuma"
+documentation: "https://github.com/louislam/uptime-kuma/wiki"
+docker_image: "https://hub.docker.com/r/louislam/uptime-kuma"
+community: "https://github.com/louislam/uptime-kuma/issues"
 status: stable
 title: Uptime Kuma
 transparency_level: T2
