@@ -33,14 +33,15 @@ Measures **architectural openness** and auditability.
 
 The whose.world framework defines four operational rights:
 
-- **Pause** – ability to stop the system at any moment.
-- **Exit** – ability to leave with all your data.
-- **Recoverability** – ability to roll back to a previous state.
-- **Visibility** – ability to inspect how the system works.
+- **Pause** – ability to stop the system at any moment.  
+- **Exit** – ability to leave with all your data.  
+- **Recoverability** – ability to roll back to a previous state.  
+- **Visibility** – ability to inspect how the system works.  
 
 These criteria feed into the Autonomy and Transparency levels:
 
-- **Autonomy** is directly influenced by Pause, Exit, and Recoverability.
-- **Transparency** is closely linked to Visibility.
+- **Autonomy** is directly influenced by Pause, Exit, and Recoverability.  
+- **Transparency** is closely linked to Visibility.  
 
 Together, they form a holistic picture of technological sovereignty.
+
