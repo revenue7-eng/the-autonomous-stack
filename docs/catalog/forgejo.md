@@ -60,7 +60,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – uses Forgejo as version control component.
+* Minimal Autonomous Server – uses Forgejo as version control component.  https://github.com/revenue7-eng/the-autonomous-stack/blob/main/docs/recipes/minimal-server.md
 
 ## Alternatives
 
@@ -70,5 +70,17 @@ services:
 
 ## Sources
 
-* Official Forgejo documentation
-* Forgejo on Codeberg
+Website
+https://forgejo.org
+
+Documentation
+https://forgejo.org/docs/
+
+Repository (Codeberg)
+https://codeberg.org/forgejo/forgejo
+
+Docker image
+https://hub.docker.com/r/codebergorg/forgejo
+
+Community (Matrix)
+https://matrix.to/#/#forgejo:matrix.org
