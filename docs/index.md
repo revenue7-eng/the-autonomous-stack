@@ -1,44 +1,54 @@
+---
+title: "The Autonomous Stack (TAS)"
+nav_order: 1
+---
+
 # The Autonomous Stack (TAS)
-*Architectural Guide for Designing Digital Flows*
 
-TAS is a practical guide for architects who build autonomous digital systems.  
-It provides a **catalog of technologies**, **tested recipes**, and a **philosophical framework** — all grounded in the ethics of [whose.world](https://whose.world).
+**A decision framework for building cloud-independent systems.**
 
----
-
-## Why TAS?
-
-Modern digital environments are often designed as **seamless flows** with hidden costs: you lose the ability to pause, exit, or recover your own data.  
-TAS helps you build **sovereign digital flows** — systems that respect three fundamental principles:
-
-- **Pause** – you can stop and reflect at any moment.
-- **Exit** – you can leave without losing what is yours.
-- **Recoverability** – mistakes can be undone; systems can be restored.
-
-These principles come from the philosophy of *whose.world*, which asks: *Whose flow are you in?*
+TAS helps engineers design infrastructure that:
+- works without constant internet access
+- avoids vendor lock-in
+- preserves control over data and execution
 
 ---
 
-## Who Is This For?
+## What you can do with TAS
 
-- **Architects** designing edge, cloud‑agnostic, or self‑hosted infrastructures.
-- **DevOps engineers** who want to understand the ethical implications of their choices.
-- **Security professionals** looking for “zero‑value‑on‑capture” solutions.
-- **Self‑hosting enthusiasts** seeking full data sovereignty.
+- Build a fully local-first stack in a few hours
+- Choose tools based on autonomy (A0–A3) and transparency (T0–T2)
+- Deploy reproducible infrastructure using recipes
 
 ---
 
-## How to Use This Guide
+## Start here
 
-- **To understand the philosophy** → read [Philosophy](philosophy.md).
-- **To pick a technology** → browse the [Technology Catalog](catalog/).
-- **To build a complete system** → follow a [Recipe](recipes/).
-- **To contribute** → see [Contributing](../CONTRIBUTING.md).
+- 👉 [Recipes](./recipes/) — ready-to-deploy stacks
+- 👉 [Catalog](./catalog/) — technologies with ratings
+- 👉 [How to choose tools](./how-to-choose.md)
+
+---
+
+## Example: Minimal Autonomous Stack
+
+- WireGuard — secure network
+- Syncthing — file sync
+- Kopia — backups
+- Forgejo — git hosting
+- Uptime Kuma — monitoring
+
+---
+
+## Core principle
+
+If your system requires an external account to function — you don’t control it.
 
 ---
 
 ## Structure
 
+```
 tas/
 ├── README.md # this file
 ├── CONTRIBUTING.md # guidelines for contributors
@@ -57,6 +67,7 @@ tas/
 │ ├── glossary.md
 │ └── ...
 └── code/ # example scripts & docker-compose files
+```
 
 ---
 
@@ -70,4 +81,5 @@ tas/
 ## Credits
 
 TAS is built on the philosophy of [whose.world](https://whose.world) and is maintained by the TAS community.  
+
 If you use TAS in your work, please link back to both projects.
