@@ -3,7 +3,11 @@ title: "Docker"
 category: "compute/container"
 status: "stable"
 license: "Apache-2.0"
-source: "https://docker.com"
+source: "https://www.docker.com"
+repository: "https://github.com/docker/docker-ce"
+documentation: "https://docs.docker.com/engine/"
+docker_image: "https://hub.docker.com/_/docker"
+community: "https://forums.docker.com"
 autonomy_level: "A3"
 transparency_level: "T2"
 ---
@@ -65,5 +69,17 @@ docker run hello-world
 
 ## Sources
 
-- Docker Documentation  
-- Docker Engine on GitHub
+Website
+https://www.docker.com
+
+Documentation
+https://docs.docker.com/engine/
+
+Repository
+https://github.com/docker/docker-ce
+
+Docker image
+https://hub.docker.com/_/docker
+
+Community
+https://forums.docker.com
