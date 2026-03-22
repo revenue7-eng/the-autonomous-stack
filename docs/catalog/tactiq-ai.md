@@ -1,4 +1,4 @@
-```yaml
+
 ---
 title: "TactiQ AI Platform"
 category: "applications/edge-ai"
