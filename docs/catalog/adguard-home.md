@@ -10,7 +10,7 @@ docker_image: "https://hub.docker.com/r/adguard/adguardhome"
 community: "https://github.com/AdguardTeam/AdGuardHome/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
-parent: Catalog
+parent: catalog
 nav_order: 2
 ---
 
