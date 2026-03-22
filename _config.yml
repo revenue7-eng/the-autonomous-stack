@@ -1,13 +1,19 @@
+remote_theme: just-the-docs/just-the-docs
 title: The Autonomous Stack
 description: Architectural guide for designing autonomous digital flows
-theme: just-the-docs
+url: "https://revenue7-eng.github.io"
+baseurl: "/the-autonomous-stack"
 
-url: https://revenue7-eng.github.io/the-autonomous-stack
-baseurl: /the-autonomous-stack
-
+# Настройки навигации
 aux_links:
-  "GitHub Repository":
+  "GitHub":
     - "https://github.com/revenue7-eng/the-autonomous-stack"
 
+# Включить поиск
 search_enabled: true
+
+# Настройки структуры
 heading_anchors: true
+
+# Определение порядка страниц в меню
+nav_order: 2  # порядок отображения в главном меню
