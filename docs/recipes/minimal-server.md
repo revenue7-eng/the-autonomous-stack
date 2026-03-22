@@ -1,3 +1,9 @@
+---
+title: "Minimal Autonomous Server"
+parent: Recipes
+nav_order: 1
+---
+
 # Minimal Autonomous Server
 
 Build a fully autonomous server that operates offline, gives you full control over your data, and respects the three ethical principles: **Pause**, **Exit**, and **Recoverability**.
