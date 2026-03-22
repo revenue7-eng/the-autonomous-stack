@@ -81,7 +81,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – can be extended with Authentik for unified auth.
+* [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Authentik for unified auth.
 
 ## Alternatives
 
