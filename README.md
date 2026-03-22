@@ -1,3 +1,8 @@
+---
+title: Home
+nav_order: 1
+---
+
 # The Autonomous Stack (TAS)
 
 *Architectural Guide for Designing Digital Flows*
