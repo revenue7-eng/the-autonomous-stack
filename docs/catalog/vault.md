@@ -10,6 +10,8 @@ docker_image: "https://hub.docker.com/r/hashicorp/vault"
 community: "https://discuss.hashicorp.com/c/vault/"
 autonomy_level: "A3"
 transparency_level: "T2"
+parent: Catalog
+nav_order: 10
 ---
 
 # Vault
