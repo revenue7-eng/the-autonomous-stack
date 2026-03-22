@@ -14,6 +14,7 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [WireGuard](./wireguard.md) | A3 | T2 | Simple, fast VPN without central servers. |
+| [AdGuard Home](./adguard-home.md) | A3 | T2 | Network‑wide ad blocking and DNS filtering. |
 
 ---
 
@@ -39,6 +40,24 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Uptime Kuma](./uptime-kuma.md) | A3 | T2 | Self‑hosted monitoring dashboard. |
+| [Prometheus](./prometheus.md) | A3 | T2 | Metrics collection, storage, and alerting. |
+
+---
+
+## Compute
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Docker](./docker.md) | A3 | T2 | Container runtime and platform. |
+| [K3s](./k3s.md) | A3 | T2 | Lightweight Kubernetes distribution. |
+
+---
+
+## Security
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Vault](./vault.md) | A3 | T2 | Secure secrets management and encryption. |
 
 ---
 
@@ -68,21 +87,11 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 |------------|----------|--------------|-------------|
 | [TactiQ AI Platform](./tactiq-ai.md) | A2 | T1 | Hardened edge‑AI platform with zero‑value‑on‑capture. |
 
-### Documents (planned)
+### Documents
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| *Paperless‑ngx* | (coming) | | Document management system. |
-
----
-
-## Compute (planned)
-
-*Docker, Podman, K3s* – container runtimes and orchestration (coming).
-
-## Security (planned)
-
-*Vault, OPA* – secrets management and policy (coming).
+| [Paperless‑ngx](./paperless-ngx.md) | A3 | T2 | Document management system with OCR. |
 
 ---
 
