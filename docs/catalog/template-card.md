@@ -54,7 +54,7 @@ A minimal configuration example (e.g., `docker run` or `docker-compose.yml` snip
 
 Links to recipes that use this technology, for example:
 
-- [Minimal Autonomous Server](../recipes/minimal-server.md)
+* [Minimal Autonomous Server](../recipes/minimal-server.md)
 
 ## Alternatives
 
@@ -62,17 +62,17 @@ List other technologies that serve a similar purpose.
 
 ## Sources
 
-Website  
+* Website  
 -
 
-Documentation  
+* Documentation  
 -
 
-Repository  
+* Repository  
 -
 
-Docker image  
+* Docker image  
 -
 
-Community  
+* Community  
 -
