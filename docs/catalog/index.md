@@ -1,3 +1,9 @@
+---
+title: "Technology Catalog"
+has_children: true
+nav_order: 3
+---
+
 # Technology Catalog
 
 This catalog evaluates technologies according to two independent scales:
