@@ -55,7 +55,7 @@ docker run hello-world
 
 ## Related Recipes
 
-Minimal Autonomous Server – uses Docker to run all services.
+[Minimal Autonomous Server](../recipes/minimal-server.md) – uses Docker to run all services.
 
 ## Alternatives
 
