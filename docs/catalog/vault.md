@@ -72,7 +72,7 @@ Start with: vault server -config=config.hcl
 
 ## Related Recipes
 
-Minimal Autonomous Server – can be extended with Vault for secrets management.
+[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Vault for secrets management.
 
 ## Alternatives
 
