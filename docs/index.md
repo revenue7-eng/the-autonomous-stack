@@ -45,22 +45,23 @@ These principles come from the philosophy of *whose.world*, which asks: *Whose f
 ## Structure
 
 tas/
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
+├── README.md # this file
+├── CONTRIBUTING.md # guidelines for contributors
+├── LICENSE # MIT (code) + CC BY-SA 4.0 (docs)
 ├── docs/
-│ ├── index.md (this page)
-│ ├── philosophy.md
-│ ├── catalog/
+│ ├── index.md # this file
+│ ├── getting-started.md # quick start guide
+│ ├── philosophy.md # core concepts from whose.world
+│ ├── catalog/ # technology cards
 │ │ ├── index.md
-│ │ └── ... (technology cards)
-│ ├── recipes/
+│ │ └── ...
+│ ├── recipes/ # tested builds
 │ │ ├── index.md
 │ │ └── minimal-server.md
-│ └── community/
-│ ├── index.md
-│ └── glossary.md (coming soon)
-└── code/
+│ └── community/ # case studies, glossary
+│ ├── glossary.md
+│ └── ...
+└── code/ # example scripts & docker-compose files
 
 ---
 
