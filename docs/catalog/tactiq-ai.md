@@ -10,7 +10,7 @@ docker_image: "https://hub.docker.com/r/tactiqedge/tactiq-ai"
 community: "-"
 autonomy_level: "A2"
 transparency_level: "T1"
-parent: Catalog
+parent: Technology Catalog
 nav_order: 14
 ---
 
