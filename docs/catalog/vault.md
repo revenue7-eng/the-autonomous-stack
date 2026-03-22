@@ -72,20 +72,29 @@ Start with: vault server -config=config.hcl
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Vault for secrets management.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Vault for secrets management.
 
 ## Alternatives
 
-SOPS – simpler, file‑based, no API.
+- SOPS – simpler, file‑based, no API.
 
-Sealed Secrets – Kubernetes‑specific.
+- Sealed Secrets – Kubernetes‑specific.
 
-Hashicorp Consul – includes key‑value store but not dedicated secrets.
+- Hashicorp Consul – includes key‑value store but not dedicated secrets.
 
 ## Sources
 
-Vault Official Website
+- Website
+https://www.vaultproject.io
 
-Vault Documentation
+- Documentation
+https://www.vaultproject.io/docs
 
-GitHub Repository
+- Repository
+https://github.com/hashicorp/vault
+
+- Docker image
+https://hub.docker.com/r/hashicorp/vault
+
+- Community
+https://discuss.hashicorp.com/c/vault/
