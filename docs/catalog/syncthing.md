@@ -56,7 +56,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – includes Syncthing for file sync between devices.
+* [Minimal Autonomous Server](../recipes/minimal-server.md) – includes Syncthing for file sync between devices.
 
 ## Alternatives
 
