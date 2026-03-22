@@ -7,7 +7,7 @@ license: "GPL-2.0"
 source: "https://jellyfin.org"
 autonomy_level: "A3"
 transparency_level: "T2"
-------------------------
+---
 
 # Jellyfin
 
