@@ -83,7 +83,7 @@ services:
 
 ## Related Recipes
 
-Minimal Autonomous Server – can be extended with Prometheus and Grafana for full observability.
+[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Prometheus and Grafana for full observability.
 
 ## Alternatives
 
