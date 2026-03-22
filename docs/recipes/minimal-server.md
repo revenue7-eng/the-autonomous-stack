@@ -50,20 +50,27 @@ You will end up with a solid foundation for your autonomous digital infrastructu
 - Install Debian 12 on your hardware (or use a VM for testing).
 - Disable unnecessary services. Set up a firewall (`ufw`) to allow SSH (22), VPN port (51820/udp), and later Web UI ports.
 - Update the system:
-  ```bash
+ ```bash
   sudo apt update && sudo apt upgrade -y
-2. Install Docker & Docker Compose
-bash
+ ```
+
+### 2. Install Docker & Docker Compose
+ ```bash
 sudo apt install docker.io docker-compose -y
 sudo systemctl enable docker
-3. Prepare Directory Structure
-bash
+ ```
+
+### 3. Prepare Directory Structure
+
+ ```bash
 mkdir -p /opt/autonomous-stack/{config,data,backups}
 cd /opt/autonomous-stack
-4. Deploy Core Services with Docker Compose
+ ```
+
+### 4. Deploy Core Services with Docker Compose
 Create a docker-compose.yml file in /opt/autonomous-stack/:
 
-yaml
+ ```yaml
 version: '3.8'
 
 services:
@@ -159,28 +166,39 @@ services:
       - FORGEJO__server__DOMAIN=git.local
       - FORGEJO__server__SSH_PORT=222
     restart: unless-stopped
+ ```
+
 Create a .env file in the same directory to store secrets:
 
-bash
+ ```bash
 AUTHENTIK_SECRET_KEY=<generate-random-key>
 AUTHENTIK_DB_PASSWORD=<generate-random-password>
+ ```
+
 Start the services:
 
-bash
+ ```bash
 docker-compose up -d
-5. Configure WireGuard (VPN)
+ ```
+
+### 5. Configure WireGuard (VPN)
+
 Install WireGuard:
 
-bash
+ ```bash
 sudo apt install wireguard -y
+ ```
+
 Generate keys:
 
-bash
+ ```bash
 cd /etc/wireguard
 umask 077
 wg genkey | tee server_private.key | wg pubkey > server_public.key
-Create /etc/wireguard/wg0.conf:
 
+
+Create /etc/wireguard/wg0.conf:
+ ```
 ini
 [Interface]
 Address = 10.0.0.1/24
@@ -192,46 +210,68 @@ PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
 Enable and start:
 
-bash
+ ```bash
 sudo systemctl enable wg-quick@wg0
 sudo systemctl start wg-quick@wg0
-6. Configure Kopia for Backups
+ ```
+
+### 6. Configure Kopia for Backups
+
 Install Kopia:
 
-bash
+ ```bash
 wget https://github.com/kopia/kopia/releases/latest/download/kopia-linux-amd64.tar.gz
 tar -xzf kopia-linux-amd64.tar.gz
 sudo mv kopia /usr/local/bin/
+ ```
+
 Create a backup repository on an external drive:
 
-bash
+ ```bash
 sudo kopia repository create filesystem --path /mnt/backup
+ ```
+
 Create a snapshot of your stack:
 
-bash
+ ```bash
 sudo kopia snapshot create /opt/autonomous-stack
+ ```
+
 Set up a daily cron job:
 
-bash
+ ```bash
 sudo crontab -e
+ ```
+
 # Add line:
+
 0 2 * * * /usr/local/bin/kopia snapshot create /opt/autonomous-stack
-7. Enable Pause (Manual Stop)
+
+### 7. Enable Pause (Manual Stop)
+
 Create a script /usr/local/bin/pause-stack.sh:
 
-bash
+ ```bash
 #!/bin/bash
 cd /opt/autonomous-stack
 docker-compose stop
+ ```
+
 Make it executable:
 
-bash
+ ```bash
 sudo chmod +x /usr/local/bin/pause-stack.sh
+ ```
+
 To resume:
 
-bash
+ ```bash
 cd /opt/autonomous-stack && docker-compose start
-8. Verification
+ ```
+
+### 8. Verification
+
+
 Pause: Run sudo pause-stack.sh and verify all containers stop. Resume with docker-compose start.
 
 Exit: All data is stored in local directories (config/, data/, backups/). You can copy these to another machine and recreate the stack. No cloud lock‑in.
@@ -240,7 +280,9 @@ Recoverability: Test restoring a Kopia snapshot to a new directory.
 
 Network isolation: Ensure the server can function with internet disconnected (except for initial image pulls).
 
+
 Philosophical Reflection
+
 This stack achieves A3 Autonomy (fully autonomous) and T2 Transparency (open source) for most components. It respects the whose.world ethical criteria:
 
 Pause: The stop script gives you control.
@@ -253,7 +295,10 @@ Visibility: All components are open source and auditable.
 
 By building this, you become an Architect in open mode, creating a digital flow that returns control to the user.
 
+
 Next Steps
+
+
 Explore other technologies in the catalog (e.g., add Immich for photos, Paperless‑ngx for documents, or Vault for secrets).
 
 Customise the stack with your own domain, certificates, and automation.
