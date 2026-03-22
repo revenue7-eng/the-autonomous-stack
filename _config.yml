@@ -1,5 +1,6 @@
 remote_theme: just-the-docs/just-the-docs
 title: The Autonomous Stack
+theme: minima
 description: Architectural guide for designing autonomous digital flows
 url: "https://revenue7-eng.github.io"
 baseurl: "/the-autonomous-stack"
