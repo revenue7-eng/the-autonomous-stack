@@ -1,4 +1,3 @@
-
 ---
 
 ### 🔹 Jellyfin → `applications/media`
