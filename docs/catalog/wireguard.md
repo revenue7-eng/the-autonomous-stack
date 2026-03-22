@@ -4,10 +4,12 @@ category: "network/vpn"
 status: "stable"
 license: "GPL-2.0"
 source: "https://www.wireguard.com"
-repository: "https://git.zx2c4.com/wireguard-linux-compat/"
+repository: "https://git.zx2c4.com/wireguard-linux-compat"
 documentation: "https://www.wireguard.com/quickstart/"
 docker_image: "https://hub.docker.com/r/linuxserver/wireguard"
 community: "https://www.reddit.com/r/WireGuard/"
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # WireGuard
@@ -73,5 +75,18 @@ AllowedIPs = 0.0.0.0/0
 - **Tailscale** – built on WireGuard but relies on central coordination servers.
 
 ## Sources
-- WireGuard Official Website  
-- WireGuard Quick Start
+
+- Website
+https://www.wireguard.com
+
+- Documentation
+https://www.wireguard.com/quickstart/
+
+- Repository
+https://git.zx2c4.com/wireguard-linux-compat
+
+- Docker image
+https://hub.docker.com/r/linuxserver/wireguard
+
+- Community
+https://www.reddit.com/r/WireGuard/
