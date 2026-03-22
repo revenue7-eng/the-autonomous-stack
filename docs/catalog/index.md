@@ -14,6 +14,15 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [WireGuard](./wireguard.md) | A3 | T2 | Simple, fast VPN without central servers. |
+| *AdGuard Home* | (coming) | | DNS‑level ad blocking (planned). |
+
+---
+
+## Identity
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Authentik](./authentik.md) | A3 | T2 | Open‑source identity provider with SSO, MFA, LDAP. |
 
 ---
 
@@ -22,6 +31,16 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Syncthing](./syncthing.md) | A3 | T2 | P2P file synchronization without cloud. |
+| [Kopia](./kopia.md) | A3 | T2 | Fast, encrypted backups with snapshots. |
+
+---
+
+## Observability
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Uptime Kuma](./uptime-kuma.md) | A3 | T2 | Self‑hosted monitoring dashboard. |
+| *Prometheus + Grafana* | (coming) | | Metrics and visualisation (planned). |
 
 ---
 
@@ -44,6 +63,24 @@ Each card also includes the **Philosophical Assessment** based on *whose.world* 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [TactiQ AI Platform](./tactiq-ai.md) | A2 | T1 | Hardened edge‑AI platform with zero‑value‑on‑capture. |
+
+### Documents (planned)
+
+*Paperless‑ngx* – document management system (coming).
+
+### Photos (planned)
+
+*Immich* – self‑hosted photo library (coming).
+
+---
+
+## Compute (planned)
+
+*Docker, Podman, K3s* – container runtimes and orchestration (coming).
+
+## Security (planned)
+
+*Vault, OPA* – secrets management and policy (coming).
 
 ---
 
