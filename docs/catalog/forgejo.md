@@ -10,6 +10,8 @@ docker_image: "https://hub.docker.com/r/codebergorg/forgejo"
 community: "https://matrix.to/#/#forgejo:matrix.org"
 autonomy_level: "A3"
 transparency_level: "T2"
+parent: Catalog
+nav_order: 12
 ---
 
 # Forgejo
