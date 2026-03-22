@@ -74,7 +74,7 @@ services:
 
 ## Related Recipes
 
-Minimal Autonomous Server -- includes Uptime Kuma for monitoring.
+[Minimal Autonomous Server](../recipes/minimal-server.md) -- includes Uptime Kuma for monitoring.
 
 ## Alternatives
 
