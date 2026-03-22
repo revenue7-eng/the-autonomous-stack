@@ -6,7 +6,7 @@ license: "MIT"
 source: "https://forgejo.org"
 autonomy_level: "A3"
 transparency_level: "T2"
-------------------------
+---
 
 # Forgejo
 
