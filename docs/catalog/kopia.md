@@ -10,7 +10,7 @@ community: "https://github.com/kopia/kopia/discussions"
 status: stable
 title: Kopia
 transparency_level: T2
-parent: Catalog
+parent: Technology Catalog
 nav_order: 5
 ---
 
