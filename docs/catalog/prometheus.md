@@ -62,8 +62,9 @@ Start Prometheus:
 
 ``` bash
 prometheus --config.file=prometheus.yml
-For Docker:
 ```
+
+For Docker:
 
 ```yaml
 services:
