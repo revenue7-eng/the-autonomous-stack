@@ -1,29 +1,13 @@
-title: "The Autonomous Stack (TAS)"
-description: "Architectural guide for designing digital flows"
-remote_theme: just-the-docs/just-the-docs
+title: The Autonomous Stack
+description: Architectural guide for designing autonomous digital flows
+theme: just-the-docs
 
-url: "https://revenue7-eng.github.io/the-autonomous-stack"
-baseurl: ""
+url: https://revenue7-eng.github.io/the-autonomous-stack
+baseurl: /the-autonomous-stack
 
-# Search
-search_enabled: true
-
-# Aux links
 aux_links:
-  "GitHub":
+  "GitHub Repository":
     - "https://github.com/revenue7-eng/the-autonomous-stack"
-  "whose.world":
-    - "https://whose.world"
 
-# Footer
-footer_content: "The Autonomous Stack (TAS) — built on the philosophy of whose.world. Licensed under MIT (code) and CC BY-SA 4.0 (docs)."
-
-# Color scheme (optional)
-color_scheme: dark
-
-# Heading anchors
+search_enabled: true
 heading_anchors: true
-
-# Back to top
-back_to_top: true
-back_to_top_text: "Back to top"
