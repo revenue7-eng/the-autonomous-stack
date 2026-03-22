@@ -1,15 +1,15 @@
 ---
-autonomy_level: A3
-category: applications/photos
-license: MIT
+title: "Immich"
+category: "applications/photos"
+status: "stable"
+license: "MIT"
 source: "https://immich.app"
 repository: "https://github.com/immich-app/immich"
 documentation: "https://docs.immich.app/overview/quick-start"
 docker_image: "https://hub.docker.com/r/immich-app/immich-server"
 community: "https://github.com/immich-app/immich/discussions"
-status: stable
-title: Immich
-transparency_level: T2
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # Immich
@@ -89,7 +89,7 @@ services:
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) -- can be extended with Immich for photo
+- [Minimal Autonomous Server](../recipes/minimal-server.md) -- can be extended with Immich for photo
 backup.
 
 ## Alternatives
@@ -100,6 +100,17 @@ backup.
 
 ## Sources
 
--   https://immich.app
--   https://github.com/immich-app/immich
--   https://immich.app/docs
+- Website
+https://immich.app
+
+- Documentation
+https://docs.immich.app/overview/quick-start
+
+- Repository
+https://github.com/immich-app/immich
+
+- Docker image
+https://hub.docker.com/r/immich-app/immich-server
+
+- Community
+https://github.com/immich-app/immich/discussions
