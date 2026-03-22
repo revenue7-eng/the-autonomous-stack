@@ -4,8 +4,10 @@ category: "network/vpn"
 status: "stable"
 license: "GPL-2.0"
 source: "https://www.wireguard.com"
-autonomy_level: "A3"
-transparency_level: "T2"
+repository: "https://git.zx2c4.com/wireguard-linux-compat/"
+documentation: "https://www.wireguard.com/quickstart/"
+docker_image: "https://hub.docker.com/r/linuxserver/wireguard"
+community: "https://www.reddit.com/r/WireGuard/"
 ---
 
 # WireGuard
