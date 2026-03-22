@@ -51,7 +51,7 @@ services:
 ```
 
 ## Related Recipes
-- Minimal Autonomous Server – uses Jellyfin as media server component.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – uses Jellyfin as media server component.
 
 ## Alternatives
 - **Plex** – requires cloud account and internet for authentication.
