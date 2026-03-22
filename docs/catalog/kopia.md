@@ -92,7 +92,7 @@ Set up a daily cron job to run snapshots:
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) -- uses Kopia for backups.
+-  [Minimal Autonomous Server](../recipes/minimal-server.md) -- uses Kopia for backups.
 
 ## Alternatives
 
@@ -103,6 +103,17 @@ Set up a daily cron job to run snapshots:
 
 ## Sources
 
--   Kopia Official Website
--   Kopia Documentation
+-  Website
+https://kopia.io
 
+-  Documentation
+https://kopia.io/docs/
+
+-  Repository
+https://github.com/kopia/kopia
+
+-  Docker image
+https://hub.docker.com/r/kopia/kopia
+
+-  Community
+https://github.com/kopia/kopia/discussions
