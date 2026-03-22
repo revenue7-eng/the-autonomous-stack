@@ -39,3 +39,33 @@ Create a repository on an external USB drive:
 
 ```bash
 kopia repository create filesystem --path /mnt/backup
+
+Create a snapshot of your Docker data:
+
+kopia snapshot create /opt/autonomous-stack
+
+List snapshots:
+
+kopia snapshot list
+
+Restore:
+
+kopia restore <snapshot-id> /tmp/restored
+
+Set up a daily cron job to run snapshots:
+
+0 2 * * * /usr/local/bin/kopia snapshot create /opt/autonomous-stack
+Related Recipes
+
+Minimal Autonomous Server – uses Kopia for backups.
+
+Alternatives
+
+BorgBackup – similar, but Kopia has a more modern UI and cloud support.
+Duplicati – GUI-based, but less reliable for large datasets.
+Restic – fast, but no built-in GUI.
+
+Sources
+
+Kopia Official Website
+Kopia Documentation
