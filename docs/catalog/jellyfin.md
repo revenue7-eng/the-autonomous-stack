@@ -8,6 +8,8 @@ repository: "https://github.com/jellyfin/jellyfin"
 documentation: "https://jellyfin.org/docs/"
 docker_image: "https://hub.docker.com/r/jellyfin/jellyfin"
 community: "https://github.com/jellyfin/jellyfin/discussions"
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # Jellyfin
@@ -51,13 +53,28 @@ services:
 ```
 
 ## Related Recipes
+
 - [Minimal Autonomous Server](../recipes/minimal-server.md) – uses Jellyfin as media server component.
 
 ## Alternatives
+
 - **Plex** – requires cloud account and internet for authentication.
 - **Emby** – similar to Plex, proprietary with cloud dependencies.
 - **Kodi** – more of a client-centric media center, not a server.
 
 ## Sources
-- Jellyfin Official Website  
-- Jellyfin Documentation
+
+- Website
+https://jellyfin.org
+
+- Documentation
+https://jellyfin.org/docs/
+
+- Repository
+https://github.com/jellyfin/jellyfin
+
+- Docker image
+https://hub.docker.com/r/jellyfin/jellyfin
+
+- Community
+https://github.com/jellyfin/jellyfin/discussions
