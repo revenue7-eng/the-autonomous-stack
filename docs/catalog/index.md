@@ -1,8 +1,3 @@
----
-title: "Technology Catalog"
-has_children: true
-nav_order: 3
----
 
 # Technology Catalog
 
