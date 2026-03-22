@@ -50,25 +50,28 @@ Single‑node server install (on Debian/Ubuntu):
 
 ```bash
 curl -sfL https://get.k3s.io | sh -
+```
+
 Verify it works offline (after installation and pulling images):
 
-bash
+```bash
 sudo k3s kubectl get nodes
+```
+
 For air‑gapped environments, use the offline installation guide.
 
-Related Recipes
+## Related Recipes
+
 Minimal Autonomous Server – can be extended with K3s for full orchestration.
 
-Alternatives
+## Alternatives
+
 K0s – another lightweight Kubernetes distribution.
-
 MicroK8s – Canonical’s lightweight Kubernetes (requires snap).
-
 Nomad – HashiCorp orchestrator, simpler but less declarative.
 
-Sources
+## Sources
+
 K3s Official Website
-
 K3s Documentation
-
 GitHub Repository
