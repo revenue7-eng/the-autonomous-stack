@@ -42,18 +42,23 @@ These principles come from the philosophy of *whose.world*, which asks: *Whose f
 
 ```
 tas/
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
+├── README.md # this file
+├── CONTRIBUTING.md # guidelines for contributors
+├── LICENSE # MIT (code) + CC BY-SA 4.0 (docs)
 ├── docs/
-│   ├── philosophy.md
-│   ├── catalog/
-│   │   ├── template-card.md
-│   │   └── tactiq-ai.md
-│   ├── recipes/
-│   │   └── minimal-server.md
-│   └── community/
-└── code/
+│ ├── index.md # this file
+│ ├── getting-started.md # quick start guide
+│ ├── philosophy.md # core concepts from whose.world
+│ ├── catalog/ # technology cards
+│ │ ├── index.md
+│ │ └── ...
+│ ├── recipes/ # tested builds
+│ │ ├── index.md
+│ │ └── minimal-server.md
+│ └── community/ # case studies, glossary
+│ ├── glossary.md
+│ └── ...
+└── code/ # example scripts & docker-compose files
 ```
 
 ---
