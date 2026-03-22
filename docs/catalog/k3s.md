@@ -4,6 +4,10 @@ category: "compute/orchestration"
 status: "stable"
 license: "Apache-2.0"
 source: "https://k3s.io"
+repository: "https://github.com/k3s-io/k3s"
+documentation: "https://docs.k3s.io"
+docker_image: "-"
+community: "https://github.com/k3s-io/k3s/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
 ---
@@ -62,16 +66,26 @@ For air‑gapped environments, use the offline installation guide.
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with K3s for full orchestration.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with K3s for full orchestration.
 
 ## Alternatives
 
-K0s – another lightweight Kubernetes distribution.
-MicroK8s – Canonical’s lightweight Kubernetes (requires snap).
-Nomad – HashiCorp orchestrator, simpler but less declarative.
+- K0s – another lightweight Kubernetes distribution.
+- MicroK8s – Canonical’s lightweight Kubernetes (requires snap).
+- Nomad – HashiCorp orchestrator, simpler but less declarative.
 
 ## Sources
 
-K3s Official Website
-K3s Documentation
-GitHub Repository
+- Website
+https://k3s.io
+
+- Documentation
+https://docs.k3s.io
+
+- Repository
+https://github.com/k3s-io/k3s
+
+- Docker image
+
+- Community
+https://github.com/k3s-io/k3s/discussions
