@@ -4,9 +4,11 @@ title: "Jellyfin"
 category: "applications/media"
 status: "stable"
 license: "GPL-2.0"
-source: "https://jellyfin.org"
-autonomy_level: "A3"
-transparency_level: "T2"
+source: "https://syncthing.net"
+repository: "https://github.com/syncthing/syncthing"
+documentation: "https://docs.syncthing.net"
+docker_image: "https://hub.docker.com/r/syncthing/syncthing"
+community: "https://forum.syncthing.net"
 ---
 
 # Jellyfin
