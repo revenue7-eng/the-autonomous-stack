@@ -60,7 +60,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – uses Forgejo as version control component.  https://github.com/revenue7-eng/the-autonomous-stack/blob/main/docs/recipes/minimal-server.md
+* Minimal Autonomous Server – uses Forgejo as version control component.
 
 ## Alternatives
 
