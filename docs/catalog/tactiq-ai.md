@@ -4,6 +4,10 @@ category: "applications/edge-ai"
 status: "stable"
 license: "Proprietary (Perpetual)"
 source: "https://tactiqedge.com"
+repository: null
+documentation: "https://tactiqedge.com/docs"
+docker_image: "https://hub.docker.com/r/tactiqedge/tactiq-ai"
+community: null
 autonomy_level: "A2"
 transparency_level: "T1"
 ---
