@@ -63,7 +63,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – can be extended with AdGuard Home for network‑wide ad blocking.
+* [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with AdGuard Home for network‑wide ad blocking.
 
 ## Alternatives
 
@@ -73,5 +73,17 @@ services:
 
 ## Sources
 
-* AdGuard Home Official Site
-* GitHub Repository
+* Website
+https://adguard.com/en/adguard-home/overview.html
+
+* Documentation
+https://github.com/AdguardTeam/AdGuardHome/wiki
+
+* Repository
+https://github.com/AdguardTeam/AdGuardHome
+
+* Docker image
+https://hub.docker.com/r/adguard/adguardhome
+
+* Community
+https://github.com/AdguardTeam/AdGuardHome/discussions
