@@ -3,6 +3,10 @@ autonomy_level: A3
 category: applications/photos
 license: MIT
 source: "https://immich.app"
+repository: "https://github.com/immich-app/immich"
+documentation: "https://docs.immich.app/overview/quick-start"
+docker_image: "https://hub.docker.com/r/immich-app/immich-server"
+community: "https://github.com/immich-app/immich/discussions"
 status: stable
 title: Immich
 transparency_level: T2
