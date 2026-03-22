@@ -65,7 +65,7 @@ AllowedIPs = 0.0.0.0/0
 ```
 
 ## Related Recipes
-- Minimal Autonomous Server – uses WireGuard for secure remote access.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – uses WireGuard for secure remote access.
 
 ## Alternatives
 - **OpenVPN** – more complex, heavier, slower.
