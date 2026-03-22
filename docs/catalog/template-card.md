@@ -1,21 +1,28 @@
 ---
 title: "Technology Name"
-category: "category (os / core / storage / applications / evolution)"
+category: "category/subcategory"
 status: "stable | experimental"
-license: "license type"
-source: "link to repository or website"
+license: "-"
+source: "-"
+repository: "-"
+documentation: "-"
+docker_image: "-"
+community: "-"
+autonomy_level: "A0"
+transparency_level: "T0"
 ---
 
 # Technology Name
 
 ## Brief Description
+
 One or two sentences explaining what the technology does.
 
 ## Architectural Role
-Where does it fit in the autonomous stack? (e.g., operating system, VPN, media server)
+
+Where does it fit in the autonomous stack? (e.g., operating system, VPN, media server, backup, identity provider)
 
 ## Technical Autonomy
-Check each that applies:
 
 - [ ] Works without internet
 - [ ] Stores data locally
@@ -25,27 +32,47 @@ Check each that applies:
 
 ## Philosophical Assessment (whose.world criteria)
 
-| Criterion | Status | Comments |
-|-----------|--------|----------|
-| **Pause** | ✅ / ⚠️ / ❌ | Does the system offer built‑in stopping mechanisms? (e.g., time limits, end of session, user‑initiated pause). For fail‑closed systems, automatic stop on anomaly also qualifies. |
-| **Exit** | ✅ / ⚠️ / ❌ | Can the user delete their account and data without loss? Are there documented export procedures? |
-| **Recoverability** | ✅ / ⚠️ / ❌ | Can the system be rolled back to a previous state? Are backups supported? |
-| **Visibility** | ✅ / ⚠️ / ❌ | Is the system architecture open (code, documentation)? Can users verify how it works? |
-| **External Dependencies** | ✅ / ⚠️ / ❌ | Does the system rely on third‑party cloud services or mandatory external accounts? |
+| Criterion             | Status        | Comments                                                                 |
+|-----------------------|--------------|--------------------------------------------------------------------------|
+| Pause                 | ✅ / ⚠️ / ❌ | Does the system offer built‑in stopping mechanisms or safe shutdown?     |
+| Exit                  | ✅ / ⚠️ / ❌ | Can the user leave with all data (export, deletion, migration)?          |
+| Recoverability        | ✅ / ⚠️ / ❌ | Are backups and rollbacks supported and documented?                      |
+| Visibility            | ✅ / ⚠️ / ❌ | Is the architecture/code/docs open enough to inspect how it works?       |
+| External Dependencies | ✅ / ⚠️ / ❌ | Can it run without mandatory third‑party cloud services or accounts?     |
 
-**Explanation of ratings**  
+**Explanation of ratings**
+
 - ✅ fully meets the criterion  
 - ⚠️ partially meets or requires configuration  
 - ❌ does not meet
 
 ## Configuration (Minimal)
-A minimal configuration example (e.g., Docker Compose snippet) or link to `/code/`.
+
+A minimal configuration example (e.g., `docker run` or `docker-compose.yml` snippet) or link to a code sample.
 
 ## Related Recipes
-Links to recipes that use this technology.
+
+Links to recipes that use this technology, for example:
+
+- [Minimal Autonomous Server](../recipes/minimal-server.md)
 
 ## Alternatives
+
 List other technologies that serve a similar purpose.
 
 ## Sources
-Links to official documentation, source code, etc.
+
+Website  
+-
+
+Documentation  
+-
+
+Repository  
+-
+
+Docker image  
+-
+
+Community  
+-
