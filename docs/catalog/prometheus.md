@@ -60,12 +60,12 @@ scrape_configs:
 
 Start Prometheus:
 
-bash
+``` bash
 prometheus --config.file=prometheus.yml
 For Docker:
 ```
 
-yaml
+```yaml
 services:
   prometheus:
     image: prom/prometheus:latest
