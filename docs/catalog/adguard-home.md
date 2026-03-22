@@ -55,17 +55,19 @@ services:
       - ./adguard-work:/opt/adguardhome/work
       - ./adguard-conf:/opt/adguardhome/conf
     restart: unless-stopped
-Related Recipes
-Minimal Autonomous Server – can be extended with AdGuard Home for network‑wide ad blocking.
+...
 
-Alternatives
-Pi‑hole – similar, but AdGuard Home offers native DoT/DoQ and more advanced features.
+## Related Recipes
 
-NextDNS – cloud‑based, not fully autonomous.
+* Minimal Autonomous Server – can be extended with AdGuard Home for network‑wide ad blocking.
 
-Unbound – recursive DNS resolver without filtering.
+## Alternatives
 
-Sources
-AdGuard Home Official Site
+* Pi‑hole – similar, but AdGuard Home offers native DoT/DoQ and more advanced features.
+* NextDNS – cloud‑based, not fully autonomous.
+* Unbound – recursive DNS resolver without filtering.
 
-GitHub Repository
+## Sources
+
+* AdGuard Home Official Site
+* GitHub Repository
