@@ -4,6 +4,10 @@ category: "applications/media"
 status: "stable"
 license: "GPL-2.0"
 source: "https://jellyfin.org"
+repository: "https://github.com/jellyfin/jellyfin"
+documentation: "https://jellyfin.org/docs/"
+docker_image: "https://hub.docker.com/r/jellyfin/jellyfin"
+community: "https://github.com/jellyfin/jellyfin/discussions"
 ---
 
 # Jellyfin
