@@ -10,7 +10,7 @@ docker_image: "https://hub.docker.com/r/louislam/uptime-kuma"
 community: "https://github.com/louislam/uptime-kuma/issues"
 autonomy_level: "A3"
 transparency_level: "T2"
-parent: Catalog
+parent: Technology Catalog
 nav_order: 6
 ---
 
