@@ -1,5 +1,4 @@
 ---
-
 title: "Authentik"
 category: "identity/auth"
 status: "stable"
@@ -7,7 +6,7 @@ license: "Apache-2.0"
 source: "https://goauthentik.io"
 autonomy_level: "A3"
 transparency_level: "T2"
-------------------------
+---
 
 # Authentik
 
