@@ -92,5 +92,17 @@ services:
 
 ## Sources
 
-* Paperless‑ngx Documentation
-* GitHub Repository
+* Website
+https://paperless-ngx.readthedocs.io
+
+* Documentation
+https://paperless-ngx.readthedocs.io
+
+* Repository
+https://github.com/paperless-ngx/paperless-ngx
+
+* Docker image
+https://hub.docker.com/r/paperlessngx/paperless-ngx
+
+* Community
+https://github.com/paperless-ngx/paperless-ngx/discussions
