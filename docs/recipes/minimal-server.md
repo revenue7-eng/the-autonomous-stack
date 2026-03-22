@@ -199,7 +199,7 @@ wg genkey | tee server_private.key | wg pubkey > server_public.key
 
 Create /etc/wireguard/wg0.conf:
 
-ini
+ ```ini
 [Interface]
 Address = 10.0.0.1/24
 PrivateKey = <server-private-key>
@@ -208,6 +208,8 @@ ListenPort = 51820
 [Peer]
 PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
+ ```
+
 Enable and start:
 
  ```bash
