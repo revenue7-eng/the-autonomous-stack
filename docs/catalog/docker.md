@@ -59,7 +59,7 @@ docker run hello-world
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) – uses Docker to run all services.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – uses Docker to run all services.
 
 ## Alternatives
 
@@ -69,17 +69,17 @@ docker run hello-world
 
 ## Sources
 
-Website
+- Website
 https://www.docker.com
 
-Documentation
+- Documentation
 https://docs.docker.com/engine/
 
-Repository
+- Repository
 https://github.com/docker/docker-ce
 
-Docker image
+- Docker image
 https://hub.docker.com/_/docker
 
-Community
+- Community
 https://forums.docker.com
