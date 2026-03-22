@@ -4,7 +4,7 @@ category: "applications/edge-ai"
 status: "stable"
 license: "Proprietary (Perpetual)"
 source: "https://tactiqedge.com"
-repository: null
+repository: -
 documentation: "https://tactiqedge.com/docs"
 docker_image: "https://hub.docker.com/r/tactiqedge/tactiq-ai"
 community: null
@@ -67,6 +67,15 @@ Full hardware deployment requires a TactiQ Box or Edge module.
 
 ## Sources
 
-- [TactiQ Edge Official Website](https://tactiqedge.com)
-- TactiQ AI Commercial Overview
-- TactiQ OS Security Whitepaper
+- Website
+https://tactiqedge.com
+
+- Documentation
+https://tactiqedge.com/docs
+
+- Repository
+
+- Docker image
+https://hub.docker.com/r/tactiqedge/tactiq-ai
+
+- Community
