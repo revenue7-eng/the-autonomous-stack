@@ -243,11 +243,9 @@ Set up a daily cron job:
 
  ```bash
 sudo crontab -e
- ```
-
-# Add line:
-
+# добавить строку:
 0 2 * * * /usr/local/bin/kopia snapshot create /opt/autonomous-stack
+```
 
 ### 7. Enable Pause (Manual Stop)
 
