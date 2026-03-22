@@ -83,20 +83,29 @@ services:
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Prometheus and Grafana for full observability.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Prometheus and Grafana for full observability.
 
 ## Alternatives
 
-VictoriaMetrics – faster, more scalable, Prometheus‑compatible.
+- VictoriaMetrics – faster, more scalable, Prometheus‑compatible.
 
-InfluxDB – time‑series database, different query language.
+- InfluxDB – time‑series database, different query language.
 
-Netdata – real‑time monitoring, less emphasis on long‑term storage.
+- Netdata – real‑time monitoring, less emphasis on long‑term storage.
 
 ## Sources
 
-Prometheus Official Website
+- Website
+https://prometheus.io
 
-Prometheus Documentation
+- Documentation
+https://prometheus.io/docs/
 
-GitHub Repository
+- Repository
+https://github.com/prometheus/prometheus
+
+- Docker image
+https://hub.docker.com/r/prom/prometheus
+
+- Community
+https://github.com/prometheus/prometheus/discussions
