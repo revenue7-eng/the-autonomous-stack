@@ -1,15 +1,15 @@
 ---
-autonomy_level: A3
-category: observability/monitoring
-license: MIT
+title: "Uptime Kuma"
+category: "observability/monitoring"
+status: "stable"
+license: "MIT"
 source: "https://uptime.kuma.pet"
 repository: "https://github.com/louislam/uptime-kuma"
 documentation: "https://github.com/louislam/uptime-kuma/wiki"
 docker_image: "https://hub.docker.com/r/louislam/uptime-kuma"
 community: "https://github.com/louislam/uptime-kuma/issues"
-status: stable
-title: Uptime Kuma
-transparency_level: T2
+autonomy_level: "A3"
+transparency_level: "T2"
 ---
 
 # Uptime Kuma
@@ -74,7 +74,7 @@ services:
 
 ## Related Recipes
 
-[Minimal Autonomous Server](../recipes/minimal-server.md) -- includes Uptime Kuma for monitoring.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) -- includes Uptime Kuma for monitoring.
 
 ## Alternatives
 
@@ -84,5 +84,17 @@ services:
 
 ## Sources
 
--   https://uptime.kuma.pet
--   GitHub Repository
+- Website
+https://uptime.kuma.pet
+
+- Documentation
+https://github.com/louislam/uptime-kuma/wiki
+
+- Repository
+https://github.com/louislam/uptime-kuma
+
+- Docker image
+https://hub.docker.com/r/louislam/uptime-kuma
+
+- Community
+https://github.com/louislam/uptime-kuma/issues
