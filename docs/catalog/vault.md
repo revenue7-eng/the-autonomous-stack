@@ -64,20 +64,20 @@ listener "tcp" {
 
 api_addr = "http://127.0.0.1:8200"
 Start with: vault server -config=config.hcl
+```
 
-Related Recipes
+## Related Recipes
+
 Minimal Autonomous Server – can be extended with Vault for secrets management.
 
-Alternatives
+## Alternatives
+
 SOPS – simpler, file‑based, no API.
-
 Sealed Secrets – Kubernetes‑specific.
-
 Hashicorp Consul – includes key‑value store but not dedicated secrets.
 
-Sources
+## Sources
+
 Vault Official Website
-
 Vault Documentation
-
 GitHub Repository
