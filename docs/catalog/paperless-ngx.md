@@ -82,7 +82,7 @@ services:
 
 ## Related Recipes
 
-* Minimal Autonomous Server – can be extended with Paperless for document archiving.
+* [Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with Paperless for document archiving.
 
 ## Alternatives
 
