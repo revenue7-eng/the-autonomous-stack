@@ -281,7 +281,7 @@ Recoverability: Test restoring a Kopia snapshot to a new directory.
 Network isolation: Ensure the server can function with internet disconnected (except for initial image pulls).
 
 
-Philosophical Reflection
+### Philosophical Reflection
 
 This stack achieves A3 Autonomy (fully autonomous) and T2 Transparency (open source) for most components. It respects the whose.world ethical criteria:
 
@@ -296,7 +296,7 @@ Visibility: All components are open source and auditable.
 By building this, you become an Architect in open mode, creating a digital flow that returns control to the user.
 
 
-Next Steps
+### Next Steps
 
 
 Explore other technologies in the catalog (e.g., add Immich for photos, Paperless‑ngx for documents, or Vault for secrets).
