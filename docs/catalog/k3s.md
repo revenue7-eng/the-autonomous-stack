@@ -62,7 +62,7 @@ For air‑gapped environments, use the offline installation guide.
 
 ## Related Recipes
 
-Minimal Autonomous Server – can be extended with K3s for full orchestration.
+[Minimal Autonomous Server](../recipes/minimal-server.md) – can be extended with K3s for full orchestration.
 
 ## Alternatives
 
