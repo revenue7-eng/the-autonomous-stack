@@ -92,7 +92,7 @@ Set up a daily cron job to run snapshots:
 
 ## Related Recipes
 
-Minimal Autonomous Server -- uses Kopia for backups.
+[Minimal Autonomous Server](../recipes/minimal-server.md) -- uses Kopia for backups.
 
 ## Alternatives
 
