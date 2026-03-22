@@ -195,10 +195,10 @@ Generate keys:
 cd /etc/wireguard
 umask 077
 wg genkey | tee server_private.key | wg pubkey > server_public.key
-
+ ```
 
 Create /etc/wireguard/wg0.conf:
- ```
+
 ini
 [Interface]
 Address = 10.0.0.1/24
