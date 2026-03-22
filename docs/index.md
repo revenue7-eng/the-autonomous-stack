@@ -25,9 +25,7 @@ TAS helps engineers design infrastructure that:
 ## Start here
 
 - 👉 [Recipes](recipes/) — ready-to-deploy stacks
-
 - 👉 [Catalog](catalog/) — technologies with ratings
-
 - 👉 [How to choose tools](how-to-choose/)
 
 ---
