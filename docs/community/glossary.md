@@ -1,6 +1,6 @@
 ---
 title: Glossary
-parent: community
+parent: Community
 nav_order: 100
 ---
 
