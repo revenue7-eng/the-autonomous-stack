@@ -63,16 +63,7 @@ List other technologies that serve a similar purpose.
 ## Sources
 
 * Website  
--
-
 * Documentation  
--
-
 * Repository  
--
-
 * Docker image  
--
-
 * Community  
--
