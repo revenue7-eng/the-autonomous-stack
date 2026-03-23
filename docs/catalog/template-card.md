@@ -1,5 +1,6 @@
 ---
 title: "Technology Name"
+nav_exclude: true
 category: "category/subcategory"
 status: "stable | experimental"
 license: "-"
@@ -34,17 +35,11 @@ Where does it fit in the autonomous stack? (e.g., operating system, VPN, media s
 
 | Criterion             | Status        | Comments                                                                 |
 |-----------------------|--------------|--------------------------------------------------------------------------|
-| Pause                 | ✅ / ⚠️ / ❌ | Does the system offer built‑in stopping mechanisms or safe shutdown?     |
-| Exit                  | ✅ / ⚠️ / ❌ | Can the user leave with all data (export, deletion, migration)?          |
-| Recoverability        | ✅ / ⚠️ / ❌ | Are backups and rollbacks supported and documented?                      |
-| Visibility            | ✅ / ⚠️ / ❌ | Is the architecture/code/docs open enough to inspect how it works?       |
-| External Dependencies | ✅ / ⚠️ / ❌ | Can it run without mandatory third‑party cloud services or accounts?     |
-
-**Explanation of ratings**
-
-- ✅ fully meets the criterion  
-- ⚠️ partially meets or requires configuration  
-- ❌ does not meet
+| Pause                 | Yes / Partial / No | Does the system offer built-in stopping mechanisms or safe shutdown?     |
+| Exit                  | Yes / Partial / No | Can the user leave with all data (export, deletion, migration)?          |
+| Recoverability        | Yes / Partial / No | Are backups and rollbacks supported and documented?                      |
+| Visibility            | Yes / Partial / No | Is the architecture/code/docs open enough to inspect how it works?       |
+| External Dependencies | Yes / Partial / No | Can it run without mandatory third-party cloud services or accounts?     |
 
 ## Configuration (Minimal)
 
@@ -60,7 +55,7 @@ Links to recipes that use this technology, for example:
 
 List other technologies that serve a similar purpose.
 
-## Trajectory *(optional — include when there's a meaningful story)*
+## Trajectory *(optional -- include when there's a meaningful story)*
 
 Where is this project heading? Toward openness (better export, community governance, permissive licensing) or toward closure (license restrictions, cloud dependencies, corporate control)?
 
@@ -70,8 +65,8 @@ Rate as: **opening**, **stable**, **mixed**, **closing**.
 
 ## Sources
 
-* Website  
-* Documentation  
-* Repository  
-* Docker image  
-* Community  
+* Website
+* Documentation
+* Repository
+* Docker image
+* Community
