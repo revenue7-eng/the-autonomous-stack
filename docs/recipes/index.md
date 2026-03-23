@@ -6,8 +6,10 @@ nav_order: 5
 
 # Recipes
 
-Here you will find tested configurations that combine multiple technologies into a working autonomous system.
+Tested configurations that combine multiple technologies into working autonomous systems. Every recipe uses components from the [Technology Catalog](../catalog/) and is verified against the three structural criteria: Pause, Exit, Recoverability.
 
 ## Available Recipes
 
-- [Minimal Autonomous Server](minimal-server.md) – a complete stack with VPN, ad filtering, identity, file sync, backups, monitoring, media, and Git hosting.
+- [Minimal Autonomous Server](minimal-server.md) -- VPN, ad filtering, identity, file sync, backups, monitoring, media, and Git hosting. The foundation.
+
+- [Privacy-First Homelab](privacy-first-homelab.md) -- extends the Minimal Server with password management, reverse proxy, cloud platform, and smart home automation. Replaces Google Drive, LastPass, Alexa, and ISP DNS with fully autonomous alternatives.
