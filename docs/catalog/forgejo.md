@@ -72,17 +72,12 @@ services:
 
 ## Sources
 
-* Website
-https://forgejo.org
+* [Website](https://forgejo.org)
 
-* Documentation
-https://forgejo.org/docs/
+* [Documentation](https://forgejo.org/docs/)
 
-* Repository (Codeberg)
-https://codeberg.org/forgejo/forgejo
+* [Repository (Codeberg)](https://codeberg.org/forgejo/forgejo)
 
-* Docker image
-https://hub.docker.com/r/codebergorg/forgejo
+* [Docker image](https://hub.docker.com/r/codebergorg/forgejo)
 
-* Community (Matrix)
-https://matrix.to/#/#forgejo:matrix.org
+* [Community (Matrix)](https://matrix.to/#/#forgejo:matrix.org)

@@ -98,17 +98,12 @@ If you choose Vault today, have a migration path to OpenBao. If you're starting 
 
 ## Sources
 
-- Website
-https://www.vaultproject.io
+- [Website](https://www.vaultproject.io)
 
-- Documentation
-https://www.vaultproject.io/docs
+- [Documentation](https://www.vaultproject.io/docs)
 
-- Repository
-https://github.com/hashicorp/vault
+- [Repository](https://github.com/hashicorp/vault)
 
-- Docker image
-https://hub.docker.com/r/hashicorp/vault
+- [Docker image](https://hub.docker.com/r/hashicorp/vault)
 
-- Community
-https://discuss.hashicorp.com/c/vault/
+- [Community](https://discuss.hashicorp.com/c/vault/)

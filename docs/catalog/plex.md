@@ -64,14 +64,10 @@ The trend is clear: Plex is moving from "media server you run" toward "media pla
 
 ## Sources
 
-* Website
-https://www.plex.tv
+* [Website](https://www.plex.tv)
 
-* Documentation
-https://support.plex.tv
+* [Documentation](https://support.plex.tv)
 
-* Docker image
-https://hub.docker.com/r/plexinc/pms-docker
+* [Docker image](https://hub.docker.com/r/plexinc/pms-docker)
 
-* Community
-https://forums.plex.tv
+* [Community](https://forums.plex.tv)

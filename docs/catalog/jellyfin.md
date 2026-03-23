@@ -66,17 +66,12 @@ services:
 
 ## Sources
 
-- Website
-https://jellyfin.org
+- [Website](https://jellyfin.org)
 
-- Documentation
-https://jellyfin.org/docs/
+- [Documentation](https://jellyfin.org/docs/)
 
-- Repository
-https://github.com/jellyfin/jellyfin
+- [Repository](https://github.com/jellyfin/jellyfin)
 
-- Docker image
-https://hub.docker.com/r/jellyfin/jellyfin
+- [Docker image](https://hub.docker.com/r/jellyfin/jellyfin)
 
-- Community
-https://github.com/jellyfin/jellyfin/discussions
+- [Community](https://github.com/jellyfin/jellyfin/discussions)

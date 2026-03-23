@@ -86,17 +86,12 @@ services:
 
 ## Sources
 
-- Website
-https://uptime.kuma.pet
+- [Website](https://uptime.kuma.pet)
 
-- Documentation
-https://github.com/louislam/uptime-kuma/wiki
+- [Documentation](https://github.com/louislam/uptime-kuma/wiki)
 
-- Repository
-https://github.com/louislam/uptime-kuma
+- [Repository](https://github.com/louislam/uptime-kuma)
 
-- Docker image
-https://hub.docker.com/r/louislam/uptime-kuma
+- [Docker image](https://hub.docker.com/r/louislam/uptime-kuma)
 
-- Community
-https://github.com/louislam/uptime-kuma/issues
+- [Community](https://github.com/louislam/uptime-kuma/issues)

@@ -58,8 +58,6 @@ Notion is one of the most popular productivity tools. Its power comes from flexi
 
 ## Sources
 
-* Website
-https://notion.so
+* [Website](https://notion.so)
 
-* Documentation
-https://www.notion.so/help
+* [Documentation](https://www.notion.so/help)

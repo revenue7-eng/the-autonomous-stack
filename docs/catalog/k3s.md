@@ -78,16 +78,12 @@ For air‑gapped environments, use the offline installation guide.
 
 ## Sources
 
-- Website
-https://k3s.io
+- [Website](https://k3s.io)
 
-- Documentation
-https://docs.k3s.io
+- [Documentation](https://docs.k3s.io)
 
-- Repository
-https://github.com/k3s-io/k3s
+- [Repository](https://github.com/k3s-io/k3s)
 
 - Docker image
 
-- Community
-https://github.com/k3s-io/k3s/discussions
+- [Community](https://github.com/k3s-io/k3s/discussions)

@@ -58,8 +58,6 @@ Google Drive is the de facto standard for file sync. Most people use it without 
 
 ## Sources
 
-* Website
-https://drive.google.com
+* [Website](https://drive.google.com)
 
-* Documentation
-https://support.google.com/drive
+* [Documentation](https://support.google.com/drive)

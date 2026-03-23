@@ -81,17 +81,12 @@ If you use Docker Engine and CLI — trajectory is stable. If you depend on Dock
 
 ## Sources
 
-- Website
-https://www.docker.com
+- [Website](https://www.docker.com)
 
-- Documentation
-https://docs.docker.com/engine/
+- [Documentation](https://docs.docker.com/engine/)
 
-- Repository
-https://github.com/docker/docker-ce
+- [Repository](https://github.com/docker/docker-ce)
 
-- Docker image
-https://hub.docker.com/_/docker
+- [Docker image](https://hub.docker.com/_/docker)
 
-- Community
-https://forums.docker.com
+- [Community](https://forums.docker.com)

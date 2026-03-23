@@ -93,17 +93,12 @@ services:
 
 ## Sources
 
-* Website
-https://goauthentik.io
+* [Website](https://goauthentik.io)
 
-* Documentation
-https://docs.goauthentik.io
+* [Documentation](https://docs.goauthentik.io)
 
-* Repository
-https://github.com/goauthentik/authentik
+* [Repository](https://github.com/goauthentik/authentik)
 
-* Docker image
-https://hub.docker.com/r/goauthentik/authentik
+* [Docker image](https://hub.docker.com/r/goauthentik/authentik)
 
-* Community
-https://github.com/goauthentik/authentik/discussions
+* [Community](https://github.com/goauthentik/authentik/discussions)

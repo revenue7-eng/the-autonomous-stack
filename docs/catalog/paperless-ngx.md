@@ -94,17 +94,12 @@ services:
 
 ## Sources
 
-* Website
-https://paperless-ngx.readthedocs.io
+* [Website](https://paperless-ngx.readthedocs.io)
 
-* Documentation
-https://paperless-ngx.readthedocs.io
+* [Documentation](https://paperless-ngx.readthedocs.io)
 
-* Repository
-https://github.com/paperless-ngx/paperless-ngx
+* [Repository](https://github.com/paperless-ngx/paperless-ngx)
 
-* Docker image
-https://hub.docker.com/r/paperlessngx/paperless-ngx
+* [Docker image](https://hub.docker.com/r/paperlessngx/paperless-ngx)
 
-* Community
-https://github.com/paperless-ngx/paperless-ngx/discussions
+* [Community](https://github.com/paperless-ngx/paperless-ngx/discussions)

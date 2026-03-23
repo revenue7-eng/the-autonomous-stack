@@ -78,17 +78,12 @@ AllowedIPs = 0.0.0.0/0
 
 ## Sources
 
-- Website
-https://www.wireguard.com
+- [Website](https://www.wireguard.com)
 
-- Documentation
-https://www.wireguard.com/quickstart/
+- [Documentation](https://www.wireguard.com/quickstart/)
 
-- Repository
-https://git.zx2c4.com/wireguard-linux-compat
+- [Repository](https://git.zx2c4.com/wireguard-linux-compat)
 
-- Docker image
-https://hub.docker.com/r/linuxserver/wireguard
+- [Docker image](https://hub.docker.com/r/linuxserver/wireguard)
 
-- Community
-https://www.reddit.com/r/WireGuard/
+- [Community](https://www.reddit.com/r/WireGuard/)

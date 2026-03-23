@@ -105,17 +105,12 @@ Set up a daily cron job to run snapshots:
 
 ## Sources
 
--  Website
-https://kopia.io
+- [Website](https://kopia.io)
 
--  Documentation
-https://kopia.io/docs/
+- [Documentation](https://kopia.io/docs/)
 
--  Repository
-https://github.com/kopia/kopia
+- [Repository](https://github.com/kopia/kopia)
 
--  Docker image
-https://hub.docker.com/r/kopia/kopia
+- [Docker image](https://hub.docker.com/r/kopia/kopia)
 
--  Community
-https://github.com/kopia/kopia/discussions
+- [Community](https://github.com/kopia/kopia/discussions)

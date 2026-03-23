@@ -75,17 +75,12 @@ services:
 
 ## Sources
 
-* Website
-https://adguard.com/en/adguard-home/overview.html
+* [Website](https://adguard.com/en/adguard-home/overview.html)
 
-* Documentation
-https://github.com/AdguardTeam/AdGuardHome/wiki
+* [Documentation](https://github.com/AdguardTeam/AdGuardHome/wiki)
 
-* Repository
-https://github.com/AdguardTeam/AdGuardHome
+* [Repository](https://github.com/AdguardTeam/AdGuardHome)
 
-* Docker image
-https://hub.docker.com/r/adguard/adguardhome
+* [Docker image](https://hub.docker.com/r/adguard/adguardhome)
 
-* Community
-https://github.com/AdguardTeam/AdGuardHome/discussions
+* [Community](https://github.com/AdguardTeam/AdGuardHome/discussions)

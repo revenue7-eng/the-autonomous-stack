@@ -72,17 +72,12 @@ services:
 
 ## Sources
 
-* Website
-https://syncthing.net
+* [Website](https://syncthing.net)
 
-* Documentation
-https://docs.syncthing.net
+* [Documentation](https://docs.syncthing.net)
 
-* Repository
-https://github.com/syncthing/syncthing
+* [Repository](https://github.com/syncthing/syncthing)
 
-* Docker image
-https://hub.docker.com/r/syncthing/syncthing
+* [Docker image](https://hub.docker.com/r/syncthing/syncthing)
 
-* Community
-https://forum.syncthing.net
+* [Community](https://forum.syncthing.net)

@@ -67,17 +67,12 @@ The tension: Tailscale's business model requires the coordination server to be v
 
 ## Sources
 
-* Website
-https://tailscale.com
+* [Website](https://tailscale.com)
 
-* Documentation
-https://tailscale.com/kb
+* [Documentation](https://tailscale.com/kb)
 
-* Repository (client)
-https://github.com/tailscale/tailscale
+* [Repository (client)](https://github.com/tailscale/tailscale)
 
-* Headscale (open‑source coordination server)
-https://github.com/jurassicpark/headscale
+* [Headscale (open‑source coordination server)](https://github.com/jurassicpark/headscale)
 
-* Community
-https://github.com/tailscale/tailscale/discussions
+* [Community](https://github.com/tailscale/tailscale/discussions)

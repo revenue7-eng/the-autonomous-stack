@@ -97,17 +97,12 @@ services:
 
 ## Sources
 
-- Website
-https://prometheus.io
+- [Website](https://prometheus.io)
 
-- Documentation
-https://prometheus.io/docs/
+- [Documentation](https://prometheus.io/docs/)
 
-- Repository
-https://github.com/prometheus/prometheus
+- [Repository](https://github.com/prometheus/prometheus)
 
-- Docker image
-https://hub.docker.com/r/prom/prometheus
+- [Docker image](https://hub.docker.com/r/prom/prometheus)
 
-- Community
-https://github.com/prometheus/prometheus/discussions
+- [Community](https://github.com/prometheus/prometheus/discussions)

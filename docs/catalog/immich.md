@@ -102,17 +102,12 @@ backup.
 
 ## Sources
 
-- Website
-https://immich.app
+- [Website](https://immich.app)
 
-- Documentation
-https://docs.immich.app/overview/quick-start
+- [Documentation](https://docs.immich.app/overview/quick-start)
 
-- Repository
-https://github.com/immich-app/immich
+- [Repository](https://github.com/immich-app/immich)
 
-- Docker image
-https://hub.docker.com/r/immich-app/immich-server
+- [Docker image](https://hub.docker.com/r/immich-app/immich-server)
 
-- Community
-https://github.com/immich-app/immich/discussions
+- [Community](https://github.com/immich-app/immich/discussions)
