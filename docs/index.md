@@ -1,5 +1,5 @@
 ﻿---
-title: "The Autonomous Stack"
+title: "Home"
 layout: home
 nav_order: 1
 ---
