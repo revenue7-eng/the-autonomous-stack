@@ -24,7 +24,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [WireGuard](wireguard.md) | **A3** | **T2** | Simple, fast VPN without central servers. |
-| [AdGuard Home](adguard-home.md) | **A3** | **T2** | Network‑wide ad blocking and DNS filtering. |
+| [AdGuard Home](adguard-home.md) | **A3** | **T2** | Network-wide ad blocking and DNS filtering. |
+| [Pi-hole](pi-hole.md) | **A3** | **T2** | DNS sinkhole for network-wide ad blocking. |
+| [Traefik](traefik.md) | **A3** | **T2** | Modern reverse proxy with auto-discovery and auto-HTTPS. |
+| [Nginx Proxy Manager](nginx-proxy-manager.md) | **A3** | **T2** | GUI-based reverse proxy built on Nginx. |
 | [Tailscale](tailscale.md) | **A2** | **T1** | Mesh VPN built on WireGuard. Convenient, but depends on central coordination server. |
 
 ---
@@ -71,6 +74,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Vault](vault.md) | **A3** | **T2** | Secure secrets management and encryption. |
+| [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Self-hosted Bitwarden-compatible password manager. |
 
 ---
 
@@ -113,6 +117,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Nextcloud](nextcloud.md) | **A3** | **T2** | Self-hosted cloud: files, calendar, contacts, office, video calls. |
+
+### Automation
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Home Assistant](home-assistant.md) | **A3** | **T2** | Local-first smart home automation with 2000+ integrations. |
 
 ---
 
