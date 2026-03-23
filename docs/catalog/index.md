@@ -53,6 +53,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self‑hosted monitoring dashboard. |
 | [Prometheus](prometheus.md) | **A3** | **T2** | Metrics collection, storage, and alerting. |
+| [Grafana](grafana.md) | **A3** | **T2** | Dashboards and visualisation for metrics, logs, traces. |
 
 ---
 
@@ -100,6 +101,18 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Paperless‑ngx](paperless-ngx.md) | **A3** | **T2** | Document management system with OCR. |
 | [Notion](notion.md) | **A0** | **T0** | All‑in‑one workspace. Powerful, but cloud‑only with lossy export. |
+
+### Notes
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Obsidian](obsidian.md) | **A2** | **T0** | Local-first Markdown notes. Data is yours, app is proprietary. |
+
+### Cloud Platform
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Nextcloud](nextcloud.md) | **A3** | **T2** | Self-hosted cloud: files, calendar, contacts, office, video calls. |
 
 ---
 
