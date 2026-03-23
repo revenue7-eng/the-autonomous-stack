@@ -1,4 +1,8 @@
-﻿# The Autonomous Stack (TAS)
+﻿---
+nav_exclude: true
+---
+
+# The Autonomous Stack (TAS)
 
 **A decision framework for building infrastructure you actually control.**
 
@@ -18,7 +22,6 @@ Eight questions. Open-mode architecture. Practical tools.
 ```bash
 cd code/minimal-server
 cp .env.example .env
-# Edit .env with your secrets
 docker compose up -d
 ```
 
