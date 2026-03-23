@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: "Getting Started"
 nav_order: 2
 ---
 
