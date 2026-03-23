@@ -1,2 +1,12 @@
 title: The Autonomous Stack
-theme: minima
+description: Catalog of autonomous technologies
+
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+search_enabled: true
+
+aux_links:
+  GitHub:
+    - https://github.com/revenue7-eng/the-autonomous-stack
