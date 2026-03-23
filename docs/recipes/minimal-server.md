@@ -74,118 +74,27 @@ cd /opt/autonomous-stack
  ```
 
 ### 4. Deploy Core Services with Docker Compose
-Create a docker-compose.yml file in /opt/autonomous-stack/:
 
- ```yaml
-version: '3.8'
+The complete `docker-compose.yml` and environment template are in [`code/minimal-server/`](../../code/minimal-server/).
 
-services:
-  adguard:
-    image: adguard/adguardhome:latest
-    container_name: adguard
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "80:80/tcp"   # Web UI
-    volumes:
-      - ./config/adguard/work:/opt/adguardhome/work
-      - ./config/adguard/conf:/opt/adguardhome/conf
-    restart: unless-stopped
+```bash
+# Copy the deployment files
+cp -r /path/to/tas/code/minimal-server/* /opt/autonomous-stack/
 
-  authentik-postgres:
-    image: postgres:15
-    container_name: authentik-postgres
-    environment:
-      POSTGRES_DB: authentik
-      POSTGRES_USER: authentik
-      POSTGRES_PASSWORD: ${AUTHENTIK_DB_PASSWORD}
-    volumes:
-      - ./data/authentik-postgres:/var/lib/postgresql/data
-    restart: unless-stopped
+# Create your .env from the template
+cp .env.example .env
 
-  authentik-redis:
-    image: redis:alpine
-    container_name: authentik-redis
-    command: --save 60 1
-    volumes:
-      - ./data/authentik-redis:/data
-    restart: unless-stopped
+# Edit .env with real secrets:
+# AUTHENTIK_SECRET_KEY — generate with: openssl rand -hex 32
+# AUTHENTIK_DB_PASSWORD — generate with: openssl rand -hex 16
+nano .env
 
-  authentik:
-    image: ghcr.io/goauthentik/server:latest
-    container_name: authentik
-    ports:
-      - "9000:9000"
-      - "9443:9443"
-    environment:
-      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
-      AUTHENTIK_POSTGRESQL__HOST: authentik-postgres
-      AUTHENTIK_POSTGRESQL__USER: authentik
-      AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_DB_PASSWORD}
-      AUTHENTIK_REDIS__HOST: authentik-redis
-    volumes:
-      - ./data/authentik-media:/media
-    depends_on:
-      - authentik-postgres
-      - authentik-redis
-    restart: unless-stopped
+# Start everything
+docker compose up -d
+```
 
-  syncthing:
-    image: syncthing/syncthing:latest
-    container_name: syncthing
-    ports:
-      - "8384:8384"
-      - "22000:22000"
-    volumes:
-      - ./config/syncthing:/var/syncthing/config
-      - ./data/syncthing:/var/syncthing/data
-    restart: unless-stopped
-
-  uptime-kuma:
-    image: louislam/uptime-kuma:1
-    container_name: uptime-kuma
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./data/uptime-kuma:/app/data
-    restart: unless-stopped
-
-  jellyfin:
-    image: jellyfin/jellyfin:latest
-    container_name: jellyfin
-    ports:
-      - "8096:8096"
-    volumes:
-      - ./config/jellyfin:/config
-      - ./data/media:/media
-    restart: unless-stopped
-
-  forgejo:
-    image: codeberg.org/forgejo/forgejo:1.21
-    container_name: forgejo
-    ports:
-      - "3000:3000"
-      - "222:22"
-    volumes:
-      - ./data/forgejo:/data
-    environment:
-      - FORGEJO__server__DOMAIN=git.local
-      - FORGEJO__server__SSH_PORT=222
-    restart: unless-stopped
- ```
-
-Create a .env file in the same directory to store secrets:
-
- ```bash
-AUTHENTIK_SECRET_KEY=<generate-random-key>
-AUTHENTIK_DB_PASSWORD=<generate-random-password>
- ```
-
-Start the services:
-
- ```bash
-docker-compose up -d
- ```
+→ [`docker-compose.yml`](../../code/minimal-server/docker-compose.yml) — all services  
+→ [`.env.example`](../../code/minimal-server/.env.example) — environment template
 
 ### 5. Configure WireGuard (VPN)
 
@@ -255,25 +164,17 @@ sudo crontab -e
 
 ### 7. Enable Pause (Manual Stop)
 
-Create a script /usr/local/bin/pause-stack.sh:
+Pause and resume scripts are included in [`code/minimal-server/scripts/`](../../code/minimal-server/scripts/).
 
- ```bash
-#!/bin/bash
-cd /opt/autonomous-stack
-docker-compose stop
- ```
+```bash
+# Pause — stops all containers, data stays on disk
+./scripts/pause-stack.sh
 
-Make it executable:
+# Resume — starts all containers
+./scripts/resume-stack.sh
+```
 
- ```bash
-sudo chmod +x /usr/local/bin/pause-stack.sh
- ```
-
-To resume:
-
- ```bash
-cd /opt/autonomous-stack && docker-compose start
- ```
+This implements the **Pause** principle: you can stop the entire stack at any time and resume without loss.
 
 ### 8. Verification
 

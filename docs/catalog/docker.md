@@ -69,6 +69,16 @@ docker run hello-world
 - containerd – lower-level runtime, used by Kubernetes  
 - LXC/LXD – system containers, not application containers  
 
+## Trajectory
+
+**Direction: mixed.**
+
+Docker Engine remains open source (Apache‑2.0) and is the foundation for containers everywhere. However, Docker Inc. introduced a paid subscription requirement for Docker Desktop in large organisations (250+ employees or $10M+ revenue) in 2021.
+
+The engine itself is stable and open. The desktop tooling is moving toward a commercial model. The container runtime ecosystem has diversified — Podman, containerd, nerdctl offer alternatives that don't depend on Docker Inc.
+
+If you use Docker Engine and CLI — trajectory is stable. If you depend on Docker Desktop — watch the licensing terms.
+
 ## Sources
 
 - Website

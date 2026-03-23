@@ -5,47 +5,61 @@ nav_order: 4
 
 # Philosophy
 
-This guide is built on the philosophical framework of [whose.world](https://whose.world).  
-Below is a brief summary of its core concepts as they apply to designing digital flows.
+TAS is a practical application of the [whose.world](https://whose.world) framework.
 
-## Key Concepts
-
-### Flow
-Any directed movement – digital, social, bodily. In TAS we focus on **digital flows**: data streams, user interfaces, network traffic, system processes.
-
-### Seamlessness & Hermeticity
-- **Seamlessness**: the absence of pauses; you move without friction and often without noticing.
-- **Hermeticity**: the inability to exit without loss; once you enter, you cannot leave with your data or identity intact.
-
-A well‑designed autonomous system actively **introduces pauses** and **ensures an exit path**.
-
-### Enlightenment (Просвет)
-A moment when conflicting flows create a crack in the seamless environment – you suddenly see the architecture that moves you.
-
-### Renter (Арендатор)
-Someone who moves along a trajectory designed by someone else, paying with attention, data, or time without realising it.
-
-### Architect (Архитектор)
-Someone who builds environments (flows). An architect can work in **open mode** or **closed mode**:
-
-- **Open mode**: the environment contains pauses, allows exit, and is recoverable.
-- **Closed mode**: the environment removes pauses, traps the user, and makes exit destructive.
-
-### Ethical Criteria
-- **Pause**: can the user stop and reflect?
-- **Exit**: can the user leave with all their data, without punishment?
-- **Recoverability**: can mistakes be undone; can the system be restored to a known good state?
-
-These three criteria form the ethical compass of TAS.
+This page is a bridge, not a substitute. If the ideas below resonate, read the original.
 
 ---
 
-## How This Relates to TAS
+## The core question
 
-TAS translates the philosophy of whose.world into **practical decisions**:
+**Whose are you?**
 
-- The **catalog** evaluates technologies against the three ethical criteria.
-- The **recipes** show how to combine technologies to build open‑mode systems.
-- The **code examples** demonstrate how to implement pause, exit, and recoverability in real software.
+Every digital environment is built by someone. Every interface has an architect. The question is not whether you're inside an architecture — you always are. The question is whether you can see it, stop it, and leave it.
 
-By using TAS, you become an **Architect in open mode** – building digital flows that respect human autonomy.
+---
+
+## Two modes of building
+
+An **open‑mode architecture** contains pauses, allows exit, and is recoverable. If someone inside it sees how it works — that's a success, not a threat.
+
+A **closed‑mode architecture** removes pauses, makes exit costly, and depends on the user not noticing. If someone inside it sees how it works — that's a risk to the system.
+
+The difference is not intent. The difference is structure.
+
+---
+
+## Three criteria — and five more
+
+The structural foundation is three tests: Pause, Exit, Recoverability. They determine whether a system is open‑mode or closed‑mode.
+
+But whose.world goes deeper. Its diagnostic toolkit identifies five additional forces that erode autonomy even when the structural criteria are met:
+
+**Personalisation** — a designed flow that looks like your own choice.
+**Urgency** — artificial time pressure that disables evaluation.
+**Hidden cost** — the price you pay without knowing you're paying.
+**Transparency fragility** — a system that depends on your ignorance to function.
+**Trajectory** — the direction a project is heading: toward openness or away from it.
+
+TAS translates all eight into the [Infrastructure Audit](how-to-choose.md) — a practical checklist for evaluating any technology.
+
+---
+
+## How this relates to TAS
+
+TAS translates whose.world into infrastructure decisions:
+
+- The **[Infrastructure Audit](how-to-choose.md)** applies all eight questions to your stack.
+- The **catalog** evaluates each technology against the three structural criteria and assigns Autonomy (A0–A3) and Transparency (T0–T2) levels.
+- The **recipes** combine technologies to build open‑mode systems.
+- Selected catalog cards include a **Trajectory** assessment — not just where a project stands, but where it's heading.
+
+By using TAS, you become an architect who builds in open mode — creating digital infrastructure that respects the autonomy of whoever uses it.
+
+---
+
+## Further reading
+
+- [whose.world](https://whose.world) — the full philosophical system
+- [Infrastructure Audit](how-to-choose.md) — apply the three criteria to your stack
+- [Assessment Scale](catalog/assessment-scale.md) — how Autonomy and Transparency levels are defined

@@ -1,85 +1,88 @@
 ---
-title: "Jellyfin"
-category: "applications/media"
+title: "Syncthing"
+category: "storage/sync"
 status: "stable"
-license: "GPL-2.0"
-source: "https://jellyfin.org"
-repository: "https://github.com/jellyfin/jellyfin"
-documentation: "https://jellyfin.org/docs/"
-docker_image: "https://hub.docker.com/r/jellyfin/jellyfin"
-community: "https://github.com/jellyfin/jellyfin/discussions"
+license: "MPL-2.0"
+source: "https://syncthing.net"
+repository: "https://github.com/syncthing/syncthing"
+documentation: "https://docs.syncthing.net"
+docker_image: "https://hub.docker.com/r/syncthing/syncthing"
+community: "https://forum.syncthing.net"
 autonomy_level: "A3"
 transparency_level: "T2"
 parent: Technology Catalog
 nav_order: 4
 ---
 
-# Jellyfin
+# Syncthing
 
 ## Brief Description
 
-Free software media server that streams your personal media collection without cloud dependencies. A full alternative to Plex and Emby.
+Peer‑to‑peer file synchronisation tool that keeps folders in sync across multiple devices — without a central server, without cloud accounts, without trusting a third party.
 
 ## Architectural Role
 
-Media server: serves movies, TV shows, music, and photos to clients (TVs, phones, browsers) over the local network.
+Storage layer: provides continuous, encrypted file sync between devices over the local network or via relay. Replaces Dropbox, Google Drive, and similar cloud sync services.
 
 ## Technical Autonomy
 
-* Works without internet (after initial setup)
-* Stores data locally (media files and metadata)
-* Does not require external accounts
-* Allows data export (media files are yours; metadata can be exported)
-* Provides offline updates (manual upgrade via packages or Docker)
+- ✅ Works without internet (syncs over LAN when devices are on the same network)
+- ✅ Stores data locally (files live on your devices, not in the cloud)
+- ✅ Does not require external accounts
+- ✅ Allows data export (files are ordinary files — stop Syncthing and keep everything)
+- ✅ Provides offline updates (manual upgrade via packages or Docker)
 
 ## Philosophical Assessment (whose.world criteria)
 
-| Criterion             | Status | Comments                                              |
-| --------------------- | ------ | ----------------------------------------------------- |
-| Pause                 | Yes    | User controls playback; can stop at any time.         |
-| Exit                  | Yes    | Data stored as ordinary files; no lock-in.            |
-| Recoverability        | Yes    | Media and config can be backed up and restored.       |
-| Visibility            | Yes    | Open source, fully transparent architecture.          |
-| External Dependencies | Yes    | No required external services; fully offline capable. |
+| Criterion             | Status | Comments |
+| --------------------- | ------ | -------- |
+| Pause                 | Yes    | Sync can be paused per folder or per device at any time. |
+| Exit                  | Yes    | No lock‑in; files are ordinary files on disk. Stop the service and everything stays. |
+| Recoverability        | Yes    | File versioning built in; deleted/changed files can be recovered from versioning archive. |
+| Visibility            | Yes    | Open source, fully documented protocol and implementation. |
+| External Dependencies | Yes    | No mandatory external services. Relay servers are optional and can be self‑hosted. |
 
 ## Configuration (Minimal)
 
-Example docker-compose.yml snippet:
+Example `docker-compose.yml` snippet:
 
 ```yaml
 services:
-  jellyfin:
-    image: jellyfin/jellyfin:latest
+  syncthing:
+    image: syncthing/syncthing:latest
+    container_name: syncthing
     ports:
-      - "8096:8096"
+      - "8384:8384"    # Web UI
+      - "22000:22000"  # Sync protocol
     volumes:
-      - ./jellyfin-config:/config
-      - ./media:/media
+      - ./syncthing-config:/var/syncthing/config
+      - ./syncthing-data:/var/syncthing/data
+    restart: unless-stopped
 ```
 
 ## Related Recipes
 
-* [Minimal Autonomous Server](../recipes/minimal-server.md) – includes Syncthing for file sync between devices.
+* [Minimal Autonomous Server](../recipes/minimal-server.md) – uses Syncthing for file sync between devices.
 
 ## Alternatives
 
-* Plex – popular but requires account and has cloud dependencies
-* Emby – similar architecture, partially proprietary
-* Kodi – local media player, less server-oriented
+* Nextcloud – heavier, server‑centric, but offers more features (calendar, contacts, office).
+* Resilio Sync – proprietary, similar P2P model but closed source.
+* Seafile – self‑hosted cloud storage, not P2P.
 
 ## Sources
 
 * Website
-https://jellyfin.org
+https://syncthing.net
 
 * Documentation
-https://jellyfin.org/docs/
+https://docs.syncthing.net
 
 * Repository
-https://github.com/jellyfin/jellyfin
+https://github.com/syncthing/syncthing
 
 * Docker image
-https://hub.docker.com/r/jellyfin/jellyfin
+https://hub.docker.com/r/syncthing/syncthing
 
 * Community
-https://github.com/jellyfin/jellyfin/discussions
+https://forum.syncthing.net

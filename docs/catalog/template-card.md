@@ -60,6 +60,14 @@ Links to recipes that use this technology, for example:
 
 List other technologies that serve a similar purpose.
 
+## Trajectory *(optional — include when there's a meaningful story)*
+
+Where is this project heading? Toward openness (better export, community governance, permissive licensing) or toward closure (license restrictions, cloud dependencies, corporate control)?
+
+Signs to look for: license changes, acquisition, feature gating (community vs enterprise), API restrictions, community governance changes.
+
+Rate as: **opening**, **stable**, **mixed**, **closing**.
+
 ## Sources
 
 * Website  
