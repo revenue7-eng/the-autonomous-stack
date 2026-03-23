@@ -1,9 +1,7 @@
-title: The Autonomous Stack
-description: A decision framework for building infrastructure you actually control. Eight questions. Open‑mode architecture. Practical tools.
+﻿title: The Autonomous Stack
+description: A decision framework for building infrastructure you actually control.
 
 remote_theme: just-the-docs/just-the-docs
-
-color_scheme: dark
 
 search_enabled: true
 
