@@ -11,26 +11,15 @@ nav_order: 1
 If your system requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
 
-TAS provides:
-
-- An **[Infrastructure Audit](docs/how-to-choose.md)** --- eight questions to evaluate any technology or your entire stack
-- A **[Technology Catalog](docs/catalog/)** --- tools rated by Autonomy (A0--A3) and Transparency (T0--T2), from Google Drive to WireGuard
-- **[Recipes](docs/recipes/)** --- tested deployments you can clone and run
-
 ---
 
-## Quick start
+## Start here
 
-**Evaluate your stack:**
-→ [Infrastructure Audit](docs/how-to-choose.md) --- 8 questions, 15 minutes per service
+→ [Infrastructure Audit](docs/how-to-choose.md) --- evaluate your stack. Eight questions, 15 minutes per service.
 
-**Choose a tool:**
-→ [Technology Catalog](docs/catalog/) --- 20+ tools rated across the full A0--A3 spectrum
+→ [Technology Catalog](docs/catalog/) --- choose a tool. 20+ technologies rated A0--A3.
 
-**Build from scratch:**
-→ [Minimal Autonomous Server](docs/recipes/minimal-server.md) --- VPN, DNS, auth, sync, backups, monitoring, media, Git
-
-**Deploy immediately:**
+→ [Minimal Autonomous Server](docs/recipes/minimal-server.md) --- build from scratch. VPN, DNS, auth, sync, backups, monitoring, media, Git.
 ```bash
 cd code/minimal-server
 cp .env.example .env
@@ -78,8 +67,6 @@ The first three determine the Autonomy Level. The next five reveal what the rati
 | [Notion](docs/catalog/notion.md) | **A0** | **T0** | Documents |
 | [Google Drive](docs/catalog/google-drive.md) | **A0** | **T0** | File storage |
 
-The catalog includes both autonomous alternatives and the mainstream services they replace. The contrast makes the trade-offs visible.
-
 → Full catalog: [Technology Catalog](docs/catalog/)
 
 ---
@@ -88,7 +75,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 TAS is built on the [whose.world](https://whose.world) framework.
 
-The core idea: every digital environment is an architecture built by someone. An **open-mode architecture** contains pauses, allows exit, and survives scrutiny. A **closed-mode architecture** removes pauses, punishes exit, and depends on your inability to see how it works.
+Every digital environment is an architecture built by someone. An **open-mode architecture** contains pauses, allows exit, and survives scrutiny. A **closed-mode architecture** removes pauses, punishes exit, and depends on your inability to see how it works.
 
 The eight questions are a practical translation of this philosophy into infrastructure decisions.
 
@@ -96,23 +83,9 @@ The eight questions are a practical translation of this philosophy into infrastr
 
 ---
 
-## Contributing
-
-We welcome contributions --- new technology cards, recipes, corrections, translations.
-
-→ [Contributing guide](CONTRIBUTING.md)
-
----
-
 ## License
 
-- **Code** (scripts, docker-compose, etc.): [MIT](LICENSE)
-- **Documentation** (text, assessments, etc.): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Code**: [MIT](LICENSE)
+- **Documentation**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
----
-
-## Credits
-
-TAS applies the philosophical framework of [whose.world](https://whose.world) to infrastructure decisions. The eight audit questions are derived from whose.world's ethics of open-mode architecture.
-
-If you use TAS, please link back to both projects.
+TAS applies the philosophical framework of [whose.world](https://whose.world) to infrastructure decisions. If you use TAS, please link back to both projects.
