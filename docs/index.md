@@ -1,7 +1,7 @@
 ---
 title: "The Autonomous Stack (TAS)"
-nav_order: 1
 layout: home
+nav_order: 1
 ---
 
 # The Autonomous Stack (TAS)
