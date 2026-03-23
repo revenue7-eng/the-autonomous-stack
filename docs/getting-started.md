@@ -22,7 +22,7 @@ If you're short on time, read the one‑page [Assessment Scale](catalog/assessme
 
 ## 2. Browse the Catalog
 
-The [Catalog](catalog/) lists technologies by architectural layer:
+The [Technology Catalog](catalog/) lists technologies by architectural layer:
 
 - Network, Identity, Storage, Observability, Compute, Security, Applications
 
