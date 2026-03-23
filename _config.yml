@@ -2,6 +2,8 @@ title: The Autonomous Stack
 description: Catalog of autonomous technologies
 
 remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
 
 color_scheme: dark
 
