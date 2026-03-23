@@ -1,4 +1,4 @@
-﻿---
+---
 nav_exclude: true
 ---
 
@@ -8,20 +8,24 @@ nav_exclude: true
 
 Eight questions. Open-mode architecture. Practical tools.
 
+![TAS Framework — 8 questions to evaluate any technology](docs/tas-framework.png)
+
 ---
 
 ## Documentation
 
 **[Read the full documentation](https://revenue7-eng.github.io/the-autonomous-stack/)**
 
-- [Infrastructure Audit](https://revenue7-eng.github.io/the-autonomous-stack/how-to-choose/) --- 8 questions to evaluate any technology
-- [Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/catalog/) --- 20+ tools rated A0--A3
-- [Minimal Autonomous Server](https://revenue7-eng.github.io/the-autonomous-stack/recipes/minimal-server/) --- deploy in a few hours
+- [Infrastructure Audit](https://revenue7-eng.github.io/the-autonomous-stack/docs/how-to-choose/) -- 8 questions to evaluate any technology
+- [Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/) -- 28 technologies rated A0--A3
+- [Recipes](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/) -- three tested stacks: minimal server, privacy homelab, developer workstation
 
 ## Quick deploy
+
 ```bash
 cd code/minimal-server
 cp .env.example .env
+# Edit .env with your secrets
 docker compose up -d
 ```
 
