@@ -1,3 +1,8 @@
+---
+title: How to Choose
+nav_order: 3
+---
+
 # How to Choose Tools
 
 TAS is not just a catalog.
