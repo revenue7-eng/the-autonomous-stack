@@ -53,7 +53,7 @@ We welcome community contributions!
 
 ## Next Steps
 
-- Explore the [Catalog](catalog/) to find more tools.
+- Explore the [Technology Catalog](catalog/) to find more tools.
 - Customise the Minimal Server recipe for your own needs.
 - Share your experience in the [Community](community/) section (coming soon).
 
