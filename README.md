@@ -8,7 +8,7 @@ nav_exclude: true
 
 Eight questions. Open-mode architecture. Practical tools.
 
-![TAS Framework — 8 questions to evaluate any technology](docs/tas-framework.png)
+![TAS Framework](tas-framework.png)
 
 ---
 
