@@ -75,6 +75,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Vault](vault.md) | **A3** | **T2** | Secure secrets management and encryption. |
 | [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Self-hosted Bitwarden-compatible password manager. |
+| [KeePass](keepass.md) | **A3** | **T2** | Local encrypted password vault. No server, no account, no internet. |
 
 ---
 
