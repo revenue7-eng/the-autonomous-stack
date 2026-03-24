@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Technology Name"
 category: "category/subcategory"
 status: "stable | experimental"
