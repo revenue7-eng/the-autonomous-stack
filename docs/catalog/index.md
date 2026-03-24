@@ -76,8 +76,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Grafana](grafana.md) | **A3** | **T2** | Open-source observability and data visualisation platform. |
-| [Prometheus](prometheus.md) | **A3** | **T2** | Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, al... |
 | [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
+| [Prometheus](prometheus.md) | **A3** | **T2** | Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, al... |
 
 ---
 
