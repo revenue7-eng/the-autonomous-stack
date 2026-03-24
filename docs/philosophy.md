@@ -50,8 +50,8 @@ TAS translates all eight into the [Infrastructure Audit](how-to-choose.md) — a
 TAS translates whose.world into infrastructure decisions:
 
 - The **[Infrastructure Audit](how-to-choose.md)** applies all eight questions to your stack.
-- The **catalog** evaluates each technology against the three structural criteria and assigns Autonomy (A0–A3) and Transparency (T0–T2) levels.
-- The **recipes** combine technologies to build open‑mode systems.
+- The **[catalog](catalog/)** evaluates each technology against the three structural criteria and assigns Autonomy (A0–A3) and Transparency (T0–T2) levels.
+- The **[recipes](recipes/)** combine technologies to build open‑mode systems.
 - Selected catalog cards include a **Trajectory** assessment — not just where a project stands, but where it's heading.
 
 By using TAS, you become an architect who builds in open mode — creating digital infrastructure that respects the autonomy of whoever uses it.
