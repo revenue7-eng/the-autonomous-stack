@@ -87,3 +87,8 @@ AllowedIPs = 0.0.0.0/0
 - [Docker image](https://hub.docker.com/r/linuxserver/wireguard)
 
 - [Community](https://www.reddit.com/r/WireGuard/)
+-e 
+## Trajectory
+**Stable — kernel-level.**
+
+WireGuard is now part of the Linux kernel (since 5.6). This is the strongest possible stability signal: it cannot be acquired, relicensed, or shut down. Direction: **permanently open**.

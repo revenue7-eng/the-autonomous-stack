@@ -81,3 +81,10 @@ services:
 * [Docker image](https://hub.docker.com/r/codebergorg/forgejo)
 
 * [Community (Matrix)](https://matrix.to/#/#forgejo:matrix.org)
+
+## Trajectory
+**Opening — community governance.**
+
+Forgejo was created in 2022 as a community fork of Gitea after concerns that Gitea Ltd was moving toward a more corporate model. It is hosted on Codeberg, governed by a non-profit, and has no commercial entity behind it. The fork was a direct response to trajectory concerns about Gitea.
+
+This makes Forgejo one of the clearest examples of a project born from a closing trajectory being replaced by an opening one. Direction: **stable opening**. The main risk is sustainability — small community, no commercial backing.

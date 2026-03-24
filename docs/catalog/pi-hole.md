@@ -80,3 +80,8 @@ services:
 * [Repository](https://github.com/pi-hole/pi-hole)
 * [Docker image](https://hub.docker.com/r/pihole/pihole)
 * [Community](https://discourse.pi-hole.net)
+-e 
+## Trajectory
+**Stable — community project.**
+
+Pi-hole is maintained by a small volunteer team with no commercial entity. It is one of the oldest and most established self-hosted tools. No enterprise tier, no cloud features. Direction: **stable**.

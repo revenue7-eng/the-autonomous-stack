@@ -114,3 +114,8 @@ Set up a daily cron job to run snapshots:
 - [Docker image](https://hub.docker.com/r/kopia/kopia)
 
 - [Community](https://github.com/kopia/kopia/discussions)
+-e 
+## Trajectory
+**Stable — independent.**
+
+Kopia is maintained independently with no commercial backing. Small but active community. No enterprise tier, no cloud dependency introduced. Direction: **stable**.

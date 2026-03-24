@@ -80,3 +80,8 @@ Default login: admin@example.com / changeme
 * [Repository](https://github.com/NginxProxyManager/nginx-proxy-manager)
 * [Docker image](https://hub.docker.com/r/jc21/nginx-proxy-manager)
 * [Community](https://github.com/NginxProxyManager/nginx-proxy-manager/discussions)
+-e 
+## Trajectory
+**Stable — independent.**
+
+Nginx Proxy Manager is maintained by a single developer (jc21) with no commercial backing. Simple scope, unlikely to drift. Direction: **stable**.

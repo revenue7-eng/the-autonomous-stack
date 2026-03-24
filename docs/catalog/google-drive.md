@@ -61,3 +61,10 @@ Google Drive is the de facto standard for file sync. Most people use it without 
 * [Website](https://drive.google.com)
 
 * [Documentation](https://support.google.com/drive)
+
+## Trajectory
+**Closing — by design.**
+
+Google Drive is a commercial product. Google has a well-documented history of discontinuing products (Google Reader, Stadia, Inbox, Plus). The trajectory of any Google product is structurally uncertain: it exists as long as it serves Google's business interests.
+
+More specifically: Google Workspace pricing has increased, free storage has been capped, and Google-native formats (Docs, Sheets) remain intentionally hard to export cleanly. Direction: **closing**. This is not a prediction — it is the structural nature of free commercial products.

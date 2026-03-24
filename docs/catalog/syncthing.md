@@ -81,3 +81,8 @@ services:
 * [Docker image](https://hub.docker.com/r/syncthing/syncthing)
 
 * [Community](https://forum.syncthing.net)
+-e 
+## Trajectory
+**Stable — opening.**
+
+Syncthing is maintained by a non-profit foundation with no commercial entity behind it. No VC funding, no enterprise tier, no cloud features. Has been consistently open for over a decade. Direction: **stable opening**.

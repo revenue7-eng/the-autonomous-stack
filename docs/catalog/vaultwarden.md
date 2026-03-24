@@ -78,3 +78,12 @@ Important: put behind a reverse proxy with HTTPS for production use.
 * [Documentation](https://github.com/dani-garcia/vaultwarden/wiki)
 * [Docker image](https://hub.docker.com/r/vaultwarden/server)
 * [Community](https://github.com/dani-garcia/vaultwarden/discussions)
+
+## Trajectory
+**Stable, but structurally dependent.**
+
+Vaultwarden is an unofficial reimplementation of the Bitwarden server API. It is not affiliated with Bitwarden Inc. and exists in a grey zone: it depends on Bitwarden's clients remaining compatible with its API.
+
+The risk is not Vaultwarden itself — the project is clean, well-maintained, and open source. The risk is Bitwarden. If Bitwarden changes its API in a way that breaks compatibility (intentionally or not), Vaultwarden users are affected. Bitwarden has not moved against Vaultwarden, but the dependency is structural.
+
+Rate: **stable**, but watch Bitwarden's trajectory, not Vaultwarden's.

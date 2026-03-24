@@ -85,3 +85,8 @@ services:
 * [Repository](https://github.com/traefik/traefik)
 * [Docker image](https://hub.docker.com/_/traefik)
 * [Community](https://community.traefik.io)
+-e 
+## Trajectory
+**Mixed — commercial company behind it.**
+
+Traefik is developed by Traefik Labs (formerly Containous). The core is open source (MIT), but Traefik Labs sells enterprise products (Traefik Enterprise, Traefik Hub). Watch for features migrating to the commercial tier. So far the open source core remains generous. Rate: **stable, monitor**.

@@ -87,3 +87,8 @@ For air‑gapped environments, use the offline installation guide.
 - Docker image
 
 - [Community](https://github.com/k3s-io/k3s/discussions)
+-e 
+## Trajectory
+**Mixed — CNCF sandbox, Rancher/SUSE backed.**
+
+K3s is developed by Rancher (acquired by SUSE). It is in the CNCF sandbox. Corporate backing means sustained development, but also means the project follows SUSE's business interests. Watch for: enterprise-only features, or deprioritisation if SUSE strategy shifts. Rate: **stable, monitor**.

@@ -95,3 +95,8 @@ services:
 - [Docker image](https://hub.docker.com/r/louislam/uptime-kuma)
 
 - [Community](https://github.com/louislam/uptime-kuma/issues)
+-e 
+## Trajectory
+**Stable — independent.**
+
+Uptime Kuma is maintained by a single developer (louislam) with no commercial entity. Simple, focused scope. No enterprise tier. Direction: **stable**.

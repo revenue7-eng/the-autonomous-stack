@@ -102,3 +102,12 @@ services:
 * [Docker image](https://hub.docker.com/r/goauthentik/authentik)
 
 * [Community](https://github.com/goauthentik/authentik/discussions)
+
+## Trajectory
+**Mixed — commercial company, open core model.**
+
+Authentik is developed by Authentik Security Inc., a venture-backed company. The core product is open source (MIT), but the company generates revenue through enterprise features and support. This is the classic open-core model.
+
+The tension: enterprise features may gradually pull the most useful capabilities behind a paywall. So far Authentik has kept the core generous. Watch for: features moving from community to enterprise tier, license changes, or acquisition. The MIT license is a strong protection — but it does not prevent forking pressure if the project closes.
+
+Rate: **stable, with commercial tension to monitor**.

@@ -103,3 +103,8 @@ services:
 * [Docker image](https://hub.docker.com/r/paperlessngx/paperless-ngx)
 
 * [Community](https://github.com/paperless-ngx/paperless-ngx/discussions)
+
+## Trajectory
+**Stable — community fork.**
+
+Paperless-ngx is a community fork of paperless-ng (itself a fork of the original paperless). The project has no commercial entity behind it. It is maintained by a volunteer team and has grown steadily. No enterprise tier, no cloud dependency. Direction: **stable opening**.

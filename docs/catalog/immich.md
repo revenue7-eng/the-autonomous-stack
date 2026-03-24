@@ -111,3 +111,12 @@ backup.
 - [Docker image](https://hub.docker.com/r/immich-app/immich-server)
 
 - [Community](https://github.com/immich-app/immich/discussions)
+
+## Trajectory
+**Fast-growing — watch carefully.**
+
+Immich is one of the fastest-growing self-hosted projects of 2023–2024. The team is small, the project is pre-v1.0 by philosophy (breaking changes are common), and there is no stable funding model yet. The founders have discussed monetisation but have not committed to a path.
+
+The risk: a project this popular will attract acquisition interest or pressure to add cloud features. So far the team has resisted — but the trajectory is unresolved. Watch for: license changes, a hosted tier that becomes the default, or VC funding that shifts priorities.
+
+Rate: **opening, but early**.

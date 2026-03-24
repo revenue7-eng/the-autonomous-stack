@@ -84,3 +84,8 @@ services:
 * [Docker image](https://hub.docker.com/r/adguard/adguardhome)
 
 * [Community](https://github.com/AdguardTeam/AdGuardHome/discussions)
+-e 
+## Trajectory
+**Mixed — commercial company, open core.**
+
+AdGuard Home is the open source product of AdGuard Ltd, a commercial company that sells AdGuard Pro and browser extensions. The Home product is kept open and free. Watch for: features moving to a paid tier, or cloud dependency introduced. So far direction is **stable**.

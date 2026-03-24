@@ -106,3 +106,8 @@ services:
 - [Docker image](https://hub.docker.com/r/prom/prometheus)
 
 - [Community](https://github.com/prometheus/prometheus/discussions)
+-e 
+## Trajectory
+**Stable — CNCF graduated.**
+
+Prometheus is a CNCF graduated project, meaning it has passed the highest level of open source governance review. No single company controls it. Direction: **stable**.

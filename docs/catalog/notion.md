@@ -61,3 +61,10 @@ Notion is one of the most popular productivity tools. Its power comes from flexi
 * [Website](https://notion.so)
 
 * [Documentation](https://www.notion.so/help)
+
+## Trajectory
+**Mixed — VC-backed, pricing pressure.**
+
+Notion has raised over $330M in funding. The free tier has been progressively restricted. Enterprise features are aggressively priced. The product is deeply integrated — the more you use Notion, the harder it is to leave, which is the mechanism that supports pricing power.
+
+Direction: **closing**. Not in terms of the product disappearing, but in terms of the exit cost increasing over time. The export format remains lossy, which means the lock-in compounds.

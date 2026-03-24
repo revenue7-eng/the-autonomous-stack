@@ -75,3 +75,8 @@ services:
 - [Docker image](https://hub.docker.com/r/jellyfin/jellyfin)
 
 - [Community](https://github.com/jellyfin/jellyfin/discussions)
+-e 
+## Trajectory
+**Opening — born from closure.**
+
+Jellyfin was created as a fork of Emby after Emby went proprietary in 2018. It is governed as a non-profit with no commercial entity. The project's origin is a direct response to a closing trajectory. Direction: **stable opening**.
