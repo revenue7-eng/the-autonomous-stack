@@ -1,0 +1,27 @@
+name: Generate Catalog Index
+
+on:
+  push:
+    paths:
+      - 'docs/catalog/**.md'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate catalog index
+        run: python3 .github/scripts/generate_catalog.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/catalog/index.md
+          git diff --cached --quiet || git commit -m "Auto-update catalog index [skip ci]"
+          git push
