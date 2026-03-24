@@ -1,7 +1,3 @@
----
-nav_exclude: true
----
-
 # The Autonomous Stack (TAS)
 
 **A decision framework for building infrastructure you actually control.**
