@@ -187,3 +187,8 @@ After auditing your stack, you'll see one of these patterns.
 ---
 
 *This audit is itself a designed environment. It has a pause (you can stop at any question), an exit (you don't have to use TAS), and recoverability (you can re-evaluate at any time). If it didn't -- it would contradict its own criteria. And if full transparency about how it works would make you stop using it -- it would fail its own seventh question.*
+
+
+---
+
+→ Ready to run the audit? **[Open the interactive Infrastructure Audit](audit.html)**

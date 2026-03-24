@@ -1,0 +1,131 @@
+---
+title: "Infrastructure Audit"
+nav_order: 3
+---
+
+<h1>Infrastructure Audit</h1>
+
+<p>Eight questions for evaluating any technology — or your entire stack. Enter a service name, answer the questions, and export your results.</p>
+
+<p>Three structural questions determine autonomy level (A0–A3). Five diagnostic questions reveal what the rating doesn't show.</p>
+
+<p>→ <a href="how-to-choose.html">Read the full framework</a> before running the audit.</p>
+
+<hr>
+
+<div style="margin-bottom: 1rem;">
+  <label for="service-name"><strong>Service name:</strong></label><br>
+  <input type="text" id="service-name" placeholder="e.g. Google Drive, Plex, Notion..." 
+    style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+</div>
+
+<div id="questions"></div>
+
+<div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap;">
+  <button onclick="copyResults()" style="padding:8px 16px;background:#1a73e8;color:white;border:none;border-radius:4px;cursor:pointer;font-size:0.95em;">Copy results</button>
+  <button onclick="downloadResults()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Download .txt</button>
+  <button onclick="resetAudit()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Reset</button>
+</div>
+
+<div id="audit-summary" style="display:none;margin-top:1.5rem;padding:1rem;background:#f8f9fa;border-left:4px solid #1a73e8;border-radius:4px;">
+  <strong>Result</strong>
+  <div id="summary-level" style="font-size:1.4em;font-weight:bold;margin:8px 0;"></div>
+  <pre id="summary-content" style="font-size:0.85em;white-space:pre-wrap;margin:0;background:none;border:none;padding:0;"></pre>
+</div>
+
+<script>
+const questions = [
+  { id:'pause',        label:'1. Pause',                 q:'Can you stop this service right now — and nothing breaks permanently?',      structural:true  },
+  { id:'exit',         label:'2. Exit',                  q:'Can you leave this service and take everything with you?',                   structural:true  },
+  { id:'recovery',     label:'3. Recoverability',        q:'If something goes wrong, can you go back?',                                 structural:true  },
+  { id:'personal',     label:'4. Personalisation',       q:'Does this service collect data about you to shape your experience?',        structural:false },
+  { id:'urgency',      label:'5. Urgency',               q:'Does this service pressure you to act before you\'re ready?',              structural:false },
+  { id:'hidden',       label:'6. Hidden cost',           q:'What do you pay besides money? (attention, data, lock-in)',                 structural:false },
+  { id:'transparency', label:'7. Transparency fragility',q:'Would you still use it if you saw everything about how it works?',         structural:false },
+  { id:'trajectory',   label:'8. Trajectory',            q:'Is this project moving toward openness — or away from it?',               structural:false },
+];
+
+function renderQuestions() {
+  const c = document.getElementById('questions');
+  c.innerHTML = questions.map(q => `
+    <div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+      <div style="font-weight:bold;margin-bottom:4px;">
+        ${q.label}
+        ${q.structural ? '<span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span>' : ''}
+      </div>
+      <div style="margin-bottom:8px;color:#444;">${q.q}</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;">
+        ${['yes','partial','no','unknown'].map(v =>
+          `<label style="cursor:pointer;"><input type="radio" name="${q.id}" value="${v}" onchange="updateSummary()"> ${v.charAt(0).toUpperCase()+v.slice(1)}</label>`
+        ).join('')}
+      </div>
+      <input type="text" id="note-${q.id}" placeholder="Notes (optional)"
+        oninput="updateSummary()"
+        style="width:100%;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:0.85em;box-sizing:border-box;">
+    </div>
+  `).join('');
+}
+
+function getResults() {
+  const service = document.getElementById('service-name').value.trim() || 'Unnamed service';
+  const date = new Date().toISOString().split('T')[0];
+  let lines = [`TAS Infrastructure Audit`, `Service: ${service}`, `Date: ${date}`, ``];
+  let structural = [];
+
+  questions.forEach(q => {
+    const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+    const answer = sel ? sel.value : '—';
+    const note = document.getElementById('note-'+q.id).value.trim();
+    lines.push(`${q.label}: ${answer}${note ? ' — '+note : ''}`);
+    if (q.structural) structural.push(answer);
+  });
+
+  const yes = structural.filter(a => a === 'yes').length;
+  const level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
+  const meaning = {A3:'Fully autonomous',A2:'Mostly autonomous',A1:'Partial dependency',A0:'Cloud-bound'};
+
+  lines.push(``);
+  lines.push(`Autonomy Level: ${level} — ${meaning[level]}`);
+  lines.push(`Generated by The Autonomous Stack`);
+  lines.push(`https://revenue7-eng.github.io/the-autonomous-stack/`);
+
+  return { text: lines.join('\n'), level, meaning: meaning[level], service };
+}
+
+const levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
+
+function updateSummary() {
+  const { text, level, meaning } = getResults();
+  document.getElementById('audit-summary').style.display = 'block';
+  document.getElementById('summary-level').innerHTML =
+    `<span style="color:${levelColors[level]}">${level}</span> — ${meaning}`;
+  document.getElementById('summary-content').textContent = text;
+}
+
+function copyResults() {
+  const { text } = getResults();
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.currentTarget;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy results', 2000);
+  });
+}
+
+function downloadResults() {
+  const { text, service } = getResults();
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type:'text/plain'}));
+  a.download = `tas-audit-${service.toLowerCase().replace(/\s+/g,'-')}.txt`;
+  a.click();
+}
+
+function resetAudit() {
+  document.getElementById('service-name').value = '';
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[id^="note-"]').forEach(t => t.value = '');
+  document.getElementById('audit-summary').style.display = 'none';
+}
+
+document.getElementById('service-name').addEventListener('input', updateSummary);
+renderQuestions();
+</script>
