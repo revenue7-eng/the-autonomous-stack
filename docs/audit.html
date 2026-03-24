@@ -2,37 +2,87 @@
 layout: default
 title: "Run the Audit"
 nav_order: 4
-parent: 
 ---
 
 # Run the Audit
 
-<p style="margin-bottom: 1.5rem;">
-  ← <a href="how-to-choose.html">Back to Infrastructure Audit framework</a>
-</p>
+← <a href="how-to-choose.html">Back to Infrastructure Audit framework</a>
 
-Enter a service name and answer the eight questions. Results update as you go — copy or download when done.
+<p style="margin-top:1rem;color:#555;">Pick a tool from the catalog or enter any service. Answer eight questions — your autonomy level appears instantly. If the tool is in our catalog, we'll show our rating alongside yours.</p>
 
 <hr>
 
-<div style="margin-bottom: 1rem;">
-  <label for="service-name"><strong>Service name:</strong></label><br>
-  <input type="text" id="service-name" placeholder="e.g. Google Drive, Plex, Notion..."
+<div style="margin-bottom:1.2rem;">
+  <label for="tool-select"><strong>Is it in our catalog?</strong></label><br>
+  <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+    <option value="">— Select from catalog —</option>
+    <option value="">── or type below ──</option>
+    <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
+    <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
+    <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
+    <option value="forgejo" data-autonomy="A3" data-transparency="T2">Forgejo</option>
+    <option value="google-drive" data-autonomy="A0" data-transparency="T0">Google Drive</option>
+    <option value="grafana" data-autonomy="A3" data-transparency="T2">Grafana</option>
+    <option value="home-assistant" data-autonomy="A3" data-transparency="T2">Home Assistant</option>
+    <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
+    <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
+    <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
+    <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
+    <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
+    <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
+    <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
+    <option value="notion" data-autonomy="A0" data-transparency="T0">Notion</option>
+    <option value="obsidian" data-autonomy="A2" data-transparency="T0">Obsidian</option>
+    <option value="paperless-ngx" data-autonomy="A3" data-transparency="T2">Paperless-ngx</option>
+    <option value="pi-hole" data-autonomy="A3" data-transparency="T2">Pi-hole</option>
+    <option value="plex" data-autonomy="A1" data-transparency="T0">Plex</option>
+    <option value="prometheus" data-autonomy="A3" data-transparency="T2">Prometheus</option>
+    <option value="syncthing" data-autonomy="A3" data-transparency="T2">Syncthing</option>
+    <option value="tailscale" data-autonomy="A2" data-transparency="T1">Tailscale</option>
+    <option value="traefik" data-autonomy="A3" data-transparency="T2">Traefik</option>
+    <option value="uptime-kuma" data-autonomy="A3" data-transparency="T2">Uptime Kuma</option>
+    <option value="vault" data-autonomy="A3" data-transparency="T2">Vault</option>
+    <option value="vaultwarden" data-autonomy="A3" data-transparency="T2">Vaultwarden</option>
+    <option value="wireguard" data-autonomy="A3" data-transparency="T2">WireGuard</option>
+  </select>
+</div>
+
+<div style="margin-bottom:1.5rem;">
+  <label for="service-name"><strong>Or enter any service name:</strong></label><br>
+  <input type="text" id="service-name" placeholder="e.g. 1Password, Synology, Dropbox..."
+    oninput="onTypeName()"
     style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
 </div>
 
 <div id="questions"></div>
 
 <div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap;">
-  <button onclick="copyResults()" style="padding:8px 16px;background:#1a73e8;color:white;border:none;border-radius:4px;cursor:pointer;font-size:0.95em;">Copy results</button>
-  <button onclick="downloadResults()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Download .txt</button>
   <button onclick="resetAudit()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Reset</button>
 </div>
 
-<div id="audit-summary" style="display:none;margin-top:1.5rem;padding:1rem;background:#f8f9fa;border-left:4px solid #1a73e8;border-radius:4px;">
-  <strong>Result</strong>
-  <div id="summary-level" style="font-size:1.4em;font-weight:bold;margin:8px 0;"></div>
-  <pre id="summary-content" style="font-size:0.85em;white-space:pre-wrap;margin:0;background:none;border:none;padding:0;"></pre>
+<div id="audit-result" style="display:none;margin-top:1.5rem;">
+
+  <div style="padding:1rem;background:#f8f9fa;border-left:4px solid #1a73e8;border-radius:4px;margin-bottom:1rem;">
+    <strong>Your assessment</strong>
+    <div id="user-level" style="font-size:1.5em;font-weight:bold;margin:8px 0;"></div>
+    <div id="user-detail" style="font-size:0.9em;color:#555;"></div>
+  </div>
+
+  <div id="tas-comparison" style="display:none;padding:1rem;background:#f0f7f0;border-left:4px solid #1a8a4a;border-radius:4px;margin-bottom:1rem;">
+    <strong>TAS catalog rating</strong>
+    <div id="tas-level" style="font-size:1.5em;font-weight:bold;margin:8px 0;"></div>
+    <div id="tas-detail" style="font-size:0.9em;"></div>
+  </div>
+
+  <div id="suggest-box" style="display:none;padding:1rem;background:#fff8e1;border-left:4px solid #f09000;border-radius:4px;margin-bottom:1rem;">
+    <strong>Not in the catalog yet</strong>
+    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Submit it for review — we'll evaluate it and add a card if it fits.</p>
+    <a id="suggest-link" href="" target="_blank"
+      style="display:inline-block;padding:6px 14px;background:#f09000;color:white;border-radius:4px;text-decoration:none;font-size:0.9em;">
+      Submit for catalog →
+    </a>
+  </div>
+
 </div>
 
 <script>
@@ -47,6 +97,18 @@ const questions = [
   { id:'trajectory',   label:'8. Trajectory',             q:'Is this project moving toward openness — or away from it?',              structural:false },
 ];
 
+const levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
+const levelMeaning = {
+  A3:'Fully autonomous — you control it completely',
+  A2:'Mostly autonomous — minor dependencies remain',
+  A1:'Partial dependency — significant cloud or vendor reliance',
+  A0:'Cloud-bound — you are renting, not owning'
+};
+
+let selectedSlug = '';
+let selectedTasAutonomy = '';
+let selectedTasTransparency = '';
+
 function renderQuestions() {
   const c = document.getElementById('questions');
   c.innerHTML = questions.map(q => `
@@ -56,78 +118,119 @@ function renderQuestions() {
         ${q.structural ? '<span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span>' : ''}
       </div>
       <div style="margin-bottom:8px;color:#444;">${q.q}</div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
         ${['yes','partial','no','unknown'].map(v =>
-          `<label style="cursor:pointer;"><input type="radio" name="${q.id}" value="${v}" onchange="updateSummary()"> ${v.charAt(0).toUpperCase()+v.slice(1)}</label>`
+          `<label style="cursor:pointer;"><input type="radio" name="${q.id}" value="${v}" onchange="updateResult()"> ${v.charAt(0).toUpperCase()+v.slice(1)}</label>`
         ).join('')}
       </div>
-      <input type="text" id="note-${q.id}" placeholder="Notes (optional)"
-        oninput="updateSummary()"
-        style="width:100%;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:0.85em;box-sizing:border-box;">
     </div>
   `).join('');
 }
 
-function getResults() {
-  const service = document.getElementById('service-name').value.trim() || 'Unnamed service';
-  const date = new Date().toISOString().split('T')[0];
-  let lines = [`TAS Infrastructure Audit`, `Service: ${service}`, `Date: ${date}`, ``];
+function getServiceName() {
+  const sel = document.getElementById('tool-select');
+  const txt = document.getElementById('service-name').value.trim();
+  if (sel.value && sel.options[sel.selectedIndex].text !== '— Select from catalog —') {
+    return sel.options[sel.selectedIndex].text;
+  }
+  return txt || 'this service';
+}
+
+function onSelectTool() {
+  const sel = document.getElementById('tool-select');
+  const opt = sel.options[sel.selectedIndex];
+  if (opt.value) {
+    document.getElementById('service-name').value = '';
+    selectedSlug = opt.value;
+    selectedTasAutonomy = opt.dataset.autonomy || '';
+    selectedTasTransparency = opt.dataset.transparency || '';
+  } else {
+    selectedSlug = '';
+    selectedTasAutonomy = '';
+    selectedTasTransparency = '';
+  }
+  updateResult();
+}
+
+function onTypeName() {
+  document.getElementById('tool-select').value = '';
+  selectedSlug = '';
+  selectedTasAutonomy = '';
+  selectedTasTransparency = '';
+  updateResult();
+}
+
+function updateResult() {
   let structural = [];
+  let answered = 0;
 
   questions.forEach(q => {
     const sel = document.querySelector(`input[name="${q.id}"]:checked`);
-    const answer = sel ? sel.value : '—';
-    const note = document.getElementById('note-'+q.id).value.trim();
-    lines.push(`${q.label}: ${answer}${note ? ' — '+note : ''}`);
-    if (q.structural) structural.push(answer);
+    if (sel) {
+      answered++;
+      if (q.structural) structural.push(sel.value);
+    } else {
+      if (q.structural) structural.push(null);
+    }
   });
+
+  if (answered === 0) {
+    document.getElementById('audit-result').style.display = 'none';
+    return;
+  }
 
   const yes = structural.filter(a => a === 'yes').length;
   const level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
-  const meaning = {A3:'Fully autonomous',A2:'Mostly autonomous',A1:'Partial dependency',A0:'Cloud-bound'};
 
-  lines.push(``);
-  lines.push(`Autonomy Level: ${level} — ${meaning[level]}`);
-  lines.push(`Generated by The Autonomous Stack`);
-  lines.push(`https://revenue7-eng.github.io/the-autonomous-stack/`);
+  document.getElementById('audit-result').style.display = 'block';
+  document.getElementById('user-level').innerHTML =
+    `<span style="color:${levelColors[level]}">${level}</span>`;
+  document.getElementById('user-detail').textContent = levelMeaning[level];
 
-  return { text: lines.join('\n'), level, meaning: meaning[level], service };
-}
+  // TAS comparison
+  if (selectedSlug && selectedTasAutonomy) {
+    const tasLevel = selectedTasAutonomy;
+    const comp = document.getElementById('tas-comparison');
+    comp.style.display = 'block';
+    document.getElementById('tas-level').innerHTML =
+      `<span style="color:${levelColors[tasLevel]}">${tasLevel} / ${selectedTasTransparency}</span>`;
 
-const levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
+    let commentary = '';
+    if (tasLevel === level) {
+      commentary = 'Your assessment matches our catalog rating.';
+    } else {
+      commentary = `Your assessment differs from ours (${level} vs ${tasLevel}). The difference may reflect your specific setup or use case.`;
+    }
+    document.getElementById('tas-detail').innerHTML =
+      `${commentary} <a href="${selectedSlug}.html" style="color:#1a73e8;">Read our full analysis →</a>`;
 
-function updateSummary() {
-  const { text, level, meaning } = getResults();
-  document.getElementById('audit-summary').style.display = 'block';
-  document.getElementById('summary-level').innerHTML =
-    `<span style="color:${levelColors[level]}">${level}</span> — ${meaning}`;
-  document.getElementById('summary-content').textContent = text;
-}
+    document.getElementById('suggest-box').style.display = 'none';
+  } else {
+    document.getElementById('tas-comparison').style.display = 'none';
 
-function copyResults() {
-  const { text } = getResults();
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = event.currentTarget;
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy results', 2000);
-  });
-}
-
-function downloadResults() {
-  const { text, service } = getResults();
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([text], {type:'text/plain'}));
-  a.download = `tas-audit-${service.toLowerCase().replace(/\s+/g,'-')}.txt`;
-  a.click();
+    // Show suggest box for unknown tools
+    const name = getServiceName();
+    if (name && name !== 'this service') {
+      const issueTitle = encodeURIComponent(`Catalog request: ${name}`);
+      const issueBody = encodeURIComponent(`## Tool submission\n\n**Name:** ${name}\n**My assessment:** ${answered > 0 ? document.getElementById('user-level').textContent : '—'}\n\n**Why it should be in the catalog:**\n\n**Link:**`);
+      const issueUrl = `https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=${issueTitle}&body=${issueBody}&labels=catalog-request`;
+      document.getElementById('suggest-link').href = issueUrl;
+      document.getElementById('suggest-box').style.display = 'block';
+    } else {
+      document.getElementById('suggest-box').style.display = 'none';
+    }
+  }
 }
 
 function resetAudit() {
+  document.getElementById('tool-select').value = '';
   document.getElementById('service-name').value = '';
   document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
-  document.querySelectorAll('input[id^="note-"]').forEach(t => t.value = '');
-  document.getElementById('audit-summary').style.display = 'none';
+  document.getElementById('audit-result').style.display = 'none';
+  selectedSlug = '';
+  selectedTasAutonomy = '';
+  selectedTasTransparency = '';
 }
 
-document.getElementById('service-name').addEventListener('input', updateSummary);
 renderQuestions();
 </script>
