@@ -1,4 +1,5 @@
 ---
+tags: [cloud, files, calendar, contacts, google-alternative]
 title: "Nextcloud"
 category: "applications/cloud"
 status: "stable"

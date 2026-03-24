@@ -1,4 +1,5 @@
 ---
+tags: [compute, containers, orchestration]
 title: "Docker"
 category: "compute/container"
 status: "stable"

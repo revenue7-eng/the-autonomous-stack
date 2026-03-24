@@ -1,4 +1,5 @@
 ---
+tags: [dns, network, privacy, ad-blocking]
 title: "AdGuard Home"
 category: "network/dns"
 status: "stable"

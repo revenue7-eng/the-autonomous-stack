@@ -1,4 +1,5 @@
 ---
+tags: [media, video, music, plex-alternative]
 title: "Jellyfin"
 category: "applications/media"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+tags: [photos, backup, google-photos-alternative]
 title: "Immich"
 category: "applications/photos"
 status: "stable"

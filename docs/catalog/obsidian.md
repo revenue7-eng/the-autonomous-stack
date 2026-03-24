@@ -1,4 +1,5 @@
 ---
+tags: [notes, markdown, knowledge, local-first]
 title: "Obsidian"
 category: "applications/notes"
 status: "stable"

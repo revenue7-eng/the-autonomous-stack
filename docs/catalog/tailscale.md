@@ -1,4 +1,5 @@
 ---
+tags: [vpn, network, mesh, wireguard]
 title: "Tailscale"
 category: "network/vpn"
 status: "stable"

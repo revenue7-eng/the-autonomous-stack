@@ -1,4 +1,5 @@
 ---
+tags: [proxy, network, https, gui]
 title: "Nginx Proxy Manager"
 category: "network/proxy"
 status: "stable"

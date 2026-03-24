@@ -1,4 +1,5 @@
 ---
+tags: [passwords, security, bitwarden, selfhosted]
 title: "Vaultwarden"
 category: "security/passwords"
 status: "stable"

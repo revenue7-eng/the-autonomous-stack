@@ -1,4 +1,5 @@
 ---
+tags: [compute, kubernetes, orchestration]
 title: "K3s"
 category: "compute/orchestration"
 status: "stable"

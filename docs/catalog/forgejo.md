@@ -1,4 +1,5 @@
 ---
+tags: [git, version-control, code, gitea-alternative]
 title: "Forgejo"
 category: "applications/version-control"
 status: "stable"

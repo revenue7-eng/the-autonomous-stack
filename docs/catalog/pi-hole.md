@@ -1,4 +1,5 @@
 ---
+tags: [dns, network, privacy, ad-blocking]
 title: "Pi-hole"
 category: "network/dns"
 status: "stable"

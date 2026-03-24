@@ -1,4 +1,5 @@
 ---
+tags: [monitoring, dashboards, observability, metrics]
 title: "Grafana"
 category: "observability/dashboards"
 status: "stable"

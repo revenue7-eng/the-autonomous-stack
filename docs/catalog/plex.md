@@ -1,4 +1,5 @@
 ---
+tags: [media, video, music, alternative]
 title: "Plex"
 category: "applications/media"
 status: "stable"

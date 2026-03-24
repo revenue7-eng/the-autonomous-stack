@@ -1,4 +1,5 @@
 ---
+tags: [secrets, security, encryption, hashicorp]
 title: "Vault"
 category: "security/secrets"
 status: "stable"

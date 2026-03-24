@@ -1,4 +1,5 @@
 ---
+tags: [monitoring, observability, uptime]
 title: "Uptime Kuma"
 category: "observability/monitoring"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+tags: [sync, files, storage, p2p]
 title: "Syncthing"
 category: "storage/sync"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+tags: [passwords, security, offline, encrypted]
 title: "KeePass"
 category: "security/password-manager"
 status: "stable"

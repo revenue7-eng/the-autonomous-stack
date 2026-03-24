@@ -1,4 +1,5 @@
 ---
+tags: [documents, ocr, archive, notion-alternative]
 title: "Paperless-ngx"
 category: "applications/documents"
 status: "stable"

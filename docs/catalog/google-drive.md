@@ -1,4 +1,5 @@
 ---
+tags: [files, storage, cloud, google, alternative]
 title: "Google Drive"
 category: "storage/sync"
 status: "stable"

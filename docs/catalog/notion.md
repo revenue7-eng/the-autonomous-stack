@@ -1,4 +1,5 @@
 ---
+tags: [notes, documents, workspace, cloud, alternative]
 title: "Notion"
 category: "applications/documents"
 status: "stable"

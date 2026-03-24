@@ -1,4 +1,5 @@
 ---
+tags: [monitoring, metrics, observability, alerting]
 title: "Prometheus"
 category: "observability/metrics"
 status: "stable"

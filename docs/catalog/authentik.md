@@ -1,4 +1,5 @@
 ---
+tags: [identity, sso, auth, mfa, ldap]
 title: "Authentik"
 category: "identity/auth"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+tags: [automation, smarthome, iot, local]
 title: "Home Assistant"
 category: "applications/automation"
 status: "stable"
