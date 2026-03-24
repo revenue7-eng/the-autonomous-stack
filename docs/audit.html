@@ -1,21 +1,23 @@
 ---
-title: "Interactive Audit"
+layout: default
+title: "Run the Audit"
 nav_order: 4
+parent: 
 ---
 
-<h1>Infrastructure Audit</h1>
+# Run the Audit
 
-<p>Eight questions for evaluating any technology — or your entire stack. Enter a service name, answer the questions, and export your results.</p>
+<p style="margin-bottom: 1.5rem;">
+  ← <a href="how-to-choose.html">Back to Infrastructure Audit framework</a>
+</p>
 
-<p>Three structural questions determine autonomy level (A0–A3). Five diagnostic questions reveal what the rating doesn't show.</p>
-
-<p>→ <a href="how-to-choose.html">Read the full framework</a> before running the audit.</p>
+Enter a service name and answer the eight questions. Results update as you go — copy or download when done.
 
 <hr>
 
 <div style="margin-bottom: 1rem;">
   <label for="service-name"><strong>Service name:</strong></label><br>
-  <input type="text" id="service-name" placeholder="e.g. Google Drive, Plex, Notion..." 
+  <input type="text" id="service-name" placeholder="e.g. Google Drive, Plex, Notion..."
     style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
 </div>
 
@@ -35,14 +37,14 @@ nav_order: 4
 
 <script>
 const questions = [
-  { id:'pause',        label:'1. Pause',                 q:'Can you stop this service right now — and nothing breaks permanently?',      structural:true  },
-  { id:'exit',         label:'2. Exit',                  q:'Can you leave this service and take everything with you?',                   structural:true  },
-  { id:'recovery',     label:'3. Recoverability',        q:'If something goes wrong, can you go back?',                                 structural:true  },
-  { id:'personal',     label:'4. Personalisation',       q:'Does this service collect data about you to shape your experience?',        structural:false },
-  { id:'urgency',      label:'5. Urgency',               q:'Does this service pressure you to act before you\'re ready?',              structural:false },
-  { id:'hidden',       label:'6. Hidden cost',           q:'What do you pay besides money? (attention, data, lock-in)',                 structural:false },
-  { id:'transparency', label:'7. Transparency fragility',q:'Would you still use it if you saw everything about how it works?',         structural:false },
-  { id:'trajectory',   label:'8. Trajectory',            q:'Is this project moving toward openness — or away from it?',               structural:false },
+  { id:'pause',        label:'1. Pause',                  q:'Can you stop this service right now — and nothing breaks permanently?',     structural:true  },
+  { id:'exit',         label:'2. Exit',                   q:'Can you leave this service and take everything with you?',                  structural:true  },
+  { id:'recovery',     label:'3. Recoverability',         q:'If something goes wrong, can you go back?',                                structural:true  },
+  { id:'personal',     label:'4. Personalisation',        q:'Does this service collect data about you to shape your experience?',       structural:false },
+  { id:'urgency',      label:'5. Urgency',                q:"Does this service pressure you to act before you're ready?",              structural:false },
+  { id:'hidden',       label:'6. Hidden cost',            q:'What do you pay besides money? (attention, data, lock-in)',                structural:false },
+  { id:'transparency', label:'7. Transparency fragility', q:'Would you still use it if you saw everything about how it works?',        structural:false },
+  { id:'trajectory',   label:'8. Trajectory',             q:'Is this project moving toward openness — or away from it?',              structural:false },
 ];
 
 function renderQuestions() {
@@ -82,7 +84,7 @@ function getResults() {
 
   const yes = structural.filter(a => a === 'yes').length;
   const level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
-  const meaning = {A3:'Fully autonomous — you control it',A2:'Mostly autonomous — minor dependencies',A1:'Partial dependency — significant cloud reliance',A0:'Cloud-bound — you are renting, not owning'};
+  const meaning = {A3:'Fully autonomous',A2:'Mostly autonomous',A1:'Partial dependency',A0:'Cloud-bound'};
 
   lines.push(``);
   lines.push(`Autonomy Level: ${level} — ${meaning[level]}`);

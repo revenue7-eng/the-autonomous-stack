@@ -133,10 +133,10 @@ The first three questions give you the Autonomy Level:
 
 | Answers to 1-3 | Level | Meaning |
 |----------------|-------|---------|
-| All three = No | **A0** | Cloud-bound. You're renting. |
-| Two = Yes | **A2** | Mostly autonomous. One structural dependency remains. |
+| All three = No | **A0** | Cloud-bound. You are renting, not owning. |
 | One = Yes | **A1** | Partial. Significant cloud or vendor dependency. |
-| All three = Yes | **A3** | Fully autonomous. You're in control. |
+| Two = Yes | **A2** | Mostly autonomous. One structural dependency remains. |
+| All three = Yes | **A3** | Fully autonomous. You are in control. |
 
 Then assign a Transparency Level:
 
@@ -187,7 +187,7 @@ After auditing your stack, you'll see one of these patterns.
 
 ---
 
-→ Ready to evaluate a specific service? **[Run the interactive Infrastructure Audit](audit.html)**
+→ Ready to evaluate a specific service? **[Run the interactive Audit →](audit.html)**
 
 ---
 
