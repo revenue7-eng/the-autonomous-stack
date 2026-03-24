@@ -134,7 +134,8 @@ The first three questions give you the Autonomy Level:
 | Answers to 1-3 | Level | Meaning |
 |----------------|-------|---------|
 | All three = No | **A0** | Cloud-bound. You're renting. |
-| One or two = Yes | **A1-A2** | Partially autonomous. Dependencies remain. |
+| Two = Yes | **A2** | Mostly autonomous. One structural dependency remains. |
+| One = Yes | **A1** | Partial. Significant cloud or vendor dependency. |
 | All three = Yes | **A3** | Fully autonomous. You're in control. |
 
 Then assign a Transparency Level:
@@ -186,9 +187,9 @@ After auditing your stack, you'll see one of these patterns.
 
 ---
 
-*This audit is itself a designed environment. It has a pause (you can stop at any question), an exit (you don't have to use TAS), and recoverability (you can re-evaluate at any time). If it didn't -- it would contradict its own criteria. And if full transparency about how it works would make you stop using it -- it would fail its own seventh question.*
-
+→ Ready to evaluate a specific service? **[Run the interactive Infrastructure Audit](audit.html)**
 
 ---
 
-→ Ready to run the audit? **[Open the interactive Infrastructure Audit](audit.html)**
+*This audit is itself a designed environment. It has a pause (you can stop at any question), an exit (you don't have to use TAS), and recoverability (you can re-evaluate at any time). If it didn't -- it would contradict its own criteria. And if full transparency about how it works would make you stop using it -- it would fail its own seventh question.*
+

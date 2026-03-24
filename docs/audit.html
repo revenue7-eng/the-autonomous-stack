@@ -1,6 +1,6 @@
 ---
-title: "Infrastructure Audit"
-nav_order: 3
+title: "Interactive Audit"
+nav_order: 4
 ---
 
 <h1>Infrastructure Audit</h1>
@@ -82,7 +82,7 @@ function getResults() {
 
   const yes = structural.filter(a => a === 'yes').length;
   const level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
-  const meaning = {A3:'Fully autonomous',A2:'Mostly autonomous',A1:'Partial dependency',A0:'Cloud-bound'};
+  const meaning = {A3:'Fully autonomous — you control it',A2:'Mostly autonomous — minor dependencies',A1:'Partial dependency — significant cloud reliance',A0:'Cloud-bound — you are renting, not owning'};
 
   lines.push(``);
   lines.push(`Autonomy Level: ${level} — ${meaning[level]}`);
