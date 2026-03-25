@@ -8,15 +8,14 @@ nav_order: 4
 
 <a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a>
 
-<p style="margin-top:1rem;color:#555;">Pick a tool from the catalog or enter any service. Answer eight questions -- your autonomy level appears instantly. If the tool is in our catalog, we'll show our rating alongside yours.</p>
+<p style="margin-top:1rem;color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not -- submit it for review.</p>
 
 <hr>
 
 <div style="margin-bottom:1.2rem;">
-  <label for="tool-select"><strong>Is it in our catalog?</strong></label><br>
-  <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+  <label for="tool-select"><strong>Step 1: Is it already in our catalog?</strong></label><br>
+  <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
     <option value="">-- Select from catalog --</option>
-    <option value="">---- or type below ----</option>
     <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
     <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
     <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
@@ -27,6 +26,7 @@ nav_order: 4
     <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
     <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
     <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
+    <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
     <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
     <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
     <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
@@ -46,17 +46,35 @@ nav_order: 4
   </select>
 </div>
 
-<div style="margin-bottom:1.5rem;">
-  <label for="service-name"><strong>Or enter any service name:</strong></label><br>
-  <input type="text" id="service-name" placeholder="e.g. 1Password, Synology, Dropbox..."
-    oninput="onTypeName()"
-    style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+<div id="url-section" style="margin-bottom:1.5rem;">
+  <label for="project-url"><strong>Step 2: Not in the catalog? Enter the project URL:</strong></label><br>
+  <input type="url" id="project-url" placeholder="https://github.com/... or https://example.com"
+    oninput="onTypeUrl()"
+    style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
 </div>
+
+<div id="questions-section">
+
+<hr>
+<p style="color:#555;"><strong>Step 3: Answer the questions</strong></p>
 
 <div id="questions"></div>
 
+<div style="margin-top:1rem;margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">Transparency level</div>
+  <div style="margin-bottom:8px;color:#444;">Is the source code publicly available?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T2" onchange="updateResult()"> T2 -- Open source (OSI license)</label>
+    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T1" onchange="updateResult()"> T1 -- Documented but closed</label>
+    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T0" onchange="updateResult()"> T0 -- Closed, no source</label>
+  </div>
+</div>
+
+</div>
+
 <div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap;">
   <button onclick="resetAudit()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Reset</button>
+  <button onclick="copyResult()" id="copy-btn" style="display:none;padding:8px 16px;background:#f0f4ff;border:1px solid #1a73e8;color:#1a73e8;border-radius:4px;cursor:pointer;font-size:0.95em;">Copy result</button>
 </div>
 
 <div id="audit-result" style="display:none;margin-top:1.5rem;">
@@ -67,19 +85,22 @@ nav_order: 4
     <div id="user-detail" style="font-size:0.9em;color:#555;"></div>
   </div>
 
+  <div id="recommendation" style="display:none;padding:1rem;border-radius:4px;margin-bottom:1rem;"></div>
+
   <div id="tas-comparison" style="display:none;padding:1rem;background:#f0f7f0;border-left:4px solid #1a8a4a;border-radius:4px;margin-bottom:1rem;">
     <strong>TAS catalog rating</strong>
     <div id="tas-level" style="font-size:1.5em;font-weight:bold;margin:8px 0;"></div>
     <div id="tas-detail" style="font-size:0.9em;"></div>
   </div>
 
-  <div id="suggest-box" style="display:none;padding:1rem;background:#fff8e1;border-left:4px solid #f09000;border-radius:4px;margin-bottom:1rem;">
+  <div id="submit-box" style="display:none;padding:1rem;background:#fff8e1;border-left:4px solid #f09000;border-radius:4px;margin-bottom:1rem;">
     <strong>Not in the catalog yet</strong>
-    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Submit it for review -- we'll evaluate it and add a card if it fits.</p>
-    <a id="suggest-link" href="" target="_blank"
-      style="display:inline-block;padding:6px 14px;background:#f09000;color:white;border-radius:4px;text-decoration:none;font-size:0.9em;">
-      Submit for catalog &rarr;
+    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Share your audit results with us. This opens a GitHub Issue with your answers pre-filled -- you review it before publishing.</p>
+    <a id="submit-link" href="" target="_blank"
+      style="display:inline-block;padding:8px 16px;background:#f09000;color:white;border-radius:4px;text-decoration:none;font-size:0.95em;">
+      Open GitHub Issue with your results &rarr;
     </a>
+    <p style="margin-top:8px;font-size:0.8em;color:#888;">No data is collected by our site. The issue is created by you on GitHub.</p>
   </div>
 
 </div>
@@ -97,6 +118,7 @@ var questions = [
 ];
 
 var levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
+var tLevelColors = { T2:'#1a8a4a', T1:'#1a73e8', T0:'#d32f2f' };
 var levelMeaning = {
   A3:'Fully autonomous -- you control it completely',
   A2:'Mostly autonomous -- minor dependencies remain',
@@ -107,6 +129,7 @@ var levelMeaning = {
 var selectedSlug = '';
 var selectedTasAutonomy = '';
 var selectedTasTransparency = '';
+var selectedName = '';
 
 function renderQuestions() {
   var c = document.getElementById('questions');
@@ -128,49 +151,81 @@ function renderQuestions() {
   c.innerHTML = html;
 }
 
-function getServiceName() {
-  var sel = document.getElementById('tool-select');
-  var txt = document.getElementById('service-name').value.trim();
-  if (sel.value && sel.selectedIndex > 1) {
-    return sel.options[sel.selectedIndex].text;
+function getProjectName() {
+  if (selectedName) return selectedName;
+  var url = document.getElementById('project-url').value.trim();
+  if (url) {
+    try {
+      var hostname = new URL(url).hostname.replace('www.','').replace('github.com/','');
+      return hostname;
+    } catch(e) {
+      return url;
+    }
   }
-  return txt || 'this service';
+  return '';
+}
+
+function showQuestions() {
+  var sel = document.getElementById('tool-select');
+  var url = document.getElementById('project-url').value.trim();
+  if (sel.value || url.length > 5) {
+    document.getElementById('questions-section').style.display = 'block';
+  }
 }
 
 function onSelectTool() {
   var sel = document.getElementById('tool-select');
   var opt = sel.options[sel.selectedIndex];
   if (opt.value) {
-    document.getElementById('service-name').value = '';
+    document.getElementById('project-url').value = '';
     selectedSlug = opt.value;
     selectedTasAutonomy = opt.getAttribute('data-autonomy') || '';
     selectedTasTransparency = opt.getAttribute('data-transparency') || '';
+    selectedName = opt.text;
+    document.getElementById('url-section').style.display = 'none';
   } else {
     selectedSlug = '';
     selectedTasAutonomy = '';
     selectedTasTransparency = '';
+    selectedName = '';
+    document.getElementById('url-section').style.display = 'block';
   }
+  showQuestions();
   updateResult();
 }
 
-function onTypeName() {
+function onTypeUrl() {
   document.getElementById('tool-select').value = '';
   selectedSlug = '';
   selectedTasAutonomy = '';
   selectedTasTransparency = '';
+  selectedName = '';
+  showQuestions();
   updateResult();
 }
 
+function getAnswers() {
+  var answers = {};
+  for (var i = 0; i < questions.length; i++) {
+    var q = questions[i];
+    var sel = document.querySelector('input[name="' + q.id + '"]:checked');
+    answers[q.id] = sel ? sel.value : null;
+  }
+  var tsel = document.querySelector('input[name="tlevel"]:checked');
+  answers.tlevel = tsel ? tsel.value : null;
+  return answers;
+}
+
 function updateResult() {
+  var answers = getAnswers();
   var structural = [];
   var answered = 0;
 
   for (var i = 0; i < questions.length; i++) {
     var q = questions[i];
-    var sel = document.querySelector('input[name="' + q.id + '"]:checked');
-    if (sel) {
+    if (answers[q.id]) {
       answered++;
-      if (q.structural) structural.push(sel.value);
+      if (q.structural) structural.push(answers[q.id]);
     } else {
       if (q.structural) structural.push(null);
     }
@@ -178,6 +233,7 @@ function updateResult() {
 
   if (answered === 0) {
     document.getElementById('audit-result').style.display = 'none';
+    document.getElementById('copy-btn').style.display = 'none';
     return;
   }
 
@@ -185,13 +241,39 @@ function updateResult() {
   for (var i = 0; i < structural.length; i++) {
     if (structural[i] === 'yes') yes++;
   }
-  var level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
+  var aLevel = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
+  var tLevel = answers.tlevel || '?';
 
   document.getElementById('audit-result').style.display = 'block';
-  document.getElementById('user-level').innerHTML =
-    '<span style="color:' + levelColors[level] + '">' + level + '</span>';
-  document.getElementById('user-detail').textContent = levelMeaning[level];
+  document.getElementById('copy-btn').style.display = 'inline-block';
 
+  var levelHtml = '<span style="color:' + levelColors[aLevel] + '">' + aLevel + '</span>';
+  if (tLevel !== '?') {
+    levelHtml += ' / <span style="color:' + (tLevelColors[tLevel] || '#888') + '">' + tLevel + '</span>';
+  }
+  document.getElementById('user-level').innerHTML = levelHtml;
+  document.getElementById('user-detail').textContent = levelMeaning[aLevel];
+
+  // Recommendation
+  var rec = document.getElementById('recommendation');
+  if (aLevel === 'A3' && tLevel === 'T2') {
+    rec.style.display = 'block';
+    rec.style.background = '#f0f7f0';
+    rec.style.borderLeft = '4px solid #1a8a4a';
+    rec.innerHTML = '<strong style="color:#1a8a4a;">Fully autonomous and transparent.</strong><br><span style="font-size:0.9em;color:#555;">This tool passes all structural criteria and is open source. Maintain it -- backups, updates, monitoring.</span>';
+  } else if (aLevel === 'A0' || aLevel === 'A1') {
+    rec.style.display = 'block';
+    rec.style.background = '#fff0f0';
+    rec.style.borderLeft = '4px solid #d32f2f';
+    rec.innerHTML = '<strong style="color:#d32f2f;">Significant dependencies detected.</strong><br><span style="font-size:0.9em;color:#555;">Consider autonomous alternatives from the <a href="catalog/" style="color:#1a73e8;">Technology Catalog</a>.</span>';
+  } else {
+    rec.style.display = 'block';
+    rec.style.background = '#fff8e1';
+    rec.style.borderLeft = '4px solid #f09000';
+    rec.innerHTML = '<strong style="color:#f09000;">Partial autonomy.</strong><br><span style="font-size:0.9em;color:#555;">Some dependencies remain. Review the diagnostic questions to understand what is pulling at you.</span>';
+  }
+
+  // TAS comparison (catalog tools)
   if (selectedSlug && selectedTasAutonomy) {
     var tasLevel = selectedTasAutonomy;
     var comp = document.getElementById('tas-comparison');
@@ -200,40 +282,91 @@ function updateResult() {
       '<span style="color:' + levelColors[tasLevel] + '">' + tasLevel + ' / ' + selectedTasTransparency + '</span>';
 
     var commentary = '';
-    if (tasLevel === level) {
+    if (tasLevel === aLevel) {
       commentary = 'Your assessment matches our catalog rating.';
     } else {
-      commentary = 'Your assessment differs from ours (' + level + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
+      commentary = 'Your assessment differs from ours (' + aLevel + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
     }
     document.getElementById('tas-detail').innerHTML =
       commentary + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
 
-    document.getElementById('suggest-box').style.display = 'none';
+    document.getElementById('submit-box').style.display = 'none';
   } else {
     document.getElementById('tas-comparison').style.display = 'none';
 
-    var name = getServiceName();
-    if (name && name !== 'this service') {
-      var issueTitle = encodeURIComponent('Catalog request: ' + name);
-      var issueBody = encodeURIComponent('## Tool submission\n\n**Name:** ' + name + '\n**My assessment:** ' + level + '\n\n**Why it should be in the catalog:**\n\n**Link:**');
-      var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + issueTitle + '&body=' + issueBody + '&labels=catalog-request';
-      document.getElementById('suggest-link').href = issueUrl;
-      document.getElementById('suggest-box').style.display = 'block';
+    // Show submit box for new tools
+    var url = document.getElementById('project-url').value.trim();
+    if (url) {
+      var name = getProjectName();
+      var body = '## Catalog submission\n\n';
+      body += '**Project URL:** ' + url + '\n\n';
+      body += '**Submitted assessment:** ' + aLevel + ' / ' + tLevel + '\n\n';
+      body += '### Answers\n\n';
+      for (var i = 0; i < questions.length; i++) {
+        var q = questions[i];
+        var a = answers[q.id] || 'not answered';
+        body += '- **' + q.label + ':** ' + a + '\n';
+      }
+      body += '- **Transparency level:** ' + tLevel + '\n';
+      body += '\n**Why it should be in the catalog:**\n\n(please add your reasoning)\n';
+
+      var issueTitle = encodeURIComponent('Catalog submission: ' + (name || url));
+      var issueBody = encodeURIComponent(body);
+      var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + issueTitle + '&body=' + issueBody + '&labels=catalog-submission';
+      document.getElementById('submit-link').href = issueUrl;
+      document.getElementById('submit-box').style.display = 'block';
     } else {
-      document.getElementById('suggest-box').style.display = 'none';
+      document.getElementById('submit-box').style.display = 'none';
     }
   }
 }
 
 function resetAudit() {
   document.getElementById('tool-select').value = '';
-  document.getElementById('service-name').value = '';
+  document.getElementById('project-url').value = '';
+  document.getElementById('url-section').style.display = 'block';
   var radios = document.querySelectorAll('input[type=radio]');
   for (var i = 0; i < radios.length; i++) radios[i].checked = false;
   document.getElementById('audit-result').style.display = 'none';
+  document.getElementById('questions-section').style.display = 'none';
+  document.getElementById('copy-btn').style.display = 'none';
   selectedSlug = '';
   selectedTasAutonomy = '';
   selectedTasTransparency = '';
+  selectedName = '';
+}
+
+function copyResult() {
+  var answers = getAnswers();
+  var name = selectedName || getProjectName() || 'Unknown';
+  var url = document.getElementById('project-url').value.trim();
+
+  var structural = [];
+  for (var i = 0; i < questions.length; i++) {
+    if (questions[i].structural) {
+      var a = answers[questions[i].id];
+      if (a === 'yes') structural.push(a);
+    }
+  }
+  var aLevel = structural.length === 3 ? 'A3' : structural.length === 2 ? 'A2' : structural.length === 1 ? 'A1' : 'A0';
+  var tLevel = answers.tlevel || '?';
+
+  var text = 'TAS Audit: ' + name + '\n';
+  if (url) text += 'URL: ' + url + '\n';
+  text += 'Result: ' + aLevel + ' / ' + tLevel + '\n\n';
+
+  for (var i = 0; i < questions.length; i++) {
+    var q = questions[i];
+    text += q.label + ': ' + (answers[q.id] || 'not answered') + '\n';
+  }
+  text += 'Transparency: ' + tLevel + '\n';
+  text += '\nGenerated by The Autonomous Stack\nhttps://revenue7-eng.github.io/the-autonomous-stack/audit.html';
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text);
+    document.getElementById('copy-btn').textContent = 'Copied!';
+    setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy result'; }, 2000);
+  }
 }
 
 renderQuestions();
