@@ -17,6 +17,9 @@ nav_order: 1
 
 # KeePass
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 Free, open source password manager that stores credentials in a locally encrypted database file (`.kdbx`). No server, no account, no internet required.
 
