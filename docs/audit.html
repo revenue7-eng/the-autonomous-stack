@@ -4,11 +4,11 @@ title: "Run the Audit"
 nav_order: 4
 ---
 
-# Run the Audit
+<h1>Run the Audit</h1>
 
-<a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a>
+<p><a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a></p>
 
-<p style="margin-top:1rem;color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not -- submit it for review.</p>
+<p style="color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not -- submit it for review.</p>
 
 <hr>
 
@@ -16,6 +16,7 @@ nav_order: 4
   <label for="tool-select"><strong>Step 1: Is it already in our catalog?</strong></label><br>
   <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
     <option value="">-- Select from catalog --</option>
+    <option value="" disabled>---- or enter URL below ----</option>
     <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
     <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
     <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
@@ -48,19 +49,104 @@ nav_order: 4
 
 <div id="url-section" style="margin-bottom:1.5rem;">
   <label for="project-url"><strong>Step 2: Not in the catalog? Enter the project URL:</strong></label><br>
-  <input type="url" id="project-url" placeholder="https://github.com/... or https://example.com"
+  <input type="text" id="project-url" placeholder="https://github.com/... or https://example.com"
     oninput="onTypeUrl()"
     style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
 </div>
 
-<div id="questions-section">
-
 <hr>
-<p style="color:#555;"><strong>Step 3: Answer the questions</strong></p>
 
-<div id="questions"></div>
+<p><strong>Step 3: Answer the questions</strong></p>
 
-<div style="margin-top:1rem;margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">1. Pause <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
+  <div style="margin-bottom:8px;color:#444;">Can you stop this service right now -- and nothing breaks permanently?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="pause" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="pause" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="pause" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="pause" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">2. Exit <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
+  <div style="margin-bottom:8px;color:#444;">Can you leave this service and take everything with you?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="exit" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="exit" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="exit" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="exit" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">3. Recoverability <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
+  <div style="margin-bottom:8px;color:#444;">If something goes wrong, can you go back?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="recovery" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="recovery" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="recovery" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="recovery" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">4. Personalisation</div>
+  <div style="margin-bottom:8px;color:#444;">Does this service collect data about you to shape your experience?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="personal" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="personal" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="personal" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="personal" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">5. Urgency</div>
+  <div style="margin-bottom:8px;color:#444;">Does this service pressure you to act before you are ready?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="urgency" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="urgency" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="urgency" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="urgency" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">6. Hidden cost</div>
+  <div style="margin-bottom:8px;color:#444;">What do you pay besides money? (attention, data, lock-in)</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="hidden" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="hidden" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="hidden" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="hidden" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">7. Transparency fragility</div>
+  <div style="margin-bottom:8px;color:#444;">Would you still use it if you saw everything about how it works?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
+  <div style="font-weight:bold;margin-bottom:4px;">8. Trajectory</div>
+  <div style="margin-bottom:8px;color:#444;">Is this project moving toward openness -- or away from it?</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="yes" onchange="updateResult()"> Yes</label>
+    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="partial" onchange="updateResult()"> Partial</label>
+    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="no" onchange="updateResult()"> No</label>
+    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="unknown" onchange="updateResult()"> Unknown</label>
+  </div>
+</div>
+
+<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
   <div style="font-weight:bold;margin-bottom:4px;">Transparency level</div>
   <div style="margin-bottom:8px;color:#444;">Is the source code publicly available?</div>
   <div style="display:flex;gap:16px;flex-wrap:wrap;">
@@ -68,8 +154,6 @@ nav_order: 4
     <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T1" onchange="updateResult()"> T1 -- Documented but closed</label>
     <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T0" onchange="updateResult()"> T0 -- Closed, no source</label>
   </div>
-</div>
-
 </div>
 
 <div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap;">
@@ -106,17 +190,8 @@ nav_order: 4
 </div>
 
 <script>
-var questions = [
-  { id:'pause',        label:'1. Pause',                  q:'Can you stop this service right now -- and nothing breaks permanently?',     structural:true  },
-  { id:'exit',         label:'2. Exit',                   q:'Can you leave this service and take everything with you?',                  structural:true  },
-  { id:'recovery',     label:'3. Recoverability',         q:'If something goes wrong, can you go back?',                                structural:true  },
-  { id:'personal',     label:'4. Personalisation',        q:'Does this service collect data about you to shape your experience?',        structural:false },
-  { id:'urgency',      label:'5. Urgency',                q:'Does this service pressure you to act before you are ready?',               structural:false },
-  { id:'hidden',       label:'6. Hidden cost',            q:'What do you pay besides money? (attention, data, lock-in)',                 structural:false },
-  { id:'transparency', label:'7. Transparency fragility', q:'Would you still use it if you saw everything about how it works?',         structural:false },
-  { id:'trajectory',   label:'8. Trajectory',             q:'Is this project moving toward openness -- or away from it?',                structural:false }
-];
-
+var qNames = ['pause','exit','recovery','personal','urgency','hidden','transfrag','trajectory'];
+var qLabels = ['1. Pause','2. Exit','3. Recoverability','4. Personalisation','5. Urgency','6. Hidden cost','7. Transparency fragility','8. Trajectory'];
 var levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
 var tLevelColors = { T2:'#1a8a4a', T1:'#1a73e8', T0:'#d32f2f' };
 var levelMeaning = {
@@ -131,46 +206,13 @@ var selectedTasAutonomy = '';
 var selectedTasTransparency = '';
 var selectedName = '';
 
-function renderQuestions() {
-  var c = document.getElementById('questions');
-  var html = '';
-  for (var i = 0; i < questions.length; i++) {
-    var q = questions[i];
-    var tag = q.structural ? '<span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span>' : '';
-    html += '<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">';
-    html += '<div style="font-weight:bold;margin-bottom:4px;">' + q.label + tag + '</div>';
-    html += '<div style="margin-bottom:8px;color:#444;">' + q.q + '</div>';
-    html += '<div style="display:flex;gap:16px;flex-wrap:wrap;">';
-    var vals = ['yes','partial','no','unknown'];
-    for (var j = 0; j < vals.length; j++) {
-      var v = vals[j];
-      html += '<label style="cursor:pointer;"><input type="radio" name="' + q.id + '" value="' + v + '" onchange="updateResult()"> ' + v.charAt(0).toUpperCase() + v.slice(1) + '</label>';
-    }
-    html += '</div></div>';
-  }
-  c.innerHTML = html;
-}
-
 function getProjectName() {
   if (selectedName) return selectedName;
   var url = document.getElementById('project-url').value.trim();
   if (url) {
-    try {
-      var hostname = new URL(url).hostname.replace('www.','').replace('github.com/','');
-      return hostname;
-    } catch(e) {
-      return url;
-    }
+    try { return new URL(url).hostname.replace('www.',''); } catch(e) { return url; }
   }
   return '';
-}
-
-function showQuestions() {
-  var sel = document.getElementById('tool-select');
-  var url = document.getElementById('project-url').value.trim();
-  if (sel.value || url.length > 5) {
-    document.getElementById('questions-section').style.display = 'block';
-  }
 }
 
 function onSelectTool() {
@@ -190,7 +232,6 @@ function onSelectTool() {
     selectedName = '';
     document.getElementById('url-section').style.display = 'block';
   }
-  showQuestions();
   updateResult();
 }
 
@@ -200,36 +241,28 @@ function onTypeUrl() {
   selectedTasAutonomy = '';
   selectedTasTransparency = '';
   selectedName = '';
-  showQuestions();
   updateResult();
 }
 
-function getAnswers() {
-  var answers = {};
-  for (var i = 0; i < questions.length; i++) {
-    var q = questions[i];
-    var sel = document.querySelector('input[name="' + q.id + '"]:checked');
-    answers[q.id] = sel ? sel.value : null;
-  }
-  var tsel = document.querySelector('input[name="tlevel"]:checked');
-  answers.tlevel = tsel ? tsel.value : null;
-  return answers;
-}
-
 function updateResult() {
-  var answers = getAnswers();
   var structural = [];
   var answered = 0;
+  var answers = {};
 
-  for (var i = 0; i < questions.length; i++) {
-    var q = questions[i];
-    if (answers[q.id]) {
+  for (var i = 0; i < qNames.length; i++) {
+    var sel = document.querySelector('input[name="' + qNames[i] + '"]:checked');
+    if (sel) {
       answered++;
-      if (q.structural) structural.push(answers[q.id]);
+      answers[qNames[i]] = sel.value;
+      if (i < 3) structural.push(sel.value);
     } else {
-      if (q.structural) structural.push(null);
+      answers[qNames[i]] = null;
+      if (i < 3) structural.push(null);
     }
   }
+
+  var tsel = document.querySelector('input[name="tlevel"]:checked');
+  var tLevel = tsel ? tsel.value : '?';
 
   if (answered === 0) {
     document.getElementById('audit-result').style.display = 'none';
@@ -242,7 +275,6 @@ function updateResult() {
     if (structural[i] === 'yes') yes++;
   }
   var aLevel = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
-  var tLevel = answers.tlevel || '?';
 
   document.getElementById('audit-result').style.display = 'block';
   document.getElementById('copy-btn').style.display = 'inline-block';
@@ -254,7 +286,6 @@ function updateResult() {
   document.getElementById('user-level').innerHTML = levelHtml;
   document.getElementById('user-detail').textContent = levelMeaning[aLevel];
 
-  // Recommendation
   var rec = document.getElementById('recommendation');
   if (aLevel === 'A3' && tLevel === 'T2') {
     rec.style.display = 'block';
@@ -273,46 +304,24 @@ function updateResult() {
     rec.innerHTML = '<strong style="color:#f09000;">Partial autonomy.</strong><br><span style="font-size:0.9em;color:#555;">Some dependencies remain. Review the diagnostic questions to understand what is pulling at you.</span>';
   }
 
-  // TAS comparison (catalog tools)
   if (selectedSlug && selectedTasAutonomy) {
     var tasLevel = selectedTasAutonomy;
-    var comp = document.getElementById('tas-comparison');
-    comp.style.display = 'block';
-    document.getElementById('tas-level').innerHTML =
-      '<span style="color:' + levelColors[tasLevel] + '">' + tasLevel + ' / ' + selectedTasTransparency + '</span>';
-
-    var commentary = '';
-    if (tasLevel === aLevel) {
-      commentary = 'Your assessment matches our catalog rating.';
-    } else {
-      commentary = 'Your assessment differs from ours (' + aLevel + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
-    }
-    document.getElementById('tas-detail').innerHTML =
-      commentary + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
-
+    document.getElementById('tas-comparison').style.display = 'block';
+    document.getElementById('tas-level').innerHTML = '<span style="color:' + levelColors[tasLevel] + '">' + tasLevel + ' / ' + selectedTasTransparency + '</span>';
+    var commentary = (tasLevel === aLevel) ? 'Your assessment matches our catalog rating.' : 'Your assessment differs from ours (' + aLevel + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
+    document.getElementById('tas-detail').innerHTML = commentary + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
     document.getElementById('submit-box').style.display = 'none';
   } else {
     document.getElementById('tas-comparison').style.display = 'none';
-
-    // Show submit box for new tools
     var url = document.getElementById('project-url').value.trim();
     if (url) {
       var name = getProjectName();
-      var body = '## Catalog submission\n\n';
-      body += '**Project URL:** ' + url + '\n\n';
-      body += '**Submitted assessment:** ' + aLevel + ' / ' + tLevel + '\n\n';
-      body += '### Answers\n\n';
-      for (var i = 0; i < questions.length; i++) {
-        var q = questions[i];
-        var a = answers[q.id] || 'not answered';
-        body += '- **' + q.label + ':** ' + a + '\n';
+      var body = '## Catalog submission\n\n**Project URL:** ' + url + '\n**Assessment:** ' + aLevel + ' / ' + tLevel + '\n\n### Answers\n\n';
+      for (var i = 0; i < qNames.length; i++) {
+        body += '- **' + qLabels[i] + ':** ' + (answers[qNames[i]] || 'not answered') + '\n';
       }
-      body += '- **Transparency level:** ' + tLevel + '\n';
-      body += '\n**Why it should be in the catalog:**\n\n(please add your reasoning)\n';
-
-      var issueTitle = encodeURIComponent('Catalog submission: ' + (name || url));
-      var issueBody = encodeURIComponent(body);
-      var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + issueTitle + '&body=' + issueBody + '&labels=catalog-submission';
+      body += '- **Transparency level:** ' + tLevel + '\n\n**Why it should be in the catalog:**\n\n(please add your reasoning)\n';
+      var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + encodeURIComponent('Catalog submission: ' + (name || url)) + '&body=' + encodeURIComponent(body) + '&labels=catalog-submission';
       document.getElementById('submit-link').href = issueUrl;
       document.getElementById('submit-box').style.display = 'block';
     } else {
@@ -328,7 +337,6 @@ function resetAudit() {
   var radios = document.querySelectorAll('input[type=radio]');
   for (var i = 0; i < radios.length; i++) radios[i].checked = false;
   document.getElementById('audit-result').style.display = 'none';
-  document.getElementById('questions-section').style.display = 'none';
   document.getElementById('copy-btn').style.display = 'none';
   selectedSlug = '';
   selectedTasAutonomy = '';
@@ -337,30 +345,27 @@ function resetAudit() {
 }
 
 function copyResult() {
-  var answers = getAnswers();
+  var answers = {};
+  for (var i = 0; i < qNames.length; i++) {
+    var sel = document.querySelector('input[name="' + qNames[i] + '"]:checked');
+    answers[qNames[i]] = sel ? sel.value : 'not answered';
+  }
+  var tsel = document.querySelector('input[name="tlevel"]:checked');
+  var tLevel = tsel ? tsel.value : '?';
+  var structural = [];
+  for (var i = 0; i < 3; i++) { if (answers[qNames[i]] === 'yes') structural.push(1); }
+  var aLevel = structural.length === 3 ? 'A3' : structural.length === 2 ? 'A2' : structural.length === 1 ? 'A1' : 'A0';
   var name = selectedName || getProjectName() || 'Unknown';
   var url = document.getElementById('project-url').value.trim();
-
-  var structural = [];
-  for (var i = 0; i < questions.length; i++) {
-    if (questions[i].structural) {
-      var a = answers[questions[i].id];
-      if (a === 'yes') structural.push(a);
-    }
-  }
-  var aLevel = structural.length === 3 ? 'A3' : structural.length === 2 ? 'A2' : structural.length === 1 ? 'A1' : 'A0';
-  var tLevel = answers.tlevel || '?';
 
   var text = 'TAS Audit: ' + name + '\n';
   if (url) text += 'URL: ' + url + '\n';
   text += 'Result: ' + aLevel + ' / ' + tLevel + '\n\n';
-
-  for (var i = 0; i < questions.length; i++) {
-    var q = questions[i];
-    text += q.label + ': ' + (answers[q.id] || 'not answered') + '\n';
+  for (var i = 0; i < qNames.length; i++) {
+    text += qLabels[i] + ': ' + answers[qNames[i]] + '\n';
   }
   text += 'Transparency: ' + tLevel + '\n';
-  text += '\nGenerated by The Autonomous Stack\nhttps://revenue7-eng.github.io/the-autonomous-stack/audit.html';
+  text += '\nhttps://revenue7-eng.github.io/the-autonomous-stack/audit.html';
 
   if (navigator.clipboard) {
     navigator.clipboard.writeText(text);
@@ -368,6 +373,4 @@ function copyResult() {
     setTimeout(function() { document.getElementById('copy-btn').textContent = 'Copy result'; }, 2000);
   }
 }
-
-renderQuestions();
 </script>
