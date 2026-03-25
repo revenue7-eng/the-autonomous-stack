@@ -3,123 +3,124 @@ layout: default
 title: "Autonomy Map"
 nav_order: 6
 ---
+{% raw %}
+<div style="padding:1rem 0;font-family:var(--font-sans);">
 
-# Autonomy Map
+<p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6;">
+Every technology in the catalog — by category, autonomy level, transparency, and trajectory. Click any card to open its full assessment.
+</p>
 
-<p>Every technology in the catalog, mapped by <strong>Autonomy</strong> and <strong>Transparency</strong>. Click any name to see its full card.</p>
-
-<style>
-.amap { width: 100%; border-collapse: collapse; margin: 1.5rem 0; table-layout: fixed; }
-.amap th, .amap td { border: 1px solid #e0e0e0; padding: 10px; vertical-align: top; text-align: left; }
-.amap th { background: #f0f0f0; text-align: center; font-size: 0.85em; color: #555; }
-.amap th.corner { background: #fff; border: none; }
-.amap th.row-header { background: #f8f8f8; text-align: right; padding-right: 12px; width: 90px; font-size: 0.8em; }
-.amap td { font-size: 0.82em; line-height: 1.6; min-height: 60px; }
-.amap td.a3t2 { background: #f0faf0; }
-.amap td.a2 { background: #f0f4ff; }
-.amap td.a1 { background: #fff8f0; }
-.amap td.a0 { background: #fff0f0; }
-.amap td.empty { background: #fafafa; color: #ccc; text-align: center; font-style: italic; }
-.amap a { text-decoration: none; color: #1a73e8; }
-.amap a:hover { text-decoration: underline; }
-.tag { display: inline-block; font-size: 0.7em; padding: 1px 5px; border-radius: 3px; margin-left: 3px; vertical-align: middle; }
-.tag-net { background: #e8f0fe; color: #1a56db; }
-.tag-sec { background: #fce8e8; color: #c62828; }
-.tag-sto { background: #e8f5e9; color: #2e7d32; }
-.tag-obs { background: #fff3e0; color: #e65100; }
-.tag-com { background: #f3e8fd; color: #6a1b9a; }
-.tag-app { background: #e0f7fa; color: #00695c; }
-.tag-id { background: #fce4ec; color: #880e4f; }
-.map-legend { margin: 1rem 0; font-size: 0.82em; color: #666; }
-.map-legend span { margin-right: 12px; }
-</style>
-
-<table class="amap">
-<tr>
-  <th class="corner"></th>
-  <th>A0<br><span style="font-weight:normal;font-size:0.85em;">Cloud-bound</span></th>
-  <th>A1<br><span style="font-weight:normal;font-size:0.85em;">Dependent</span></th>
-  <th>A2<br><span style="font-weight:normal;font-size:0.85em;">Optional</span></th>
-  <th>A3<br><span style="font-weight:normal;font-size:0.85em;">Autonomous</span></th>
-</tr>
-<tr>
-  <th class="row-header">T2<br>Open source</th>
-  <td class="empty">--</td>
-  <td class="empty">--</td>
-  <td class="empty">--</td>
-  <td class="a3t2">
-    <a href="catalog/wireguard.html">WireGuard</a> <span class="tag tag-net">net</span><br>
-    <a href="catalog/adguard-home.html">AdGuard Home</a> <span class="tag tag-net">net</span><br>
-    <a href="catalog/pi-hole.html">Pi-hole</a> <span class="tag tag-net">net</span><br>
-    <a href="catalog/traefik.html">Traefik</a> <span class="tag tag-net">net</span><br>
-    <a href="catalog/nginx-proxy-manager.html">Nginx Proxy Manager</a> <span class="tag tag-net">net</span><br>
-    <a href="catalog/authentik.html">Authentik</a> <span class="tag tag-id">id</span><br>
-    <a href="catalog/syncthing.html">Syncthing</a> <span class="tag tag-sto">sto</span><br>
-    <a href="catalog/kopia.html">Kopia</a> <span class="tag tag-sto">sto</span><br>
-    <a href="catalog/docker.html">Docker</a> <span class="tag tag-com">com</span><br>
-    <a href="catalog/k3s.html">K3s</a> <span class="tag tag-com">com</span><br>
-    <a href="catalog/vault.html">Vault</a> <span class="tag tag-sec">sec</span><br>
-    <a href="catalog/vaultwarden.html">Vaultwarden</a> <span class="tag tag-sec">sec</span><br>
-    <a href="catalog/keepass.html">KeePass</a> <span class="tag tag-sec">sec</span><br>
-    <a href="catalog/prometheus.html">Prometheus</a> <span class="tag tag-obs">obs</span><br>
-    <a href="catalog/grafana.html">Grafana</a> <span class="tag tag-obs">obs</span><br>
-    <a href="catalog/uptime-kuma.html">Uptime Kuma</a> <span class="tag tag-obs">obs</span><br>
-    <a href="catalog/jellyfin.html">Jellyfin</a> <span class="tag tag-app">app</span><br>
-    <a href="catalog/immich.html">Immich</a> <span class="tag tag-app">app</span><br>
-    <a href="catalog/forgejo.html">Forgejo</a> <span class="tag tag-app">app</span><br>
-    <a href="catalog/paperless-ngx.html">Paperless-ngx</a> <span class="tag tag-app">app</span><br>
-    <a href="catalog/nextcloud.html">Nextcloud</a> <span class="tag tag-app">app</span><br>
-    <a href="catalog/home-assistant.html">Home Assistant</a> <span class="tag tag-app">app</span>
-  </td>
-</tr>
-<tr>
-  <th class="row-header">T1<br>Documented</th>
-  <td class="empty">--</td>
-  <td class="empty">--</td>
-  <td class="a2">
-    <a href="catalog/tailscale.html">Tailscale</a> <span class="tag tag-net">net</span>
-  </td>
-  <td class="empty">--</td>
-</tr>
-<tr>
-  <th class="row-header">T0<br>Closed</th>
-  <td class="a0">
-    <a href="catalog/google-drive.html">Google Drive</a> <span class="tag tag-sto">sto</span><br>
-    <a href="catalog/notion.html">Notion</a> <span class="tag tag-app">app</span>
-  </td>
-  <td class="a1">
-    <a href="catalog/plex.html">Plex</a> <span class="tag tag-app">app</span>
-  </td>
-  <td class="a2">
-    <a href="catalog/obsidian.html">Obsidian</a> <span class="tag tag-app">app</span>
-  </td>
-  <td class="empty">--</td>
-</tr>
-</table>
-
-<div class="map-legend">
-  <strong>Categories:</strong>
-  <span class="tag tag-net">net</span> Network
-  <span class="tag tag-id">id</span> Identity
-  <span class="tag tag-sto">sto</span> Storage
-  <span class="tag tag-com">com</span> Compute
-  <span class="tag tag-sec">sec</span> Security
-  <span class="tag tag-obs">obs</span> Observability
-  <span class="tag tag-app">app</span> Applications
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.25rem;">
+  <select id="trajF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+    <option value="all">All trajectories</option>
+    <option value="opening">Opening</option>
+    <option value="stable">Stable</option>
+    <option value="mixed">Mixed</option>
+    <option value="closing">Closing</option>
+  </select>
+  <select id="aF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+    <option value="all">Autonomy: all</option>
+    <option value="3">A3</option>
+    <option value="2">A2</option>
+    <option value="1">A1</option>
+    <option value="0">A0</option>
+  </select>
+  <select id="tF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+    <option value="all">Transparency: all</option>
+    <option value="2">T2</option>
+    <option value="1">T1</option>
+    <option value="0">T0</option>
+  </select>
 </div>
 
-<hr>
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#666;">
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing</span>
+</div>
 
-<h2>Reading the map</h2>
+<div id="board"></div>
+</div>
 
-<p><strong>Top-right (A3/T2)</strong> is the ideal: fully autonomous, fully transparent. Most self-hosted open-source tools live here.</p>
+<script>
+const CARDS=[
+  {name:'WireGuard',a:3,t:2,cat:'Network',traj:'stable',url:'wireguard'},
+  {name:'AdGuard Home',a:3,t:2,cat:'Network',traj:'stable',url:'adguard-home'},
+  {name:'Pi-hole',a:3,t:2,cat:'Network',traj:'stable',url:'pi-hole'},
+  {name:'Nginx Proxy Manager',a:3,t:2,cat:'Network',traj:'stable',url:'nginx-proxy-manager'},
+  {name:'Traefik',a:3,t:2,cat:'Network',traj:'mixed',url:'traefik'},
+  {name:'Tailscale',a:2,t:1,cat:'Network',traj:'mixed',url:'tailscale'},
+  {name:'Syncthing',a:3,t:2,cat:'Storage',traj:'stable',url:'syncthing'},
+  {name:'Nextcloud',a:3,t:2,cat:'Storage',traj:'stable',url:'nextcloud'},
+  {name:'Kopia',a:3,t:2,cat:'Storage',traj:'mixed',url:'kopia'},
+  {name:'Google Drive',a:0,t:0,cat:'Storage',traj:'closing',url:'google-drive'},
+  {name:'Vaultwarden',a:3,t:2,cat:'Security',traj:'stable',url:'vaultwarden'},
+  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass'},
+  {name:'Authentik',a:3,t:2,cat:'Security',traj:'stable',url:'authentik'},
+  {name:'Vault',a:3,t:1,cat:'Security',traj:'closing',url:'vault'},
+  {name:'Prometheus',a:3,t:2,cat:'Observability',traj:'opening',url:'prometheus'},
+  {name:'Grafana',a:3,t:2,cat:'Observability',traj:'mixed',url:'grafana'},
+  {name:'Uptime Kuma',a:3,t:2,cat:'Observability',traj:'stable',url:'uptime-kuma'},
+  {name:'Jellyfin',a:3,t:2,cat:'Applications',traj:'opening',url:'jellyfin'},
+  {name:'Forgejo',a:3,t:2,cat:'Applications',traj:'opening',url:'forgejo'},
+  {name:'Immich',a:3,t:2,cat:'Applications',traj:'stable',url:'immich'},
+  {name:'Paperless-ngx',a:3,t:2,cat:'Applications',traj:'opening',url:'paperless-ngx'},
+  {name:'Home Assistant',a:3,t:2,cat:'Applications',traj:'opening',url:'home-assistant'},
+  {name:'Obsidian',a:2,t:0,cat:'Applications',traj:'mixed',url:'obsidian'},
+  {name:'Notion',a:0,t:0,cat:'Applications',traj:'closing',url:'notion'},
+  {name:'Plex',a:1,t:0,cat:'Applications',traj:'closing',url:'plex'},
+  {name:'Docker',a:3,t:2,cat:'Compute',traj:'mixed',url:'docker'},
+  {name:'K3s',a:3,t:2,cat:'Compute',traj:'stable',url:'k3s'},
+];
 
-<p><strong>Bottom-left (A0/T0)</strong> is the opposite: cloud-bound and closed. Google Drive, Notion.</p>
+const TC={opening:'#22c55e',stable:'#3b82f6',mixed:'#f59e0b',closing:'#ef4444'};
+const TC_BG={opening:'#dcfce7',stable:'#dbeafe',mixed:'#fef3c7',closing:'#fee2e2'};
+const CATS=['Network','Storage','Security','Observability','Applications','Compute'];
+const BASE='https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/';
 
-<p><strong>The diagonal tells the story.</strong> Tailscale (A2/T1) trades some autonomy for convenience. Obsidian (A2/T0) keeps your data local but the app is closed. Plex (A1/T0) requires cloud authentication for your own media.</p>
-
-<p>Not every tool needs to be A3/T2. But every choice should be intentional.</p>
-
-<hr>
-
-<p>Explore the full <a href="catalog/">Technology Catalog</a> or <a href="audit.html">run the audit</a> on your own stack.</p>
+function render(){
+  const trajF=document.getElementById('trajF').value;
+  const aF=document.getElementById('aF').value;
+  const tF=document.getElementById('tF').value;
+  const board=document.getElementById('board');
+  board.innerHTML='';
+  CATS.forEach(cat=>{
+    const cards=CARDS.filter(c=>c.cat===cat&&(trajF==='all'||c.traj===trajF)&&(aF==='all'||c.a===+aF)&&(tF==='all'||c.t===+tF));
+    const lane=document.createElement('div');
+    lane.style.cssText='display:flex;align-items:flex-start;margin-bottom:4px;';
+    const lbl=document.createElement('div');
+    lbl.style.cssText='font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;width:110px;flex-shrink:0;padding-right:12px;text-align:right;padding-top:11px;';
+    lbl.textContent=cat;
+    const body=document.createElement('div');
+    body.style.cssText='flex:1;display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:#f8f8f8;border-radius:8px;min-height:40px;align-items:center;';
+    if(!cards.length){
+      const e=document.createElement('span');
+      e.style.cssText='font-size:12px;color:#aaa;font-style:italic;';
+      e.textContent='no matches';
+      body.appendChild(e);
+    } else {
+      cards.forEach(c=>{
+        const chip=document.createElement('div');
+        chip.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:3px 9px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:opacity .15s;';
+        chip.style.background=TC_BG[c.traj];
+        chip.style.border='1px solid '+TC[c.traj]+'55';
+        chip.style.color=TC[c.traj];
+        const nonStd=!(c.a===3&&c.t===2);
+        chip.innerHTML=c.name+(nonStd?` <span style="font-size:10px;opacity:.7;font-weight:500;">A${c.a}/T${c.t}</span>`:'');
+        chip.title=c.traj+' · A'+c.a+'/T'+c.t+' · click to open';
+        chip.onmouseenter=()=>{chip.style.opacity='.7';};
+        chip.onmouseleave=()=>{chip.style.opacity='1';};
+        chip.onclick=()=>window.open(BASE+c.url+'.html','_blank');
+        body.appendChild(chip);
+      });
+    }
+    lane.appendChild(lbl);
+    lane.appendChild(body);
+    board.appendChild(lane);
+  });
+}
+['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+render();
+</script>
+{% endraw %}
