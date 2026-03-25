@@ -5,16 +5,8 @@ nav_order: 99
 ---
 {% raw %}
 <style>
-/* Override Jekyll theme — fullpage dark */
-body, .site-header, .site-nav, .page-content, .wrapper, main {
-  background: #0d0d0d !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-.site-header { display: none !important; }
-.page-content { padding: 0 !important; margin: 0 !important; }
-.wrapper { max-width: 100% !important; padding: 0 !important; }
-html { background: #0d0d0d; }
+/* Scope dark theme to our block only */
+.page-content { padding: 0 !important; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -60,7 +52,7 @@ html { background: #0d0d0d; }
 
 h1 {
   font-family: var(--sans);
-  font-size: clamp(20px, 2.5vw, 28px); font-weight: 600; color: var(--text);
+  font-size: clamp(18px, 2vw, 24px); font-weight: 600; color: var(--text);
   line-height: 1.2; margin-bottom: 12px;
   white-space: nowrap;
 }
