@@ -1,0 +1,553 @@
+---
+layout: default
+title: "The TAS Test"
+nav_exclude: true
+---
+<style>
+/* Override Jekyll theme — fullpage dark */
+body, .site-header, .site-nav, .page-content, .wrapper, main {
+  background: #0d0d0d !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.site-header { display: none !important; }
+.page-content { padding: 0 !important; margin: 0 !important; }
+.wrapper { max-width: 100% !important; padding: 0 !important; }
+html { background: #0d0d0d; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0d0d;
+  --bg2: #141414;
+  --bg3: #1a1a1a;
+  --border: #252525;
+  --border-hi: #333;
+  --text: #e8e6e0;
+  --text-sub: #c8c8c8;
+  --text-dim: #888;
+  --text-label: #666;
+  --green: #4ade80;
+  --green-mid: #22c55e;
+  --green-dark: #14532d;
+  --green-border: #166534;
+  --red: #f87171;
+  --red-dark: #450a0a;
+  --red-border: #7f1d1d;
+  --amber: #fbbf24;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+.wrap {
+  background: var(--bg);
+  padding: 44px 36px 64px;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ── header ── */
+.logo {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 28px;
+}
+.logo span { color: var(--green); }
+
+h1 {
+  font-family: var(--sans);
+  font-size: 30px; font-weight: 600; color: var(--text);
+  line-height: 1.2; margin-bottom: 12px;
+}
+.subtitle {
+  font-size: 16px; font-weight: 300; color: var(--text-sub);
+  margin-bottom: 36px; line-height: 1.6;
+}
+
+/* ── input ── */
+.input-label {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 8px;
+}
+.input-row { display: flex; gap: 8px; margin-bottom: 20px; justify-content: center; }
+input[type="text"] {
+  flex: 1; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 2px; padding: 13px 16px;
+  font-family: var(--sans); font-size: 16px; color: var(--text);
+  outline: none; transition: border-color .15s;
+}
+input::placeholder { color: #666; }
+input:focus { border-color: var(--green); }
+.btn-start {
+  background: var(--green); color: #0a0a0a; border: none; border-radius: 2px;
+  padding: 13px 22px; font-family: var(--mono); font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: opacity .15s; letter-spacing: .04em;
+}
+.btn-start:hover { opacity: .85; }
+
+/* ── examples ── */
+.ex-label {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 10px;
+}
+.ex-row { display: flex; gap: 6px; margin-bottom: 40px; justify-content: center; }
+.ex-chip {
+  flex: 1; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 2px; padding: 12px 14px; cursor: pointer; transition: border-color .15s;
+}
+.ex-chip:hover { border-color: var(--border-hi); }
+.ex-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.ex-score { font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.fail { color: var(--red); } .pass { color: var(--green); } .mid { color: var(--amber); }
+
+/* ── progress ── */
+.prog-wrap { margin-bottom: 24px; }
+.progress { display: flex; gap: 4px; margin-bottom: 6px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.pd {
+  height: 3px; flex: 1; background: var(--border);
+  border-radius: 0; transition: background .3s;
+}
+.pd.done { background: var(--green); }
+.pd.act  { background: var(--green-mid); }
+.prog-labels {
+  display: flex; gap: 4px;
+  max-width: 480px; margin: 0 auto;
+}
+.prog-lbl {
+  flex: 1; font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-label); text-align: center;
+  transition: color .3s;
+}
+.prog-lbl.done { color: var(--green); }
+.prog-lbl.act  { color: var(--text-sub); }
+
+.svc-tag {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 20px;
+}
+.svc-tag strong { color: var(--amber); font-weight: 600; }
+
+/* ── question card ── */
+.q-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 2px; padding: 24px 26px; margin-bottom: 3px;
+  opacity: 0; transform: translateY(8px); transition: all .3s ease;
+  }
+.q-card.vis { opacity: 1; transform: translateY(0); }
+.q-card.ans { border-color: var(--border-hi); opacity: .7; }
+.q-card.ans .q-ans { opacity: 1; }
+
+.q-num {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 8px;
+}
+.q-title {
+  font-family: var(--sans);
+  font-size: 20px; font-weight: 600; color: var(--text);
+  margin-bottom: 8px; line-height: 1.35;
+}
+.q-body {
+  font-size: 15px; font-weight: 300; color: var(--text-sub);
+  line-height: 1.7; margin-bottom: 20px;
+}
+.q-btns { display: flex; gap: 10px; justify-content: center; }
+
+/* YES — спокойный */
+.btn-y {
+  padding: 11px 32px; border-radius: 2px;
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
+  cursor: pointer; letter-spacing: .04em; transition: all .15s;
+  background: var(--green-dark); color: var(--green); border: 1px solid var(--green-border);
+}
+.btn-y:hover { background: var(--green-border); border-color: var(--green); }
+
+/* NO — более заметный, предупреждающий */
+.btn-n {
+  padding: 11px 32px; border-radius: 2px;
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
+  cursor: pointer; letter-spacing: .04em; transition: all .15s;
+  background: var(--red-dark); color: var(--red); border: 1px solid var(--red-border);
+  /* чуть ярче чем yes — потому что no = проблема */
+  box-shadow: inset 0 0 0 1px rgba(248,113,113,.08);
+}
+.btn-n:hover { background: var(--red-border); border-color: var(--red); box-shadow: none; }
+
+.q-ans {
+  display: none; font-family: var(--mono); font-size: 14px; font-weight: 600;
+  padding: 5px 0; letter-spacing: .04em;
+}
+.q-card.ans .q-btns { display: none; }
+.q-card.ans .q-ans  { display: block; }
+.q-ans.y { color: var(--green); }
+.q-ans.n { color: var(--red); }
+
+/* ── evaluating screen ── */
+.evaluating {
+  display: none; padding: 20px 32px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 2px; margin-top: 3px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.evaluating.vis { display: block; }
+.eval-text {
+  font-family: var(--mono); font-size: 13px; color: var(--text-label);
+  letter-spacing: .06em;
+}
+.eval-dots::after {
+  content: '';
+  animation: dots 1.2s steps(3, end) infinite;
+}
+@keyframes dots {
+  0%   { content: '.'; }
+  33%  { content: '..'; }
+  66%  { content: '...'; }
+  100% { content: ''; }
+}
+
+/* ── result card ── */
+.result-card {
+  background: var(--bg2); border: 1px solid var(--border-hi);
+  border-radius: 2px; padding: 28px 32px; margin-top: 3px;
+  opacity: 0; transform: translateY(10px); transition: all .4s ease;
+  display: none;
+}
+.result-card.vis { opacity: 1; transform: translateY(0); }
+
+.r-label {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 10px;
+}
+.r-score { font-family: var(--mono); font-size: 56px; font-weight: 600; line-height: 1; margin-bottom: 6px; }
+.r-verdict { font-family: var(--mono); font-size: 15px; font-weight: 600; letter-spacing: .04em; margin-bottom: 6px; }
+.r-level  { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; font-family: var(--mono); }
+.r-desc   { font-size: 15px; font-weight: 300; color: var(--text-sub); line-height: 1.7; padding-bottom: 22px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+
+.s3 .r-score, .s3 .r-verdict { color: var(--green); }  .s3 { border-color: #1f4a2a; }
+.s2 .r-score, .s2 .r-verdict { color: var(--amber); }  .s2 { border-color: #3d2a00; }
+.s1 .r-score, .s1 .r-verdict { color: var(--amber); }  .s1 { border-color: #3d2a00; }
+.s0 .r-score, .s0 .r-verdict { color: var(--red); }    .s0 { border-color: #4a1010; }
+
+/* ── share ── */
+.share-label {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-label); margin-bottom: 8px;
+}
+.share-text {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 2px; padding: 14px 16px;
+  font-family: var(--mono); font-size: 12px; color: #c0c0c0;
+  line-height: 1.8; margin-bottom: 12px;
+  white-space: pre; user-select: all;
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+.share-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-copy {
+  background: var(--bg3); border: 1px solid var(--border-hi);
+  border-radius: 2px; padding: 10px 18px;
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  color: var(--text-dim); cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-copy:hover { border-color: var(--green); color: var(--text); }
+.btn-copy.ok    { background: var(--green-dark); border-color: var(--green-border); color: var(--green); }
+.copy-hint      { font-size: 13px; color: var(--text-label); }
+.copy-hint.ok   { color: var(--green); }
+
+.btn-restart {
+  display: inline-block; margin-top: 14px;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 2px; padding: 10px 18px;
+  font-family: var(--mono); font-size: 13px; color: var(--text-dim);
+  cursor: pointer; transition: all .15s; letter-spacing: .02em;
+}
+.btn-restart:hover { border-color: var(--border-hi); color: var(--text-sub); }
+
+/* ── footer links ── */
+.links {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--border);
+  justify-content: center;
+}
+.links a { font-size: 13px; color: var(--text-label); text-decoration: none; transition: color .15s; }
+.links a:hover { color: var(--green); }
+
+#quiz { display: none; } #quiz.on { display: block; }
+
+/* ── mobile ── */
+@media (max-width: 600px) {
+  .wrap { padding: 28px 20px 48px; }
+  h1 { font-size: 24px; }
+  .subtitle { font-size: 15px; }
+  .input-row { flex-direction: column; }
+  .btn-start { width: 100%; padding: 14px; font-size: 15px; }
+  input[type="text"] { font-size: 16px; padding: 13px 14px; }
+  .ex-row { flex-direction: column; gap: 6px; }
+  .ex-chip { padding: 13px 14px; }
+  .ex-name { font-size: 14px; }
+  .q-card { padding: 20px 18px; }
+  .q-title { font-size: 19px; }
+  .q-body { font-size: 15px; }
+  .q-btns { gap: 8px; }
+  .btn-y, .btn-n { padding: 13px 0; flex: 1; font-size: 15px; }
+  .r-score { font-size: 48px; }
+  .r-verdict { font-size: 14px; }
+  .share-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .links { gap: 14px; }
+}
+</style>
+
+<div class="wrap">
+  <div class="logo"><span>TAS</span> · The Autonomous Stack</div>
+  <h1>Does your infrastructure pass the test?</h1>
+  <p class="subtitle">Takes 30 seconds. No account needed.</p>
+
+  <div id="intro">
+    <div class="input-label">Enter a technology or service</div>
+    <div class="input-row">
+      <input type="text" id="svc" placeholder="Test something you rely on — e.g. Notion, AWS, Syncthing" autocomplete="off">
+      <button class="btn-start" onclick="go()">Run test →</button>
+    </div>
+    <div class="ex-label">Or try an example</div>
+    <div class="ex-row">
+      <div class="ex-chip" onclick="demo('Google Drive',0)">
+        <div class="ex-name">Google Drive</div>
+        <div class="ex-score fail">0/3 · A0</div>
+      </div>
+      <div class="ex-chip" onclick="demo('Syncthing',3)">
+        <div class="ex-name">Syncthing</div>
+        <div class="ex-score pass">3/3 · A3</div>
+      </div>
+      <div class="ex-chip" onclick="demo('Plex',1)">
+        <div class="ex-name">Plex</div>
+        <div class="ex-score mid">1/3 · A1</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz">
+    <!-- progress with labels -->
+    <div class="prog-wrap">
+      <div class="progress">
+        <div class="pd act" id="p0"></div>
+        <div class="pd"     id="p1"></div>
+        <div class="pd"     id="p2"></div>
+      </div>
+      <div class="prog-labels">
+        <div class="prog-lbl act" id="pl0">Pause</div>
+        <div class="prog-lbl"     id="pl1">Exit</div>
+        <div class="prog-lbl"     id="pl2">Recover</div>
+      </div>
+    </div>
+
+    <div class="svc-tag">Testing: <strong id="sname">—</strong></div>
+
+    <div class="q-card" id="q0">
+      <div class="q-num">Question 1 of 3 · Pause</div>
+      <div class="q-title">Can you stop it right now?</div>
+      <div class="q-body">Shut it down — without permanent data loss, without breaking something else, without a vendor's permission.</div>
+      <div class="q-btns">
+        <button class="btn-y" onclick="ans(0,1)">Yes</button>
+        <button class="btn-n" onclick="ans(0,0)">No</button>
+      </div>
+      <div class="q-ans"></div>
+    </div>
+
+    <div class="q-card" id="q1">
+      <div class="q-num">Question 2 of 3 · Exit</div>
+      <div class="q-title">Can you leave and take everything?</div>
+      <div class="q-body">Export all your data in a portable format and migrate to an alternative — without losing anything that matters.</div>
+      <div class="q-btns">
+        <button class="btn-y" onclick="ans(1,1)">Yes</button>
+        <button class="btn-n" onclick="ans(1,0)">No</button>
+      </div>
+      <div class="q-ans"></div>
+    </div>
+
+    <div class="q-card" id="q2">
+      <div class="q-num">Question 3 of 3 · Recoverability</div>
+      <div class="q-title">If something breaks, can you go back?</div>
+      <div class="q-body">Backups that are yours — not the vendor's. Restore to a specific point in time without asking for permission.</div>
+      <div class="q-btns">
+        <button class="btn-y" onclick="ans(2,1)">Yes</button>
+        <button class="btn-n" onclick="ans(2,0)">No</button>
+      </div>
+      <div class="q-ans"></div>
+    </div>
+
+    <!-- evaluating pause -->
+    <div class="evaluating" id="evaluating">
+      <div class="eval-text">Evaluating autonomy<span class="eval-dots"></span></div>
+    </div>
+
+    <!-- result -->
+    <div class="result-card" id="rcard">
+      <div class="r-label">Autonomy Score</div>
+      <div class="r-score"   id="rscore"></div>
+      <div class="r-verdict" id="rverdict"></div>
+      <div class="r-level"   id="rlevel"></div>
+      <div class="r-desc"    id="rdesc"></div>
+
+      <button class="btn-restart" onclick="reset()">← Test another service</button>
+      <div style="margin-top:22px; border-top:1px solid var(--border); padding-top:22px;">
+      <div class="share-label">Share this result</div>
+      <div class="share-text" id="shareText"></div>
+      <div class="share-row">
+        <button class="btn-copy" id="cbtn" onclick="cp()">
+          <span id="cicon">📋</span><span id="ctxt"> Copy to clipboard</span>
+        </button>
+        <span class="copy-hint" id="chint">Paste anywhere — Slack, email, GitHub</span>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="links">
+    <a href="catalog/" style="color:var(--text-sub);font-weight:500">Technology catalog →</a>
+    <a href="how-to-choose.html">Full 8-question audit</a>
+    <a href="index.html">What is TAS?</a>
+  </div>
+</div>
+
+<script>
+const L = {
+  3: {
+    verdict: 'You are in control.',
+    level:   'A3 — Fully Autonomous',
+    cls:     's3',
+    desc:    "This service passes all three structural criteria. You can stop it, leave it, and recover from it without asking anyone's permission. This is what infrastructure ownership looks like."
+  },
+  2: {
+    verdict: 'One dependency remains.',
+    level:   'A2 — Mostly Autonomous',
+    cls:     's2',
+    desc:    "Two out of three criteria pass. There is one structural dependency you don't fully control. This may be an acceptable trade-off — but it should be a conscious choice, not a default."
+  },
+  1: {
+    verdict: 'You are renting, not owning.',
+    level:   'A1 — Partially Dependent',
+    cls:     's1',
+    desc:    "Only one criterion passes. This service has significant cloud or vendor dependency. If the vendor changes terms, goes down, or is acquired — you have limited options. Check the catalog for autonomous alternatives."
+  },
+  0: {
+    verdict: 'You don\'t control this system.',
+    level:   'A0 — Cloud-Bound',
+    cls:     's0',
+    desc:    "None of the three criteria pass. The vendor controls this service, not you. That may be a deliberate trade-off — convenience for sovereignty. But if you haven't made that choice consciously, this is the moment."
+  }
+};
+
+let A = [null, null, null], svc = '';
+
+function go() {
+  const v = document.getElementById('svc').value.trim();
+  if (!v) { document.getElementById('svc').focus(); return; }
+  start(v);
+}
+function demo(name, score) {
+  document.getElementById('svc').value = name;
+  start(name);
+  const ya = [score >= 1, score >= 2, score >= 3];
+  let d = 600;
+  ya.forEach((y, i) => { setTimeout(() => ans(i, y ? 1 : 0), d); d += 700; });
+}
+function start(name) {
+  svc = name; A = [null, null, null];
+  document.getElementById('sname').textContent = name;
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('quiz').classList.add('on');
+  document.getElementById('evaluating').classList.remove('vis');
+  const rc = document.getElementById('rcard');
+  rc.style.display = 'none'; rc.classList.remove('vis');
+  for (let i = 0; i < 3; i++) {
+    const c = document.getElementById('q' + i);
+    c.classList.remove('vis', 'ans');
+    c.style.display = 'block';
+    c.querySelector('.q-ans').textContent = '';
+    c.querySelector('.q-btns').style.display = 'flex';
+  }
+  prog(0);
+  setTimeout(() => document.getElementById('q0').classList.add('vis'), 60);
+}
+function ans(i, v) {
+  if (A[i] !== null) return;
+  A[i] = v;
+  const c = document.getElementById('q' + i);
+  const a = c.querySelector('.q-ans');
+  a.textContent = v ? '✓ Yes' : '✗ No';
+  a.className = 'q-ans ' + (v ? 'y' : 'n');
+  c.classList.add('ans');
+  if (i < 2) {
+    prog(i + 1);
+    setTimeout(() => document.getElementById('q' + (i + 1)).classList.add('vis'), 200);
+  } else {
+    prog(3);
+    document.getElementById('evaluating').classList.add('vis');
+    setTimeout(showR, 900);
+  }
+}
+function prog(done) {
+  for (let i = 0; i < 3; i++) {
+    const d  = document.getElementById('p'  + i);
+    const dl = document.getElementById('pl' + i);
+    if (i < done)       { d.className = 'pd done'; dl.className = 'prog-lbl done'; }
+    else if (i === done){ d.className = 'pd act';  dl.className = 'prog-lbl act';  }
+    else                { d.className = 'pd';       dl.className = 'prog-lbl';      }
+  }
+}
+function shareStr() {
+  const sc = A.filter(Boolean).length;
+  return `TAS Test — ${svc}
+Pause: ${A[0]?'Yes':'No'} · Exit: ${A[1]?'Yes':'No'} · Recoverability: ${A[2]?'Yes':'No'}
+Score: ${sc}/3 · ${L[sc].verdict}
+https://revenue7-eng.github.io/the-autonomous-stack/test.html`;
+}
+function showR() {
+  document.getElementById('evaluating').classList.remove('vis');
+  const sc = A.filter(Boolean).length, lv = L[sc];
+  const rc = document.getElementById('rcard');
+  document.getElementById('rscore').textContent   = sc + '/3';
+  document.getElementById('rverdict').textContent = lv.verdict;
+  document.getElementById('rlevel').textContent   = lv.level;
+  document.getElementById('rdesc').textContent    = lv.desc;
+  document.getElementById('shareText').textContent = shareStr();
+  document.getElementById('cbtn').className = 'btn-copy';
+  document.getElementById('cicon').textContent = '📋';
+  document.getElementById('ctxt').textContent  = ' Copy to clipboard';
+  document.getElementById('chint').textContent = 'Paste anywhere — Slack, email, GitHub';
+  document.getElementById('chint').className   = 'copy-hint';
+  rc.className = 'result-card ' + lv.cls;
+  rc.style.display = 'block';
+  setTimeout(() => rc.classList.add('vis'), 20);
+}
+function cp() {
+  navigator.clipboard.writeText(shareStr()).then(() => {
+    document.getElementById('cbtn').classList.add('ok');
+    document.getElementById('cicon').textContent = '✓';
+    document.getElementById('ctxt').textContent  = ' Copied to clipboard';
+    document.getElementById('chint').textContent = 'Now paste with Ctrl+V (or ⌘+V on Mac)';
+    document.getElementById('chint').className   = 'copy-hint ok';
+  }).catch(() => {
+    document.getElementById('chint').textContent = 'Select the text above and copy manually (Ctrl+C)';
+  });
+}
+function reset() {
+  document.getElementById('quiz').classList.remove('on');
+  document.getElementById('intro').style.display = 'block';
+  document.getElementById('svc').value = '';
+  document.getElementById('svc').focus();
+}
+document.getElementById('svc').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+</script>
