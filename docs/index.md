@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Home"
 layout: home
 nav_order: 1
@@ -13,6 +13,8 @@ If your infrastructure requires an external account to function --- you don't co
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
 
 TAS gives you three things: a way to **evaluate** any technology, a **catalog** of evaluated tools, and **recipes** to deploy them.
+
+**→ [Does your infrastructure pass the TAS test?](test.html)** — 30 seconds, no account needed.
 
 ---
 
