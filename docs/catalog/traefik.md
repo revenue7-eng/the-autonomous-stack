@@ -96,6 +96,18 @@ services:
 * [Community](https://community.traefik.io)
 -e 
 ## Trajectory
-**Mixed — commercial company behind it.**
 
-Traefik is developed by Traefik Labs (formerly Containous). The core is open source (MIT), but Traefik Labs sells enterprise products (Traefik Enterprise, Traefik Hub). Watch for features migrating to the commercial tier. So far the open source core remains generous. Rate: **stable, monitor**.
+**Direction: mixed.**
+
+Traefik is MIT licenced and widely adopted. Traefik Labs also develops Traefik Enterprise (closed-source) with advanced features. The open-source version remains functional and well-maintained. The risk is gradual migration of useful features to the enterprise edition — this has been a slow trend in recent releases.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | MIT for OSS edition; unchanged. Enterprise edition is separate and proprietary. |
+| Feature gating | ⚠️ | Some advanced features (API management, OIDC, advanced routing) are enterprise-only. |
+| Self-hosting | ✅ | OSS self-hosting remains well-supported; no cloud dependency. |
+| Governance | ➖ | Traefik Labs controls direction; community contributions accepted but roadmap is corporate-driven. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

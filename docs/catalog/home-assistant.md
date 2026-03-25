@@ -80,7 +80,18 @@ services:
 
 **Direction: opening.**
 
-Home Assistant has consistently moved toward local control and away from cloud dependencies. The Matter protocol integration strengthens local-first device communication. The project rejected acquisition offers and remains community-governed. Nabu Casa (the company behind it) monetises through optional cloud subscription, not by closing features.
+Home Assistant has consistently moved toward local control and away from cloud dependencies. Matter protocol integration strengthens local-first device communication. The project rejected acquisition offers and remains community-governed under the Open Home Foundation. Nabu Casa monetises through optional cloud subscription — no features are gated.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | Apache-2.0; no changes. Open Home Foundation holds the project. |
+| Feature gating | ✅ | Nabu Casa Cloud is optional; no local features require subscription. |
+| Self-hosting | ✅ | Local-first is the stated mission; Matter/Thread improve offline capability. |
+| Governance | ✅ | Open Home Foundation (non-profit) governs the project; community-driven. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

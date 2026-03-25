@@ -113,10 +113,18 @@ services:
 * [Community](https://github.com/goauthentik/authentik/discussions)
 
 ## Trajectory
-**Mixed — commercial company, open core model.**
 
-Authentik is developed by Authentik Security Inc., a venture-backed company. The core product is open source (MIT), but the company generates revenue through enterprise features and support. This is the classic open-core model.
+**Direction: stable.**
 
-The tension: enterprise features may gradually pull the most useful capabilities behind a paywall. So far Authentik has kept the core generous. Watch for: features moving from community to enterprise tier, license changes, or acquisition. The MIT license is a strong protection — but it does not prevent forking pressure if the project closes.
+Authentik uses a dual-license model: MIT for the core, and a separate enterprise license for advanced features (RBAC, support SLAs). The split is clean — enterprise features are additive, not replacements for community functionality. The project is actively developed and self-hosting is a first-class use case.
 
-Rate: **stable, with commercial tension to monitor**.
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | MIT for core; enterprise license for additive features only. |
+| Feature gating | ➖ | Enterprise tier adds features on top — does not remove community functionality. |
+| Self-hosting | ✅ | Self-hosting is the primary deployment model; documentation is thorough. |
+| Governance | ➖ | Maintained by Authentik Security Inc.; community PRs accepted actively. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

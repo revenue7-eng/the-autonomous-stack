@@ -95,6 +95,18 @@ services:
 * [Community](https://github.com/AdguardTeam/AdGuardHome/discussions)
 -e 
 ## Trajectory
-**Mixed — commercial company, open core.**
 
-AdGuard Home is the open source product of AdGuard Ltd, a commercial company that sells AdGuard Pro and browser extensions. The Home product is kept open and free. Watch for: features moving to a paid tier, or cloud dependency introduced. So far direction is **stable**.
+**Direction: stable.**
+
+AdGuard Home has been GPL-3.0 since launch. The project is actively maintained, self-hosting is well-documented, and there are no signs of license changes or feature migration to a paid tier. AdGuard Ltd. also develops a commercial DNS service (AdGuard DNS), but AdGuard Home remains fully separate and community-supported.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | GPL-3.0 since launch — no changes. |
+| Feature gating | ➖ | No features moved to paid tier; commercial products are separate. |
+| Self-hosting | ✅ | Installation and documentation consistently improving. |
+| Governance | ➖ | Maintained by AdGuard Ltd.; active community contributions on GitHub. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

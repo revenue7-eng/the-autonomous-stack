@@ -114,6 +114,18 @@ services:
 * [Community](https://github.com/paperless-ngx/paperless-ngx/discussions)
 
 ## Trajectory
-**Stable — community fork.**
 
-Paperless-ngx is a community fork of paperless-ng (itself a fork of the original paperless). The project has no commercial entity behind it. It is maintained by a volunteer team and has grown steadily. No enterprise tier, no cloud dependency. Direction: **stable opening**.
+**Direction: opening.**
+
+Paperless-ngx was created as a community fork of paperless-ng after the original maintainer abandoned the project. It is GPL-3.0, community-governed, and actively developed. No corporate ownership, no monetisation pressure, no enterprise tier.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | GPL-3.0; forked to preserve community development after upstream abandonment. |
+| Feature gating | ✅ | No paid tier; all features available to all users. |
+| Self-hosting | ✅ | Self-hosting is the only deployment model. |
+| Governance | ✅ | Community-governed; active maintainer team; transparent roadmap. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

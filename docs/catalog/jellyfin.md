@@ -86,6 +86,18 @@ services:
 - [Community](https://github.com/jellyfin/jellyfin/discussions)
 -e 
 ## Trajectory
-**Opening — born from closure.**
 
-Jellyfin was created as a fork of Emby after Emby went proprietary in 2018. It is governed as a non-profit with no commercial entity. The project's origin is a direct response to a closing trajectory. Direction: **stable opening**.
+**Direction: opening.**
+
+Jellyfin was created in 2018 as a fork of Emby after Emby's source was closed. It is governed by the Jellyfin project organisation (non-corporate), GPL-2.0 licenced, and has no paid tier. The trajectory since inception has been consistently toward openness and community governance.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | GPL-2.0; forked explicitly to preserve open source after Emby closed. |
+| Feature gating | ✅ | No paid tier; all features free for all users. |
+| Self-hosting | ✅ | Self-hosting is the only model; no cloud service exists or is planned. |
+| Governance | ✅ | Community-governed non-corporate project; transparent decision-making. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

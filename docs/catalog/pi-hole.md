@@ -91,6 +91,18 @@ services:
 * [Community](https://discourse.pi-hole.net)
 -e 
 ## Trajectory
-**Stable — community project.**
 
-Pi-hole is maintained by a small volunteer team with no commercial entity. It is one of the oldest and most established self-hosted tools. No enterprise tier, no cloud features. Direction: **stable**.
+**Direction: stable.**
+
+Pi-hole is EUPL-1.2 licenced and community-governed. Development continues actively. No corporate ownership, no enterprise tier, no cloud service. The project has been stable and consistent since 2014.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | EUPL-1.2; no changes since launch. |
+| Feature gating | ✅ | No paid tier; all features free. |
+| Self-hosting | ✅ | Self-hosting only; local DNS by design. |
+| Governance | ➖ | Small core team; community active; no formal foundation but stable governance in practice. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

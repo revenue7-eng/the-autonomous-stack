@@ -98,6 +98,18 @@ For air‑gapped environments, use the offline installation guide.
 - [Community](https://github.com/k3s-io/k3s/discussions)
 -e 
 ## Trajectory
-**Mixed — CNCF sandbox, Rancher/SUSE backed.**
 
-K3s is developed by Rancher (acquired by SUSE). It is in the CNCF sandbox. Corporate backing means sustained development, but also means the project follows SUSE's business interests. Watch for: enterprise-only features, or deprioritisation if SUSE strategy shifts. Rate: **stable, monitor**.
+**Direction: stable.**
+
+K3s is an official CNCF project, donated by Rancher Labs (now SUSE) to the community. Apache-2.0 licenced. CNCF governance provides structural protection against unilateral corporate decisions. The project is widely adopted and has multiple corporate contributors beyond SUSE.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | Apache-2.0; CNCF project with governance protections. |
+| Feature gating | ➖ | No enterprise tier; SUSE offers paid support but not feature gating. |
+| Self-hosting | ✅ | Designed specifically for edge/self-hosted deployments. |
+| Governance | ✅ | CNCF governance; multiple corporate contributors; not SUSE-controlled. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

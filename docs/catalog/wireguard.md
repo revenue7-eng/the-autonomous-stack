@@ -98,6 +98,18 @@ AllowedIPs = 0.0.0.0/0
 - [Community](https://www.reddit.com/r/WireGuard/)
 -e 
 ## Trajectory
-**Stable — kernel-level.**
 
-WireGuard is now part of the Linux kernel (since 5.6). This is the strongest possible stability signal: it cannot be acquired, relicensed, or shut down. Direction: **permanently open**.
+**Direction: stable.**
+
+WireGuard is GPL-2.0 licenced and has been merged into the Linux kernel (5.6, 2020). Development is led by Jason Donenfeld with ZX2C4 LLC, but the protocol specification is public and there are multiple independent implementations. Kernel inclusion provides structural stability.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | GPL-2.0; merged into Linux kernel in 2020 — structural stability guaranteed. |
+| Feature gating | ✅ | No paid tier; no commercial entity; protocol is a public standard. |
+| Self-hosting | ✅ | Kernel-level integration; no external service dependencies. |
+| Governance | ✅ | Linux kernel governance; multiple independent implementations (boringtun, wireguard-go, etc.). |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

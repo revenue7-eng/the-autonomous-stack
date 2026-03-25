@@ -117,6 +117,18 @@ services:
 - [Community](https://github.com/prometheus/prometheus/discussions)
 -e 
 ## Trajectory
-**Stable — CNCF graduated.**
 
-Prometheus is a CNCF graduated project, meaning it has passed the highest level of open source governance review. No single company controls it. Direction: **stable**.
+**Direction: opening.**
+
+Prometheus is a CNCF graduated project (the highest maturity level), Apache-2.0 licenced. It was donated to CNCF by SoundCloud in 2016. CNCF governance protects against unilateral corporate decisions. Multiple major companies contribute. No enterprise tier, no commercial gating.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | Apache-2.0; CNCF graduated project with governance protections. |
+| Feature gating | ✅ | No paid tier; all features available to all users. |
+| Self-hosting | ✅ | Designed for self-hosted infrastructure monitoring. |
+| Governance | ✅ | CNCF governance; multiple corporate contributors; community-driven roadmap. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

@@ -92,8 +92,18 @@ services:
 * [Community (Matrix)](https://matrix.to/#/#forgejo:matrix.org)
 
 ## Trajectory
-**Opening — community governance.**
 
-Forgejo was created in 2022 as a community fork of Gitea after concerns that Gitea Ltd was moving toward a more corporate model. It is hosted on Codeberg, governed by a non-profit, and has no commercial entity behind it. The fork was a direct response to trajectory concerns about Gitea.
+**Direction: opening.**
 
-This makes Forgejo one of the clearest examples of a project born from a closing trajectory being replaced by an opening one. Direction: **stable opening**. The main risk is sustainability — small community, no commercial backing.
+Forgejo was created in 2022 as a community fork of Gitea after governance concerns arose when the Gitea organisation moved toward corporate control. Forgejo is governed by the Codeberg e.V. non-profit, uses MIT licence, and explicitly positions itself as a community-first alternative. The trajectory since inception has been consistently toward openness.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | MIT licence; forked explicitly to preserve open governance. |
+| Feature gating | ✅ | No enterprise tier; all features available to all users. |
+| Self-hosting | ✅ | Self-hosting is the only deployment model; improving with each release. |
+| Governance | ✅ | Governed by Codeberg e.V. non-profit; community-driven decisions. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

@@ -73,8 +73,18 @@ Notion is one of the most popular productivity tools. Its power comes from flexi
 * [Documentation](https://www.notion.so/help)
 
 ## Trajectory
-**Mixed — VC-backed, pricing pressure.**
 
-Notion has raised over $330M in funding. The free tier has been progressively restricted. Enterprise features are aggressively priced. The product is deeply integrated — the more you use Notion, the harder it is to leave, which is the mechanism that supports pricing power.
+**Direction: closing.**
 
-Direction: **closing**. Not in terms of the product disappearing, but in terms of the exit cost increasing over time. The export format remains lossy, which means the lock-in compounds.
+Notion has no trajectory toward openness. It is a fully proprietary cloud product. The company has added AI features (paid add-on), tightened API rate limits, and moved some functionality behind higher-tier plans. The direction is stable-to-closing — value increasingly depends on continued subscription.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ⚠️ | Proprietary; no change and no expectation of change. |
+| Feature gating | ⚠️ | AI features are paid add-on; some functionality limited to Business/Enterprise plans. |
+| Self-hosting | ⚠️ | No self-hosting path exists or is planned. |
+| Governance | ⚠️ | Fully controlled by Notion Labs; no community input. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

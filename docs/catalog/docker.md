@@ -83,11 +83,18 @@ docker run hello-world
 
 **Direction: mixed.**
 
-Docker Engine remains open source (Apache‑2.0) and is the foundation for containers everywhere. However, Docker Inc. introduced a paid subscription requirement for Docker Desktop in large organisations (250+ employees or $10M+ revenue) in 2021.
+Docker Engine remains open source (Apache-2.0) and is the foundation for the container ecosystem. However, Docker Inc. introduced a paid subscription requirement for Docker Desktop in large organisations (250+ employees or $10M+ revenue) in 2021. The engine itself is stable and open. If you use Docker Engine and CLI — trajectory is stable. If you depend on Docker Desktop — watch the licensing terms.
 
-The engine itself is stable and open. The desktop tooling is moving toward a commercial model. The container runtime ecosystem has diversified — Podman, containerd, nerdctl offer alternatives that don't depend on Docker Inc.
+**Signal assessment:**
 
-If you use Docker Engine and CLI — trajectory is stable. If you depend on Docker Desktop — watch the licensing terms.
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | Docker Engine: Apache-2.0, unchanged. Docker Desktop: commercial licence introduced 2021 for large orgs. |
+| Feature gating | ⚠️ | Docker Desktop features (Dev Environments, Docker Extensions) are commercial-first. |
+| Self-hosting | ✅ | Docker Engine self-hosting unchanged; Podman/containerd are credible alternatives. |
+| Governance | ➖ | Moby project (upstream) is community-governed; Docker Inc. controls the Desktop product. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

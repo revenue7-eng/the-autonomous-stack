@@ -83,9 +83,18 @@ Add Prometheus as a data source after startup via the web UI or provisioning con
 
 **Direction: mixed.**
 
-Grafana Labs changed the license from Apache 2.0 to AGPL-3.0 in 2021 to prevent cloud providers from offering Grafana as a service without contributing back. The source remains open and auditable, but AGPL's copyleft requirements may affect how you embed Grafana in proprietary products.
+Grafana Labs changed the licence from Apache 2.0 to AGPL-3.0 in 2021. Core dashboarding and alerting remain open. Enterprise features (SSO, RBAC, reporting, advanced data source plugins) are not in the OSS edition and are moving further into the enterprise tier. Watch for features migrating from OSS to enterprise-only.
 
-The company increasingly promotes Grafana Cloud and enterprise features (SSO, RBAC, reporting) that are not in the open-source edition. Core dashboarding and alerting remain fully open. Watch for features migrating from OSS to enterprise-only.
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ⚠️ | Apache 2.0 → AGPL-3.0 in 2021; AGPL's copyleft requirements affect embedding in proprietary products. |
+| Feature gating | ⚠️ | SSO, RBAC, reporting, and several plugins are enterprise-only and growing. |
+| Self-hosting | ➖ | OSS self-hosting remains well-supported; Grafana Cloud is optional. |
+| Governance | ➖ | Grafana Labs controls direction; community contributions accepted but roadmap is corporate-driven. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

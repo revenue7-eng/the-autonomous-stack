@@ -91,6 +91,18 @@ Default login: admin@example.com / changeme
 * [Community](https://github.com/NginxProxyManager/nginx-proxy-manager/discussions)
 -e 
 ## Trajectory
-**Stable — independent.**
 
-Nginx Proxy Manager is maintained by a single developer (jc21) with no commercial backing. Simple scope, unlikely to drift. Direction: **stable**.
+**Direction: stable.**
+
+Nginx Proxy Manager is MIT licenced, community-maintained, and has no commercial entity behind it. Development is active. No monetisation pressure, no enterprise tier. The main risk is dependency on a small maintainer team.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | MIT licence; no changes. |
+| Feature gating | ✅ | No paid tier; all features are free. |
+| Self-hosting | ✅ | Self-hosting only; no cloud service. |
+| Governance | ➖ | Small maintainer team; active but no formal governance structure. Single-maintainer risk is moderate. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

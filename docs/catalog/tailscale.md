@@ -69,11 +69,20 @@ Tailscale is the best example of A2: it works mostly offline, data flows peer‑
 
 ## Trajectory
 
-**Direction: stable with tension.**
+**Direction: mixed.**
 
-Tailscale's client remains open source. The company is growing toward enterprise (SSO integration, audit logs, policy controls). The coordination server remains proprietary — but Headscale exists as a community alternative and Tailscale has not moved against it.
+Tailscale's client remains open source (BSD-3-Clause). The company is growing toward enterprise features (SSO, audit logs, policy controls). The coordination server remains proprietary — but Headscale exists as a community alternative and Tailscale has not moved against it. Watch for changes to the client licence or Headscale compatibility.
 
-The tension: Tailscale's business model requires the coordination server to be valuable enough to pay for. If Headscale becomes good enough, the model is threatened. How Tailscale responds to that pressure will determine the trajectory. So far — neutral. Watch for changes to the client license or Headscale compatibility.
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | Client: BSD-3-Clause (open). Coordination server: proprietary. No changes to client licence. |
+| Feature gating | ⚠️ | Enterprise features (SSO, audit logs, device posture) are paid-only and growing. |
+| Self-hosting | ➖ | Headscale provides an open-source coordination server alternative; Tailscale has not blocked it. |
+| Governance | ➖ | VC-backed company; client is open but control plane is proprietary and corporate-governed. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

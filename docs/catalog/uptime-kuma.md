@@ -106,6 +106,18 @@ services:
 - [Community](https://github.com/louislam/uptime-kuma/issues)
 -e 
 ## Trajectory
-**Stable — independent.**
 
-Uptime Kuma is maintained by a single developer (louislam) with no commercial entity. Simple, focused scope. No enterprise tier. Direction: **stable**.
+**Direction: stable.**
+
+Uptime Kuma is MIT licenced, maintained by a single primary author (louislam) with a large community of contributors. No commercial entity, no enterprise tier, no cloud service. Rapid development since 2021. Single-maintainer dependency is the main governance risk.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | MIT; no changes since launch. |
+| Feature gating | ✅ | No paid tier; all features free. |
+| Self-hosting | ✅ | Self-hosting only; no cloud component. |
+| Governance | ➖ | Single primary maintainer (louislam); active community; no foundation backing. Bus-factor risk. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

@@ -122,10 +122,18 @@ backup.
 - [Community](https://github.com/immich-app/immich/discussions)
 
 ## Trajectory
-**Fast-growing — watch carefully.**
 
-Immich is one of the fastest-growing self-hosted projects of 2023–2024. The team is small, the project is pre-v1.0 by philosophy (breaking changes are common), and there is no stable funding model yet. The founders have discussed monetisation but have not committed to a path.
+**Direction: stable.**
 
-The risk: a project this popular will attract acquisition interest or pressure to add cloud features. So far the team has resisted — but the trajectory is unresolved. Watch for: license changes, a hosted tier that becomes the default, or VC funding that shifts priorities.
+Immich is a relatively new project (2022) that has grown rapidly. It uses AGPL-3.0 and is self-hosting-first. The maintainers have been transparent about the project direction and have rejected suggestions to add cloud services. No concerning trends, but the project is young enough that governance structures are still maturing.
 
-Rate: **opening, but early**.
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | AGPL-3.0 since launch; no changes. |
+| Feature gating | ✅ | No paid tier; all features available to self-hosters. |
+| Self-hosting | ✅ | Self-hosting is the only supported deployment model. |
+| Governance | ➖ | Small core team; community active on GitHub; governance structures still maturing. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

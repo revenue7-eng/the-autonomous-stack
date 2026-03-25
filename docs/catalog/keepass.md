@@ -74,7 +74,21 @@ To sync the database across devices, add the `.kdbx` file to Syncthing:
 - **1Password** – cloud-only, proprietary, A0.
 
 ## Trajectory
-**Stable — opening.** Maintained by a single developer since 2003, no VC funding, no acquisition, no enterprise tier. The `.kdbx` format has become an open standard adopted by multiple independent clients (KeePassXC, KeePassDX, Strongbox). No license changes in 20+ years.
+
+**Direction: stable.**
+
+KeePass is one of the oldest password managers (2003) with an unchanged GPL-2.0 licence. Development is slow but deliberate. The format (KDBX) is an open standard with multiple independent implementations. No corporate ownership, no cloud service, no monetisation pressure.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | GPL-2.0 since 2003; never changed. |
+| Feature gating | ✅ | No paid tier exists and never has. |
+| Self-hosting | ✅ | Local-only by design; no cloud component. |
+| Governance | ➖ | Single maintainer (Dominik Reichl); slow but consistent development. Single-maintainer risk exists. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 - [Website](https://keepass.info/)

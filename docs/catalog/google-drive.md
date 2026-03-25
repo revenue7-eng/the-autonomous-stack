@@ -73,8 +73,18 @@ Google Drive is the de facto standard for file sync. Most people use it without 
 * [Documentation](https://support.google.com/drive)
 
 ## Trajectory
-**Closing — by design.**
 
-Google Drive is a commercial product. Google has a well-documented history of discontinuing products (Google Reader, Stadia, Inbox, Plus). The trajectory of any Google product is structurally uncertain: it exists as long as it serves Google's business interests.
+**Direction: closing.**
 
-More specifically: Google Workspace pricing has increased, free storage has been capped, and Google-native formats (Docs, Sheets) remain intentionally hard to export cleanly. Direction: **closing**. This is not a prediction — it is the structural nature of free commercial products.
+Google Drive has no meaningful trajectory toward openness. Google has reduced free storage (15GB shared across services), changed pricing multiple times, and maintains full proprietary control. The service is valuable because of network effects, not architectural openness. Direction is stable-to-closing.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ⚠️ | Proprietary — no change and no expectation of change. |
+| Feature gating | ⚠️ | Free tier has been reduced; features tied to Google Workspace subscription. |
+| Self-hosting | ⚠️ | No self-hosting path exists or is planned. |
+| Governance | ⚠️ | Fully controlled by Google; no community input into direction. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

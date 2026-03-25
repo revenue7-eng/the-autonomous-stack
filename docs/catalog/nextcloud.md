@@ -84,7 +84,18 @@ For production, use PostgreSQL or MariaDB instead of SQLite.
 
 **Direction: stable.**
 
-Nextcloud has consistently maintained its open-source commitment since forking from ownCloud in 2016. The AGPL license ensures that modifications must be shared. The company monetises through enterprise support, not by closing features. Community governance is active. No license changes or concerning trends.
+Nextcloud has consistently maintained its open-source commitment since forking from ownCloud in 2016. AGPL-3.0 ensures modifications must be shared. Nextcloud GmbH monetises through enterprise support contracts, not by closing features. Community governance is active.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | AGPL-3.0 since fork in 2016; no changes. |
+| Feature gating | ➖ | Enterprise apps exist but core functionality is fully open; no regression. |
+| Self-hosting | ✅ | Self-hosting is the primary use case; documentation and tooling consistently improving. |
+| Governance | ✅ | Active community; Nextcloud GmbH supports but doesn't gate community edition. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

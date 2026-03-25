@@ -68,9 +68,18 @@ Plex is the most popular media server — and a perfect example of A1: you host 
 
 **Direction: closing.**
 
-Plex has been steadily increasing cloud dependencies. Authentication has always required Plex servers. In recent years: ad‑supported free streaming was added (shifting focus from personal media to content platform), the API has become more restrictive, and features that were free have moved behind Plex Pass.
+Plex has been steadily increasing cloud dependencies and moving features behind Plex Pass. Authentication has always required Plex servers. Ad-supported free streaming was added (shifting focus from personal media server to content platform). API restrictions have increased. The trend is clear: Plex is moving from a media server you run toward a media platform you use.
 
-The trend is clear: Plex is moving from "media server you run" toward "media platform you use." Each update increases the distance between your data and your control.
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ⚠️ | Proprietary; server source closed. Direction unchanged. |
+| Feature gating | ⚠️ | Free features increasingly require Plex Pass; ad-supported content added without user control. |
+| Self-hosting | ⚠️ | Authentication still requires Plex's servers; offline operation is degraded. |
+| Governance | ⚠️ | Fully corporate-controlled; no community input into direction. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

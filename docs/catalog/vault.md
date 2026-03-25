@@ -98,13 +98,18 @@ Start with: vault server -config=config.hcl
 
 **Direction: closing.**
 
-In August 2023, HashiCorp changed the license of Vault (and all its products) from MPL‑2.0 to the Business Source License (BSL 1.1). BSL is not an OSI‑approved open‑source license — it prohibits using the software to offer competing commercial services.
+In August 2023, HashiCorp changed Vault's licence from MPL-2.0 to BSL 1.1 — not an OSI-approved open-source licence. In 2024, IBM acquired HashiCorp. The community responded with OpenBao (MPL-2.0 fork, Linux Foundation). If starting fresh, evaluate OpenBao directly.
 
-This moved Vault from T2 (open source) toward T1 (documented but restricted). The source code is still publicly readable, but the usage rights are narrower. The community responded with OpenBao — an MPL‑2.0 fork maintained by the Linux Foundation.
+**Signal assessment:**
 
-In 2024, IBM acquired HashiCorp. The long‑term trajectory is uncertain, but the direction — from community‑governed open source to corporate‑controlled source‑available — is clear.
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ⚠️ | MPL-2.0 → BSL 1.1 in August 2023. BSL is not OSI-approved; restricts competing commercial use. |
+| Feature gating | ⚠️ | Enterprise features (namespaces, HSM support, advanced auth) have always been gated; trend continues. |
+| Self-hosting | ➖ | Self-hosting still works; no cloud dependency introduced. |
+| Governance | ⚠️ | IBM acquired HashiCorp in 2024; community fork (OpenBao) created in response. |
 
-If you choose Vault today, have a migration path to OpenBao. If you're starting fresh, evaluate OpenBao directly.
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 

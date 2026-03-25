@@ -92,6 +92,18 @@ services:
 * [Community](https://forum.syncthing.net)
 -e 
 ## Trajectory
-**Stable — opening.**
 
-Syncthing is maintained by a non-profit foundation with no commercial entity behind it. No VC funding, no enterprise tier, no cloud features. Has been consistently open for over a decade. Direction: **stable opening**.
+**Direction: stable.**
+
+Syncthing is MPL-2.0 licenced and community-governed by the Syncthing Foundation. Development has been active and consistent since 2014. The discovery servers are operated by the foundation but self-hostable. No corporate ownership, no paid tier, no cloud lock-in.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ✅ | MPL-2.0; no changes since launch. |
+| Feature gating | ✅ | No paid tier; no commercial entity; all features free. |
+| Self-hosting | ✅ | Discovery and relay servers are self-hostable; works LAN-only without any external services. |
+| Governance | ✅ | Syncthing Foundation governs the project; transparent and community-driven. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

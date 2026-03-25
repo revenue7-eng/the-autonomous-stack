@@ -124,6 +124,18 @@ Set up a daily cron job to run snapshots:
 - [Community](https://github.com/kopia/kopia/discussions)
 -e 
 ## Trajectory
-**Stable — independent.**
 
-Kopia is maintained independently with no commercial backing. Small but active community. No enterprise tier, no cloud dependency introduced. Direction: **stable**.
+**Direction: stable.**
+
+Kopia is Apache-2.0 licenced and was open-sourced from the start. It was acquired by Veeam in 2022, but Veeam has continued to develop it as open source and uses it as the engine for their commercial products. The acquisition is the main risk signal — watch for feature gating or licence changes.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | Apache-2.0; unchanged since acquisition by Veeam (2022). |
+| Feature gating | ➖ | No features gated yet; Veeam uses Kopia engine in commercial products but hasn't restricted OSS. |
+| Self-hosting | ✅ | Self-hosting remains the primary use case; no cloud dependency added. |
+| Governance | ⚠️ | Acquired by Veeam in 2022; community contributions continue but corporate control increased. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing

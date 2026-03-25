@@ -76,9 +76,20 @@ For sync without Obsidian Sync, use [Syncthing](syncthing.md) to sync the vault 
 
 ## Trajectory
 
-**Direction: stable with tension.**
+**Direction: stable.**
 
-Obsidian's core promise -- local Markdown files, no lock-in -- has held since launch. But the company increasingly promotes Obsidian Sync and Publish as paid services, which are cloud-dependent. The app remains free for personal use, but commercial use requires a paid license. No concerning license changes, but the closed-source nature means the community has no recourse if priorities shift.
+Obsidian's core promise — local Markdown files, no lock-in — has held since launch. The company promotes Obsidian Sync and Publish as paid cloud services, but these are opt-in additions, not replacements for local functionality. The closed-source nature means the community has no recourse if priorities shift.
+
+**Signal assessment:**
+
+| Signal | Status | Evidence |
+|--------|--------|----------|
+| License | ➖ | Proprietary app; free for personal use, paid for commercial use. No change since launch. |
+| Feature gating | ➖ | Sync and Publish are paid cloud services, but local functionality is complete without them. |
+| Self-hosting | ➖ | Local-first by design; no self-hosted server component (Sync uses Obsidian's cloud). |
+| Governance | ⚠️ | Privately held; no community governance; direction opaque. No open-source recourse if app is discontinued. |
+
+**Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
 ## Sources
 
