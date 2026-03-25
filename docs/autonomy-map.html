@@ -6,224 +6,120 @@ nav_order: 3
 
 # Autonomy Map
 
-Every technology in the catalog, plotted by **Autonomy** (horizontal) and **Transparency** (vertical). Click any dot to see its card.
+<p>Every technology in the catalog, mapped by <strong>Autonomy</strong> and <strong>Transparency</strong>. Click any name to see its full card.</p>
 
 <style>
-.map-container { position: relative; width: 100%; max-width: 700px; margin: 2rem auto; }
-.map-container svg { width: 100%; height: auto; }
-.tech-dot { cursor: pointer; transition: transform 0.15s, opacity 0.15s; }
-.tech-dot:hover { transform: scale(1.15); opacity: 0.85; }
-.axis-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #888; }
-.axis-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #555; font-weight: 600; }
-.grid-line { stroke: #e8e8e8; stroke-width: 0.5; }
-.level-bg { fill: #fafafa; stroke: #eee; stroke-width: 0.5; }
-.dot-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 10px; fill: #444; pointer-events: none; }
-.legend-item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 11px; fill: #666; }
+.amap { width: 100%; border-collapse: collapse; margin: 1.5rem 0; table-layout: fixed; }
+.amap th, .amap td { border: 1px solid #e0e0e0; padding: 10px; vertical-align: top; text-align: left; }
+.amap th { background: #f0f0f0; text-align: center; font-size: 0.85em; color: #555; }
+.amap th.corner { background: #fff; border: none; }
+.amap th.row-header { background: #f8f8f8; text-align: right; padding-right: 12px; width: 90px; font-size: 0.8em; }
+.amap td { font-size: 0.82em; line-height: 1.6; min-height: 60px; }
+.amap td.a3t2 { background: #f0faf0; }
+.amap td.a2 { background: #f0f4ff; }
+.amap td.a1 { background: #fff8f0; }
+.amap td.a0 { background: #fff0f0; }
+.amap td.empty { background: #fafafa; color: #ccc; text-align: center; font-style: italic; }
+.amap a { text-decoration: none; color: #1a73e8; }
+.amap a:hover { text-decoration: underline; }
+.tag { display: inline-block; font-size: 0.7em; padding: 1px 5px; border-radius: 3px; margin-left: 3px; vertical-align: middle; }
+.tag-net { background: #e8f0fe; color: #1a56db; }
+.tag-sec { background: #fce8e8; color: #c62828; }
+.tag-sto { background: #e8f5e9; color: #2e7d32; }
+.tag-obs { background: #fff3e0; color: #e65100; }
+.tag-com { background: #f3e8fd; color: #6a1b9a; }
+.tag-app { background: #e0f7fa; color: #00695c; }
+.tag-id { background: #fce4ec; color: #880e4f; }
+.map-legend { margin: 1rem 0; font-size: 0.82em; color: #666; }
+.map-legend span { margin-right: 12px; }
 </style>
 
-<div class="map-container">
-<svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg">
+<table class="amap">
+<tr>
+  <th class="corner"></th>
+  <th>A0<br><span style="font-weight:normal;font-size:0.85em;">Cloud-bound</span></th>
+  <th>A1<br><span style="font-weight:normal;font-size:0.85em;">Dependent</span></th>
+  <th>A2<br><span style="font-weight:normal;font-size:0.85em;">Optional</span></th>
+  <th>A3<br><span style="font-weight:normal;font-size:0.85em;">Autonomous</span></th>
+</tr>
+<tr>
+  <th class="row-header">T2<br>Open source</th>
+  <td class="empty">--</td>
+  <td class="empty">--</td>
+  <td class="empty">--</td>
+  <td class="a3t2">
+    <a href="catalog/wireguard.html">WireGuard</a> <span class="tag tag-net">net</span><br>
+    <a href="catalog/adguard-home.html">AdGuard Home</a> <span class="tag tag-net">net</span><br>
+    <a href="catalog/pi-hole.html">Pi-hole</a> <span class="tag tag-net">net</span><br>
+    <a href="catalog/traefik.html">Traefik</a> <span class="tag tag-net">net</span><br>
+    <a href="catalog/nginx-proxy-manager.html">Nginx Proxy Manager</a> <span class="tag tag-net">net</span><br>
+    <a href="catalog/authentik.html">Authentik</a> <span class="tag tag-id">id</span><br>
+    <a href="catalog/syncthing.html">Syncthing</a> <span class="tag tag-sto">sto</span><br>
+    <a href="catalog/kopia.html">Kopia</a> <span class="tag tag-sto">sto</span><br>
+    <a href="catalog/docker.html">Docker</a> <span class="tag tag-com">com</span><br>
+    <a href="catalog/k3s.html">K3s</a> <span class="tag tag-com">com</span><br>
+    <a href="catalog/vault.html">Vault</a> <span class="tag tag-sec">sec</span><br>
+    <a href="catalog/vaultwarden.html">Vaultwarden</a> <span class="tag tag-sec">sec</span><br>
+    <a href="catalog/keepass.html">KeePass</a> <span class="tag tag-sec">sec</span><br>
+    <a href="catalog/prometheus.html">Prometheus</a> <span class="tag tag-obs">obs</span><br>
+    <a href="catalog/grafana.html">Grafana</a> <span class="tag tag-obs">obs</span><br>
+    <a href="catalog/uptime-kuma.html">Uptime Kuma</a> <span class="tag tag-obs">obs</span><br>
+    <a href="catalog/jellyfin.html">Jellyfin</a> <span class="tag tag-app">app</span><br>
+    <a href="catalog/immich.html">Immich</a> <span class="tag tag-app">app</span><br>
+    <a href="catalog/forgejo.html">Forgejo</a> <span class="tag tag-app">app</span><br>
+    <a href="catalog/paperless-ngx.html">Paperless-ngx</a> <span class="tag tag-app">app</span><br>
+    <a href="catalog/nextcloud.html">Nextcloud</a> <span class="tag tag-app">app</span><br>
+    <a href="catalog/home-assistant.html">Home Assistant</a> <span class="tag tag-app">app</span>
+  </td>
+</tr>
+<tr>
+  <th class="row-header">T1<br>Documented</th>
+  <td class="empty">--</td>
+  <td class="empty">--</td>
+  <td class="a2">
+    <a href="catalog/tailscale.html">Tailscale</a> <span class="tag tag-net">net</span>
+  </td>
+  <td class="empty">--</td>
+</tr>
+<tr>
+  <th class="row-header">T0<br>Closed</th>
+  <td class="a0">
+    <a href="catalog/google-drive.html">Google Drive</a> <span class="tag tag-sto">sto</span><br>
+    <a href="catalog/notion.html">Notion</a> <span class="tag tag-app">app</span>
+  </td>
+  <td class="a1">
+    <a href="catalog/plex.html">Plex</a> <span class="tag tag-app">app</span>
+  </td>
+  <td class="a2">
+    <a href="catalog/obsidian.html">Obsidian</a> <span class="tag tag-app">app</span>
+  </td>
+  <td class="empty">--</td>
+</tr>
+</table>
 
-<!-- Background grid -->
-<rect x="100" y="40" width="150" height="133" class="level-bg" rx="2"/>
-<rect x="250" y="40" width="150" height="133" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-<rect x="400" y="40" width="150" height="133" class="level-bg" rx="2"/>
-<rect x="550" y="40" width="130" height="133" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-
-<rect x="100" y="173" width="150" height="133" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-<rect x="250" y="173" width="150" height="133" class="level-bg" rx="2"/>
-<rect x="400" y="173" width="150" height="133" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-<rect x="550" y="173" width="130" height="133" class="level-bg" rx="2"/>
-
-<rect x="100" y="306" width="150" height="134" class="level-bg" rx="2"/>
-<rect x="250" y="306" width="150" height="134" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-<rect x="400" y="306" width="150" height="134" class="level-bg" rx="2"/>
-<rect x="550" y="306" width="130" height="134" class="level-bg" rx="2" style="fill:#f5f5f5"/>
-
-<!-- Axis labels -->
-<text x="175" y="460" text-anchor="middle" class="axis-label" font-size="13">A0</text>
-<text x="325" y="460" text-anchor="middle" class="axis-label" font-size="13">A1</text>
-<text x="475" y="460" text-anchor="middle" class="axis-label" font-size="13">A2</text>
-<text x="615" y="460" text-anchor="middle" class="axis-label" font-size="13">A3</text>
-
-<text x="175" y="478" text-anchor="middle" class="axis-label" font-size="9">Cloud-bound</text>
-<text x="325" y="478" text-anchor="middle" class="axis-label" font-size="9">Cloud-dependent</text>
-<text x="475" y="478" text-anchor="middle" class="axis-label" font-size="9">Cloud-optional</text>
-<text x="615" y="478" text-anchor="middle" class="axis-label" font-size="9">Fully autonomous</text>
-
-<text x="90" y="375" text-anchor="end" class="axis-label" font-size="13">T0</text>
-<text x="90" y="240" text-anchor="end" class="axis-label" font-size="13">T1</text>
-<text x="90" y="107" text-anchor="end" class="axis-label" font-size="13">T2</text>
-
-<text x="90" y="390" text-anchor="end" class="axis-label" font-size="9">Closed</text>
-<text x="90" y="255" text-anchor="end" class="axis-label" font-size="9">Documented</text>
-<text x="90" y="122" text-anchor="end" class="axis-label" font-size="9">Open source</text>
-
-<!-- Axis titles -->
-<text x="380" y="505" text-anchor="middle" class="axis-title" font-size="14">Autonomy &rarr;</text>
-<text x="25" y="240" text-anchor="middle" class="axis-title" font-size="14" transform="rotate(-90,25,240)">Transparency &rarr;</text>
-
-<!-- === TECHNOLOGIES === -->
-
-<!-- A0 / T0: Cloud-bound, Closed -->
-<a href="catalog/google-drive.html">
-  <circle cx="155" cy="370" r="8" fill="#d32f2f" class="tech-dot"/>
-  <text x="155" y="388" text-anchor="middle" class="dot-label">Google Drive</text>
-</a>
-<a href="catalog/notion.html">
-  <circle cx="200" cy="355" r="8" fill="#d32f2f" class="tech-dot"/>
-  <text x="200" y="345" text-anchor="middle" class="dot-label">Notion</text>
-</a>
-
-<!-- A1 / T0: Cloud-dependent, Closed -->
-<a href="catalog/plex.html">
-  <circle cx="325" cy="370" r="8" fill="#f09000" class="tech-dot"/>
-  <text x="325" y="388" text-anchor="middle" class="dot-label">Plex</text>
-</a>
-
-<!-- A2 / T0: Cloud-optional, Closed -->
-<a href="catalog/obsidian.html">
-  <circle cx="475" cy="370" r="8" fill="#1a73e8" class="tech-dot"/>
-  <text x="475" y="388" text-anchor="middle" class="dot-label">Obsidian</text>
-</a>
-
-<!-- A2 / T1: Cloud-optional, Documented -->
-<a href="catalog/tailscale.html">
-  <circle cx="475" cy="240" r="8" fill="#1a73e8" class="tech-dot"/>
-  <text x="475" y="258" text-anchor="middle" class="dot-label">Tailscale</text>
-</a>
-
-<!-- A3 / T2: Fully autonomous, Open source -->
-<!-- Network -->
-<a href="catalog/wireguard.html">
-  <circle cx="570" cy="60" r="8" fill="#1a8a4a" class="tech-dot"/>
-  <text x="570" y="78" text-anchor="middle" class="dot-label">WireGuard</text>
-</a>
-<a href="catalog/adguard-home.html">
-  <circle cx="620" cy="75" r="8" fill="#1a8a4a" class="tech-dot"/>
-  <text x="620" y="93" text-anchor="middle" class="dot-label">AdGuard Home</text>
-</a>
-<a href="catalog/pi-hole.html">
-  <circle cx="665" cy="60" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="665" y="78" text-anchor="middle" class="dot-label">Pi-hole</text>
-</a>
-<a href="catalog/traefik.html">
-  <circle cx="570" cy="100" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="570" y="118" text-anchor="middle" class="dot-label">Traefik</text>
-</a>
-<a href="catalog/nginx-proxy-manager.html">
-  <circle cx="640" cy="105" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="640" y="123" text-anchor="middle" class="dot-label">NPM</text>
-</a>
-
-<!-- Identity -->
-<a href="catalog/authentik.html">
-  <circle cx="580" cy="135" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="580" y="153" text-anchor="middle" class="dot-label">Authentik</text>
-</a>
-
-<!-- Storage -->
-<a href="catalog/syncthing.html">
-  <circle cx="630" cy="135" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="630" y="153" text-anchor="middle" class="dot-label">Syncthing</text>
-</a>
-<a href="catalog/kopia.html">
-  <circle cx="665" cy="145" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="665" y="163" text-anchor="middle" class="dot-label">Kopia</text>
-</a>
-
-<!-- Compute -->
-<a href="catalog/docker.html">
-  <circle cx="570" cy="155" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="556" y="165" text-anchor="middle" class="dot-label">Docker</text>
-</a>
-<a href="catalog/k3s.html">
-  <circle cx="610" cy="160" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="610" y="172" text-anchor="middle" class="dot-label">K3s</text>
-</a>
-
-<!-- Security -->
-<a href="catalog/vault.html">
-  <circle cx="650" cy="80" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="650" y="72" text-anchor="middle" class="dot-label">Vault</text>
-</a>
-<a href="catalog/vaultwarden.html">
-  <circle cx="590" cy="80" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="590" y="72" text-anchor="middle" class="dot-label">Vaultwarden</text>
-</a>
-<a href="catalog/keepass.html">
-  <circle cx="560" cy="55" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="560" y="48" text-anchor="middle" class="dot-label">KeePass</text>
-</a>
-
-<!-- Observability -->
-<a href="catalog/uptime-kuma.html">
-  <circle cx="580" cy="110" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="565" y="108" text-anchor="middle" class="dot-label">Uptime Kuma</text>
-</a>
-<a href="catalog/prometheus.html">
-  <circle cx="640" cy="55" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="640" y="48" text-anchor="middle" class="dot-label">Prometheus</text>
-</a>
-<a href="catalog/grafana.html">
-  <circle cx="660" cy="120" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="660" y="112" text-anchor="middle" class="dot-label">Grafana</text>
-</a>
-
-<!-- Applications -->
-<a href="catalog/jellyfin.html">
-  <circle cx="600" cy="90" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="600" y="83" text-anchor="middle" class="dot-label">Jellyfin</text>
-</a>
-<a href="catalog/immich.html">
-  <circle cx="560" cy="130" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="546" y="140" text-anchor="middle" class="dot-label">Immich</text>
-</a>
-<a href="catalog/forgejo.html">
-  <circle cx="650" cy="150" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="650" y="143" text-anchor="middle" class="dot-label">Forgejo</text>
-</a>
-<a href="catalog/paperless-ngx.html">
-  <circle cx="580" cy="150" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="580" y="143" text-anchor="middle" class="dot-label">Paperless</text>
-</a>
-<a href="catalog/nextcloud.html">
-  <circle cx="620" cy="160" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="620" y="153" text-anchor="middle" class="dot-label">Nextcloud</text>
-</a>
-<a href="catalog/home-assistant.html">
-  <circle cx="660" cy="165" r="7" fill="#1a8a4a" class="tech-dot"/>
-  <text x="660" y="158" text-anchor="middle" class="dot-label">HA</text>
-</a>
-
-<!-- Legend -->
-<rect x="105" y="490" width="12" height="12" rx="6" fill="#d32f2f"/>
-<text x="122" y="501" class="legend-item">A0 Cloud-bound</text>
-
-<rect x="245" y="490" width="12" height="12" rx="6" fill="#f09000"/>
-<text x="262" y="501" class="legend-item">A1 Dependent</text>
-
-<rect x="375" y="490" width="12" height="12" rx="6" fill="#1a73e8"/>
-<text x="392" y="501" class="legend-item">A2 Optional</text>
-
-<rect x="505" y="490" width="12" height="12" rx="6" fill="#1a8a4a"/>
-<text x="522" y="501" class="legend-item">A3 Autonomous</text>
-
-</svg>
+<div class="map-legend">
+  <strong>Categories:</strong>
+  <span class="tag tag-net">net</span> Network
+  <span class="tag tag-id">id</span> Identity
+  <span class="tag tag-sto">sto</span> Storage
+  <span class="tag tag-com">com</span> Compute
+  <span class="tag tag-sec">sec</span> Security
+  <span class="tag tag-obs">obs</span> Observability
+  <span class="tag tag-app">app</span> Applications
 </div>
 
----
+<hr>
 
-## Reading the map
+<h2>Reading the map</h2>
 
-**Top-right corner (A3/T2)** is the ideal: fully autonomous, fully transparent. Most self-hosted open-source tools cluster here.
+<p><strong>Top-right (A3/T2)</strong> is the ideal: fully autonomous, fully transparent. Most self-hosted open-source tools live here.</p>
 
-**Bottom-left corner (A0/T0)** is the opposite: cloud-bound and closed. Google Drive, Notion.
+<p><strong>Bottom-left (A0/T0)</strong> is the opposite: cloud-bound and closed. Google Drive, Notion.</p>
 
-**The interesting space is in between.** Tailscale (A2/T1) is convenient but depends on a coordination server. Obsidian (A2/T0) stores your data locally but the app itself is closed. Plex (A1/T0) requires cloud authentication for your own media.
+<p><strong>The diagonal tells the story.</strong> Tailscale (A2/T1) trades some autonomy for convenience. Obsidian (A2/T0) keeps your data local but the app is closed. Plex (A1/T0) requires cloud authentication for your own media.</p>
 
-The map makes conscious choice possible. Not every tool needs to be A3/T2. But every choice should be intentional.
+<p>Not every tool needs to be A3/T2. But every choice should be intentional.</p>
 
----
+<hr>
 
-Explore the full [Technology Catalog](catalog/) or [run the audit](audit.html) on your own stack.
+<p>Explore the full <a href="catalog/">Technology Catalog</a> or <a href="audit.html">run the audit</a> on your own stack.</p>
