@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/jellyfin/jellyfin"
 community: "https://github.com/jellyfin/jellyfin/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: []
+critical_criteria: ["Exit"]
 parent: Technology Catalog
 nav_order: 11
 ---

@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/adguard/adguardhome"
 community: "https://github.com/AdguardTeam/AdGuardHome/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: ["minimal-server recipe", "privacy-first-homelab recipe"]
+critical_criteria: ["Pause"]
 parent: Technology Catalog
 nav_order: 2
 ---

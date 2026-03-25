@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/_/nextcloud"
 community: "https://help.nextcloud.com"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker", "postgresql"]
+optional_deps: ["redis"]
+depended_by: []
+critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
 nav_order: 16
 ---

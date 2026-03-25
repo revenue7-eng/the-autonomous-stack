@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/hashicorp/vault"
 community: "https://discuss.hashicorp.com/c/vault/"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: []
+critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
 nav_order: 10
 ---

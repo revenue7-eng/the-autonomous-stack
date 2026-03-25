@@ -11,6 +11,10 @@ docker_image: "-"
 community: "-"
 autonomy_level: "A0"
 transparency_level: "T0"
+depends_on: []
+optional_deps: []
+depended_by: []
+critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
 nav_order: 51
 ---

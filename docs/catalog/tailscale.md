@@ -11,6 +11,10 @@ docker_image: "-"
 community: "https://github.com/tailscale/tailscale/discussions"
 autonomy_level: "A2"
 transparency_level: "T1"
+depends_on: []
+optional_deps: []
+depended_by: []
+critical_criteria: ["Exit"]
 parent: Technology Catalog
 nav_order: 53
 ---

@@ -11,6 +11,10 @@ docker_image: "-"
 community: "https://sourceforge.net/p/keepass/discussion/"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: []
+optional_deps: ["syncthing"]
+depended_by: []
+critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
 nav_order: 1
 ---

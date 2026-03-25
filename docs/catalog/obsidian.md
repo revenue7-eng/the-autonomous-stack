@@ -11,6 +11,10 @@ docker_image: "-"
 community: "https://forum.obsidian.md"
 autonomy_level: "A2"
 transparency_level: "T0"
+depends_on: []
+optional_deps: ["syncthing"]
+depended_by: []
+critical_criteria: ["Exit"]
 parent: Technology Catalog
 nav_order: 54
 ---

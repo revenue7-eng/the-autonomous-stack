@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/_/traefik"
 community: "https://community.traefik.io"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: []
+critical_criteria: ["Pause"]
 parent: Technology Catalog
 nav_order: 20
 ---

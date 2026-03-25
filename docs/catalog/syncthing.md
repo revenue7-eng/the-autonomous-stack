@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/syncthing/syncthing"
 community: "https://forum.syncthing.net"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: ["keepass", "obsidian"]
+critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
 nav_order: 4
 ---

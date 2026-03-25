@@ -11,6 +11,10 @@ docker_image: "-"
 community: "https://github.com/k3s-io/k3s/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: []
+optional_deps: ["docker"]
+depended_by: []
+critical_criteria: ["Recoverability"]
 parent: Technology Catalog
 nav_order: 9
 ---

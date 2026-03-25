@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/jc21/nginx-proxy-manager"
 community: "https://github.com/NginxProxyManager/nginx-proxy-manager/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: []
+critical_criteria: ["Pause"]
 parent: Technology Catalog
 nav_order: 21
 ---

@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/prom/prometheus"
 community: "https://github.com/prometheus/prometheus/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker"]
+optional_deps: []
+depended_by: ["grafana"]
+critical_criteria: ["Recoverability"]
 parent: Technology Catalog
 nav_order: 7
 ---

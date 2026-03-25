@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/goauthentik/authentik"
 community: "https://github.com/goauthentik/authentik/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
+depends_on: ["docker", "postgresql"]
+optional_deps: ["redis"]
+depended_by: []
+critical_criteria: ["Pause", "Exit"]
 parent: Technology Catalog
 nav_order: 3
 ---

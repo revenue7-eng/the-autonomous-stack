@@ -11,6 +11,10 @@ docker_image: "https://hub.docker.com/r/plexinc/pms-docker"
 community: "https://forums.plex.tv"
 autonomy_level: "A1"
 transparency_level: "T0"
+depends_on: []
+optional_deps: []
+depended_by: []
+critical_criteria: ["Exit"]
 parent: Technology Catalog
 nav_order: 52
 ---

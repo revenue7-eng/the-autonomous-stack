@@ -10,6 +10,10 @@ community: "https://github.com/kopia/kopia/discussions"
 status: stable
 title: Kopia
 transparency_level: T2
+depends_on: []
+optional_deps: ["docker"]
+depended_by: []
+critical_criteria: ["Recoverability"]
 parent: Technology Catalog
 nav_order: 5
 ---
