@@ -17,6 +17,9 @@ nav_order: 12
 
 # Forgejo
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. A fork of Gitea.

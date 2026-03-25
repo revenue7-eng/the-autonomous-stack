@@ -17,6 +17,9 @@ nav_order: 54
 
 # Obsidian
 
+> **TAS Score: S2/3 -- D3/5** -- A2 / T0
+
+
 ## Brief Description
 
 Local-first knowledge management app based on plain Markdown files stored on your device. Rich plugin ecosystem. Free for personal use, paid for commercial and sync.

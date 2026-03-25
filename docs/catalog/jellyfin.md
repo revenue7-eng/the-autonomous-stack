@@ -17,6 +17,9 @@ nav_order: 11
 
 # Jellyfin
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 Free software media server that streams your personal media collection without cloud dependencies. A full alternative to Plex/Emby.
 

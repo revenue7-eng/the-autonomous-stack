@@ -17,6 +17,9 @@ nav_order: 2
 
 # AdGuard Home
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Network-wide software for blocking ads, trackers, and malware. Works as a DNS server with filtering and parental control, entirely self‑hosted.

@@ -17,6 +17,9 @@ nav_order: 20
 
 # Traefik
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Modern reverse proxy and load balancer designed for microservices and container environments. Auto-discovers services from Docker, Kubernetes, and other providers. Handles SSL certificates automatically via Let's Encrypt.

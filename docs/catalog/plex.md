@@ -17,6 +17,9 @@ nav_order: 52
 
 # Plex
 
+> **TAS Score: S1/3 -- D2/5** -- A1 / T0
+
+
 ## Brief Description
 
 Media server that organises and streams your personal media collection. Self‑hosted, but requires a Plex account and internet connection for authentication.

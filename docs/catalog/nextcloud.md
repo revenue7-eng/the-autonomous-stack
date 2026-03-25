@@ -17,6 +17,9 @@ nav_order: 16
 
 # Nextcloud
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Self-hosted cloud platform providing file sync, calendar, contacts, email, office documents, video calls, and more -- all under your control. The most comprehensive open-source alternative to Google Workspace and Microsoft 365.

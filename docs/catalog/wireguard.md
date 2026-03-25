@@ -17,6 +17,9 @@ nav_order: 1
 
 # WireGuard
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. Designed for ease of use and minimal attack surface.
 

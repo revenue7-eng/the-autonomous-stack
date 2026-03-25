@@ -17,6 +17,9 @@ nav_order: 13
 
 # Immich
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Self-hosted photo and video backup solution with a focus on user

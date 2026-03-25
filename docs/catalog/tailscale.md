@@ -17,6 +17,9 @@ nav_order: 53
 
 # Tailscale
 
+> **TAS Score: S2/3 -- D3/5** -- A2 / T1
+
+
 ## Brief Description
 
 Mesh VPN built on WireGuard. Zero‑config networking between devices. Uses a central coordination server for key exchange, NAT traversal, and access control — hosted by Tailscale.

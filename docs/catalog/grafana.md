@@ -17,6 +17,9 @@ nav_order: 17
 
 # Grafana
 
+> **TAS Score: S3/3 -- D4/5** -- A3 / T2
+
+
 ## Brief Description
 
 Open-source observability and data visualisation platform. Dashboards for metrics, logs, and traces from Prometheus, InfluxDB, Loki, Elasticsearch, and dozens of other sources. The standard for infrastructure monitoring dashboards.

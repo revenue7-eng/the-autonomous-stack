@@ -17,6 +17,9 @@ nav_order: 6
 
 # Uptime Kuma
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Self-hosted monitoring tool that tracks the availability of websites,

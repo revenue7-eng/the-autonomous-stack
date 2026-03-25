@@ -17,6 +17,9 @@ nav_order: 8
 
 # Docker
 
+> **TAS Score: S3/3 -- D4/5** -- A3 / T2
+
+
 ## Brief Description
 
 Platform for developing, shipping, and running applications in lightweight containers. Works fully offline after images are downloaded.

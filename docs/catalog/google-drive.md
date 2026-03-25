@@ -17,6 +17,9 @@ nav_order: 50
 
 # Google Drive
 
+> **TAS Score: S0/3 -- D1/5** -- A0 / T0
+
+
 ## Brief Description
 
 Cloud file storage and synchronisation service by Google. Integrated with Google Workspace (Docs, Sheets, Slides). Requires a Google account and internet connection.

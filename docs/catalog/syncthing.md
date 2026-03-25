@@ -17,6 +17,9 @@ nav_order: 4
 
 # Syncthing
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Peer‑to‑peer file synchronisation tool that keeps folders in sync across multiple devices — without a central server, without cloud accounts, without trusting a third party.

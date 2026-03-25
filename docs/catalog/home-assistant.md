@@ -17,6 +17,9 @@ nav_order: 18
 
 # Home Assistant
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Open-source home automation platform that puts local control and privacy first. Supports 2000+ integrations for smart home devices -- lights, sensors, locks, cameras, climate -- all managed from a single dashboard without cloud dependencies.

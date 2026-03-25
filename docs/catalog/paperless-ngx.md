@@ -17,6 +17,9 @@ nav_order: 15
 
 # Paperless-ngx
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Document management system that transforms your physical and digital documents into a searchable, organized archive. OCR, tagging, and full‑text search — all self‑hosted.

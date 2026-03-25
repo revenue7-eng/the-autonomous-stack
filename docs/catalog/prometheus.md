@@ -17,6 +17,9 @@ nav_order: 7
 
 # Prometheus
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, alerting, and visualisation.

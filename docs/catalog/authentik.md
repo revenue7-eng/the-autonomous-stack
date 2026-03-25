@@ -17,6 +17,9 @@ nav_order: 3
 
 # Authentik
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Open-source identity provider focused on flexibility and security. Supports SSO, MFA, LDAP, OAuth2, OIDC, and more — all without external dependencies.

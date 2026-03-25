@@ -17,6 +17,9 @@ nav_order: 21
 
 # Nginx Proxy Manager
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 GUI-based reverse proxy built on Nginx. Manage proxy hosts, SSL certificates, redirects, and access lists through a clean web interface -- no manual Nginx config files needed.

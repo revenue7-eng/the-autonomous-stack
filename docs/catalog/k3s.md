@@ -17,6 +17,9 @@ nav_order: 9
 
 # K3s
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. Single binary, low memory footprint, fully offline capable.

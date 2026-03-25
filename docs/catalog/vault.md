@@ -17,6 +17,9 @@ nav_order: 10
 
 # Vault
 
+> **TAS Score: S3/3 -- D3/5** -- A3 / T2
+
+
 ## Brief Description
 
 Secure, encrypted storage for secrets, API keys, certificates, and other sensitive data. Provides fine‑grained access control, auditing, and dynamic secrets.

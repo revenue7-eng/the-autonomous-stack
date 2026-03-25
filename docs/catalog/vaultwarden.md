@@ -17,6 +17,9 @@ nav_order: 19
 
 # Vaultwarden
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Lightweight, self-hosted implementation of the Bitwarden password manager API. Compatible with all official Bitwarden clients (browser, mobile, desktop, CLI) but runs entirely on your hardware with minimal resources.

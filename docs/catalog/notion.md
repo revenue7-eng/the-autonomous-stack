@@ -17,6 +17,9 @@ nav_order: 51
 
 # Notion
 
+> **TAS Score: S0/3 -- D1/5** -- A0 / T0
+
+
 ## Brief Description
 
 All‑in‑one workspace for notes, documents, databases, wikis, and project management. Cloud‑only. Requires an account and internet connection for full functionality.

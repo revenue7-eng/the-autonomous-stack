@@ -17,6 +17,9 @@ nav_order: 22
 
 # Pi-hole
 
+> **TAS Score: S3/3 -- D5/5** -- A3 / T2
+
+
 ## Brief Description
 
 Network-wide ad blocker and DNS sinkhole. Blocks ads, trackers, and malware at the DNS level for every device on your network -- without installing anything on individual devices.
