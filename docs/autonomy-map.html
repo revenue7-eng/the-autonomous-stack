@@ -1,31 +1,31 @@
 ---
 layout: default
-title: "Autonomy Map"
+title: "Catalog Index"
 nav_order: 6
 ---
 {% raw %}
 <div style="padding:1rem 0;font-family:var(--font-sans);">
 
-<p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6;">
-Every technology in the catalog — by category, autonomy level, transparency, and trajectory. Click any card to open its full assessment.
+<p style="font-size:14px;color:#666;line-height:1.65;margin-bottom:1.5rem;max-width:640px;">
+Every technology in the catalog — by category, autonomy, transparency, and trajectory. Click any card to preview. Use filters to narrow down.
 </p>
 
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.25rem;">
-  <select id="trajF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+  <select id="trajF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ddd;">
     <option value="all">All trajectories</option>
     <option value="opening">Opening</option>
     <option value="stable">Stable</option>
     <option value="mixed">Mixed</option>
     <option value="closing">Closing</option>
   </select>
-  <select id="aF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+  <select id="aF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ddd;">
     <option value="all">Autonomy: all</option>
     <option value="3">A3</option>
     <option value="2">A2</option>
     <option value="1">A1</option>
     <option value="0">A0</option>
   </select>
-  <select id="tF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333;">
+  <select id="tF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ddd;">
     <option value="all">Transparency: all</option>
     <option value="2">T2</option>
     <option value="1">T1</option>
@@ -33,7 +33,7 @@ Every technology in the catalog — by category, autonomy level, transparency, a
   </select>
 </div>
 
-<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#666;">
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#888;">
   <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening</span>
   <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable</span>
   <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed</span>
@@ -41,37 +41,45 @@ Every technology in the catalog — by category, autonomy level, transparency, a
 </div>
 
 <div id="board"></div>
+
+<!-- Modal overlay -->
+<div id="overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;">
+  <div id="modal" style="background:#fff;border-radius:12px;border:1px solid #e0e0e0;padding:28px 32px;max-width:480px;width:90%;position:relative;">
+    <button id="closeBtn" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
 </div>
 
 <script>
 const CARDS=[
-  {name:'WireGuard',a:3,t:2,cat:'Network',traj:'stable',url:'wireguard'},
-  {name:'AdGuard Home',a:3,t:2,cat:'Network',traj:'stable',url:'adguard-home'},
-  {name:'Pi-hole',a:3,t:2,cat:'Network',traj:'stable',url:'pi-hole'},
-  {name:'Nginx Proxy Manager',a:3,t:2,cat:'Network',traj:'stable',url:'nginx-proxy-manager'},
-  {name:'Traefik',a:3,t:2,cat:'Network',traj:'mixed',url:'traefik'},
-  {name:'Tailscale',a:2,t:1,cat:'Network',traj:'mixed',url:'tailscale'},
-  {name:'Syncthing',a:3,t:2,cat:'Storage',traj:'stable',url:'syncthing'},
-  {name:'Nextcloud',a:3,t:2,cat:'Storage',traj:'stable',url:'nextcloud'},
-  {name:'Kopia',a:3,t:2,cat:'Storage',traj:'mixed',url:'kopia'},
-  {name:'Google Drive',a:0,t:0,cat:'Storage',traj:'closing',url:'google-drive'},
-  {name:'Vaultwarden',a:3,t:2,cat:'Security',traj:'stable',url:'vaultwarden'},
-  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass'},
-  {name:'Authentik',a:3,t:2,cat:'Security',traj:'stable',url:'authentik'},
-  {name:'Vault',a:3,t:1,cat:'Security',traj:'closing',url:'vault'},
-  {name:'Prometheus',a:3,t:2,cat:'Observability',traj:'opening',url:'prometheus'},
-  {name:'Grafana',a:3,t:2,cat:'Observability',traj:'mixed',url:'grafana'},
-  {name:'Uptime Kuma',a:3,t:2,cat:'Observability',traj:'stable',url:'uptime-kuma'},
-  {name:'Jellyfin',a:3,t:2,cat:'Applications',traj:'opening',url:'jellyfin'},
-  {name:'Forgejo',a:3,t:2,cat:'Applications',traj:'opening',url:'forgejo'},
-  {name:'Immich',a:3,t:2,cat:'Applications',traj:'stable',url:'immich'},
-  {name:'Paperless-ngx',a:3,t:2,cat:'Applications',traj:'opening',url:'paperless-ngx'},
-  {name:'Home Assistant',a:3,t:2,cat:'Applications',traj:'opening',url:'home-assistant'},
-  {name:'Obsidian',a:2,t:0,cat:'Applications',traj:'mixed',url:'obsidian'},
-  {name:'Notion',a:0,t:0,cat:'Applications',traj:'closing',url:'notion'},
-  {name:'Plex',a:1,t:0,cat:'Applications',traj:'closing',url:'plex'},
-  {name:'Docker',a:3,t:2,cat:'Compute',traj:'mixed',url:'docker'},
-  {name:'K3s',a:3,t:2,cat:'Compute',traj:'stable',url:'k3s'},
+  {name:'WireGuard',     a:3,t:2,cat:'Network',      traj:'stable',  url:'wireguard',           desc:'Kernel-level VPN protocol. No accounts, no cloud, no overhead.'},
+  {name:'AdGuard Home',  a:3,t:2,cat:'Network',      traj:'stable',  url:'adguard-home',        desc:'Network-wide DNS filtering and ad blocking. Self-hosted, no cloud required.'},
+  {name:'Pi-hole',       a:3,t:2,cat:'Network',      traj:'stable',  url:'pi-hole',             desc:'DNS sinkhole for network-wide ad and tracker blocking.'},
+  {name:'Nginx PM',      a:3,t:2,cat:'Network',      traj:'stable',  url:'nginx-proxy-manager', desc:'Reverse proxy with a web GUI. Manages SSL certificates automatically.'},
+  {name:'Traefik',       a:3,t:2,cat:'Network',      traj:'mixed',   url:'traefik',             desc:'Cloud-native reverse proxy with automatic service discovery.'},
+  {name:'Tailscale',     a:2,t:1,cat:'Network',      traj:'mixed',   url:'tailscale',           desc:'Mesh VPN built on WireGuard. Coordination server is proprietary.'},
+  {name:'Syncthing',     a:3,t:2,cat:'Storage',      traj:'stable',  url:'syncthing',           desc:'P2P file synchronization. No cloud, no central server required.'},
+  {name:'Nextcloud',     a:3,t:2,cat:'Storage',      traj:'stable',  url:'nextcloud',           desc:'Self-hosted cloud platform: files, calendar, contacts, collaboration.'},
+  {name:'Kopia',         a:3,t:2,cat:'Storage',      traj:'mixed',   url:'kopia',               desc:'Fast encrypted backups with deduplication. Acquired by Veeam in 2022.'},
+  {name:'Google Drive',  a:0,t:0,cat:'Storage',      traj:'closing', url:'google-drive',        desc:'Cloud file storage. Fully proprietary, no self-hosting path.'},
+  {name:'Vaultwarden',   a:3,t:2,cat:'Security',     traj:'stable',  url:'vaultwarden',         desc:'Unofficial Bitwarden-compatible server. MIT license, self-hosted only.'},
+  {name:'KeePass',       a:3,t:2,cat:'Security',     traj:'stable',  url:'keepass',             desc:'Local password manager. GPL-2.0, no cloud component, since 2003.'},
+  {name:'Authentik',     a:3,t:2,cat:'Security',     traj:'stable',  url:'authentik',           desc:'Self-hosted identity provider and SSO. MIT core license.'},
+  {name:'Vault',         a:3,t:1,cat:'Security',     traj:'closing', url:'vault',               desc:'Secrets management. License changed from MPL-2.0 to BSL in 2023.'},
+  {name:'Prometheus',    a:3,t:2,cat:'Observability',traj:'opening', url:'prometheus',          desc:'CNCF graduated metrics system. Apache-2.0, community governed.'},
+  {name:'Grafana',       a:3,t:2,cat:'Observability',traj:'mixed',   url:'grafana',             desc:'Dashboards and alerting. License changed to AGPL-3.0 in 2021.'},
+  {name:'Uptime Kuma',   a:3,t:2,cat:'Observability',traj:'stable',  url:'uptime-kuma',         desc:'Self-hosted monitoring dashboard. MIT license, no cloud component.'},
+  {name:'Jellyfin',      a:3,t:2,cat:'Applications', traj:'opening', url:'jellyfin',            desc:'Community fork of Emby after it went closed-source. GPL-2.0.'},
+  {name:'Forgejo',       a:3,t:2,cat:'Applications', traj:'opening', url:'forgejo',             desc:'Community fork of Gitea. Governed by Codeberg e.V. non-profit.'},
+  {name:'Immich',        a:3,t:2,cat:'Applications', traj:'stable',  url:'immich',              desc:'Self-hosted photo and video backup. AGPL-3.0, self-hosting first.'},
+  {name:'Paperless-ngx', a:3,t:2,cat:'Applications', traj:'opening', url:'paperless-ngx',       desc:'Community fork of paperless-ng. Document management, GPL-3.0.'},
+  {name:'Home Assistant',a:3,t:2,cat:'Applications', traj:'opening', url:'home-assistant',      desc:'Local-first smart home automation. Open Home Foundation governed.'},
+  {name:'Obsidian',      a:2,t:0,cat:'Applications', traj:'mixed',   url:'obsidian',            desc:'Local Markdown notes. Proprietary app, but files are yours.'},
+  {name:'Notion',        a:0,t:0,cat:'Applications', traj:'closing', url:'notion',              desc:'Cloud-only workspace. Fully proprietary, no self-hosting path.'},
+  {name:'Plex',          a:1,t:0,cat:'Applications', traj:'closing', url:'plex',                desc:'Media server moving toward platform. Authentication requires Plex servers.'},
+  {name:'Docker',        a:3,t:2,cat:'Compute',      traj:'mixed',   url:'docker',              desc:'Container runtime. Engine is Apache-2.0; Desktop requires paid license for large orgs.'},
+  {name:'K3s',           a:3,t:2,cat:'Compute',      traj:'stable',  url:'k3s',                 desc:'Lightweight Kubernetes. CNCF project, Apache-2.0, edge-first.'},
 ];
 
 const TC={opening:'#22c55e',stable:'#3b82f6',mixed:'#f59e0b',closing:'#ef4444'};
@@ -102,16 +110,15 @@ function render(){
     } else {
       cards.forEach(c=>{
         const chip=document.createElement('div');
-        chip.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:3px 9px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:opacity .15s;';
+        chip.style.cssText='display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:3px 9px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all .15s;';
         chip.style.background=TC_BG[c.traj];
         chip.style.border='1px solid '+TC[c.traj]+'55';
         chip.style.color=TC[c.traj];
         const nonStd=!(c.a===3&&c.t===2);
         chip.innerHTML=c.name+(nonStd?` <span style="font-size:10px;opacity:.7;font-weight:500;">A${c.a}/T${c.t}</span>`:'');
-        chip.title=c.traj+' · A'+c.a+'/T'+c.t+' · click to open';
-        chip.onmouseenter=()=>{chip.style.opacity='.7';};
-        chip.onmouseleave=()=>{chip.style.opacity='1';};
-        chip.onclick=()=>window.open(BASE+c.url+'.html','_blank');
+        chip.onmouseenter=()=>{chip.style.opacity='.75';chip.style.transform='translateY(-1px)';};
+        chip.onmouseleave=()=>{chip.style.opacity='1';chip.style.transform='none';};
+        chip.onclick=()=>showModal(c);
         body.appendChild(chip);
       });
     }
@@ -120,6 +127,27 @@ function render(){
     board.appendChild(lane);
   });
 }
+
+function showModal(c){
+  document.getElementById('modalContent').innerHTML=`
+    <div style="margin-bottom:16px;">
+      <div style="font-size:19px;font-weight:500;color:#111;margin-bottom:6px;">${c.name}</div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:12px;font-weight:600;color:${TC[c.traj]};background:${TC_BG[c.traj]};padding:2px 8px;border-radius:12px;border:1px solid ${TC[c.traj]}44;">${c.traj}</span>
+        <span style="font-size:12px;color:#888;">${c.cat}</span>
+        <span style="font-size:12px;color:#888;">A${c.a} / T${c.t}</span>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#555;line-height:1.65;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid #eee;">${c.desc}</p>
+    <a href="${BASE}${c.url}.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:9px 18px;text-decoration:none;">Open full card →</a>
+  `;
+  document.getElementById('overlay').style.display='flex';
+}
+
+document.getElementById('closeBtn').onclick=()=>{document.getElementById('overlay').style.display='none';};
+document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')document.getElementById('overlay').style.display='none';};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
+
 ['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
 render();
 </script>
