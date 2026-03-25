@@ -1,9 +1,13 @@
 ---
-layout: default
-title: "The TAS Test"
-nav_order: 99
+layout: null
 ---
-{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TAS Test — Does your infrastructure pass?</title>
+<link rel="icon" href="/the-autonomous-stack/favicon.ico" type="image/x-icon">
 <style>
 /* Scope dark theme to our block only */
 .page-content { padding: 0 !important; }
@@ -302,7 +306,8 @@ input:focus { border-color: var(--green); }
   .links { gap: 14px; }
 }
 </style>
-
+</head>
+<body style="margin:0;padding:0;background:#0d0d0d;">
 <div class="wrap">
   <div class="logo"><span>TAS</span> · The Autonomous Stack</div>
   <h1>Does your infrastructure pass the test?</h1>
@@ -545,4 +550,5 @@ function reset() {
 }
 document.getElementById('svc').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
 </script>
-{% endraw %}
+</body>
+</html>
