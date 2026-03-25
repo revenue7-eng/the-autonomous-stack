@@ -176,6 +176,44 @@ Pause and resume scripts are included in [`code/minimal-server/scripts/`](../../
 
 This implements the **Pause** principle: you can stop the entire stack at any time and resume without loss.
 
+
+---
+
+## Failure Modes
+
+What breaks, how badly, and how to recover.
+
+| Component | Failure scenario | Impact | Recovery |
+|-----------|-----------------|--------|----------|
+| **Docker** | Daemon crash or failed start | All containerised services down | `sudo systemctl restart docker`, then `docker compose up -d` |
+| **WireGuard** | Key mismatch after OS update | Remote access lost | Requires local/physical access — regenerate peer config, restart with `systemctl restart wg-quick@wg0` |
+| **AdGuard Home** | Service down or misconfigured DNS | DNS resolution fails for all network devices | Set device DNS to `1.1.1.1` temporarily; fix AdGuard config and restart container |
+| **Authentik** | PostgreSQL database corruption | SSO login fails — all SSO-protected services inaccessible | Restore Authentik DB from Kopia backup; or access services directly via IP:PORT |
+| **Syncthing** | Conflict storm on large folder | Files duplicated with conflict copies | Pause sync, resolve conflicts in Syncthing UI, resume |
+| **Kopia** | Backup repository corruption | Snapshots unreadable | Run `kopia repository validate-cache`; restore from last valid snapshot |
+| **Uptime Kuma** | Service down | No monitoring alerts | Non-critical — restart container; all other services unaffected |
+| **Jellyfin** | Database corruption | Library metadata lost; playback still works | Delete Jellyfin DB, rescan library — metadata regenerates automatically |
+| **Forgejo** | Data volume failure | Git repositories inaccessible | Restore `/opt/autonomous-stack/data/forgejo` from Kopia backup |
+
+**Blast radius note:** AdGuard Home and Authentik have the highest impact. AdGuard failure breaks DNS for the whole network. Authentik failure locks SSO-protected services. Verify these two first after any system restart.
+
+**Quick recovery commands:**
+
+```bash
+# Restart a single failed service
+docker compose restart <service-name>
+
+# Check logs
+docker compose logs --tail=50 <service-name>
+
+# Full stack restart
+docker compose down && docker compose up -d
+
+# Restore from Kopia snapshot
+sudo kopia snapshot list
+sudo kopia restore <snapshot-id> /opt/autonomous-stack-restored
+```
+
 ### 8. Verification
 
 

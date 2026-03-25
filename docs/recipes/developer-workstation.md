@@ -326,6 +326,57 @@ Your daily workflow now looks like this:
 
 ---
 
+
+---
+
+## Failure Modes
+
+What breaks, how badly, and how to recover.
+
+| Component | Failure scenario | Impact | Recovery |
+|-----------|-----------------|--------|----------|
+| **Traefik** | Config syntax error or volume permission issue | All services unreachable via domain | Access directly via `http://server-ip:PORT` while fixing Traefik config; check logs with `docker compose logs traefik` |
+| **Forgejo** | Data volume failure | All Git repositories and CI/CD history inaccessible | Restore `/opt/devstack/data/forgejo` from Kopia backup; Git repos are standard bare repos and can be re-pushed if backup fails |
+| **Forgejo Actions runner** | Runner offline | CI/CD pipelines queue but don't run | Restart runner container; pipelines resume automatically |
+| **Vaultwarden** | Service down | Developer credentials temporarily inaccessible | Restart container; data persists on volume. If volume corrupt: restore from Kopia backup |
+| **Container Registry** | Service down or volume failure | `docker push/pull` fails; existing images on disk are intact | Restart registry container; images in `/opt/devstack/data/registry` survive restarts |
+| **Syncthing** | Conflict on dotfiles | Dotfiles duplicated with conflict copies | Pause sync, resolve via Syncthing UI, resume; no data loss |
+| **Prometheus** | Data volume full | Metrics collection stops; dashboards show gaps | Prune old data: `docker compose exec prometheus promtool tsdb list`; or reduce retention in prometheus.yml |
+| **Grafana** | Database corruption | Dashboards inaccessible | Dashboards are JSON — export regularly. Restore from Kopia backup or re-import dashboard JSON files |
+| **WireGuard** | Key rotation failure after server rebuild | Remote dev access lost | Regenerate server keys, redistribute peer configs; keep an SSH fallback |
+| **Kopia** | Repository locked (crash during backup) | Subsequent backups fail | `sudo kopia repository unlock`; run `sudo kopia maintenance run` |
+
+**Highest-impact failures:** Forgejo data loss = losing Git history. Vaultwarden failure = losing API keys and credentials. Both must have tested backup restore paths before you rely on this stack in production.
+
+**Forgejo backup verification:**
+
+```bash
+# Verify Forgejo backup is restorable
+sudo kopia snapshot list | grep forgejo
+sudo kopia restore <snapshot-id> /tmp/forgejo-test
+ls /tmp/forgejo-test/data/forgejo/repositories/
+# You should see your repository directories
+```
+
+**Quick recovery commands:**
+
+```bash
+# Restart any failed service
+docker compose restart <service-name>
+
+# View recent logs
+docker compose logs --tail=100 <service-name>
+
+# Check all container statuses
+docker compose ps -a
+
+# Pause entire stack safely
+docker compose stop
+
+# Emergency rollback to previous image
+docker compose pull <service>  # pulls latest; specify tag to pin version
+```
+
 ## Verification
 
 **Pause.** `docker compose stop`. All services halt. Code stays in Forgejo data directory. Secrets stay encrypted. Resume with `docker compose start`.

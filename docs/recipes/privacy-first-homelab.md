@@ -299,6 +299,53 @@ docker compose start
 
 ---
 
+
+---
+
+## Failure Modes
+
+What breaks, how badly, and how to recover.
+
+| Component | Failure scenario | Impact | Recovery |
+|-----------|-----------------|--------|----------|
+| **Pi-hole** | Service down | DNS resolution fails for every device using the server as DNS | Set router DNS back to ISP temporarily, or set `1.1.1.1` on individual devices; restart Pi-hole container |
+| **Nginx Proxy Manager** | Config error or service crash | All services unreachable via domain names (HTTPS) | Access services directly via `http://server-ip:PORT` while fixing NPM config |
+| **Vaultwarden** | Data volume failure | All passwords inaccessible | This is the highest-severity failure in this stack. Restore `/opt/homelab/data/vaultwarden` from Kopia backup immediately. **Test this restore path before you need it.** |
+| **Nextcloud + PostgreSQL** | PostgreSQL crash | Nextcloud unavailable; files on disk are intact | Restart `nextcloud-db` container; if corrupt, restore DB from Kopia backup. Files in `/opt/homelab/data/nextcloud` remain accessible directly. |
+| **Syncthing** | Device goes offline | Sync pauses until device reconnects — no data loss | No action needed; sync resumes automatically on reconnect |
+| **Home Assistant** | Config error after update | Automation and device control unavailable | Roll back: `docker compose pull homeassistant` to previous tag; or restore config from Kopia backup |
+| **Kopia** | Backup drive unmounted | Backups silently fail | Add a Kopia health check to Uptime Kuma: monitor the cron log or set up `kopia maintenance run` with alerting |
+| **WireGuard** | Firewall rule change blocks UDP 51820 | Remote access lost | Requires local access to fix firewall; or keep an SSH fallback port open |
+| **Uptime Kuma** | Service down | No monitoring alerts | Not critical — all other services continue; restart container |
+
+**Cascade risk:** Pi-hole → Nginx Proxy Manager → all services. If Pi-hole fails, domain-based access via NPM also breaks (DNS doesn't resolve the domain). Direct IP:PORT access is always your fallback.
+
+**Vaultwarden is your most critical service.** All your passwords live there. Verify the backup restore path:
+
+```bash
+# Test Vaultwarden backup restore
+sudo kopia snapshot list | grep vaultwarden
+sudo kopia restore <snapshot-id> /tmp/vaultwarden-test
+ls /tmp/vaultwarden-test/data/vaultwarden/
+# You should see: db.sqlite3, attachments/, config.json
+```
+
+**Quick recovery commands:**
+
+```bash
+# Restart any failed service
+docker compose restart <service-name>
+
+# View recent logs
+docker compose logs --tail=100 <service-name>
+
+# Check all container statuses
+docker compose ps
+
+# Emergency: stop everything safely
+docker compose stop
+```
+
 ## Verification
 
 Run through the three structural criteria:
