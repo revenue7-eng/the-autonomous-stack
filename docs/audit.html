@@ -6,17 +6,17 @@ nav_order: 4
 
 # Run the Audit
 
-← <a href="how-to-choose.html">Back to Infrastructure Audit framework</a>
+<a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a>
 
-<p style="margin-top:1rem;color:#555;">Pick a tool from the catalog or enter any service. Answer eight questions — your autonomy level appears instantly. If the tool is in our catalog, we'll show our rating alongside yours.</p>
+<p style="margin-top:1rem;color:#555;">Pick a tool from the catalog or enter any service. Answer eight questions -- your autonomy level appears instantly. If the tool is in our catalog, we'll show our rating alongside yours.</p>
 
 <hr>
 
 <div style="margin-bottom:1.2rem;">
   <label for="tool-select"><strong>Is it in our catalog?</strong></label><br>
   <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:400px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
-    <option value="">— Select from catalog —</option>
-    <option value="">── or type below ──</option>
+    <option value="">-- Select from catalog --</option>
+    <option value="">---- or type below ----</option>
     <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
     <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
     <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
@@ -27,7 +27,6 @@ nav_order: 4
     <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
     <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
     <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
-    <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
     <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
     <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
     <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
@@ -76,74 +75,76 @@ nav_order: 4
 
   <div id="suggest-box" style="display:none;padding:1rem;background:#fff8e1;border-left:4px solid #f09000;border-radius:4px;margin-bottom:1rem;">
     <strong>Not in the catalog yet</strong>
-    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Submit it for review — we'll evaluate it and add a card if it fits.</p>
+    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Submit it for review -- we'll evaluate it and add a card if it fits.</p>
     <a id="suggest-link" href="" target="_blank"
       style="display:inline-block;padding:6px 14px;background:#f09000;color:white;border-radius:4px;text-decoration:none;font-size:0.9em;">
-      Submit for catalog →
+      Submit for catalog &rarr;
     </a>
   </div>
 
 </div>
 
 <script>
-const questions = [
-  { id:'pause',        label:'1. Pause',                  q:'Can you stop this service right now — and nothing breaks permanently?',     structural:true  },
+var questions = [
+  { id:'pause',        label:'1. Pause',                  q:'Can you stop this service right now -- and nothing breaks permanently?',     structural:true  },
   { id:'exit',         label:'2. Exit',                   q:'Can you leave this service and take everything with you?',                  structural:true  },
   { id:'recovery',     label:'3. Recoverability',         q:'If something goes wrong, can you go back?',                                structural:true  },
-  { id:'personal',     label:'4. Personalisation',        q:'Does this service collect data about you to shape your experience?',       structural:false },
-  { id:'urgency',      label:'5. Urgency',                q:"Does this service pressure you to act before you're ready?",              structural:false },
-  { id:'hidden',       label:'6. Hidden cost',            q:'What do you pay besides money? (attention, data, lock-in)',                structural:false },
-  { id:'transparency', label:'7. Transparency fragility', q:'Would you still use it if you saw everything about how it works?',        structural:false },
-  { id:'trajectory',   label:'8. Trajectory',             q:'Is this project moving toward openness — or away from it?',              structural:false },
+  { id:'personal',     label:'4. Personalisation',        q:'Does this service collect data about you to shape your experience?',        structural:false },
+  { id:'urgency',      label:'5. Urgency',                q:'Does this service pressure you to act before you are ready?',               structural:false },
+  { id:'hidden',       label:'6. Hidden cost',            q:'What do you pay besides money? (attention, data, lock-in)',                 structural:false },
+  { id:'transparency', label:'7. Transparency fragility', q:'Would you still use it if you saw everything about how it works?',         structural:false },
+  { id:'trajectory',   label:'8. Trajectory',             q:'Is this project moving toward openness -- or away from it?',                structural:false }
 ];
 
-const levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
-const levelMeaning = {
-  A3:'Fully autonomous — you control it completely',
-  A2:'Mostly autonomous — minor dependencies remain',
-  A1:'Partial dependency — significant cloud or vendor reliance',
-  A0:'Cloud-bound — you are renting, not owning'
+var levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
+var levelMeaning = {
+  A3:'Fully autonomous -- you control it completely',
+  A2:'Mostly autonomous -- minor dependencies remain',
+  A1:'Partial dependency -- significant cloud or vendor reliance',
+  A0:'Cloud-bound -- you are renting, not owning'
 };
 
-let selectedSlug = '';
-let selectedTasAutonomy = '';
-let selectedTasTransparency = '';
+var selectedSlug = '';
+var selectedTasAutonomy = '';
+var selectedTasTransparency = '';
 
 function renderQuestions() {
-  const c = document.getElementById('questions');
-  c.innerHTML = questions.map(q => `
-    <div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-      <div style="font-weight:bold;margin-bottom:4px;">
-        ${q.label}
-        ${q.structural ? '<span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span>' : ''}
-      </div>
-      <div style="margin-bottom:8px;color:#444;">${q.q}</div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        ${['yes','partial','no','unknown'].map(v =>
-          `<label style="cursor:pointer;"><input type="radio" name="${q.id}" value="${v}" onchange="updateResult()"> ${v.charAt(0).toUpperCase()+v.slice(1)}</label>`
-        ).join('')}
-      </div>
-    </div>
-  `).join('');
+  var c = document.getElementById('questions');
+  var html = '';
+  for (var i = 0; i < questions.length; i++) {
+    var q = questions[i];
+    var tag = q.structural ? '<span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span>' : '';
+    html += '<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">';
+    html += '<div style="font-weight:bold;margin-bottom:4px;">' + q.label + tag + '</div>';
+    html += '<div style="margin-bottom:8px;color:#444;">' + q.q + '</div>';
+    html += '<div style="display:flex;gap:16px;flex-wrap:wrap;">';
+    var vals = ['yes','partial','no','unknown'];
+    for (var j = 0; j < vals.length; j++) {
+      var v = vals[j];
+      html += '<label style="cursor:pointer;"><input type="radio" name="' + q.id + '" value="' + v + '" onchange="updateResult()"> ' + v.charAt(0).toUpperCase() + v.slice(1) + '</label>';
+    }
+    html += '</div></div>';
+  }
+  c.innerHTML = html;
 }
 
 function getServiceName() {
-  const sel = document.getElementById('tool-select');
-  const txt = document.getElementById('service-name').value.trim();
-  if (sel.value && sel.options[sel.selectedIndex].text !== '— Select from catalog —') {
+  var sel = document.getElementById('tool-select');
+  var txt = document.getElementById('service-name').value.trim();
+  if (sel.value && sel.selectedIndex > 1) {
     return sel.options[sel.selectedIndex].text;
   }
   return txt || 'this service';
 }
 
 function onSelectTool() {
-  const sel = document.getElementById('tool-select');
-  const opt = sel.options[sel.selectedIndex];
+  var sel = document.getElementById('tool-select');
+  var opt = sel.options[sel.selectedIndex];
   if (opt.value) {
     document.getElementById('service-name').value = '';
     selectedSlug = opt.value;
-    selectedTasAutonomy = opt.dataset.autonomy || '';
-    selectedTasTransparency = opt.dataset.transparency || '';
+    selectedTasAutonomy = opt.getAttribute('data-autonomy') || '';
+    selectedTasTransparency = opt.getAttribute('data-transparency') || '';
   } else {
     selectedSlug = '';
     selectedTasAutonomy = '';
@@ -161,59 +162,61 @@ function onTypeName() {
 }
 
 function updateResult() {
-  let structural = [];
-  let answered = 0;
+  var structural = [];
+  var answered = 0;
 
-  questions.forEach(q => {
-    const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+  for (var i = 0; i < questions.length; i++) {
+    var q = questions[i];
+    var sel = document.querySelector('input[name="' + q.id + '"]:checked');
     if (sel) {
       answered++;
       if (q.structural) structural.push(sel.value);
     } else {
       if (q.structural) structural.push(null);
     }
-  });
+  }
 
   if (answered === 0) {
     document.getElementById('audit-result').style.display = 'none';
     return;
   }
 
-  const yes = structural.filter(a => a === 'yes').length;
-  const level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
+  var yes = 0;
+  for (var i = 0; i < structural.length; i++) {
+    if (structural[i] === 'yes') yes++;
+  }
+  var level = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
 
   document.getElementById('audit-result').style.display = 'block';
   document.getElementById('user-level').innerHTML =
-    `<span style="color:${levelColors[level]}">${level}</span>`;
+    '<span style="color:' + levelColors[level] + '">' + level + '</span>';
   document.getElementById('user-detail').textContent = levelMeaning[level];
 
-  // TAS comparison
   if (selectedSlug && selectedTasAutonomy) {
-    const tasLevel = selectedTasAutonomy;
-    const comp = document.getElementById('tas-comparison');
+    var tasLevel = selectedTasAutonomy;
+    var comp = document.getElementById('tas-comparison');
     comp.style.display = 'block';
     document.getElementById('tas-level').innerHTML =
-      `<span style="color:${levelColors[tasLevel]}">${tasLevel} / ${selectedTasTransparency}</span>`;
+      '<span style="color:' + levelColors[tasLevel] + '">' + tasLevel + ' / ' + selectedTasTransparency + '</span>';
 
-    let commentary = '';
+    var commentary = '';
     if (tasLevel === level) {
       commentary = 'Your assessment matches our catalog rating.';
     } else {
-      commentary = `Your assessment differs from ours (${level} vs ${tasLevel}). The difference may reflect your specific setup or use case.`;
+      commentary = 'Your assessment differs from ours (' + level + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
     }
     document.getElementById('tas-detail').innerHTML =
-      `${commentary} <a href="${selectedSlug}.html" style="color:#1a73e8;">Read our full analysis →</a>`;
+      commentary + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
 
     document.getElementById('suggest-box').style.display = 'none';
   } else {
     document.getElementById('tas-comparison').style.display = 'none';
 
-    // Show suggest box for unknown tools
-    const name = getServiceName();
+    var name = getServiceName();
     if (name && name !== 'this service') {
-      const issueTitle = encodeURIComponent(`Catalog request: ${name}`);
-      const issueBody = encodeURIComponent(`## Tool submission\n\n**Name:** ${name}\n**My assessment:** ${answered > 0 ? document.getElementById('user-level').textContent : '—'}\n\n**Why it should be in the catalog:**\n\n**Link:**`);
-      const issueUrl = `https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=${issueTitle}&body=${issueBody}&labels=catalog-request`;
+      var issueTitle = encodeURIComponent('Catalog request: ' + name);
+      var issueBody = encodeURIComponent('## Tool submission\n\n**Name:** ' + name + '\n**My assessment:** ' + level + '\n\n**Why it should be in the catalog:**\n\n**Link:**');
+      var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + issueTitle + '&body=' + issueBody + '&labels=catalog-request';
       document.getElementById('suggest-link').href = issueUrl;
       document.getElementById('suggest-box').style.display = 'block';
     } else {
@@ -225,7 +228,8 @@ function updateResult() {
 function resetAudit() {
   document.getElementById('tool-select').value = '';
   document.getElementById('service-name').value = '';
-  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  var radios = document.querySelectorAll('input[type=radio]');
+  for (var i = 0; i < radios.length; i++) radios[i].checked = false;
   document.getElementById('audit-result').style.display = 'none';
   selectedSlug = '';
   selectedTasAutonomy = '';
