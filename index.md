@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Home"
 layout: home
 nav_order: 1
@@ -11,6 +11,8 @@ nav_order: 1
 If your system requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
 
+**→ [Does your infrastructure pass the TAS test?](docs/test.html)** — 30 seconds, no account needed.
+
 ---
 
 ## Start here
@@ -20,12 +22,6 @@ If it can't be stopped, exited, or recovered --- you're renting, not owning.
 → [Technology Catalog](docs/catalog/) --- choose a tool. 20+ technologies rated A0--A3.
 
 → [Minimal Autonomous Server](docs/recipes/minimal-server.md) --- build from scratch. VPN, DNS, auth, sync, backups, monitoring, media, Git.
-```bash
-cd code/minimal-server
-cp .env.example .env
-# Edit .env with your secrets
-docker compose up -d
-```
 
 ---
 
