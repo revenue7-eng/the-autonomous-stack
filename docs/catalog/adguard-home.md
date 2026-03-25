@@ -22,6 +22,7 @@ nav_order: 2
 # AdGuard Home
 
 > **TAS Score: S3/3 -- D5/5** -- A3 / T2
+> **Critical criteria for this category:** Pause.
 
 
 ## Brief Description

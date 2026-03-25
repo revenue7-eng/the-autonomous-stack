@@ -22,6 +22,7 @@ nav_order: 4
 # Syncthing
 
 > **TAS Score: S3/3 -- D5/5** -- A3 / T2
+> **Critical criteria for this category:** Exit, Recoverability.
 
 
 ## Brief Description

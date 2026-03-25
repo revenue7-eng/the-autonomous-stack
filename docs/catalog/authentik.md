@@ -22,6 +22,7 @@ nav_order: 3
 # Authentik
 
 > **TAS Score: S3/3 -- D5/5** -- A3 / T2
+> **Critical criteria for this category:** Pause, Exit.
 
 
 ## Brief Description

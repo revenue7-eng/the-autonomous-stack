@@ -23,6 +23,7 @@ nav_order: 8
 
 > **TAS Score: S3/3 -- D4/5** -- A3 / T2
 > D4 (not D5): Docker Desktop requires a paid subscription for large organisations (250+ employees); Docker Engine itself has no such restriction (Q6 hidden cost).
+> **Critical criteria for this category:** Recoverability.
 
 
 ## Brief Description

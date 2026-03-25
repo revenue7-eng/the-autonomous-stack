@@ -23,6 +23,7 @@ nav_order: 51
 
 > **TAS Score: S0/3 -- D1/5** -- A0 / T0
 > S0 (not S3): no structural Pause, lossy Exit (databases don't survive export), no user-controlled Recoverability (Q1–Q3). D1 (not D5): closed proprietary system; value depends on continued Notion access (Q6–Q8).
+> **Critical criteria for this category:** Exit, Recoverability.
 
 
 ## Brief Description
