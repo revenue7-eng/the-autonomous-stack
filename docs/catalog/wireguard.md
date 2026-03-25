@@ -85,18 +85,8 @@ AllowedIPs = 0.0.0.0/0
 - **IPsec** – powerful but difficult to configure.
 - **Tailscale** – built on WireGuard but relies on central coordination servers.
 
-## Sources
+---
 
-- [Website](https://www.wireguard.com)
-
-- [Documentation](https://www.wireguard.com/quickstart/)
-
-- [Repository](https://git.zx2c4.com/wireguard-linux-compat)
-
-- [Docker image](https://hub.docker.com/r/linuxserver/wireguard)
-
-- [Community](https://www.reddit.com/r/WireGuard/)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -113,3 +103,18 @@ WireGuard is GPL-2.0 licenced and has been merged into the Linux kernel (5.6, 20
 | Governance | ✅ | Linux kernel governance; multiple independent implementations (boringtun, wireguard-go, etc.). |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://www.wireguard.com)
+
+- [Documentation](https://www.wireguard.com/quickstart/)
+
+- [Repository](https://git.zx2c4.com/wireguard-linux-compat)
+
+- [Docker image](https://hub.docker.com/r/linuxserver/wireguard)
+
+- [Community](https://www.reddit.com/r/WireGuard/)
+-e

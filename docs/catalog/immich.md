@@ -109,17 +109,7 @@ backup.
 -   Nextcloud Memories -- part of Nextcloud, heavier
 -   Piwigo -- older, less modern UI
 
-## Sources
-
-- [Website](https://immich.app)
-
-- [Documentation](https://docs.immich.app/overview/quick-start)
-
-- [Repository](https://github.com/immich-app/immich)
-
-- [Docker image](https://hub.docker.com/r/immich-app/immich-server)
-
-- [Community](https://github.com/immich-app/immich/discussions)
+---
 
 ## Trajectory
 
@@ -137,3 +127,17 @@ Immich is a relatively new project (2022) that has grown rapidly. It uses AGPL-3
 | Governance | ➖ | Small core team; community active on GitHub; governance structures still maturing. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://immich.app)
+
+- [Documentation](https://docs.immich.app/overview/quick-start)
+
+- [Repository](https://github.com/immich-app/immich)
+
+- [Docker image](https://hub.docker.com/r/immich-app/immich-server)
+
+- [Community](https://github.com/immich-app/immich/discussions)

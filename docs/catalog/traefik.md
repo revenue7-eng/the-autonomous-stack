@@ -87,14 +87,8 @@ services:
 * Nginx -- manual configuration, most flexible, steepest learning curve
 * HAProxy -- enterprise-grade load balancer, more complex
 
-## Sources
+---
 
-* [Website](https://traefik.io)
-* [Documentation](https://doc.traefik.io/traefik/)
-* [Repository](https://github.com/traefik/traefik)
-* [Docker image](https://hub.docker.com/_/traefik)
-* [Community](https://community.traefik.io)
--e 
 ## Trajectory
 
 **Direction: mixed.**
@@ -111,3 +105,14 @@ Traefik is MIT licenced and widely adopted. Traefik Labs also develops Traefik E
 | Governance | ➖ | Traefik Labs controls direction; community contributions accepted but roadmap is corporate-driven. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://traefik.io)
+* [Documentation](https://doc.traefik.io/traefik/)
+* [Repository](https://github.com/traefik/traefik)
+* [Docker image](https://hub.docker.com/_/traefik)
+* [Community](https://community.traefik.io)
+-e

@@ -66,11 +66,7 @@ Google Drive is the de facto standard for file sync. Most people use it without 
 * [Nextcloud](https://nextcloud.com) (A3/T2) — self‑hosted cloud with file sync, calendar, contacts
 * [Kopia](kopia.md) (A3/T2) — for backup specifically
 
-## Sources
-
-* [Website](https://drive.google.com)
-
-* [Documentation](https://support.google.com/drive)
+---
 
 ## Trajectory
 
@@ -88,3 +84,11 @@ Google Drive has no meaningful trajectory toward openness. Google has reduced fr
 | Governance | ⚠️ | Fully controlled by Google; no community input into direction. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://drive.google.com)
+
+* [Documentation](https://support.google.com/drive)

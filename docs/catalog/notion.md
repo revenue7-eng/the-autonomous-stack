@@ -66,11 +66,7 @@ Notion is one of the most popular productivity tools. Its power comes from flexi
 * [Bookstack](https://www.bookstackapp.com) (A3/T2) — self‑hosted wiki
 * [Obsidian](https://obsidian.md) + [Syncthing](syncthing.md) — local Markdown notes with P2P sync
 
-## Sources
-
-* [Website](https://notion.so)
-
-* [Documentation](https://www.notion.so/help)
+---
 
 ## Trajectory
 
@@ -88,3 +84,11 @@ Notion has no trajectory toward openness. It is a fully proprietary cloud produc
 | Governance | ⚠️ | Fully controlled by Notion Labs; no community input. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://notion.so)
+
+* [Documentation](https://www.notion.so/help)

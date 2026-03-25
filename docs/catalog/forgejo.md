@@ -79,17 +79,7 @@ services:
 * GitLab – more features but heavier, requires more resources.
 * Gogs – lighter but fewer features.
 
-## Sources
-
-* [Website](https://forgejo.org)
-
-* [Documentation](https://forgejo.org/docs/)
-
-* [Repository (Codeberg)](https://codeberg.org/forgejo/forgejo)
-
-* [Docker image](https://hub.docker.com/r/codebergorg/forgejo)
-
-* [Community (Matrix)](https://matrix.to/#/#forgejo:matrix.org)
+---
 
 ## Trajectory
 
@@ -107,3 +97,17 @@ Forgejo was created in 2022 as a community fork of Gitea after governance concer
 | Governance | ✅ | Governed by Codeberg e.V. non-profit; community-driven decisions. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://forgejo.org)
+
+* [Documentation](https://forgejo.org/docs/)
+
+* [Repository (Codeberg)](https://codeberg.org/forgejo/forgejo)
+
+* [Docker image](https://hub.docker.com/r/codebergorg/forgejo)
+
+* [Community (Matrix)](https://matrix.to/#/#forgejo:matrix.org)

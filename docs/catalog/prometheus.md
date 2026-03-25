@@ -104,18 +104,8 @@ services:
 
 - Netdata – real‑time monitoring, less emphasis on long‑term storage.
 
-## Sources
+---
 
-- [Website](https://prometheus.io)
-
-- [Documentation](https://prometheus.io/docs/)
-
-- [Repository](https://github.com/prometheus/prometheus)
-
-- [Docker image](https://hub.docker.com/r/prom/prometheus)
-
-- [Community](https://github.com/prometheus/prometheus/discussions)
--e 
 ## Trajectory
 
 **Direction: opening.**
@@ -132,3 +122,18 @@ Prometheus is a CNCF graduated project (the highest maturity level), Apache-2.0 
 | Governance | ✅ | CNCF governance; multiple corporate contributors; community-driven roadmap. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://prometheus.io)
+
+- [Documentation](https://prometheus.io/docs/)
+
+- [Repository](https://github.com/prometheus/prometheus)
+
+- [Docker image](https://hub.docker.com/r/prom/prometheus)
+
+- [Community](https://github.com/prometheus/prometheus/discussions)
+-e

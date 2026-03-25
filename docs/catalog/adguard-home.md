@@ -82,18 +82,8 @@ services:
 * NextDNS – cloud‑based, not fully autonomous.
 * Unbound – recursive DNS resolver without filtering.
 
-## Sources
+---
 
-* [Website](https://adguard.com/en/adguard-home/overview.html)
-
-* [Documentation](https://github.com/AdguardTeam/AdGuardHome/wiki)
-
-* [Repository](https://github.com/AdguardTeam/AdGuardHome)
-
-* [Docker image](https://hub.docker.com/r/adguard/adguardhome)
-
-* [Community](https://github.com/AdguardTeam/AdGuardHome/discussions)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -110,3 +100,18 @@ AdGuard Home has been GPL-3.0 since launch. The project is actively maintained, 
 | Governance | ➖ | Maintained by AdGuard Ltd.; active community contributions on GitHub. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://adguard.com/en/adguard-home/overview.html)
+
+* [Documentation](https://github.com/AdguardTeam/AdGuardHome/wiki)
+
+* [Repository](https://github.com/AdguardTeam/AdGuardHome)
+
+* [Docker image](https://hub.docker.com/r/adguard/adguardhome)
+
+* [Community](https://github.com/AdguardTeam/AdGuardHome/discussions)
+-e

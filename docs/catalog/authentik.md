@@ -100,17 +100,7 @@ services:
 * Authelia – lightweight, but less feature-rich
 * Zitadel – cloud-native, requires external database
 
-## Sources
-
-* [Website](https://goauthentik.io)
-
-* [Documentation](https://docs.goauthentik.io)
-
-* [Repository](https://github.com/goauthentik/authentik)
-
-* [Docker image](https://hub.docker.com/r/goauthentik/authentik)
-
-* [Community](https://github.com/goauthentik/authentik/discussions)
+---
 
 ## Trajectory
 
@@ -128,3 +118,17 @@ Authentik uses a dual-license model: MIT for the core, and a separate enterprise
 | Governance | ➖ | Maintained by Authentik Security Inc.; community PRs accepted actively. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://goauthentik.io)
+
+* [Documentation](https://docs.goauthentik.io)
+
+* [Repository](https://github.com/goauthentik/authentik)
+
+* [Docker image](https://hub.docker.com/r/goauthentik/authentik)
+
+* [Community](https://github.com/goauthentik/authentik/discussions)

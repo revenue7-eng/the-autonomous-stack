@@ -93,18 +93,8 @@ services:
 -   Nagios -- older and harder to configure
 -   Healthchecks.io -- cloud-based (not autonomous)
 
-## Sources
+---
 
-- [Website](https://uptime.kuma.pet)
-
-- [Documentation](https://github.com/louislam/uptime-kuma/wiki)
-
-- [Repository](https://github.com/louislam/uptime-kuma)
-
-- [Docker image](https://hub.docker.com/r/louislam/uptime-kuma)
-
-- [Community](https://github.com/louislam/uptime-kuma/issues)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -121,3 +111,18 @@ Uptime Kuma is MIT licenced, maintained by a single primary author (louislam) wi
 | Governance | ➖ | Single primary maintainer (louislam); active community; no foundation backing. Bus-factor risk. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://uptime.kuma.pet)
+
+- [Documentation](https://github.com/louislam/uptime-kuma/wiki)
+
+- [Repository](https://github.com/louislam/uptime-kuma)
+
+- [Docker image](https://hub.docker.com/r/louislam/uptime-kuma)
+
+- [Community](https://github.com/louislam/uptime-kuma/issues)
+-e

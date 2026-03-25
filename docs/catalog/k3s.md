@@ -85,18 +85,8 @@ For air‑gapped environments, use the offline installation guide.
 - MicroK8s – Canonical’s lightweight Kubernetes (requires snap).
 - Nomad – HashiCorp orchestrator, simpler but less declarative.
 
-## Sources
+---
 
-- [Website](https://k3s.io)
-
-- [Documentation](https://docs.k3s.io)
-
-- [Repository](https://github.com/k3s-io/k3s)
-
-- Docker image
-
-- [Community](https://github.com/k3s-io/k3s/discussions)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -113,3 +103,18 @@ K3s is an official CNCF project, donated by Rancher Labs (now SUSE) to the commu
 | Governance | ✅ | CNCF governance; multiple corporate contributors; not SUSE-controlled. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://k3s.io)
+
+- [Documentation](https://docs.k3s.io)
+
+- [Repository](https://github.com/k3s-io/k3s)
+
+- Docker image
+
+- [Community](https://github.com/k3s-io/k3s/discussions)
+-e

@@ -82,14 +82,8 @@ Default login: admin@example.com / changeme
 * Caddy -- simpler config, automatic HTTPS, no GUI
 * Nginx (raw) -- maximum flexibility, manual configuration
 
-## Sources
+---
 
-* [Website](https://nginxproxymanager.com)
-* [Documentation](https://nginxproxymanager.com/guide/)
-* [Repository](https://github.com/NginxProxyManager/nginx-proxy-manager)
-* [Docker image](https://hub.docker.com/r/jc21/nginx-proxy-manager)
-* [Community](https://github.com/NginxProxyManager/nginx-proxy-manager/discussions)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -106,3 +100,14 @@ Nginx Proxy Manager is MIT licenced, community-maintained, and has no commercial
 | Governance | ➖ | Small maintainer team; active but no formal governance structure. Single-maintainer risk is moderate. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://nginxproxymanager.com)
+* [Documentation](https://nginxproxymanager.com/guide/)
+* [Repository](https://github.com/NginxProxyManager/nginx-proxy-manager)
+* [Docker image](https://hub.docker.com/r/jc21/nginx-proxy-manager)
+* [Community](https://github.com/NginxProxyManager/nginx-proxy-manager/discussions)
+-e

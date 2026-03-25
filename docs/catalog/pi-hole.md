@@ -82,14 +82,8 @@ services:
 * Blocky -- lightweight DNS proxy with blocklists, config-file only
 * NextDNS -- cloud-based, not self-hosted, A0/T1
 
-## Sources
+---
 
-* [Website](https://pi-hole.net)
-* [Documentation](https://docs.pi-hole.net)
-* [Repository](https://github.com/pi-hole/pi-hole)
-* [Docker image](https://hub.docker.com/r/pihole/pihole)
-* [Community](https://discourse.pi-hole.net)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -106,3 +100,14 @@ Pi-hole is EUPL-1.2 licenced and community-governed. Development continues activ
 | Governance | ➖ | Small core team; community active; no formal foundation but stable governance in practice. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://pi-hole.net)
+* [Documentation](https://docs.pi-hole.net)
+* [Repository](https://github.com/pi-hole/pi-hole)
+* [Docker image](https://hub.docker.com/r/pihole/pihole)
+* [Community](https://discourse.pi-hole.net)
+-e

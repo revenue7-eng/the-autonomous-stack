@@ -79,18 +79,8 @@ services:
 * Resilio Sync – proprietary, similar P2P model but closed source.
 * Seafile – self‑hosted cloud storage, not P2P.
 
-## Sources
+---
 
-* [Website](https://syncthing.net)
-
-* [Documentation](https://docs.syncthing.net)
-
-* [Repository](https://github.com/syncthing/syncthing)
-
-* [Docker image](https://hub.docker.com/r/syncthing/syncthing)
-
-* [Community](https://forum.syncthing.net)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -107,3 +97,18 @@ Syncthing is MPL-2.0 licenced and community-governed by the Syncthing Foundation
 | Governance | ✅ | Syncthing Foundation governs the project; transparent and community-driven. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://syncthing.net)
+
+* [Documentation](https://docs.syncthing.net)
+
+* [Repository](https://github.com/syncthing/syncthing)
+
+* [Docker image](https://hub.docker.com/r/syncthing/syncthing)
+
+* [Community](https://forum.syncthing.net)
+-e

@@ -81,12 +81,7 @@ Important: put behind a reverse proxy with HTTPS for production use.
 * KeePass/KeePassXC -- local-only, no sync built in (pair with Syncthing)
 * 1Password / LastPass -- cloud-dependent, A0/T0
 
-## Sources
-
-* [Repository](https://github.com/dani-garcia/vaultwarden)
-* [Documentation](https://github.com/dani-garcia/vaultwarden/wiki)
-* [Docker image](https://hub.docker.com/r/vaultwarden/server)
-* [Community](https://github.com/dani-garcia/vaultwarden/discussions)
+---
 
 ## Trajectory
 
@@ -104,3 +99,12 @@ Vaultwarden is an unofficial MIT-licenced compatible implementation of the Bitwa
 | Governance | ➖ | Community-maintained; no foundation. API compatibility depends on Bitwarden not breaking changes. Bitwarden's AGPL-3.0 server is a fallback. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Repository](https://github.com/dani-garcia/vaultwarden)
+* [Documentation](https://github.com/dani-garcia/vaultwarden/wiki)
+* [Docker image](https://hub.docker.com/r/vaultwarden/server)
+* [Community](https://github.com/dani-garcia/vaultwarden/discussions)

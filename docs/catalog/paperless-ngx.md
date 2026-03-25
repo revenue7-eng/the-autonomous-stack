@@ -101,17 +101,7 @@ services:
 * Teedy – lighter but less feature‑rich.
 * Nextcloud – can store documents but lacks dedicated OCR and metadata extraction.
 
-## Sources
-
-* [Website](https://paperless-ngx.readthedocs.io)
-
-* [Documentation](https://paperless-ngx.readthedocs.io)
-
-* [Repository](https://github.com/paperless-ngx/paperless-ngx)
-
-* [Docker image](https://hub.docker.com/r/paperlessngx/paperless-ngx)
-
-* [Community](https://github.com/paperless-ngx/paperless-ngx/discussions)
+---
 
 ## Trajectory
 
@@ -129,3 +119,17 @@ Paperless-ngx was created as a community fork of paperless-ng after the original
 | Governance | ✅ | Community-governed; active maintainer team; transparent roadmap. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+* [Website](https://paperless-ngx.readthedocs.io)
+
+* [Documentation](https://paperless-ngx.readthedocs.io)
+
+* [Repository](https://github.com/paperless-ngx/paperless-ngx)
+
+* [Docker image](https://hub.docker.com/r/paperlessngx/paperless-ngx)
+
+* [Community](https://github.com/paperless-ngx/paperless-ngx/discussions)

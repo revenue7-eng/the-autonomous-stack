@@ -73,18 +73,8 @@ services:
 - **Emby** – similar to Plex, proprietary with cloud dependencies.
 - **Kodi** – more of a client-centric media center, not a server.
 
-## Sources
+---
 
-- [Website](https://jellyfin.org)
-
-- [Documentation](https://jellyfin.org/docs/)
-
-- [Repository](https://github.com/jellyfin/jellyfin)
-
-- [Docker image](https://hub.docker.com/r/jellyfin/jellyfin)
-
-- [Community](https://github.com/jellyfin/jellyfin/discussions)
--e 
 ## Trajectory
 
 **Direction: opening.**
@@ -101,3 +91,18 @@ Jellyfin was created in 2018 as a fork of Emby after Emby's source was closed. I
 | Governance | ✅ | Community-governed non-corporate project; transparent decision-making. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://jellyfin.org)
+
+- [Documentation](https://jellyfin.org/docs/)
+
+- [Repository](https://github.com/jellyfin/jellyfin)
+
+- [Docker image](https://hub.docker.com/r/jellyfin/jellyfin)
+
+- [Community](https://github.com/jellyfin/jellyfin/discussions)
+-e

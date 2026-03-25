@@ -111,18 +111,8 @@ Set up a daily cron job to run snapshots:
 -   Duplicati -- GUI-based, but less reliable for large datasets
 -   Restic -- fast, but no built-in GUI
 
-## Sources
+---
 
-- [Website](https://kopia.io)
-
-- [Documentation](https://kopia.io/docs/)
-
-- [Repository](https://github.com/kopia/kopia)
-
-- [Docker image](https://hub.docker.com/r/kopia/kopia)
-
-- [Community](https://github.com/kopia/kopia/discussions)
--e 
 ## Trajectory
 
 **Direction: stable.**
@@ -139,3 +129,18 @@ Kopia is Apache-2.0 licenced and was open-sourced from the start. It was acquire
 | Governance | ⚠️ | Acquired by Veeam in 2022; community contributions continue but corporate control increased. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
+
+---
+
+## Sources
+
+- [Website](https://kopia.io)
+
+- [Documentation](https://kopia.io/docs/)
+
+- [Repository](https://github.com/kopia/kopia)
+
+- [Docker image](https://hub.docker.com/r/kopia/kopia)
+
+- [Community](https://github.com/kopia/kopia/discussions)
+-e
