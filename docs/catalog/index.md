@@ -73,11 +73,23 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ## Observability
 
+### Dashboards
+
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Grafana](grafana.md) | **A3** | **T2** | Open-source observability and data visualisation platform. |
-| [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
+
+### Metrics
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
 | [Prometheus](prometheus.md) | **A3** | **T2** | Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, al... |
+
+### Monitoring
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
 
 ---
 
@@ -92,16 +104,11 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ## Security
 
-### General
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Lightweight, self-hosted implementation of the Bitwarden password manager API. |
-
 ### Password Manager
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Lightweight, self-hosted implementation of the Bitwarden password manager API. |
 | [KeePass](keepass.md) | **A3** | **T2** | Free, open source password manager that stores credentials in a locally encrypted database file (`.kdbx`). |
 
 ### Secrets
