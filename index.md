@@ -6,7 +6,7 @@ nav_order: 1
 
 # The Autonomous Stack (TAS)
 
-**A decision framework for building infrastructure you actually control.**
+**Three questions that reveal who controls your infrastructure.**
 
 If your system requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.

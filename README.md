@@ -1,6 +1,6 @@
 # The Autonomous Stack (TAS)
 
-**A decision framework for building infrastructure you actually control.**
+**Three questions that reveal who controls your infrastructure.**
 
 Eight questions. Open-mode architecture. Practical tools.
 

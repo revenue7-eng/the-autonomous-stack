@@ -8,7 +8,7 @@ permalink: /docs/
 
 # The Autonomous Stack
 
-**A decision framework for engineers who build systems they actually control.**
+**Three questions that reveal who controls your infrastructure.**
 
 If your infrastructure requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
