@@ -18,6 +18,7 @@ nav_order: 53
 # Tailscale
 
 > **TAS Score: S2/3 -- D3/5** -- A2 / T1
+> S2 (not S3): Exit and Recoverability are partial — network topology depends on Tailscale's coordination server; new connections fail if server is unreachable (Q2, Q3). D3 (not D5): coordination server is proprietary (Q7); vendor dependency creates hidden cost if terms change (Q6, Q8).
 
 
 ## Brief Description

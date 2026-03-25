@@ -18,6 +18,7 @@ nav_order: 17
 # Grafana
 
 > **TAS Score: S3/3 -- D4/5** -- A3 / T2
+> D4 (not D5): optional telemetry is enabled by default and must be explicitly disabled (Q4 personalisation).
 
 
 ## Brief Description

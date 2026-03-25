@@ -18,6 +18,7 @@ nav_order: 52
 # Plex
 
 > **TAS Score: S1/3 -- D2/5** -- A1 / T0
+> S1 (not S3): Pause and Recoverability are partial — requires Plex auth servers to be reachable; Plex-specific metadata (playlists, watch history) is not fully recoverable (Q1, Q3). D2 (not D5): proprietary server, telemetry cannot be fully disabled (Q4, Q7); depends on Plex account system (Q6).
 
 
 ## Brief Description

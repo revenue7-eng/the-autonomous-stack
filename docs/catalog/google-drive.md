@@ -18,6 +18,7 @@ nav_order: 50
 # Google Drive
 
 > **TAS Score: S0/3 -- D1/5** -- A0 / T0
+> S0 (not S3): Pause, Exit, and Recoverability all fail — continuous sync, lossy export, no user-controlled backup (Q1–Q3). D1 (not D5): closed proprietary system with full cloud dependency; only partial export credit (Q4–Q8).
 
 
 ## Brief Description

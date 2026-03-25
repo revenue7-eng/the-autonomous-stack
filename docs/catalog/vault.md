@@ -18,6 +18,7 @@ nav_order: 10
 # Vault
 
 > **TAS Score: S3/3 -- D3/5** -- A3 / T2
+> D3 (not D5): license changed from MPL-2.0 to BSL 1.1 in 2023 — no longer OSI-approved (Q8 trajectory closing); IBM acquisition adds governance uncertainty (Q8). Community fork OpenBao (MPL-2.0) is the open alternative.
 
 
 ## Brief Description

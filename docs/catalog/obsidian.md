@@ -18,6 +18,7 @@ nav_order: 54
 # Obsidian
 
 > **TAS Score: S2/3 -- D3/5** -- A2 / T0
+> S2 (not S3): Recoverability is partial — no built-in backup, depends on external tools (Q3). D3 (not D5): closed-source application (Q7 transparency fragility); Obsidian Sync is a cloud service (Q6 hidden cost); no telemetry audit possible.
 
 
 ## Brief Description
