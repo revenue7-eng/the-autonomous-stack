@@ -1,6 +1,6 @@
 ---
 title: "Infrastructure Audit"
-nav_order: 3
+nav_order: 2
 ---
 
 # Infrastructure Audit

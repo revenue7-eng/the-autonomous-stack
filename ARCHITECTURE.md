@@ -1,4 +1,8 @@
-# The Autonomous Stack — Architecture
+---
+layout: default
+title: "TAS Architecture"
+nav_order: 11
+---
 
 **Version:** 1.0  
 **Date:** March 2026  

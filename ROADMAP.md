@@ -1,4 +1,8 @@
-# The Autonomous Stack — Roadmap
+---
+layout: default
+title: "TAS Roadmap"
+nav_order: 10
+---
 
 **Version:** 1.0  
 **Date:** March 2026  

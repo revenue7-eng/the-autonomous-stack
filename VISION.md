@@ -1,4 +1,8 @@
-# The Autonomous Stack — Vision
+---
+layout: default
+title: "TAS Vision"
+nav_order: 9
+---
 
 **Version:** 1.0  
 **Date:** March 2026  
