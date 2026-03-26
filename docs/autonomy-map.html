@@ -8,8 +8,8 @@ nav_order: 7
 Every technology in the TAS catalog mapped as a star. <strong>Size and brightness</strong> reflect autonomy — the closer and brighter, the more control you have. <strong>Color</strong> shows trajectory. Stars belong to one of 12 constellations defined by Autonomy × Transparency level. Hover to identify. Click to open the card.
 </p>
 
-<div id="skyWrap" style="position:relative;width:100%;background:#060b14;border-radius:10px;margin-bottom:2rem;">
-<canvas id="sky" style="display:block;width:100%;"></canvas>
+<div id="skyWrap" style="position:relative;width:100%;background:#060b14;border-radius:10px;margin-bottom:2rem;overflow:hidden;">
+<canvas id="sky"></canvas>
 <div id="tip" style="position:absolute;display:none;pointer-events:none;background:rgba(6,15,30,0.95);border:1px solid rgba(100,160,255,0.25);border-radius:8px;padding:10px 14px;font-size:12px;color:#c8d8f0;line-height:1.7;max-width:200px;z-index:10;"></div>
 <div style="position:absolute;top:14px;right:16px;display:flex;flex-direction:column;gap:4px;align-items:flex-end;">
   <span style="font-size:10px;color:#22c55e;letter-spacing:.06em;">● Opening</span>
@@ -161,7 +161,8 @@ function draw(){
   });
 }
 
-build();draw();
+function init(){build();draw();}
+if(document.readyState==='complete'){init();}else{window.addEventListener('load',init);}
 window.addEventListener('resize',draw);
 
 canvas.addEventListener('mousemove',e=>{
