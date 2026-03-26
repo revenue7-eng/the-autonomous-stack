@@ -1,235 +1,129 @@
 ---
 layout: default
 title: "Autonomy Map"
-nav_exclude: true
+nav_order: 7
 ---
 {% raw %}
-<p style="font-size:14px;color:#666;line-height:1.7;max-width:640px;margin-bottom:1.5rem;">
-Every technology in the TAS catalog mapped as a star. <strong>Size and brightness</strong> reflect autonomy — the closer and brighter, the more control you have. <strong>Color</strong> shows trajectory. Stars belong to one of 12 constellations defined by Autonomy × Transparency level. Hover to identify. Click to open the card.
+<div style="max-width:680px;">
+
+<p style="font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;">
+A living star chart of the infrastructure technology landscape. Every evaluated tool is plotted as a star — its brightness and size reflect autonomy, its color shows trajectory. Stars cluster into 12 constellations defined by the combination of Autonomy and Transparency level.
 </p>
 
-<div id="skyWrap" style="position:relative;width:100%;background:#060b14;border-radius:10px;margin-bottom:2rem;overflow:hidden;">
-<canvas id="sky"></canvas>
-<div id="tip" style="position:absolute;display:none;pointer-events:none;background:rgba(6,15,30,0.95);border:1px solid rgba(100,160,255,0.25);border-radius:8px;padding:10px 14px;font-size:12px;color:#c8d8f0;line-height:1.7;max-width:200px;z-index:10;"></div>
-<div style="position:absolute;top:14px;right:16px;display:flex;flex-direction:column;gap:4px;align-items:flex-end;">
-  <span style="font-size:10px;color:#22c55e;letter-spacing:.06em;">● Opening</span>
-  <span style="font-size:10px;color:#60a5fa;letter-spacing:.06em;">● Stable</span>
-  <span style="font-size:10px;color:#fbbf24;letter-spacing:.06em;">● Mixed</span>
-  <span style="font-size:10px;color:#f87171;letter-spacing:.06em;">● Closing</span>
+<a href="https://revenue7-eng.github.io/the-autonomous-stack/map.html"
+   style="display:inline-flex;align-items:center;gap:10px;background:#0d1117;color:#e0ecff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;padding:14px 24px;border-radius:8px;text-decoration:none;margin-bottom:2.5rem;transition:opacity .15s;"
+   onmouseenter="this.style.opacity='.8'" onmouseleave="this.style.opacity='1'">
+  ✦ Open full map →
+</a>
+
+<div style="border-top:1px solid #e8e8e8;padding-top:2rem;margin-bottom:1rem;">
+  <p style="font-size:13px;font-weight:500;color:#111;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.25rem;">The 12 Constellations</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:8px;">
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Lux</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T2</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Full autonomy, open source. The brightest stars — you own everything, code included. The TAS ideal.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Vigil</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T1</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Fully autonomous, documented. Operates offline, code not fully open but architecture is transparent.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Solitudo</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T0</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Autonomous but opaque. Your data, your control — but you cannot see inside the tool.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Libertas</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T2</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Nearly free, open source. One dependency remains but the code is fully auditable.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Stella</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T1</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Mostly autonomous, documented. A reliable intermediate — conscious trade-off zone.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Janua</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T0</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Data is yours, tool is closed. A half-open door — autonomy without transparency.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Aurora</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T2</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Dependent but open source. Cloud-reliant yet auditable — heading toward freedom.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Iter</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T1</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Partial freedom, partial light. A path — not a destination.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Nebula</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T0</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Partially dependent, opaque. Blurred edges — hard to know what you control.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Paradoxa</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T2</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Cloud-bound yet open source. Rare and contradictory — dependent infrastructure with visible code.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Vinculum</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T1</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Dependent but documented. The chains are visible. You know what holds you.</p>
+    </div>
+
+    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+        <span style="font-size:14px;font-weight:500;color:#111;">Umbra</span>
+        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T0</span>
+      </div>
+      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Full dependency, full opacity. The darkest corner — no control, no visibility.</p>
+    </div>
+
+  </div>
 </div>
-<div style="position:absolute;bottom:10px;left:16px;">
-  <span style="font-size:10px;color:rgba(180,210,255,0.3);letter-spacing:.06em;text-transform:uppercase;">Larger & brighter = more autonomous · click a star to open its card</span>
+
+<div style="margin-top:2rem;padding:16px 20px;background:#f4f4f2;border-radius:8px;border-left:3px solid #888;">
+  <p style="font-size:12px;color:#666;line-height:1.7;margin:0;">
+    The map is open and growing. Today 27 stars, 12 constellations. As new tools are evaluated, new stars appear. As new criteria emerge, new constellations form. The map is a separate project — it uses TAS data but lives beyond it.
+  </p>
 </div>
+
 </div>
-
-<h2 style="font-size:16px;font-weight:500;margin-bottom:1rem;color:#333;">The 12 Constellations</h2>
-<div id="constTable" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin-bottom:2rem;"></div>
-
-<script>
-const CONSTS={
-  'A3/T2':{name:'Lux',       desc:'Full autonomy, open source. The brightest stars — you own everything, code included. The TAS ideal.'},
-  'A3/T1':{name:'Vigil',     desc:'Fully autonomous, documented. Operates offline, code not fully open but architecture is transparent.'},
-  'A3/T0':{name:'Solitudo',  desc:'Autonomous but opaque. Your data, your control — but you cannot see inside the tool.'},
-  'A2/T2':{name:'Libertas',  desc:'Nearly free, open source. One dependency remains but the code is fully auditable.'},
-  'A2/T1':{name:'Stella',    desc:'Mostly autonomous, documented. A reliable intermediate — conscious trade-off zone.'},
-  'A2/T0':{name:'Janua',     desc:'Data is yours, tool is closed. A half-open door — autonomy without transparency.'},
-  'A1/T2':{name:'Aurora',    desc:'Dependent but open source. Cloud-reliant yet auditable — heading toward freedom.'},
-  'A1/T1':{name:'Iter',      desc:'Partial freedom, partial light. A path — not a destination.'},
-  'A1/T0':{name:'Nebula',    desc:'Partially dependent, opaque. Blurred edges — hard to know what you control.'},
-  'A0/T2':{name:'Paradoxa',  desc:'Cloud-bound yet open source. Rare and contradictory — dependent infrastructure with visible code.'},
-  'A0/T1':{name:'Vinculum',  desc:'Dependent but documented. The chains are visible. You know what holds you.'},
-  'A0/T0':{name:'Umbra',     desc:'Full dependency, full opacity. The darkest corner — no control, no visibility.'},
-};
-
-const CARDS=[
-  {name:'WireGuard',     a:3,t:2,traj:'stable',  url:'wireguard'},
-  {name:'AdGuard Home',  a:3,t:2,traj:'stable',  url:'adguard-home'},
-  {name:'Pi-hole',       a:3,t:2,traj:'stable',  url:'pi-hole'},
-  {name:'Nginx PM',      a:3,t:2,traj:'stable',  url:'nginx-proxy-manager'},
-  {name:'Traefik',       a:3,t:2,traj:'mixed',   url:'traefik'},
-  {name:'Tailscale',     a:2,t:1,traj:'mixed',   url:'tailscale'},
-  {name:'Syncthing',     a:3,t:2,traj:'stable',  url:'syncthing'},
-  {name:'Nextcloud',     a:3,t:2,traj:'stable',  url:'nextcloud'},
-  {name:'Kopia',         a:3,t:2,traj:'mixed',   url:'kopia'},
-  {name:'Google Drive',  a:0,t:0,traj:'closing', url:'google-drive'},
-  {name:'Vaultwarden',   a:3,t:2,traj:'stable',  url:'vaultwarden'},
-  {name:'KeePass',       a:3,t:2,traj:'stable',  url:'keepass'},
-  {name:'Authentik',     a:3,t:2,traj:'stable',  url:'authentik'},
-  {name:'Vault',         a:3,t:1,traj:'closing', url:'vault'},
-  {name:'Prometheus',    a:3,t:2,traj:'opening', url:'prometheus'},
-  {name:'Grafana',       a:3,t:2,traj:'mixed',   url:'grafana'},
-  {name:'Uptime Kuma',   a:3,t:2,traj:'stable',  url:'uptime-kuma'},
-  {name:'Jellyfin',      a:3,t:2,traj:'opening', url:'jellyfin'},
-  {name:'Forgejo',       a:3,t:2,traj:'opening', url:'forgejo'},
-  {name:'Immich',        a:3,t:2,traj:'stable',  url:'immich'},
-  {name:'Paperless-ngx', a:3,t:2,traj:'opening', url:'paperless-ngx'},
-  {name:'Home Assistant',a:3,t:2,traj:'opening', url:'home-assistant'},
-  {name:'Obsidian',      a:2,t:0,traj:'mixed',   url:'obsidian'},
-  {name:'Notion',        a:0,t:0,traj:'closing', url:'notion'},
-  {name:'Plex',          a:1,t:0,traj:'closing', url:'plex'},
-  {name:'Docker',        a:3,t:2,traj:'mixed',   url:'docker'},
-  {name:'K3s',           a:3,t:2,traj:'stable',  url:'k3s'},
-];
-
-const TC={opening:'#22c55e',stable:'#60a5fa',mixed:'#fbbf24',closing:'#f87171'};
-
-const CPOS={
-  'A3/T2':{ax:0.50,ay:0.42},
-  'A3/T1':{ax:0.72,ay:0.28},
-  'A3/T0':{ax:0.84,ay:0.55},
-  'A2/T2':{ax:0.28,ay:0.26},
-  'A2/T1':{ax:0.54,ay:0.20},
-  'A2/T0':{ax:0.76,ay:0.72},
-  'A1/T2':{ax:0.14,ay:0.46},
-  'A1/T1':{ax:0.33,ay:0.65},
-  'A1/T0':{ax:0.58,ay:0.82},
-  'A0/T2':{ax:0.10,ay:0.22},
-  'A0/T1':{ax:0.12,ay:0.75},
-  'A0/T0':{ax:0.89,ay:0.86},
-};
-
-const canvas=document.getElementById('sky');
-const tip=document.getElementById('tip');
-let W,H,stars=[];
-
-function key(c){return 'A'+c.a+'/T'+c.t;}
-function score(c){return (c.a/3)*0.6+(c.t/2)*0.4;}
-function seedRng(s){let v=s;return()=>{v=(v*1664525+1013904223)&0xffffffff;return(v>>>0)/0xffffffff;};}
-
-function build(){
-  stars=[];
-  CARDS.forEach((c,i)=>{
-    const k=key(c),pos=CPOS[k]||{ax:.5,ay:.5};
-    const rng=seedRng(i*137+c.name.charCodeAt(0)*31);
-    const angle=rng()*Math.PI*2,dist=0.03+rng()*0.07;
-    const sc=score(c);
-    stars.push({...c,key:k,ax:pos.ax+Math.cos(angle)*dist,ay:pos.ay+Math.sin(angle)*dist,score:sc,r:3+sc*10,alpha:0.3+sc*0.7});
-  });
-}
-
-function draw(){
-  const wrap=document.getElementById('skyWrap');
-  W=wrap.offsetWidth||800;
-  H=Math.round(W*0.56);
-  wrap.style.height=H+'px';
-  canvas.width=W;canvas.height=H;
-  canvas.style.width='100%';
-  canvas.style.height=H+'px';
-  canvas.style.display="block";canvas.style.width="100%";
-  wrap.style.height=H+"px";
-  const ctx=canvas.getContext('2d');
-
-  const g=ctx.createRadialGradient(W*.46,H*.4,0,W*.46,H*.4,Math.max(W,H)*.8);
-  g.addColorStop(0,'#0d1b2e');g.addColorStop(1,'#020608');
-  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-
-  const rng=seedRng(99);
-  for(let i=0;i<150;i++){
-    ctx.beginPath();ctx.arc(rng()*W,rng()*H,rng()*.9,0,Math.PI*2);
-    ctx.fillStyle='rgba(180,210,255,'+(0.06+rng()*.18)+')';ctx.fill();
-  }
-
-  const groups={};
-  stars.forEach(s=>{(groups[s.key]||(groups[s.key]=[])).push(s);});
-  Object.entries(groups).forEach(([k,grp])=>{
-    if(grp.length<2)return;
-    ctx.strokeStyle='rgba(80,130,255,0.10)';ctx.lineWidth=1;ctx.setLineDash([2,6]);
-    ctx.beginPath();grp.forEach((s,i)=>i===0?ctx.moveTo(s.ax*W,s.ay*H):ctx.lineTo(s.ax*W,s.ay*H));
-    ctx.stroke();ctx.setLineDash([]);
-  });
-
-  Object.entries(CPOS).forEach(([k,pos])=>{
-    const cn=CONSTS[k];if(!cn)return;
-    const has=stars.some(s=>s.key===k);
-    ctx.fillStyle=has?'rgba(160,200,255,0.5)':'rgba(100,140,200,0.15)';
-    ctx.font=(has?'11':'9')+'px monospace';ctx.textAlign='center';
-    ctx.fillText(cn.name.toUpperCase(),pos.ax*W,pos.ay*H-16);
-    ctx.fillStyle='rgba(100,140,200,0.22)';ctx.font='9px monospace';
-    ctx.fillText(k,pos.ax*W,pos.ay*H-5);
-  });
-
-  stars.forEach(s=>{
-    const x=s.ax*W,y=s.ay*H,col=TC[s.traj];
-    const gl=ctx.createRadialGradient(x,y,0,x,y,s.r*3.5);
-    gl.addColorStop(0,col+'44');gl.addColorStop(1,'transparent');
-    ctx.fillStyle=gl;ctx.beginPath();ctx.arc(x,y,s.r*3.5,0,Math.PI*2);ctx.fill();
-    ctx.globalAlpha=s.alpha;
-    ctx.beginPath();ctx.arc(x,y,s.r,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
-    ctx.globalAlpha=Math.min(s.alpha+0.2,1);
-    ctx.beginPath();ctx.arc(x,y,s.r*.35,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
-    ctx.globalAlpha=1;
-  });
-}
-
-function init(){build();draw();}
-if(document.readyState==='complete'){init();}else{window.addEventListener('load',init);}
-window.addEventListener('resize',draw);
-
-canvas.addEventListener('mousemove',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=(e.clientX-rect.left)*(W/rect.width);
-  const my=(e.clientY-rect.top)*(H/rect.height);
-
-  // Проверить попадание на звезду
-  const hit=stars.find(s=>Math.hypot(s.ax*W-mx,s.ay*H-my)<Math.max(s.r+5,12));
-  if(hit){
-    canvas.style.cursor='pointer';
-    tip.style.display='block';
-    tip.style.left=(e.offsetX+16)+'px';
-    tip.style.top=(e.offsetY-10)+'px';
-    const cn=CONSTS[hit.key];
-    tip.innerHTML='<strong style="color:#e0ecff">'+hit.name+'</strong><br>'
-      +'<span style="color:rgba(160,200,255,0.6);font-size:11px;">'+(cn?cn.name:hit.key)+' constellation</span><br>'
-      +'<span style="color:'+TC[hit.traj]+'">'+hit.traj+'</span> · A'+hit.a+'/T'+hit.t;
-    return;
-  }
-
-  // Проверить попадание на название созвездия
-  const constHit=Object.entries(CPOS).find(([k,pos])=>{
-    const cx=pos.ax*W, cy=pos.ay*H-10;
-    return Math.abs(mx-cx)<40 && Math.abs(my-cy)<20;
-  });
-  if(constHit){
-    const [k,pos]=constHit;
-    const cn=CONSTS[k];
-    const count=stars.filter(s=>s.key===k).length;
-    canvas.style.cursor='default';
-    tip.style.display='block';
-    tip.style.left=(e.offsetX+16)+'px';
-    tip.style.top=(e.offsetY-10)+'px';
-    tip.innerHTML='<strong style="color:#e0ecff;font-size:13px;">'+cn.name+'</strong>'
-      +' <span style="color:rgba(160,200,255,0.4);font-size:11px;">'+k+'</span><br>'
-      +'<span style="color:rgba(160,200,255,0.7);font-size:11px;line-height:1.6;">'+cn.desc+'</span>'
-      +(count>0?'<br><span style="color:rgba(160,200,255,0.35);font-size:10px;">'+count+' '+(count===1?'star':'stars')+'</span>':'');
-    return;
-  }
-
-  canvas.style.cursor='default';tip.style.display='none';
-});
-canvas.addEventListener('mouseleave',()=>tip.style.display='none');
-canvas.addEventListener('click',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=(e.clientX-rect.left)*(W/rect.width);
-  const my=(e.clientY-rect.top)*(H/rect.height);
-  const hit=stars.find(s=>Math.hypot(s.ax*W-mx,s.ay*H-my)<Math.max(s.r+5,12));
-  if(hit)window.open('https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/'+hit.url+'.html','_blank');
-});
-
-// Constellation table
-const tbl=document.getElementById('constTable');
-const order=['A3/T2','A3/T1','A3/T0','A2/T2','A2/T1','A2/T0','A1/T2','A1/T1','A1/T0','A0/T2','A0/T1','A0/T0'];
-order.forEach(k=>{
-  const cn=CONSTS[k];
-  const count=stars.filter(s=>s.key===k).length;
-  const card=document.createElement('div');
-  card.style.cssText='padding:10px 14px;background:#f8f8f8;border-radius:8px;border:1px solid #e8e8e8;';
-  card.innerHTML='<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">'
-    +'<span style="font-size:13px;font-weight:500;color:#111;">'+cn.name+'</span>'
-    +'<span style="font-size:11px;color:#999;">'+k+'</span>'
-    +(count>0?'<span style="font-size:11px;color:#bbb;margin-left:auto;">'+count+' '+(count===1?'star':'stars')+'</span>':'')
-    +'</div>'
-    +'<p style="font-size:12px;color:#666;line-height:1.6;margin:0;">'+cn.desc+'</p>';
-  tbl.appendChild(card);
-});
-</script>
 {% endraw %}
