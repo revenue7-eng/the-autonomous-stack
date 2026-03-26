@@ -91,6 +91,8 @@ Two roles define every relationship with infrastructure:
 
 Neither role is absolute. The goal of TAS is not maximum autonomy — it is conscious positioning.
 
+*TAS itself lives in Lux — A3/T2. It is a tool built from the constellation it describes.*
+
 ---
 
 ## Who TAS Is For
@@ -121,42 +123,6 @@ Neither role is absolute. The goal of TAS is not maximum autonomy — it is cons
 ---
 
 
-## The Autonomy Map — A Living Star Chart
-
-TAS maintains a **star map of the technology landscape** — every evaluated tool plotted by its Autonomy and Transparency level, colored by trajectory.
-
-The map is organized into 12 constellations, defined by the combination of A-level (A0–A3) and T-level (T0–T2):
-
-| Constellation | Coordinates | Character |
-|---------------|-------------|-----------|
-| **Lux** | A3/T2 | Full autonomy, open source. The TAS ideal. |
-| **Vigil** | A3/T1 | Autonomous, documented but not open. |
-| **Solitudo** | A3/T0 | Autonomous but opaque. |
-| **Libertas** | A2/T2 | Nearly free, open source. |
-| **Stella** | A2/T1 | Mostly autonomous, documented. |
-| **Janua** | A2/T0 | Data is yours, tool is closed. |
-| **Aurora** | A1/T2 | Dependent but open source. |
-| **Iter** | A1/T1 | Partial freedom, partial light. |
-| **Nebula** | A1/T0 | Partially dependent, opaque. |
-| **Paradoxa** | A0/T2 | Cloud-bound yet open source. |
-| **Vinculum** | A0/T1 | Dependent, but documented. |
-| **Umbra** | A0/T0 | Full dependency, full opacity. |
-
-The map is **open and growing**. Today it has 27 stars. The goal is thousands — every significant technology in the infrastructure space, evaluated and placed.
-
-The map can evolve in several dimensions:
-
-**New constellations** — as new evaluation criteria are added (e.g. Privacy level, AI dependency), new constellations will appear that don't exist today.
-
-**Solar systems within constellations** — tools don't exist in isolation. Inside each constellation, ecosystems form: tools orbit each other through dependency relationships. Docker is a star around which Portainer, Traefik, Watchtower, and others orbit. These relationships become visible as the map grows.
-
-**Uncharted stars** — tools that exist but haven't been evaluated yet. They appear as dim, unrated points — awaiting a card, awaiting assessment.
-
-The long-term vision: the Autonomy Map becomes a **periodic table of infrastructure software** — a reference artifact that lives independently of any particular catalog or tool list. Something people cite, contribute to, and build on.
-
-The map is the thing that outlasts the catalog.
-
----
 
 ## What TAS Is Not
 
