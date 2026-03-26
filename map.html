@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomy Map — The Infrastructure Star Chart</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; background: #04090f; overflow: hidden; font-family: 'IBM Plex Mono', monospace; }
+#map { width: 100%; height: 100%; cursor: grab; }
+#map:active { cursor: grabbing; }
+.header { position: fixed; top: 0; left: 0; right: 0; padding: 16px 24px; z-index: 10; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(4,9,15,0.92) 0%, transparent 100%); pointer-events: none; }
+.header-title { font-size: 13px; font-weight: 600; color: rgba(200,220,255,0.85); letter-spacing: .08em; text-transform: uppercase; }
+.header-sub { font-size: 10px; color: rgba(140,170,210,0.4); letter-spacing: .06em; margin-top: 2px; }
+.legend { display: flex; gap: 14px; }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: rgba(180,210,255,0.45); letter-spacing: .06em; }
+.leg-dot { width: 7px; height: 7px; border-radius: 50%; }
+.back { position: fixed; top: 18px; left: 24px; z-index: 11; font-size: 11px; color: rgba(140,170,210,0.35); text-decoration: none; letter-spacing: .06em; transition: color .15s; }
+.back:hover { color: rgba(140,170,210,0.75); }
+.controls { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 6px; z-index: 10; }
+.ctrl-btn { width: 36px; height: 36px; border-radius: 6px; background: rgba(10,20,40,0.85); border: 1px solid rgba(100,160,255,0.2); color: rgba(180,210,255,0.7); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+.ctrl-btn:hover { background: rgba(20,40,80,0.95); border-color: rgba(100,160,255,0.4); color: #fff; }
+#tooltip { position: fixed; display: none; pointer-events: none; background: rgba(6,14,28,0.96); border: 1px solid rgba(100,160,255,0.2); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #c8d8f0; z-index: 20; max-width: 220px; line-height: 1.7; }
+.zoom-lbl { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 10px; color: rgba(140,170,210,0.2); letter-spacing: .1em; text-transform: uppercase; z-index: 10; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="back" href="https://revenue7-eng.github.io/the-autonomous-stack/">← The Autonomous Stack</a>
+
+<div class="header">
+  <div>
+    <div class="header-title">Autonomy Map</div>
+    <div class="header-sub">scroll to zoom · drag to pan · hover to identify · click to open card</div>
+  </div>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#22c55e"></div>Opening</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#60a5fa"></div>Stable</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#fbbf24"></div>Mixed</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#f87171"></div>Closing</div>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="ctrl-btn" id="zoomIn">+</button>
+  <button class="ctrl-btn" id="zoomOut">−</button>
+  <button class="ctrl-btn" id="zoomReset" style="font-size:11px;">⊙</button>
+</div>
+
+<div class="zoom-lbl" id="zoomLbl">Overview</div>
+
+<svg id="map"></svg>
+<div id="tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const CONSTS = {
+  'A3/T2':{name:'Lux',      desc:'Full autonomy, open source. The TAS ideal.'},
+  'A3/T1':{name:'Vigil',    desc:'Autonomous, documented but not fully open.'},
+  'A3/T0':{name:'Solitudo', desc:'Autonomous but opaque. Your data, your control.'},
+  'A2/T2':{name:'Libertas', desc:'Nearly free, open source. One dependency remains.'},
+  'A2/T1':{name:'Stella',   desc:'Mostly autonomous, documented. Conscious trade-off zone.'},
+  'A2/T0':{name:'Janua',    desc:'Data is yours, tool is closed. A half-open door.'},
+  'A1/T2':{name:'Aurora',   desc:'Dependent but open source. Heading toward freedom.'},
+  'A1/T1':{name:'Iter',     desc:'Partial freedom, partial light. A path, not a destination.'},
+  'A1/T0':{name:'Nebula',   desc:'Partially dependent, opaque. Hard to know what you control.'},
+  'A0/T2':{name:'Paradoxa', desc:'Cloud-bound yet open source. Rare and contradictory.'},
+  'A0/T1':{name:'Vinculum', desc:'Dependent but documented. The chains are visible.'},
+  'A0/T0':{name:'Umbra',    desc:'Full dependency, full opacity. The darkest corner.'},
+};
+
+const CARDS = [
+  {name:'WireGuard',     a:3,t:2,traj:'stable',  url:'wireguard'},
+  {name:'AdGuard Home',  a:3,t:2,traj:'stable',  url:'adguard-home'},
+  {name:'Pi-hole',       a:3,t:2,traj:'stable',  url:'pi-hole'},
+  {name:'Nginx PM',      a:3,t:2,traj:'stable',  url:'nginx-proxy-manager'},
+  {name:'Traefik',       a:3,t:2,traj:'mixed',   url:'traefik'},
+  {name:'Tailscale',     a:2,t:1,traj:'mixed',   url:'tailscale'},
+  {name:'Syncthing',     a:3,t:2,traj:'stable',  url:'syncthing'},
+  {name:'Nextcloud',     a:3,t:2,traj:'stable',  url:'nextcloud'},
+  {name:'Kopia',         a:3,t:2,traj:'mixed',   url:'kopia'},
+  {name:'Google Drive',  a:0,t:0,traj:'closing', url:'google-drive'},
+  {name:'Vaultwarden',   a:3,t:2,traj:'stable',  url:'vaultwarden'},
+  {name:'KeePass',       a:3,t:2,traj:'stable',  url:'keepass'},
+  {name:'Authentik',     a:3,t:2,traj:'stable',  url:'authentik'},
+  {name:'Vault',         a:3,t:1,traj:'closing', url:'vault'},
+  {name:'Prometheus',    a:3,t:2,traj:'opening', url:'prometheus'},
+  {name:'Grafana',       a:3,t:2,traj:'mixed',   url:'grafana'},
+  {name:'Uptime Kuma',   a:3,t:2,traj:'stable',  url:'uptime-kuma'},
+  {name:'Jellyfin',      a:3,t:2,traj:'opening', url:'jellyfin'},
+  {name:'Forgejo',       a:3,t:2,traj:'opening', url:'forgejo'},
+  {name:'Immich',        a:3,t:2,traj:'stable',  url:'immich'},
+  {name:'Paperless-ngx', a:3,t:2,traj:'opening', url:'paperless-ngx'},
+  {name:'Home Assistant',a:3,t:2,traj:'opening', url:'home-assistant'},
+  {name:'Obsidian',      a:2,t:0,traj:'mixed',   url:'obsidian'},
+  {name:'Notion',        a:0,t:0,traj:'closing', url:'notion'},
+  {name:'Plex',          a:1,t:0,traj:'closing', url:'plex'},
+  {name:'Docker',        a:3,t:2,traj:'mixed',   url:'docker'},
+  {name:'K3s',           a:3,t:2,traj:'stable',  url:'k3s'},
+];
+
+const TC = {opening:'#22c55e', stable:'#60a5fa', mixed:'#fbbf24', closing:'#f87171'};
+const CPOS = {
+  'A3/T2':{x:0.50,y:0.42}, 'A3/T1':{x:0.72,y:0.28}, 'A3/T0':{x:0.84,y:0.56},
+  'A2/T2':{x:0.28,y:0.26}, 'A2/T1':{x:0.54,y:0.20}, 'A2/T0':{x:0.76,y:0.72},
+  'A1/T2':{x:0.14,y:0.46}, 'A1/T1':{x:0.33,y:0.65}, 'A1/T0':{x:0.58,y:0.82},
+  'A0/T2':{x:0.10,y:0.22}, 'A0/T1':{x:0.12,y:0.75}, 'A0/T0':{x:0.89,y:0.86},
+};
+
+function seedRng(s){let v=s;return()=>{v=(v*1664525+1013904223)&0xffffffff;return(v>>>0)/0xffffffff;};}
+
+const W0=2400, H0=1400;
+
+const stars = CARDS.map((c,i)=>{
+  const key=`A${c.a}/T${c.t}`;
+  const pos=CPOS[key]||{x:.5,y:.5};
+  const rng=seedRng(i*137+c.name.charCodeAt(0)*31);
+  const angle=rng()*Math.PI*2, dist=(0.03+rng()*0.07)*Math.min(W0,H0);
+  const score=(c.a/3)*0.6+(c.t/2)*0.4;
+  return {...c,key,x:pos.x*W0+Math.cos(angle)*dist,y:pos.y*H0+Math.sin(angle)*dist,score,r:4+score*12,alpha:0.35+score*0.65};
+});
+
+const svg=d3.select('#map').attr('width','100%').attr('height','100%');
+const g=svg.append('g');
+
+// Фоновые звёзды
+const defs=svg.append('defs');
+const filter=defs.append('filter').attr('id','glow');
+filter.append('feGaussianBlur').attr('stdDeviation','4').attr('result','blur');
+const fm=filter.append('feMerge');
+fm.append('feMergeNode').attr('in','blur');
+fm.append('feMergeNode').attr('in','SourceGraphic');
+
+const bgRng=seedRng(42);
+g.append('g').selectAll('circle').data(d3.range(300)).join('circle')
+  .attr('cx',()=>bgRng()*W0).attr('cy',()=>bgRng()*H0)
+  .attr('r',()=>bgRng()*1.1)
+  .attr('fill',()=>`rgba(180,210,255,${0.04+bgRng()*0.15})`);
+
+// Линии созвездий
+const groups=d3.group(stars,d=>d.key);
+groups.forEach((grp,key)=>{
+  if(grp.length<2)return;
+  g.append('path').datum(grp)
+    .attr('d',d3.line().x(d=>d.x).y(d=>d.y))
+    .attr('fill','none').attr('stroke','rgba(80,130,255,0.10)')
+    .attr('stroke-width',1).attr('stroke-dasharray','3,8');
+});
+
+// Названия созвездий
+const constLabels=g.append('g');
+const constLabelGroups=[];
+Object.entries(CPOS).forEach(([key,pos])=>{
+  const cn=CONSTS[key];if(!cn)return;
+  const has=stars.some(s=>s.key===key);
+  const cg=constLabels.append('g').attr('transform',`translate(${pos.x*W0},${pos.y*H0})`);
+  const nameText=cg.append('text').attr('text-anchor','middle')
+    .attr('font-family','IBM Plex Mono').attr('font-weight','600').attr('letter-spacing','0.1em')
+    .attr('fill',has?'rgba(160,200,255,0.6)':'rgba(100,140,200,0.18)')
+    .text(cn.name.toUpperCase());
+  const keyText=cg.append('text').attr('text-anchor','middle')
+    .attr('font-family','IBM Plex Mono').attr('fill','rgba(100,140,200,0.25)')
+    .text(key);
+  cg.append('rect').attr('x',-55).attr('y',-40).attr('width',110).attr('height',42)
+    .attr('fill','transparent').style('cursor','default')
+    .on('mouseenter',function(event){
+      const tt=document.getElementById('tooltip');
+      tt.style.display='block';
+      tt.style.left=(event.clientX+14)+'px';
+      tt.style.top=(event.clientY-10)+'px';
+      tt.innerHTML=`<strong style="color:#e0ecff;font-size:13px;">${cn.name}</strong> <span style="color:rgba(160,200,255,0.35);font-size:10px;">${key}</span><br><span style="color:rgba(160,200,255,0.6);font-size:11px;line-height:1.6;">${cn.desc}</span>`;
+    })
+    .on('mouseleave',()=>document.getElementById('tooltip').style.display='none');
+  constLabelGroups.push({cg,nameText,keyText});
+});
+
+// Звёзды
+const starGroups=stars.map(s=>{
+  const sg=g.append('g').attr('transform',`translate(${s.x},${s.y})`).style('cursor','pointer');
+  sg.append('circle').attr('r',s.r*3.5).attr('fill',TC[s.traj]).attr('opacity',s.alpha*0.12).attr('filter','url(#glow)');
+  sg.append('circle').attr('class','body').attr('r',s.r).attr('fill',TC[s.traj]).attr('opacity',s.alpha);
+  sg.append('circle').attr('r',s.r*0.35).attr('fill','#fff').attr('opacity',Math.min(s.alpha+0.2,1));
+  const label=sg.append('text').attr('text-anchor','middle')
+    .attr('font-family','IBM Plex Mono').attr('font-size',11)
+    .attr('fill',TC[s.traj]).attr('opacity',0).text(s.name);
+  sg.on('mouseenter',function(event){
+    d3.select(this).select('.body').attr('r',s.r*1.5);
+    const cn=CONSTS[s.key];
+    const tt=document.getElementById('tooltip');
+    tt.style.display='block';
+    tt.style.left=(event.clientX+14)+'px';
+    tt.style.top=(event.clientY-10)+'px';
+    tt.innerHTML=`<strong style="color:#e0ecff">${s.name}</strong><br>`
+      +`<span style="color:rgba(160,200,255,0.5);font-size:11px;">${cn?cn.name:s.key}</span><br>`
+      +`<span style="color:${TC[s.traj]}">${s.traj}</span> · A${s.a}/T${s.t}`;
+  })
+  .on('mouseleave',function(){
+    d3.select(this).select('.body').attr('r',s.r);
+    document.getElementById('tooltip').style.display='none';
+  })
+  .on('click',()=>window.open('https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/'+s.url+'.html','_blank'));
+  return {sg,label,s};
+});
+
+// Semantic zoom
+function updateSemanticZoom(k){
+  const zl=document.getElementById('zoomLbl');
+  if(k<0.8)      zl.textContent='Galaxy view';
+  else if(k<1.5) zl.textContent='Overview';
+  else if(k<3)   zl.textContent='Constellation view';
+  else            zl.textContent='Star view';
+
+  const cf=Math.max(9,Math.min(13,12/k));
+  const ck=Math.max(7,Math.min(10,9/k));
+  constLabelGroups.forEach(({nameText,keyText})=>{
+    nameText.attr('font-size',cf).attr('y',-22/k);
+    keyText.attr('font-size',ck).attr('y',-8/k);
+  });
+
+  const lo=k>=2?Math.min((k-2)/0.8,1):0;
+  starGroups.forEach(({label,s})=>{
+    label.attr('opacity',lo).attr('font-size',Math.max(8,11/k)).attr('y',(s.r+14)/k);
+  });
+}
+
+const zoom=d3.zoom().scaleExtent([0.25,10])
+  .on('zoom',event=>{
+    g.attr('transform',event.transform);
+    updateSemanticZoom(event.transform.k);
+  });
+svg.call(zoom);
+
+function initialTransform(){
+  const vw=window.innerWidth,vh=window.innerHeight;
+  const scale=Math.min(vw/W0,vh/H0)*0.88;
+  return d3.zoomIdentity.translate((vw-W0*scale)/2,(vh-H0*scale)/2).scale(scale);
+}
+svg.call(zoom.transform,initialTransform());
+
+document.getElementById('zoomIn').onclick=()=>svg.transition().duration(300).call(zoom.scaleBy,1.6);
+document.getElementById('zoomOut').onclick=()=>svg.transition().duration(300).call(zoom.scaleBy,0.625);
+document.getElementById('zoomReset').onclick=()=>svg.transition().duration(400).call(zoom.transform,initialTransform());
+window.addEventListener('resize',()=>svg.call(zoom.transform,initialTransform()));
+</script>
+</body>
+</html>
