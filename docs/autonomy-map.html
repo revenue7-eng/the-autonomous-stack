@@ -8,7 +8,7 @@ nav_order: 7
 Every technology in the TAS catalog mapped as a star. <strong>Size and brightness</strong> reflect autonomy — the closer and brighter, the more control you have. <strong>Color</strong> shows trajectory. Stars belong to one of 12 constellations defined by Autonomy × Transparency level. Hover to identify. Click to open the card.
 </p>
 
-<div style="position:relative;width:100%;background:#060b14;border-radius:10px;overflow:hidden;margin-bottom:2rem;">
+<div style="position:relative;width:100%;background:#060b14;border-radius:10px;overflow:hidden;margin-bottom:2rem;min-height:300px;">
 <canvas id="sky"></canvas>
 <div id="tip" style="position:absolute;display:none;pointer-events:none;background:rgba(6,15,30,0.95);border:1px solid rgba(100,160,255,0.25);border-radius:8px;padding:10px 14px;font-size:12px;color:#c8d8f0;line-height:1.7;max-width:200px;z-index:10;"></div>
 <div style="position:absolute;top:14px;right:16px;display:flex;flex-direction:column;gap:4px;align-items:flex-end;">
@@ -162,6 +162,8 @@ canvas.addEventListener('mousemove',e=>{
   const rect=canvas.getBoundingClientRect();
   const mx=(e.clientX-rect.left)*(W/rect.width);
   const my=(e.clientY-rect.top)*(H/rect.height);
+
+  // Проверить попадание на звезду
   const hit=stars.find(s=>Math.hypot(s.ax*W-mx,s.ay*H-my)<Math.max(s.r+5,12));
   if(hit){
     canvas.style.cursor='pointer';
@@ -172,9 +174,30 @@ canvas.addEventListener('mousemove',e=>{
     tip.innerHTML='<strong style="color:#e0ecff">'+hit.name+'</strong><br>'
       +'<span style="color:rgba(160,200,255,0.6);font-size:11px;">'+(cn?cn.name:hit.key)+' constellation</span><br>'
       +'<span style="color:'+TC[hit.traj]+'">'+hit.traj+'</span> · A'+hit.a+'/T'+hit.t;
-  } else {
-    canvas.style.cursor='default';tip.style.display='none';
+    return;
   }
+
+  // Проверить попадание на название созвездия
+  const constHit=Object.entries(CPOS).find(([k,pos])=>{
+    const cx=pos.ax*W, cy=pos.ay*H-10;
+    return Math.abs(mx-cx)<40 && Math.abs(my-cy)<20;
+  });
+  if(constHit){
+    const [k,pos]=constHit;
+    const cn=CONSTS[k];
+    const count=stars.filter(s=>s.key===k).length;
+    canvas.style.cursor='default';
+    tip.style.display='block';
+    tip.style.left=(e.offsetX+16)+'px';
+    tip.style.top=(e.offsetY-10)+'px';
+    tip.innerHTML='<strong style="color:#e0ecff;font-size:13px;">'+cn.name+'</strong>'
+      +' <span style="color:rgba(160,200,255,0.4);font-size:11px;">'+k+'</span><br>'
+      +'<span style="color:rgba(160,200,255,0.7);font-size:11px;line-height:1.6;">'+cn.desc+'</span>'
+      +(count>0?'<br><span style="color:rgba(160,200,255,0.35);font-size:10px;">'+count+' '+(count===1?'star':'stars')+'</span>':'');
+    return;
+  }
+
+  canvas.style.cursor='default';tip.style.display='none';
 });
 canvas.addEventListener('mouseleave',()=>tip.style.display='none');
 canvas.addEventListener('click',e=>{
