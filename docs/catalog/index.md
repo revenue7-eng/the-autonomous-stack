@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*47 technologies evaluated.*
+*50 technologies evaluated.*
 
 ---
 
@@ -75,6 +75,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ## Observability
 
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Loki](loki.md) | **A3** | **T2** | Log aggregation system by Grafana Labs. |
+
 ### Dashboards
 
 | Technology | Autonomy | Transparency | Description |
@@ -91,6 +95,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Zabbix](zabbix.md) | **A3** | **T2** | Enterprise-grade open-source monitoring platform. |
+| [Netdata](netdata.md) | **A3** | **T2** | Real-time performance monitoring with zero configuration. |
 | [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
 
 ---
