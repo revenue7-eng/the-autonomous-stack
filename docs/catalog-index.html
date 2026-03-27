@@ -192,7 +192,6 @@ document.getElementById('closeBtn').onclick=()=>{document.getElementById('overla
 document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')document.getElementById('overlay').style.display='none';};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
 
-['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
 
 const TC_BG_INACTIVE={opening:'#f0f0f0',stable:'#f0f0f0',mixed:'#f0f0f0',closing:'#f0f0f0'};
 const TC_COL_INACTIVE='#aaa';
@@ -212,6 +211,11 @@ function toggleTraj(traj){
   trajF.value = activeTraj || 'all';
   render();
 }
-render();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  ['trajF','aF','tF'].forEach(function(id){document.getElementById(id).addEventListener('change',render);});
+  render();
+});
 </script>
 {% endraw %}
