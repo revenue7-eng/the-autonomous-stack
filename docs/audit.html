@@ -16,33 +16,68 @@ nav_order: 3
   <label for="tool-select"><strong>Step 1: Is it already in our catalog?</strong></label><br>
   <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
     <option value="">-- Select from catalog --</option>
+    <option value="1password" data-autonomy="A0" data-transparency="T0">1Password</option>
     <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
     <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
+    <option value="bitwarden" data-autonomy="A3" data-transparency="T2">Bitwarden</option>
+    <option value="bookstack" data-autonomy="A3" data-transparency="T2">BookStack</option>
+    <option value="confluence" data-autonomy="A0" data-transparency="T0">Confluence</option>
     <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
+    <option value="docmost" data-autonomy="A3" data-transparency="T2">Docmost</option>
     <option value="forgejo" data-autonomy="A3" data-transparency="T2">Forgejo</option>
+    <option value="gitea-actions" data-autonomy="A3" data-transparency="T2">Gitea Actions</option>
+    <option value="gmail" data-autonomy="A0" data-transparency="T0">Gmail</option>
+    <option value="google-analytics" data-autonomy="A0" data-transparency="T0">Google Analytics</option>
     <option value="google-drive" data-autonomy="A0" data-transparency="T0">Google Drive</option>
     <option value="grafana" data-autonomy="A3" data-transparency="T2">Grafana</option>
+    <option value="headscale" data-autonomy="A3" data-transparency="T2">Headscale</option>
     <option value="home-assistant" data-autonomy="A3" data-transparency="T2">Home Assistant</option>
     <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
     <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
+    <option value="jenkins" data-autonomy="A3" data-transparency="T2">Jenkins</option>
+    <option value="joplin" data-autonomy="A3" data-transparency="T2">Joplin</option>
     <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
     <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
     <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
+    <option value="logseq" data-autonomy="A3" data-transparency="T2">Logseq</option>
+    <option value="loki" data-autonomy="A3" data-transparency="T2">Loki</option>
+    <option value="mailcow" data-autonomy="A3" data-transparency="T2">Mailcow</option>
+    <option value="mariadb" data-autonomy="A3" data-transparency="T2">MariaDB</option>
+    <option value="matrix" data-autonomy="A3" data-transparency="T2">Matrix / Element</option>
+    <option value="mysql" data-autonomy="A3" data-transparency="T1">MySQL</option>
+    <option value="n8n" data-autonomy="A3" data-transparency="T2">n8n</option>
+    <option value="netdata" data-autonomy="A3" data-transparency="T2">Netdata</option>
     <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
     <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
+    <option value="node-red" data-autonomy="A3" data-transparency="T2">Node-RED</option>
     <option value="notion" data-autonomy="A0" data-transparency="T0">Notion</option>
     <option value="obsidian" data-autonomy="A2" data-transparency="T0">Obsidian</option>
+    <option value="openvpn" data-autonomy="A3" data-transparency="T2">OpenVPN</option>
     <option value="paperless-ngx" data-autonomy="A3" data-transparency="T2">Paperless-ngx</option>
+    <option value="photoprism" data-autonomy="A3" data-transparency="T2">PhotoPrism</option>
     <option value="pi-hole" data-autonomy="A3" data-transparency="T2">Pi-hole</option>
+    <option value="plausible" data-autonomy="A3" data-transparency="T2">Plausible Analytics</option>
     <option value="plex" data-autonomy="A1" data-transparency="T0">Plex</option>
+    <option value="postgresql" data-autonomy="A3" data-transparency="T2">PostgreSQL</option>
     <option value="prometheus" data-autonomy="A3" data-transparency="T2">Prometheus</option>
+    <option value="protonmail" data-autonomy="A0" data-transparency="T1">Proton Mail</option>
+    <option value="redis" data-autonomy="A2" data-transparency="T1">Redis</option>
+    <option value="slack" data-autonomy="A0" data-transparency="T0">Slack</option>
+    <option value="sqlite" data-autonomy="A3" data-transparency="T1">SQLite</option>
+    <option value="stalwart" data-autonomy="A3" data-transparency="T2">Stalwart</option>
     <option value="syncthing" data-autonomy="A3" data-transparency="T2">Syncthing</option>
     <option value="tailscale" data-autonomy="A2" data-transparency="T1">Tailscale</option>
+    <option value="telegram" data-autonomy="A1" data-transparency="T0">Telegram</option>
     <option value="traefik" data-autonomy="A3" data-transparency="T2">Traefik</option>
+    <option value="tuta" data-autonomy="A0" data-transparency="T1">Tuta (Tutanota)</option>
+    <option value="umami" data-autonomy="A3" data-transparency="T2">Umami</option>
     <option value="uptime-kuma" data-autonomy="A3" data-transparency="T2">Uptime Kuma</option>
     <option value="vault" data-autonomy="A3" data-transparency="T2">Vault</option>
     <option value="vaultwarden" data-autonomy="A3" data-transparency="T2">Vaultwarden</option>
     <option value="wireguard" data-autonomy="A3" data-transparency="T2">WireGuard</option>
+    <option value="woodpecker" data-autonomy="A3" data-transparency="T2">Woodpecker CI</option>
+    <option value="zabbix" data-autonomy="A3" data-transparency="T2">Zabbix</option>
+    <option value="zapier" data-autonomy="A0" data-transparency="T0">Zapier</option>
   <option value="" disabled>---- or enter URL below ----</option>
   </select>
 </div>
