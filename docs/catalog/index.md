@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*67 technologies evaluated.*
+*68 technologies evaluated.*
 
 ---
 
@@ -221,6 +221,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Paperless-ngx](paperless-ngx.md) | **A3** | **T2** | Document management system that transforms your physical and digital documents into a searchable, organized archive. |
+| [The Autonomous Stack (TAS)](the-autonomous-stack.md) | **A2** | **T2** | An open-source decision framework for evaluating and building infrastructure you control. |
 | [Notion](notion.md) | **A0** | **T0** | All‑in‑one workspace for notes, documents, databases, wikis, and project management. |
 
 ### Documents & Wiki
