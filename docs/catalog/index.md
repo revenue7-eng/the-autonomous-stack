@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*57 technologies evaluated.*
+*62 technologies evaluated.*
 
 ---
 
@@ -63,6 +63,16 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Kopia](kopia.md) | **A3** | **T2** | Fast and secure open-source backup/restore tool with snapshots, deduplication, compression, and client-side encryption. |
+
+### General
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [MySQL](mysql.md) | **A3** | **T1** | The world's most widely deployed open-source relational database. |
+| [MariaDB](mariadb.md) | **A3** | **T2** | Community-developed fork of MySQL created by MySQL's original author (Monty Widenius) after Oracle's acquisition. |
+| [PostgreSQL](postgresql.md) | **A3** | **T2** | The world's most advanced open-source relational database. |
+| [SQLite](sqlite.md) | **A3** | **T1** | The most widely deployed database engine in the world — embedded in every smartphone, browser, and operating system. |
+| [Redis](redis.md) | **A2** | **T1** | In-memory data structure store. |
 
 ### Sync
 
