@@ -14,7 +14,7 @@ If it can't be stopped, exited, or recovered --- you're renting, not owning.
 
 TAS gives you three things: a way to **evaluate** any technology, a **catalog** of evaluated tools, and **recipes** to deploy them.
 
-**→ [Does your infrastructure pass the TAS test?](test.html)** — 30 seconds, no account needed.
+**→ [Does your infrastructure pass the TAS test?](https://revenue7-eng.github.io/the-autonomous-stack/test.html)** — 30 seconds, no account needed.
 
 **→ [Explore the Autonomy Map](autonomy-map.html)** — 62 technologies, 12 constellations.
 
