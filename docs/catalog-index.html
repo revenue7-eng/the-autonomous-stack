@@ -200,14 +200,14 @@ let activeTraj=null;
 
 function toggleTraj(traj){
   activeTraj = activeTraj===traj ? null : traj;
-  // Обновить вид кнопок
+  /* Обновить вид кнопок */
   ['opening','stable','mixed','closing'].forEach(t=>{
     const btn=document.getElementById('btn-'+t);
     const isActive = activeTraj===null || activeTraj===t;
     btn.style.opacity = isActive ? '1' : '0.35';
     btn.style.transform = activeTraj===t ? 'scale(1.05)' : 'scale(1)';
   });
-  // Перерисовать с фильтром
+  /* Перерисовать с фильтром */
   const trajF=document.getElementById('trajF');
   trajF.value = activeTraj || 'all';
   render();

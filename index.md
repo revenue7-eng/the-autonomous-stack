@@ -6,7 +6,7 @@ nav_order: 1
 
 # The Autonomous Stack
 
-**Three questions that reveal who controls your infrastructure.**
+**Eight questions that reveal who controls your infrastructure.**
 
 If your infrastructure requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
@@ -92,13 +92,13 @@ See the full [Assessment Scale](docs/catalog/assessment-scale.md) for details.
 
 | Technology | Autonomy | Transparency | Category |
 |------------|----------|--------------|----------|
-| [WireGuard](catalog/wireguard.md) | **A3** | **T2** | VPN |
-| [Syncthing](catalog/syncthing.md) | **A3** | **T2** | File sync |
-| [Jellyfin](catalog/jellyfin.md) | **A3** | **T2** | Media server |
-| [Tailscale](catalog/tailscale.md) | **A2** | **T1** | Mesh VPN |
-| [Plex](catalog/plex.md) | **A1** | **T0** | Media server |
-| [Notion](catalog/notion.md) | **A0** | **T0** | Documents |
-| [Google Drive](catalog/google-drive.md) | **A0** | **T0** | File storage |
+| [WireGuard](docs/catalog/wireguard.md) | **A3** | **T2** | VPN |
+| [Syncthing](docs/catalog/syncthing.md) | **A3** | **T2** | File sync |
+| [Jellyfin](docs/catalog/jellyfin.md) | **A3** | **T2** | Media server |
+| [Tailscale](docs/catalog/tailscale.md) | **A2** | **T1** | Mesh VPN |
+| [Plex](docs/catalog/plex.md) | **A1** | **T0** | Media server |
+| [Notion](docs/catalog/notion.md) | **A0** | **T0** | Documents |
+| [Google Drive](docs/catalog/google-drive.md) | **A0** | **T0** | File storage |
 
 Full catalog: [Technology Catalog](docs/catalog/)
 
@@ -140,5 +140,5 @@ This framework is built on the philosophy of [whose.world](https://whose.world).
 
 ## License
 
-- **Code**: [MIT](../LICENSE)
+- **Code**: [MIT](LICENSE)
 - **Documentation**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)

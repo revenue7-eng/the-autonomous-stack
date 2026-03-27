@@ -7,7 +7,7 @@ nav_exclude: true
 
 # The Autonomous Stack
 
-**Three questions that reveal who controls your infrastructure.**
+**Eight questions that reveal who controls your infrastructure.**
 
 If your infrastructure requires an external account to function --- you don't control it.
 If it can't be stopped, exited, or recovered --- you're renting, not owning.
