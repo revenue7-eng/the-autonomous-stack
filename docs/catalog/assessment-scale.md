@@ -66,3 +66,101 @@ The A/T rating is necessary but not sufficient. Five additional questions reveal
 A tool can be A3/T2 today and still have aggressive telemetry, hidden costs, or a closing trajectory. The A/T rating tells you where the tool stands. The diagnostic questions tell you what's pulling at it -- and where it's headed.
 
 Together, they form a complete picture of technological sovereignty.
+
+---
+
+## How to score — step by step
+
+### Step 1: Determine A level (structural questions)
+
+Answer the three structural questions. Use this table:
+
+| Pause | Exit | Recoverability | A level |
+|-------|------|----------------|---------|
+| ✅ yes | ✅ yes | ✅ yes | **A3** |
+| ✅ yes | ✅ yes | ⚠️ partial | **A2** |
+| ✅ yes | ⚠️ partial | ⚠️ partial | **A2** |
+| ✅ yes | ❌ no | any | **A1** |
+| ⚠️ partial | any | any | **A1** |
+| ❌ no | any | any | **A0** |
+
+**Rule:** the weakest answer dominates. If Exit is ❌, the tool is A0 or A1 regardless of the other answers.
+
+---
+
+### Step 2: Determine T level (transparency)
+
+| Source code | License | T level |
+|-------------|---------|---------|
+| Public, OSI-approved license | MIT, Apache, GPL, AGPL, MPL... | **T2** |
+| Architecture documented, code closed | Whitepaper, security audits published | **T1** |
+| Closed, no public documentation | Proprietary, no auditable information | **T0** |
+
+**Note:** BSL (Business Source License) is NOT OSI-approved → T1, not T2.
+
+---
+
+### Step 3: Determine D score (diagnostic questions)
+
+Each of the five diagnostic questions is answered ✅ (clean) or ⚠️ (concern):
+
+| Question | ✅ clean | ⚠️ concern |
+|----------|----------|------------|
+| Personalisation | No behavioural profiling | Builds user model, telemetry |
+| Urgency | No artificial pressure | Countdown timers, forced upgrades |
+| Hidden cost | No non-monetary costs | Privacy, attention, lock-in |
+| Transparency fragility | Value survives full visibility | Value depends on user ignorance |
+| Trajectory | Moving toward openness | License changes, feature gating, cloud push |
+
+Count the ⚠️ concerns:
+
+| ⚠️ concerns | D score | Trajectory |
+|-------------|---------|------------|
+| 0 | D5 | opening |
+| 1 | D4 | stable |
+| 2 | D3 | mixed |
+| 3 | D2 | closing |
+| 4–5 | D1 | closing |
+
+---
+
+### Step 4: Write the TAS Score
+
+Format: **S_/3 — D_/5 · A_ / T_**
+
+Example: `S3/3 — D4/5 · A3 / T2`
+
+- **S** = structural score = number of ✅ among the 3 structural questions
+- **D** = diagnostic score = 5 minus number of ⚠️ concerns
+- **A** = autonomy level from Step 1
+- **T** = transparency level from Step 2
+
+If S=3 and D=5 — no explanation needed.
+If S<3 or D<5 — always explain which question caused the deduction.
+
+---
+
+### Worked example: PhotoPrism
+
+**Structural:**
+- Pause ✅ — can be stopped cleanly
+- Exit ✅ — original files remain untouched
+- Recoverability ✅ — standard backup applies
+
+→ S3/3 · **A3**
+
+**Transparency:**
+- AGPL-3.0, fully open source
+
+→ **T2**
+
+**Diagnostic:**
+- Personalisation ✅ — no behavioural profiling
+- Urgency ✅ — no artificial pressure
+- Hidden cost ✅ — no non-monetary costs
+- Transparency fragility ✅ — value survives full visibility
+- Trajectory ⚠️ — PhotoPrism+ is a paid closed tier; some features gated
+
+→ D4/5 · **mixed**
+
+**Final: S3/3 — D4/5 · A3 / T2 · trajectory: mixed**
