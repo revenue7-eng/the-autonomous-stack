@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*27 technologies evaluated.*
+*33 technologies evaluated.*
 
 ---
 
@@ -97,8 +97,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
 | [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
+| [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
 
 ---
 
@@ -108,8 +108,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Lightweight, self-hosted implementation of the Bitwarden password manager API. |
 | [KeePass](keepass.md) | **A3** | **T2** | Free, open source password manager that stores credentials in a locally encrypted database file (`.kdbx`). |
+| [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Lightweight, self-hosted implementation of the Bitwarden password manager API. |
 
 ### Secrets
 
@@ -144,7 +144,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Docmost](docmost.md) | **A3** | **T2** | Open-source, self-hosted documentation and wiki platform. |
 | [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
+| [BookStack](bookstack.md) | **A3** | **T2** | Open-source, self-hosted wiki platform built with PHP and Laravel. |
+| [Confluence](confluence.md) | **A0** | **T0** | Proprietary wiki and collaboration platform by Atlassian. |
 
 ### Media
 
@@ -164,6 +167,16 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Immich](immich.md) | **A3** | **T2** | Self-hosted photo and video backup solution with a focus on user experience, automatic organisation, and machine learnin... |
+
+---
+
+## Other
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Mailcow](mailcow.md) | **A3** | **T2** | Open-source, Docker-based email server suite. |
+| [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
+| [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
 
 ---
 
