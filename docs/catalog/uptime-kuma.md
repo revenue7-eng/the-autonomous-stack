@@ -1,5 +1,5 @@
 ---
-tags: [monitoring, observability, uptime]
+nav_exclude: false
 title: "Uptime Kuma"
 category: "observability/monitoring"
 status: "stable"

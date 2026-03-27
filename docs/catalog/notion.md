@@ -1,5 +1,5 @@
 ---
-tags: [notes, documents, workspace, cloud, alternative]
+nav_exclude: false
 title: "Notion"
 category: "applications/documents"
 status: "stable"

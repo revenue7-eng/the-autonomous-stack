@@ -1,5 +1,5 @@
 ---
-tags: [media, video, music, plex-alternative]
+nav_exclude: false
 title: "Jellyfin"
 category: "applications/media"
 status: "stable"

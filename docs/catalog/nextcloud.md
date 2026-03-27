@@ -1,5 +1,5 @@
 ---
-tags: [cloud, files, calendar, contacts, google-alternative]
+nav_exclude: false
 title: "Nextcloud"
 category: "applications/cloud"
 status: "stable"

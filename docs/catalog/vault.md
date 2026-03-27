@@ -1,5 +1,5 @@
 ---
-tags: [secrets, security, encryption, hashicorp]
+nav_exclude: false
 title: "Vault"
 category: "security/secrets"
 status: "stable"

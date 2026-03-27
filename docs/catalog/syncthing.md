@@ -1,5 +1,5 @@
 ---
-tags: [sync, files, storage, p2p]
+nav_exclude: false
 title: "Syncthing"
 category: "storage/sync"
 status: "stable"

@@ -1,5 +1,5 @@
 ---
-tags: [files, storage, cloud, google, alternative]
+nav_exclude: false
 title: "Google Drive"
 category: "storage/sync"
 status: "stable"

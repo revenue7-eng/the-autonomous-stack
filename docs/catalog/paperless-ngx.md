@@ -1,5 +1,5 @@
 ---
-tags: [documents, ocr, archive, notion-alternative]
+nav_exclude: false
 title: "Paperless-ngx"
 category: "applications/documents"
 status: "stable"

@@ -1,5 +1,5 @@
 ---
-tags: [monitoring, dashboards, observability, metrics]
+nav_exclude: false
 title: "Grafana"
 category: "observability/dashboards"
 status: "stable"

@@ -159,7 +159,7 @@ const stars = CARDS.map((c,i)=>{
 const svg=d3.select('#map').attr('width','100%').attr('height','100%');
 const g=svg.append('g');
 
-// Фоновые звёзды
+/* Фоновые звёзды */
 const defs=svg.append('defs');
 const filter=defs.append('filter').attr('id','glow');
 filter.append('feGaussianBlur').attr('stdDeviation','4').attr('result','blur');
@@ -173,7 +173,7 @@ g.append('g').selectAll('circle').data(d3.range(300)).join('circle')
   .attr('r',()=>bgRng()*1.1)
   .attr('fill',()=>`rgba(180,210,255,${0.04+bgRng()*0.15})`);
 
-// Линии созвездий
+/* Линии созвездий */
 const groups=d3.group(stars,d=>d.key);
 groups.forEach((grp,key)=>{
   if(grp.length<2)return;
@@ -183,7 +183,7 @@ groups.forEach((grp,key)=>{
     .attr('stroke-width',1).attr('stroke-dasharray','3,8');
 });
 
-// Названия созвездий
+/* Названия созвездий */
 const constLabels=g.append('g');
 const constLabelGroups=[];
 Object.entries(CPOS).forEach(([key,pos])=>{
@@ -210,7 +210,7 @@ Object.entries(CPOS).forEach(([key,pos])=>{
   constLabelGroups.push({cg,nameText,keyText});
 });
 
-// Звёзды
+/* Звёзды */
 const starGroups=stars.map(s=>{
   const sg=g.append('g').attr('transform',`translate(${s.x},${s.y})`).style('cursor','pointer');
   sg.append('circle').attr('r',s.r*3.5).attr('fill',TC[s.traj]).attr('opacity',s.alpha*0.12).attr('filter','url(#glow)');
@@ -238,7 +238,7 @@ const starGroups=stars.map(s=>{
   return {sg,label,s};
 });
 
-// Semantic zoom
+/* Semantic zoom */
 function updateSemanticZoom(k){
   const zl=document.getElementById('zoomLbl');
   if(k<0.8)      zl.textContent='Galaxy view';

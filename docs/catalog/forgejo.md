@@ -1,5 +1,5 @@
 ---
-tags: [git, version-control, code, gitea-alternative]
+nav_exclude: false
 title: "Forgejo"
 category: "applications/version-control"
 status: "stable"

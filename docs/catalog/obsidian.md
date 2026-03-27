@@ -1,5 +1,5 @@
 ---
-tags: [notes, markdown, knowledge, local-first]
+nav_exclude: false
 title: "Obsidian"
 category: "applications/notes"
 status: "stable"

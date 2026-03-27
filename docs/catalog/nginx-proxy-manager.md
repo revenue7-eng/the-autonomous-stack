@@ -1,5 +1,5 @@
 ---
-tags: [proxy, network, https, gui]
+nav_exclude: false
 title: "Nginx Proxy Manager"
 category: "network/proxy"
 status: "stable"

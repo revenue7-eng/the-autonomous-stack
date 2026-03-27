@@ -1,4 +1,5 @@
 ---
+nav_exclude: false
 autonomy_level: A3
 category: storage/backup
 license: Apache-2.0

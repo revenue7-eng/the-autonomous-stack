@@ -1,5 +1,5 @@
 ---
-tags: [passwords, security, bitwarden, selfhosted]
+nav_exclude: false
 title: "Vaultwarden"
 category: "security/passwords"
 status: "stable"

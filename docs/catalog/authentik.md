@@ -1,5 +1,5 @@
 ---
-tags: [identity, sso, auth, mfa, ldap]
+nav_exclude: false
 title: "Authentik"
 category: "identity/auth"
 status: "stable"

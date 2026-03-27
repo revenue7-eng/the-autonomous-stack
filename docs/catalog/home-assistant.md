@@ -1,5 +1,5 @@
 ---
-tags: [automation, smarthome, iot, local]
+nav_exclude: false
 title: "Home Assistant"
 category: "applications/automation"
 status: "stable"

@@ -1,5 +1,5 @@
 ---
-tags: [dns, network, privacy, ad-blocking]
+nav_exclude: false
 title: "Pi-hole"
 category: "network/dns"
 status: "stable"

@@ -1,5 +1,5 @@
 ---
-tags: [monitoring, metrics, observability, alerting]
+nav_exclude: false
 title: "Prometheus"
 category: "observability/metrics"
 status: "stable"

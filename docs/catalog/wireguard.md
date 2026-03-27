@@ -1,5 +1,5 @@
 ---
-tags: [vpn, network, security, privacy]
+nav_exclude: false
 title: "WireGuard"
 category: "network/vpn"
 status: "stable"

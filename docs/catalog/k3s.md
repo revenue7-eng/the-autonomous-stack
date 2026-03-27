@@ -1,5 +1,5 @@
 ---
-tags: [compute, kubernetes, orchestration]
+nav_exclude: false
 title: "K3s"
 category: "compute/orchestration"
 status: "stable"

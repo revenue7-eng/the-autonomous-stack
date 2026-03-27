@@ -1,5 +1,5 @@
 ---
-tags: [media, video, music, alternative]
+nav_exclude: false
 title: "Plex"
 category: "applications/media"
 status: "stable"

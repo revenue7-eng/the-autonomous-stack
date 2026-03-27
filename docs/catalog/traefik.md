@@ -1,5 +1,5 @@
 ---
-tags: [proxy, network, https, docker]
+nav_exclude: false
 title: "Traefik"
 category: "network/proxy"
 status: "stable"

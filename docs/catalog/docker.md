@@ -1,5 +1,5 @@
 ---
-tags: [compute, containers, orchestration]
+nav_exclude: false
 title: "Docker"
 category: "compute/container"
 status: "stable"

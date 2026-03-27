@@ -1,4 +1,5 @@
 ---
+nav_exclude: false
 parent: "Technology Catalog"
 nav_order: 99
 title: "Bitwarden"
