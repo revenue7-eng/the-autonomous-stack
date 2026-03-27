@@ -34,7 +34,7 @@ nav_order: 7
 <h1>Autonomy Map</h1>
 
 <p class="map-desc">
-Every evaluated technology plotted by Autonomy (vertical) and Transparency (horizontal). Stars cluster into 12 constellations. Color shows trajectory. Size reflects how many other tools depend on it. Hover for details, click to open the catalog card.
+A living star chart of the infrastructure landscape. Stars cluster into 12 constellations by Autonomy x Transparency. Color shows trajectory. Size reflects how many other tools depend on it. Drag to explore, hover for details, click to open the catalog card.
 </p>
 
 <div class="filter-row" id="filters">
@@ -72,202 +72,196 @@ const INBOUND={"docker":43.0,"postgresql":5.5,"redis":1.5,"forgejo":2,"prometheu
 
 const TC = {opening:'#22c55e', stable:'#60a5fa', mixed:'#f59e0b', closing:'#f87171'};
 const CONSTS = {
-  'A3/T2':{name:'Lux',      desc:'Full autonomy, open source. The TAS ideal.'},
-  'A3/T1':{name:'Vigil',    desc:'Autonomous, documented but not fully open.'},
-  'A3/T0':{name:'Solitudo', desc:'Autonomous but opaque. Your data, your control.'},
-  'A2/T2':{name:'Libertas', desc:'Nearly free, open source. One dependency remains.'},
-  'A2/T1':{name:'Stella',   desc:'Mostly autonomous, documented. Conscious trade-off zone.'},
-  'A2/T0':{name:'Janua',    desc:'Data is yours, tool is closed. A half-open door.'},
-  'A1/T2':{name:'Aurora',   desc:'Dependent but open source. Heading toward freedom.'},
-  'A1/T1':{name:'Iter',     desc:'Partial freedom, partial light. A path, not a destination.'},
-  'A1/T0':{name:'Nebula',   desc:'Partially dependent, opaque. Hard to know what you control.'},
-  'A0/T2':{name:'Paradoxa', desc:'Cloud-bound yet open source. Rare and contradictory.'},
-  'A0/T1':{name:'Vinculum', desc:'Dependent but documented. The chains are visible.'},
-  'A0/T0':{name:'Umbra',    desc:'Full dependency, full opacity. The darkest corner.'},
+  'A3/T2':{name:'Lux'},      'A3/T1':{name:'Vigil'},    'A3/T0':{name:'Solitudo'},
+  'A2/T2':{name:'Libertas'}, 'A2/T1':{name:'Stella'},   'A2/T0':{name:'Janua'},
+  'A1/T2':{name:'Aurora'},   'A1/T1':{name:'Iter'},      'A1/T0':{name:'Nebula'},
+  'A0/T2':{name:'Paradoxa'}, 'A0/T1':{name:'Vinculum'}, 'A0/T0':{name:'Umbra'},
 };
+const CONST_DESC = {
+  'A3/T2':'Full autonomy, open source. The TAS ideal.',
+  'A3/T1':'Autonomous, documented but not fully open.',
+  'A3/T0':'Autonomous but opaque. Your data, your control.',
+  'A2/T2':'Nearly free, open source. One dependency remains.',
+  'A2/T1':'Mostly autonomous, documented. Conscious trade-off zone.',
+  'A2/T0':'Data is yours, tool is closed. A half-open door.',
+  'A1/T2':'Dependent but open source. Heading toward freedom.',
+  'A1/T1':'Partial freedom, partial light. A path, not a destination.',
+  'A1/T0':'Partially dependent, opaque. Hard to know what you control.',
+  'A0/T2':'Cloud-bound yet open source. Rare and contradictory.',
+  'A0/T1':'Dependent but documented. The chains are visible.',
+  'A0/T0':'Full dependency, full opacity. The darkest corner.',
+};
+
 const BASE = 'https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/';
-
-/* Seeded RNG for consistent star jitter */
-function seedRng(s) { return function() { s = Math.sin(s * 9301 + 49297) * 233280; return s - Math.floor(s); }; }
-
-/* Setup */
 const container = document.getElementById('map-container');
 const W = container.clientWidth;
 const H = container.clientHeight;
-const PAD = {top:50, right:40, bottom:50, left:50};
 
 const svg = d3.select('#map-container').append('svg')
   .attr('viewBox', `0 0 ${W} ${H}`)
   .attr('preserveAspectRatio', 'xMidYMid meet');
-
 const g = svg.append('g');
-const zoom = d3.zoom().scaleExtent([0.5, 5]).on('zoom', e => g.attr('transform', e.transform));
-svg.call(zoom);
+svg.call(d3.zoom().scaleExtent([0.4, 5]).on('zoom', e => g.attr('transform', e.transform)));
 
-/* Scales: T on X (0 left = closed, 2 right = open), A on Y (0 bottom = cloud, 3 top = autonomous) */
-const xScale = d3.scaleLinear().domain([-0.3, 2.3]).range([PAD.left, W - PAD.right]);
-const yScale = d3.scaleLinear().domain([-0.3, 3.3]).range([H - PAD.bottom, PAD.top]);
+/* Glow filter */
+const defs = svg.append('defs');
+const flt = defs.append('filter').attr('id','glow').attr('x','-50%').attr('y','-50%').attr('width','200%').attr('height','200%');
+flt.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation',2.5).attr('result','b');
+const fm2 = flt.append('feMerge'); fm2.append('feMergeNode').attr('in','b'); fm2.append('feMergeNode').attr('in','SourceGraphic');
 
-/* Grid lines */
-const gridG = g.append('g');
-for (let a = 0; a <= 3; a++) {
-  gridG.append('line').attr('x1', PAD.left).attr('x2', W - PAD.right)
-    .attr('y1', yScale(a)).attr('y2', yScale(a))
-    .attr('stroke', '#0e1a2a').attr('stroke-width', 1);
-  gridG.append('text').attr('x', PAD.left - 8).attr('y', yScale(a) + 4)
-    .attr('text-anchor', 'end').attr('font-size', 10).attr('fill', '#2a3a55')
-    .attr('font-family', "'IBM Plex Mono', monospace")
-    .text('A' + a);
-}
-for (let t = 0; t <= 2; t++) {
-  gridG.append('line').attr('y1', PAD.top).attr('y2', H - PAD.bottom)
-    .attr('x1', xScale(t)).attr('x2', xScale(t))
-    .attr('stroke', '#0e1a2a').attr('stroke-width', 1);
-  gridG.append('text').attr('x', xScale(t)).attr('y', H - PAD.bottom + 18)
-    .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#2a3a55')
-    .attr('font-family', "'IBM Plex Mono', monospace")
-    .text('T' + t);
-}
+/* Constellation anchor positions */
+const PAD = 60;
+const cX = d3.scaleLinear().domain([0, 2]).range([PAD + 80, W - PAD - 40]);
+const cY = d3.scaleLinear().domain([0, 3]).range([H - PAD - 20, PAD + 20]);
 
-/* Axis labels */
-gridG.append('text').attr('x', W / 2).attr('y', H - 8)
-  .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#1e3050')
-  .attr('font-family', "'IBM Plex Mono', monospace").attr('letter-spacing', '0.1em')
-  .text('TRANSPARENCY →');
-gridG.append('text').attr('x', 12).attr('y', H / 2)
-  .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#1e3050')
-  .attr('font-family', "'IBM Plex Mono', monospace").attr('letter-spacing', '0.1em')
-  .attr('transform', `rotate(-90, 12, ${H/2})`)
-  .text('AUTONOMY →');
-
-/* Constellation labels */
-const constG = g.append('g');
+/* Constellation zone labels */
+const labelG = g.append('g');
 for (let a = 0; a <= 3; a++) {
   for (let t = 0; t <= 2; t++) {
-    const key = `A${a}/T${t}`;
+    const key = 'A'+a+'/T'+t;
     const cn = CONSTS[key];
     if (!cn) continue;
-    const cx = xScale(t), cy = yScale(a);
-    constG.append('text').attr('x', cx).attr('y', cy - 28)
-      .attr('text-anchor', 'middle').attr('font-size', 9).attr('fill', '#1a2a42')
-      .attr('font-family', "'IBM Plex Mono', monospace").attr('font-weight', 600)
-      .attr('letter-spacing', '0.08em')
+    labelG.append('text')
+      .attr('x', cX(t)).attr('y', cY(a) - 4)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 9).attr('fill', '#16263e')
+      .attr('font-family', "'IBM Plex Mono',monospace")
+      .attr('font-weight', 600).attr('letter-spacing', '0.1em')
       .text(cn.name.toUpperCase());
+    labelG.append('text')
+      .attr('x', cX(t)).attr('y', cY(a) + 10)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 7).attr('fill', '#0e1a2a')
+      .attr('font-family', "'IBM Plex Mono',monospace")
+      .text(key);
   }
 }
 
-/* Place stars with jitter */
-const stars = NODES.map((n, i) => {
-  const rng = seedRng(i * 137 + n.n.charCodeAt(0) * 31);
-  const jitterX = (rng() - 0.5) * (xScale(1) - xScale(0)) * 0.55;
-  const jitterY = (rng() - 0.5) * (yScale(0) - yScale(1)) * 0.45;
-  const ib = INBOUND[n.id] || 0;
+/* Axis hints */
+labelG.append('text').attr('x', W/2).attr('y', H - 8).attr('text-anchor','middle')
+  .attr('font-size',9).attr('fill','#12202e').attr('font-family',"'IBM Plex Mono',monospace")
+  .attr('letter-spacing','0.1em').text('TRANSPARENCY \u2192');
+labelG.append('text').attr('x', 14).attr('y', H/2).attr('text-anchor','middle')
+  .attr('font-size',9).attr('fill','#12202e').attr('font-family',"'IBM Plex Mono',monospace")
+  .attr('letter-spacing','0.1em').attr('transform','rotate(-90,14,'+H/2+')').text('AUTONOMY \u2192');
+
+/* Build star nodes */
+var nodes = NODES.map(function(n,i) {
+  var ib = INBOUND[n.id] || 0;
+  var key = 'A'+n.a+'/T'+n.t;
   return {
-    ...n,
-    x: xScale(n.t) + jitterX,
-    y: yScale(n.a) + jitterY,
-    r: 3.5 + ib * 1.1,
-    key: `A${n.a}/T${n.t}`,
+    id:n.id, n:n.n, a:n.a, t:n.t, tr:n.tr, g:n.g, key:key,
+    targetX: cX(n.t),
+    targetY: cY(n.a),
+    r: Math.max(4, 3.5 + Math.sqrt(ib) * 3),
+    ib: ib,
   };
 });
 
-/* Background glow for populated constellations */
-const glowG = g.append('g');
-const constCounts = {};
-stars.forEach(s => { constCounts[s.key] = (constCounts[s.key] || 0) + 1; });
-Object.entries(constCounts).forEach(([key, count]) => {
-  const [a, t] = [parseInt(key[1]), parseInt(key[4])];
-  const cx = xScale(t), cy = yScale(a);
-  const r = 30 + count * 4;
-  const grad = svg.select('defs').empty() ? svg.append('defs') : svg.select('defs');
-  const gid = 'glow-' + key.replace('/', '-');
-  const radGrad = grad.append('radialGradient').attr('id', gid);
-  radGrad.append('stop').attr('offset', '0%').attr('stop-color', '#1a3050').attr('stop-opacity', 0.15);
-  radGrad.append('stop').attr('offset', '100%').attr('stop-color', '#04090f').attr('stop-opacity', 0);
-  glowG.append('circle').attr('cx', cx).attr('cy', cy).attr('r', r).attr('fill', `url(#${gid})`);
+/* Count per constellation */
+var constCounts = {};
+nodes.forEach(function(n) { constCounts[n.key] = (constCounts[n.key]||0)+1; });
+
+/* Background glow per constellation */
+var glowG = g.insert('g', ':first-child');
+Object.keys(constCounts).forEach(function(key) {
+  var count = constCounts[key];
+  var a = parseInt(key[1]), t = parseInt(key[4]);
+  var gid = 'cg-' + key.replace('/','-');
+  var rad = defs.append('radialGradient').attr('id', gid);
+  rad.append('stop').attr('offset','0%').attr('stop-color','#1a3050').attr('stop-opacity', Math.min(0.2, 0.04 + count * 0.005));
+  rad.append('stop').attr('offset','100%').attr('stop-color','#04090f').attr('stop-opacity',0);
+  glowG.append('circle').attr('cx', cX(t)).attr('cy', cY(a))
+    .attr('r', 40 + count * 3).attr('fill', 'url(#'+gid+')');
 });
 
 /* Draw stars */
-const starG = g.append('g');
-const starEls = starG.selectAll('g').data(stars).join('g')
-  .attr('transform', d => `translate(${d.x},${d.y})`)
-  .attr('cursor', 'pointer');
+var starG = g.append('g');
+var starEls = starG.selectAll('g').data(nodes).join('g').attr('cursor','pointer')
+  .call(d3.drag()
+    .on('start', function(e,d) { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+    .on('drag', function(e,d) { d.fx=e.x; d.fy=e.y; })
+    .on('end', function(e,d) { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; })
+  );
 
 starEls.append('circle')
-  .attr('r', d => d.r)
-  .attr('fill', d => TC[d.tr])
-  .attr('opacity', 0.8)
-  .attr('filter', 'url(#star-glow)');
+  .attr('r', function(d){return d.r})
+  .attr('fill', function(d){return TC[d.tr]})
+  .attr('opacity', 0.85)
+  .attr('filter', 'url(#glow)');
 
 starEls.append('text')
-  .text(d => d.n)
-  .attr('x', d => d.r + 4).attr('y', 3)
-  .attr('font-size', d => Math.max(7, Math.min(10, 6 + (INBOUND[d.id]||0) * 0.4)))
+  .text(function(d){return d.n})
+  .attr('x', function(d){return d.r + 3}).attr('y', 3)
+  .attr('font-size', function(d){return Math.max(7, Math.min(10, 7 + d.ib * 0.3))})
   .attr('fill', '#4a6080')
-  .attr('font-family', "'IBM Plex Mono', monospace")
+  .attr('font-family', "'IBM Plex Mono',monospace")
   .attr('pointer-events', 'none');
 
-/* Star glow filter */
-const defs = svg.append('defs');
-const filter = defs.append('filter').attr('id', 'star-glow').attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
-filter.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', 2).attr('result', 'blur');
-const merge = filter.append('feMerge');
-merge.append('feMergeNode').attr('in', 'blur');
-merge.append('feMergeNode').attr('in', 'SourceGraphic');
+/* Force simulation */
+var sim = d3.forceSimulation(nodes)
+  .force('x', d3.forceX(function(d){return d.targetX}).strength(0.12))
+  .force('y', d3.forceY(function(d){return d.targetY}).strength(0.12))
+  .force('charge', d3.forceManyBody().strength(-18))
+  .force('collision', d3.forceCollide().radius(function(d){return d.r + 6}).strength(0.8))
+  .alphaDecay(0.015)
+  .on('tick', function() {
+    starEls.attr('transform', function(d){return 'translate('+d.x+','+d.y+')'});
+  });
 
 /* Tooltip */
-const tooltip = document.getElementById('tooltip');
-starEls.on('mouseenter', (e, d) => {
-  const cn = CONSTS[d.key];
-  const ib = INBOUND[d.id] || 0;
-  let html = `<div class="tt-name">${d.n}</div>`;
-  html += `<div class="tt-meta">A${d.a}/T${d.t} · ${d.tr} · ${d.g}</div>`;
-  if (cn) html += `<div class="tt-const">Constellation: ${cn.name} — ${cn.desc}</div>`;
-  if (ib) html += `<div style="font-size:11px;color:#60a5fa;margin-top:4px;">${ib} technologies depend on this</div>`;
+var tooltip = document.getElementById('tooltip');
+starEls.on('mouseenter', function(e, d) {
+  var cn = CONSTS[d.key];
+  var desc = CONST_DESC[d.key];
+  var html = '<div class="tt-name">'+d.n+'</div>';
+  html += '<div class="tt-meta">A'+d.a+'/T'+d.t+' \u00b7 '+d.tr+' \u00b7 '+d.g+'</div>';
+  if (cn) html += '<div class="tt-const">'+cn.name+': '+desc+'</div>';
+  if (d.ib) html += '<div style="font-size:11px;color:#60a5fa;margin-top:4px;">'+Math.round(d.ib)+' technologies depend on this</div>';
   tooltip.innerHTML = html;
   tooltip.style.display = 'block';
 
-  starEls.select('circle').attr('opacity', s => s.key === d.key ? 0.95 : 0.15);
-  starEls.select('text').attr('opacity', s => s.key === d.key ? 1 : 0.1);
-}).on('mousemove', (e) => {
-  const rect = container.getBoundingClientRect();
+  starEls.select('circle').attr('opacity', function(s){return s.key === d.key ? 0.95 : 0.12});
+  starEls.select('text').attr('opacity', function(s){return s.key === d.key ? 1 : 0.08});
+}).on('mousemove', function(e) {
+  var rect = container.getBoundingClientRect();
   tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
   tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
-}).on('mouseleave', () => {
+}).on('mouseleave', function() {
   tooltip.style.display = 'none';
   applyFilter();
-}).on('click', (e, d) => {
+}).on('click', function(e, d) {
   window.open(BASE + d.id + '.html', '_blank');
 });
 
-/* Filter by trajectory */
-let activeTraj = null;
+/* Trajectory filter */
+var activeTraj = null;
 function setTraj(tr) {
   activeTraj = tr;
-  document.querySelectorAll('.filter-row .fbtn').forEach(b => {
+  document.querySelectorAll('.filter-row .fbtn').forEach(function(b) {
     if (tr === null) b.classList.toggle('active', !b.dataset.traj);
     else b.classList.toggle('active', b.dataset.traj === tr);
   });
   applyFilter();
 }
-
 function applyFilter() {
-  starEls.select('circle').attr('opacity', d => (!activeTraj || d.tr === activeTraj) ? 0.8 : 0.08);
-  starEls.select('text').attr('opacity', d => (!activeTraj || d.tr === activeTraj) ? 1 : 0.05);
+  starEls.select('circle').attr('opacity', function(d){return (!activeTraj || d.tr === activeTraj) ? 0.85 : 0.06});
+  starEls.select('text').attr('opacity', function(d){return (!activeTraj || d.tr === activeTraj) ? 1 : 0.04});
 }
 
 /* Stats */
-document.getElementById('stats').innerHTML = `<span class="stat"><b>${NODES.length}</b> technologies</span><span class="stat"><b>12</b> constellations</span>`;
+document.getElementById('stats').innerHTML = '<span class="stat"><b>'+NODES.length+'</b> technologies</span><span class="stat"><b>12</b> constellations</span>';
 
-/* Constellation reference grid */
-const constGrid = document.getElementById('const-grid');
-[['A3','T2'],['A3','T1'],['A3','T0'],['A2','T2'],['A2','T1'],['A2','T0'],['A1','T2'],['A1','T1'],['A1','T0'],['A0','T2'],['A0','T1'],['A0','T0']].forEach(([a,t]) => {
-  const key = `${a}/${t}`;
-  const cn = CONSTS[key];
-  const count = constCounts[key] || 0;
-  const card = document.createElement('div');
+/* Constellation grid below */
+var constGrid = document.getElementById('const-grid');
+[['A3','T2'],['A3','T1'],['A3','T0'],['A2','T2'],['A2','T1'],['A2','T0'],['A1','T2'],['A1','T1'],['A1','T0'],['A0','T2'],['A0','T1'],['A0','T0']].forEach(function(pair) {
+  var a=pair[0], t=pair[1], key = a+'/'+t;
+  var cn = CONSTS[key];
+  var desc = CONST_DESC[key];
+  var count = constCounts[key] || 0;
+  var card = document.createElement('div');
   card.className = 'const-card';
-  card.innerHTML = `<div class="cc-head"><span class="cc-name">${cn.name}</span><span class="cc-key">${key}</span></div><p class="cc-desc">${cn.desc}</p><div class="cc-count">${count} ${count===1?'technology':'technologies'}</div>`;
+  card.innerHTML = '<div class="cc-head"><span class="cc-name">'+cn.name+'</span><span class="cc-key">'+key+'</span></div><p class="cc-desc">'+desc+'</p><div class="cc-count">'+count+' '+(count===1?'technology':'technologies')+'</div>';
   constGrid.appendChild(card);
 });
 </script>
