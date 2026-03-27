@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*42 technologies evaluated.*
+*45 technologies evaluated.*
 
 ---
 
@@ -163,12 +163,15 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Joplin](joplin.md) | **A3** | **T2** | Open-source note-taking app with end-to-end encryption. |
+| [Logseq](logseq.md) | **A3** | **T2** | Local-first outliner and knowledge graph. |
 | [Obsidian](obsidian.md) | **A2** | **T0** | Local-first knowledge management app based on plain Markdown files stored on your device. |
 
 ### Photos
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [PhotoPrism](photoprism.md) | **A3** | **T2** | AI-powered self-hosted photo management. |
 | [Immich](immich.md) | **A3** | **T2** | Self-hosted photo and video backup solution with a focus on user experience, automatic organisation, and machine learnin... |
 
 ---
