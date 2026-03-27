@@ -367,6 +367,53 @@ COUNT_REPLACEMENTS = [
 
 
 
+
+
+# ── Generator: docs/autonomy-map.html ─────────────────────────────────────
+
+def generate_autonomy_map(cards):
+    """Generate NODES and INBOUND data for the autonomy map visualization."""
+    import json as _json
+    from collections import Counter
+
+    nodes = []
+    for card in sorted(cards, key=lambda c: c['title'].lower()):
+        nodes.append({
+            'id': card['slug'],
+            'n': card['title'],
+            'a': card['a_num'],
+            't': card['t_num'],
+            'tr': card['trajectory'],
+            'g': card['category'].split('/')[0] if card['category'] else 'other',
+        })
+
+    # Count inbound dependencies for node sizing
+    all_slugs = {c['slug'] for c in cards}
+    inbound = Counter()
+    for card in cards:
+        for dep in card.get('depends_on', []):
+            if dep in all_slugs:
+                inbound[dep] += 1
+        for dep in card.get('optional_deps', []):
+            if dep in all_slugs:
+                inbound[dep] += 0.5
+
+    inbound_dict = {k: v for k, v in inbound.items() if v > 0}
+
+    nodes_json = _json.dumps(nodes, separators=(',', ':'))
+    inbound_json = _json.dumps(inbound_dict, separators=(',', ':'))
+
+    data_block = f'const NODES={nodes_json};\nconst INBOUND={inbound_json};'
+
+    replace_between_markers(
+        'docs/autonomy-map.html',
+        '/* AUTO:AUTONOMY_MAP_DATA:START */',
+        '/* AUTO:AUTONOMY_MAP_DATA:END */',
+        data_block
+    )
+    print(f'  autonomy-map.html: {len(nodes)} stars')
+
+
 # ── Generator: docs/dependency-graph.html ──────────────────────────────────
 
 def generate_dependency_graph(cards):
@@ -441,6 +488,7 @@ def main():
     generate_audit_options(cards)
     generate_catalog_cards_js(cards)
     generate_map_cards_js(cards)
+    generate_autonomy_map(cards)
     generate_dependency_graph(cards)
     update_technology_counts(cards)
 

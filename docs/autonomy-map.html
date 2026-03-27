@@ -4,126 +4,271 @@ title: "Autonomy Map"
 nav_order: 7
 ---
 {% raw %}
-<div style="max-width:680px;">
+<style>
+.map-wrap { position:relative; width:100%; height:75vh; min-height:560px; background:#04090f; border-radius:12px; overflow:hidden; border:1px solid #0e1a2a; }
+.map-wrap svg { width:100%; height:100%; }
+.map-desc { font-size:14px; color:#666; line-height:1.65; max-width:640px; margin-bottom:1.25rem; }
+.legend-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:1rem; }
+.leg { display:flex; align-items:center; gap:5px; font-size:11px; color:#888; }
+.leg-dot { width:10px; height:10px; border-radius:50%; }
+.filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:1rem; }
+.fbtn { font-size:11px; padding:3px 10px; border-radius:14px; cursor:pointer; border:1px solid #1a2030; background:#0a0e18; color:#6880a0; transition:all .15s; }
+.fbtn:hover { border-color:#3a4a60; color:#a0b4cc; }
+.fbtn.active { border-color:#60a5fa; color:#60a5fa; background:#0f1a2e; }
+.tooltip-box { position:absolute; display:none; background:#0c1220; border:1px solid #1a2a40; border-radius:8px; padding:12px 16px; font-size:12px; color:#c0d0e0; pointer-events:none; z-index:10; max-width:280px; line-height:1.5; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
+.tooltip-box .tt-name { font-size:14px; font-weight:600; color:#e0ecf8; margin-bottom:4px; }
+.tooltip-box .tt-meta { font-size:11px; color:#5a7090; margin-bottom:4px; }
+.tooltip-box .tt-const { font-size:11px; color:#8aa0c0; font-style:italic; }
+.stats-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:1rem; }
+.stat { font-size:12px; color:#666; }
+.stat b { color:#999; }
+.const-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:8px; margin-top:1.5rem; }
+.const-card { padding:12px 16px; background:#fafafa; border-radius:8px; border:1px solid #eee; }
+.const-card .cc-head { display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.const-card .cc-name { font-size:14px; font-weight:500; color:#111; }
+.const-card .cc-key { font-size:11px; color:#999; font-family:monospace; }
+.const-card .cc-desc { font-size:12px; color:#666; line-height:1.6; margin:0; }
+.const-card .cc-count { font-size:11px; color:#aaa; margin-top:4px; }
+</style>
 
-<p style="font-size:15px;color:#444;line-height:1.75;margin-bottom:2rem;">
-A living star chart of the infrastructure technology landscape. Every evaluated tool is plotted as a star — its brightness and size reflect autonomy, its color shows trajectory. Stars cluster into 12 constellations defined by the combination of Autonomy and Transparency level.
+<h1>Autonomy Map</h1>
+
+<p class="map-desc">
+Every evaluated technology plotted by Autonomy (vertical) and Transparency (horizontal). Stars cluster into 12 constellations. Color shows trajectory. Size reflects how many other tools depend on it. Hover for details, click to open the catalog card.
 </p>
 
-<a href="https://revenue7-eng.github.io/the-autonomous-stack/map.html"
-   style="display:inline-flex;align-items:center;gap:10px;background:#0d1117;color:#e0ecff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;padding:14px 24px;border-radius:8px;text-decoration:none;margin-bottom:2.5rem;transition:opacity .15s;"
-   onmouseenter="this.style.opacity='.8'" onmouseleave="this.style.opacity='1'">
-  ✦ Open full map →
-</a>
-
-<div style="border-top:1px solid #e8e8e8;padding-top:2rem;margin-bottom:1rem;">
-  <p style="font-size:13px;font-weight:500;color:#111;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.25rem;">The 12 Constellations</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:8px;">
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Lux</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T2</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Full autonomy, open source. The brightest stars — you own everything, code included. The TAS ideal.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Vigil</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T1</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Fully autonomous, documented. Operates offline, code not fully open but architecture is transparent.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Solitudo</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A3/T0</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Autonomous but opaque. Your data, your control — but you cannot see inside the tool.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Libertas</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T2</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Nearly free, open source. One dependency remains but the code is fully auditable.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Stella</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T1</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Mostly autonomous, documented. A reliable intermediate — conscious trade-off zone.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Janua</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A2/T0</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Data is yours, tool is closed. A half-open door — autonomy without transparency.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Aurora</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T2</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Dependent but open source. Cloud-reliant yet auditable — heading toward freedom.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Iter</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T1</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Partial freedom, partial light. A path — not a destination.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Nebula</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A1/T0</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Partially dependent, opaque. Blurred edges — hard to know what you control.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Paradoxa</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T2</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Cloud-bound yet open source. Rare and contradictory — dependent infrastructure with visible code.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Vinculum</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T1</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Dependent but documented. The chains are visible. You know what holds you.</p>
-    </div>
-
-    <div style="padding:12px 16px;background:#fafafa;border-radius:8px;border:1px solid #eee;">
-      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-        <span style="font-size:14px;font-weight:500;color:#111;">Umbra</span>
-        <span style="font-size:11px;color:#999;font-family:monospace;">A0/T0</span>
-      </div>
-      <p style="font-size:12px;color:#666;line-height:1.6;margin:0;">Full dependency, full opacity. The darkest corner — no control, no visibility.</p>
-    </div>
-
-  </div>
+<div class="filter-row" id="filters">
+  <button class="fbtn active" onclick="setTraj(null)">All trajectories</button>
+  <button class="fbtn" data-traj="opening" onclick="setTraj('opening')" style="border-color:#22c55e44;">Opening</button>
+  <button class="fbtn" data-traj="stable" onclick="setTraj('stable')" style="border-color:#60a5fa44;">Stable</button>
+  <button class="fbtn" data-traj="mixed" onclick="setTraj('mixed')" style="border-color:#f59e0b44;">Mixed</button>
+  <button class="fbtn" data-traj="closing" onclick="setTraj('closing')" style="border-color:#f8717144;">Closing</button>
 </div>
 
-<div style="margin-top:2rem;padding:16px 20px;background:#f4f4f2;border-radius:8px;border-left:3px solid #888;">
-  <p style="font-size:12px;color:#666;line-height:1.7;margin:0;">
-    The map is open and growing. Today 67 stars, 12 constellations. As new tools are evaluated, new stars appear. As new criteria emerge, new constellations form. The map is a separate project — it uses TAS data but lives beyond it.
-  </p>
+<div class="legend-row">
+  <div class="leg"><div class="leg-dot" style="background:#22c55e;"></div> Opening</div>
+  <div class="leg"><div class="leg-dot" style="background:#60a5fa;"></div> Stable</div>
+  <div class="leg"><div class="leg-dot" style="background:#f59e0b;"></div> Mixed</div>
+  <div class="leg"><div class="leg-dot" style="background:#f87171;"></div> Closing</div>
+  <div class="leg" style="margin-left:12px;"><div class="leg-dot" style="width:6px;height:6px;background:#88a;"></div> No dependents</div>
+  <div class="leg"><div class="leg-dot" style="width:16px;height:16px;background:#88a;"></div> Many dependents</div>
 </div>
 
+<div class="map-wrap" id="map-container">
+  <div class="tooltip-box" id="tooltip"></div>
 </div>
+
+<div class="stats-row" id="stats"></div>
+
+<h2 style="margin-top:2rem;">The 12 Constellations</h2>
+<div class="const-grid" id="const-grid"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+/* AUTO:AUTONOMY_MAP_DATA:START */
+const NODES=[{"id":"1password","n":"1Password","a":0,"t":0,"tr":"closing","g":"security"},{"id":"adguard-home","n":"AdGuard Home","a":3,"t":2,"tr":"stable","g":"network"},{"id":"authentik","n":"Authentik","a":3,"t":2,"tr":"stable","g":"identity"},{"id":"bitwarden","n":"Bitwarden","a":3,"t":2,"tr":"stable","g":"security"},{"id":"bookstack","n":"BookStack","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"caddy","n":"Caddy","a":3,"t":2,"tr":"opening","g":"network"},{"id":"confluence","n":"Confluence","a":0,"t":0,"tr":"closing","g":"applications"},{"id":"crowdsec","n":"CrowdSec","a":2,"t":2,"tr":"mixed","g":"security"},{"id":"docker","n":"Docker","a":3,"t":2,"tr":"mixed","g":"compute"},{"id":"docmost","n":"Docmost","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"forgejo","n":"Forgejo","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"gitea-actions","n":"Gitea Actions","a":3,"t":2,"tr":"opening","g":"applications"},{"id":"gmail","n":"Gmail","a":0,"t":0,"tr":"closing","g":"communication"},{"id":"google-analytics","n":"Google Analytics","a":0,"t":0,"tr":"closing","g":"analytics"},{"id":"google-drive","n":"Google Drive","a":0,"t":0,"tr":"closing","g":"storage"},{"id":"grafana","n":"Grafana","a":3,"t":2,"tr":"mixed","g":"observability"},{"id":"headscale","n":"Headscale","a":3,"t":2,"tr":"opening","g":"network"},{"id":"home-assistant","n":"Home Assistant","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"homepage","n":"Homepage","a":3,"t":2,"tr":"opening","g":"applications"},{"id":"immich","n":"Immich","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"jellyfin","n":"Jellyfin","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"jenkins","n":"Jenkins","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"joplin","n":"Joplin","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"k3s","n":"K3s","a":3,"t":2,"tr":"stable","g":"compute"},{"id":"keepass","n":"KeePass","a":3,"t":2,"tr":"stable","g":"security"},{"id":"kopia","n":"Kopia","a":3,"t":2,"tr":"mixed","g":"storage"},{"id":"logseq","n":"Logseq","a":3,"t":2,"tr":"mixed","g":"applications"},{"id":"loki","n":"Loki","a":3,"t":2,"tr":"mixed","g":"observability"},{"id":"mailcow","n":"Mailcow","a":3,"t":2,"tr":"opening","g":"communication"},{"id":"mariadb","n":"MariaDB","a":3,"t":2,"tr":"mixed","g":"storage"},{"id":"matrix","n":"Matrix / Element","a":3,"t":2,"tr":"stable","g":"communication"},{"id":"minio","n":"MinIO","a":3,"t":2,"tr":"mixed","g":"storage"},{"id":"mysql","n":"MySQL","a":3,"t":1,"tr":"mixed","g":"storage"},{"id":"n8n","n":"n8n","a":3,"t":2,"tr":"mixed","g":"applications"},{"id":"netdata","n":"Netdata","a":3,"t":2,"tr":"mixed","g":"observability"},{"id":"nextcloud","n":"Nextcloud","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"nginx-proxy-manager","n":"Nginx Proxy Manager","a":3,"t":2,"tr":"stable","g":"network"},{"id":"node-red","n":"Node-RED","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"notion","n":"Notion","a":0,"t":0,"tr":"closing","g":"applications"},{"id":"obsidian","n":"Obsidian","a":2,"t":0,"tr":"mixed","g":"applications"},{"id":"openvpn","n":"OpenVPN","a":3,"t":2,"tr":"stable","g":"network"},{"id":"paperless-ngx","n":"Paperless-ngx","a":3,"t":2,"tr":"stable","g":"applications"},{"id":"photoprism","n":"PhotoPrism","a":3,"t":2,"tr":"mixed","g":"applications"},{"id":"pi-hole","n":"Pi-hole","a":3,"t":2,"tr":"stable","g":"network"},{"id":"plausible","n":"Plausible Analytics","a":3,"t":2,"tr":"stable","g":"analytics"},{"id":"plex","n":"Plex","a":1,"t":0,"tr":"closing","g":"applications"},{"id":"portainer","n":"Portainer","a":3,"t":2,"tr":"mixed","g":"compute"},{"id":"postgresql","n":"PostgreSQL","a":3,"t":2,"tr":"opening","g":"storage"},{"id":"prometheus","n":"Prometheus","a":3,"t":2,"tr":"stable","g":"observability"},{"id":"protonmail","n":"Proton Mail","a":0,"t":1,"tr":"closing","g":"communication"},{"id":"redis","n":"Redis","a":2,"t":1,"tr":"closing","g":"storage"},{"id":"slack","n":"Slack","a":0,"t":0,"tr":"closing","g":"communication"},{"id":"sqlite","n":"SQLite","a":3,"t":1,"tr":"stable","g":"storage"},{"id":"stalwart","n":"Stalwart","a":3,"t":2,"tr":"stable","g":"communication"},{"id":"syncthing","n":"Syncthing","a":3,"t":2,"tr":"stable","g":"storage"},{"id":"tailscale","n":"Tailscale","a":2,"t":1,"tr":"mixed","g":"network"},{"id":"telegram","n":"Telegram","a":1,"t":0,"tr":"mixed","g":"communication"},{"id":"traefik","n":"Traefik","a":3,"t":2,"tr":"mixed","g":"network"},{"id":"tuta","n":"Tuta (Tutanota)","a":0,"t":1,"tr":"mixed","g":"communication"},{"id":"umami","n":"Umami","a":3,"t":2,"tr":"mixed","g":"analytics"},{"id":"uptime-kuma","n":"Uptime Kuma","a":3,"t":2,"tr":"stable","g":"observability"},{"id":"vault","n":"Vault","a":3,"t":2,"tr":"closing","g":"security"},{"id":"vaultwarden","n":"Vaultwarden","a":3,"t":2,"tr":"stable","g":"security"},{"id":"wireguard","n":"WireGuard","a":3,"t":2,"tr":"stable","g":"network"},{"id":"woodpecker","n":"Woodpecker CI","a":3,"t":2,"tr":"opening","g":"applications"},{"id":"zabbix","n":"Zabbix","a":3,"t":2,"tr":"stable","g":"observability"},{"id":"zapier","n":"Zapier","a":0,"t":0,"tr":"closing","g":"applications"}];
+const INBOUND={"docker":43.0,"postgresql":5.5,"redis":1.5,"forgejo":2,"prometheus":7.5,"wireguard":1,"syncthing":2.0,"nextcloud":0.5,"grafana":2.0};
+/* AUTO:AUTONOMY_MAP_DATA:END */
+
+const TC = {opening:'#22c55e', stable:'#60a5fa', mixed:'#f59e0b', closing:'#f87171'};
+const CONSTS = {
+  'A3/T2':{name:'Lux',      desc:'Full autonomy, open source. The TAS ideal.'},
+  'A3/T1':{name:'Vigil',    desc:'Autonomous, documented but not fully open.'},
+  'A3/T0':{name:'Solitudo', desc:'Autonomous but opaque. Your data, your control.'},
+  'A2/T2':{name:'Libertas', desc:'Nearly free, open source. One dependency remains.'},
+  'A2/T1':{name:'Stella',   desc:'Mostly autonomous, documented. Conscious trade-off zone.'},
+  'A2/T0':{name:'Janua',    desc:'Data is yours, tool is closed. A half-open door.'},
+  'A1/T2':{name:'Aurora',   desc:'Dependent but open source. Heading toward freedom.'},
+  'A1/T1':{name:'Iter',     desc:'Partial freedom, partial light. A path, not a destination.'},
+  'A1/T0':{name:'Nebula',   desc:'Partially dependent, opaque. Hard to know what you control.'},
+  'A0/T2':{name:'Paradoxa', desc:'Cloud-bound yet open source. Rare and contradictory.'},
+  'A0/T1':{name:'Vinculum', desc:'Dependent but documented. The chains are visible.'},
+  'A0/T0':{name:'Umbra',    desc:'Full dependency, full opacity. The darkest corner.'},
+};
+const BASE = 'https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/';
+
+/* Seeded RNG for consistent star jitter */
+function seedRng(s) { return function() { s = Math.sin(s * 9301 + 49297) * 233280; return s - Math.floor(s); }; }
+
+/* Setup */
+const container = document.getElementById('map-container');
+const W = container.clientWidth;
+const H = container.clientHeight;
+const PAD = {top:50, right:40, bottom:50, left:50};
+
+const svg = d3.select('#map-container').append('svg')
+  .attr('viewBox', `0 0 ${W} ${H}`)
+  .attr('preserveAspectRatio', 'xMidYMid meet');
+
+const g = svg.append('g');
+const zoom = d3.zoom().scaleExtent([0.5, 5]).on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+
+/* Scales: T on X (0 left = closed, 2 right = open), A on Y (0 bottom = cloud, 3 top = autonomous) */
+const xScale = d3.scaleLinear().domain([-0.3, 2.3]).range([PAD.left, W - PAD.right]);
+const yScale = d3.scaleLinear().domain([-0.3, 3.3]).range([H - PAD.bottom, PAD.top]);
+
+/* Grid lines */
+const gridG = g.append('g');
+for (let a = 0; a <= 3; a++) {
+  gridG.append('line').attr('x1', PAD.left).attr('x2', W - PAD.right)
+    .attr('y1', yScale(a)).attr('y2', yScale(a))
+    .attr('stroke', '#0e1a2a').attr('stroke-width', 1);
+  gridG.append('text').attr('x', PAD.left - 8).attr('y', yScale(a) + 4)
+    .attr('text-anchor', 'end').attr('font-size', 10).attr('fill', '#2a3a55')
+    .attr('font-family', "'IBM Plex Mono', monospace")
+    .text('A' + a);
+}
+for (let t = 0; t <= 2; t++) {
+  gridG.append('line').attr('y1', PAD.top).attr('y2', H - PAD.bottom)
+    .attr('x1', xScale(t)).attr('x2', xScale(t))
+    .attr('stroke', '#0e1a2a').attr('stroke-width', 1);
+  gridG.append('text').attr('x', xScale(t)).attr('y', H - PAD.bottom + 18)
+    .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#2a3a55')
+    .attr('font-family', "'IBM Plex Mono', monospace")
+    .text('T' + t);
+}
+
+/* Axis labels */
+gridG.append('text').attr('x', W / 2).attr('y', H - 8)
+  .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#1e3050')
+  .attr('font-family', "'IBM Plex Mono', monospace").attr('letter-spacing', '0.1em')
+  .text('TRANSPARENCY →');
+gridG.append('text').attr('x', 12).attr('y', H / 2)
+  .attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', '#1e3050')
+  .attr('font-family', "'IBM Plex Mono', monospace").attr('letter-spacing', '0.1em')
+  .attr('transform', `rotate(-90, 12, ${H/2})`)
+  .text('AUTONOMY →');
+
+/* Constellation labels */
+const constG = g.append('g');
+for (let a = 0; a <= 3; a++) {
+  for (let t = 0; t <= 2; t++) {
+    const key = `A${a}/T${t}`;
+    const cn = CONSTS[key];
+    if (!cn) continue;
+    const cx = xScale(t), cy = yScale(a);
+    constG.append('text').attr('x', cx).attr('y', cy - 28)
+      .attr('text-anchor', 'middle').attr('font-size', 9).attr('fill', '#1a2a42')
+      .attr('font-family', "'IBM Plex Mono', monospace").attr('font-weight', 600)
+      .attr('letter-spacing', '0.08em')
+      .text(cn.name.toUpperCase());
+  }
+}
+
+/* Place stars with jitter */
+const stars = NODES.map((n, i) => {
+  const rng = seedRng(i * 137 + n.n.charCodeAt(0) * 31);
+  const jitterX = (rng() - 0.5) * (xScale(1) - xScale(0)) * 0.55;
+  const jitterY = (rng() - 0.5) * (yScale(0) - yScale(1)) * 0.45;
+  const ib = INBOUND[n.id] || 0;
+  return {
+    ...n,
+    x: xScale(n.t) + jitterX,
+    y: yScale(n.a) + jitterY,
+    r: 3.5 + ib * 1.1,
+    key: `A${n.a}/T${n.t}`,
+  };
+});
+
+/* Background glow for populated constellations */
+const glowG = g.append('g');
+const constCounts = {};
+stars.forEach(s => { constCounts[s.key] = (constCounts[s.key] || 0) + 1; });
+Object.entries(constCounts).forEach(([key, count]) => {
+  const [a, t] = [parseInt(key[1]), parseInt(key[4])];
+  const cx = xScale(t), cy = yScale(a);
+  const r = 30 + count * 4;
+  const grad = svg.select('defs').empty() ? svg.append('defs') : svg.select('defs');
+  const gid = 'glow-' + key.replace('/', '-');
+  const radGrad = grad.append('radialGradient').attr('id', gid);
+  radGrad.append('stop').attr('offset', '0%').attr('stop-color', '#1a3050').attr('stop-opacity', 0.15);
+  radGrad.append('stop').attr('offset', '100%').attr('stop-color', '#04090f').attr('stop-opacity', 0);
+  glowG.append('circle').attr('cx', cx).attr('cy', cy).attr('r', r).attr('fill', `url(#${gid})`);
+});
+
+/* Draw stars */
+const starG = g.append('g');
+const starEls = starG.selectAll('g').data(stars).join('g')
+  .attr('transform', d => `translate(${d.x},${d.y})`)
+  .attr('cursor', 'pointer');
+
+starEls.append('circle')
+  .attr('r', d => d.r)
+  .attr('fill', d => TC[d.tr])
+  .attr('opacity', 0.8)
+  .attr('filter', 'url(#star-glow)');
+
+starEls.append('text')
+  .text(d => d.n)
+  .attr('x', d => d.r + 4).attr('y', 3)
+  .attr('font-size', d => Math.max(7, Math.min(10, 6 + (INBOUND[d.id]||0) * 0.4)))
+  .attr('fill', '#4a6080')
+  .attr('font-family', "'IBM Plex Mono', monospace")
+  .attr('pointer-events', 'none');
+
+/* Star glow filter */
+const defs = svg.append('defs');
+const filter = defs.append('filter').attr('id', 'star-glow').attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
+filter.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', 2).attr('result', 'blur');
+const merge = filter.append('feMerge');
+merge.append('feMergeNode').attr('in', 'blur');
+merge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+/* Tooltip */
+const tooltip = document.getElementById('tooltip');
+starEls.on('mouseenter', (e, d) => {
+  const cn = CONSTS[d.key];
+  const ib = INBOUND[d.id] || 0;
+  let html = `<div class="tt-name">${d.n}</div>`;
+  html += `<div class="tt-meta">A${d.a}/T${d.t} · ${d.tr} · ${d.g}</div>`;
+  if (cn) html += `<div class="tt-const">Constellation: ${cn.name} — ${cn.desc}</div>`;
+  if (ib) html += `<div style="font-size:11px;color:#60a5fa;margin-top:4px;">${ib} technologies depend on this</div>`;
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+
+  starEls.select('circle').attr('opacity', s => s.key === d.key ? 0.95 : 0.15);
+  starEls.select('text').attr('opacity', s => s.key === d.key ? 1 : 0.1);
+}).on('mousemove', (e) => {
+  const rect = container.getBoundingClientRect();
+  tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+}).on('mouseleave', () => {
+  tooltip.style.display = 'none';
+  applyFilter();
+}).on('click', (e, d) => {
+  window.open(BASE + d.id + '.html', '_blank');
+});
+
+/* Filter by trajectory */
+let activeTraj = null;
+function setTraj(tr) {
+  activeTraj = tr;
+  document.querySelectorAll('.filter-row .fbtn').forEach(b => {
+    if (tr === null) b.classList.toggle('active', !b.dataset.traj);
+    else b.classList.toggle('active', b.dataset.traj === tr);
+  });
+  applyFilter();
+}
+
+function applyFilter() {
+  starEls.select('circle').attr('opacity', d => (!activeTraj || d.tr === activeTraj) ? 0.8 : 0.08);
+  starEls.select('text').attr('opacity', d => (!activeTraj || d.tr === activeTraj) ? 1 : 0.05);
+}
+
+/* Stats */
+document.getElementById('stats').innerHTML = `<span class="stat"><b>${NODES.length}</b> technologies</span><span class="stat"><b>12</b> constellations</span>`;
+
+/* Constellation reference grid */
+const constGrid = document.getElementById('const-grid');
+[['A3','T2'],['A3','T1'],['A3','T0'],['A2','T2'],['A2','T1'],['A2','T0'],['A1','T2'],['A1','T1'],['A1','T0'],['A0','T2'],['A0','T1'],['A0','T0']].forEach(([a,t]) => {
+  const key = `${a}/${t}`;
+  const cn = CONSTS[key];
+  const count = constCounts[key] || 0;
+  const card = document.createElement('div');
+  card.className = 'const-card';
+  card.innerHTML = `<div class="cc-head"><span class="cc-name">${cn.name}</span><span class="cc-key">${key}</span></div><p class="cc-desc">${cn.desc}</p><div class="cc-count">${count} ${count===1?'technology':'technologies'}</div>`;
+  constGrid.appendChild(card);
+});
+</script>
 {% endraw %}
