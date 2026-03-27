@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*36 technologies evaluated.*
+*39 technologies evaluated.*
 
 ---
 
@@ -126,6 +126,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Home Assistant](home-assistant.md) | **A3** | **T2** | Open-source home automation platform that puts local control and privacy first. |
+| [Node-RED](node-red.md) | **A3** | **T2** | Flow-based visual automation tool built on Node.js. |
+| [n8n](n8n.md) | **A3** | **T2** | Source-available workflow automation platform. |
+| [Zapier](zapier.md) | **A0** | **T0** | Cloud-based workflow automation platform. |
 
 ### Cloud Platform
 
