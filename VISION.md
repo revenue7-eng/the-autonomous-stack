@@ -70,7 +70,7 @@ TAS has three layers. Each works independently. Together they form a decision pi
 
 **1. The Test** — the Infrastructure Audit. Eight questions. Apply to any technology. Takes 10 minutes. Produces an A-level (A0–A3), a T-level (T0–T2), and a profile of forces acting on you.
 
-**2. The Catalog** — 27+ technology cards, each evaluated against the test. Includes both autonomous alternatives and the mainstream services they replace. The contrast makes trade-offs visible. Each card shows: TAS Score, Philosophical Assessment, Configuration, Trajectory, Dependencies.
+**2. The Catalog** — 65+ technology cards, each evaluated against the test. Includes both autonomous alternatives and the mainstream services they replace. The contrast makes trade-offs visible. Each card shows: TAS Score, Philosophical Assessment, Configuration, Trajectory, Dependencies.
 
 **3. Recipes** — tested configurations combining catalog components into deployable stacks. Every recipe: uses only catalog components with known autonomy ratings, includes a full docker-compose.yml, documents failure modes for each critical component, and is verified against all three structural criteria.
 

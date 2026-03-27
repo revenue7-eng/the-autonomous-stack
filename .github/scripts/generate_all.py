@@ -10,6 +10,8 @@ Generates:
   2. docs/audit.html              — <option> list between AUTO:AUDIT_OPTIONS markers
   3. docs/catalog-index.html      — CARDS[] JS array between AUTO:CATALOG_CARDS markers
   4. map.html                     — CARDS[] JS array between AUTO:MAP_CARDS markers
+  5. README.md, index.md, docs/index.md, docs/autonomy-map.html
+     — technology count updated via regex replacement
 
 All four outputs are derived from the same frontmatter fields:
   - title, category, autonomy_level, transparency_level, trajectory
@@ -328,6 +330,51 @@ def replace_between_markers(filepath, start_marker, end_marker, new_content):
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
+# ── Generator 5: update technology count in static files ────────────────────
+
+COUNT_REPLACEMENTS = [
+    # (filepath, regex_pattern, replacement_template)
+    # {n} will be replaced with the actual count
+    ('README.md',
+     r'-- \d+ technologies rated',
+     '-- {n} technologies rated'),
+    ('index.md',
+     r'\d+ technologies, 12 constellations',
+     '{n} technologies, 12 constellations'),
+    ('index.md',
+     r'\d+ technologies rated by Autonomy',
+     '{n} technologies rated by Autonomy'),
+    ('docs/index.md',
+     r'\d+ technologies, 12 constellations',
+     '{n} technologies, 12 constellations'),
+    ('docs/autonomy-map.html',
+     r'Today \d+ stars',
+     'Today {n} stars'),
+]
+
+
+def update_technology_counts(cards):
+    n = len(cards)
+    updated_files = set()
+
+    for filepath, pattern, template in COUNT_REPLACEMENTS:
+        replacement = template.replace('{n}', str(n))
+
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        new_content = re.sub(pattern, replacement, content)
+
+        if new_content != content:
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            updated_files.add(filepath)
+
+    print(f'  technology counts: {n} in {", ".join(sorted(updated_files)) or "no changes"}')
+
+
+# ── Main ───────────────────────────────────────────────────────────────────
+
 def main():
     print('Loading cards from frontmatter...')
     cards = load_cards()
@@ -338,6 +385,7 @@ def main():
     generate_audit_options(cards)
     generate_catalog_cards_js(cards)
     generate_map_cards_js(cards)
+    update_technology_counts(cards)
 
     print(f'\nDone. All outputs generated from {len(cards)} cards.')
 

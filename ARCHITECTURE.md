@@ -23,7 +23,7 @@ This document describes how TAS is structured, how its components relate, and th
                    │ produces
 ┌──────────────────▼──────────────────────────┐
 │                THE CATALOG                   │
-│       27+ cards · evaluated technologies     │
+│       65+ cards · evaluated technologies     │
 │       TAS Score · Trajectory · Dependencies  │
 └──────────────────┬──────────────────────────┘
                    │ assembles into

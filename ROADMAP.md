@@ -226,10 +226,10 @@ Submit TAS as a meta-resource. The catalog complements awesome-selfhosted — it
 ## Definition of Done for Priority 1
 
 Priority 1 is complete when:
-- [ ] All 27 cards have formalized Trajectory signals (4 measurable indicators)
-- [ ] All 27 cards have TAS Score gap explanation (1 line per card)
+- [ ] All cards have formalized Trajectory signals (4 measurable indicators)
+- [ ] All cards have TAS Score gap explanation (1 line per card)
 - [ ] All 3 recipes have Failure Modes section
-- [ ] All 27 cards have `depends_on` / `depended_by` frontmatter
+- [ ] All cards have `depends_on` / `depended_by` frontmatter
 - [ ] template-card.md updated to reflect all new fields
 - [ ] CONTRIBUTING.md updated with new requirements for contributions
 
