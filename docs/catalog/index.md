@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*33 technologies evaluated.*
+*36 technologies evaluated.*
 
 ---
 
@@ -174,9 +174,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Matrix / Element](matrix.md) | **A3** | **T2** | Matrix is an open standard for decentralized, end-to-end encrypted communication. |
 | [Mailcow](mailcow.md) | **A3** | **T2** | Open-source, Docker-based email server suite. |
 | [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
+| [Telegram](telegram.md) | **A1** | **T0** | Cloud-based messaging platform. |
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
+| [Slack](slack.md) | **A0** | **T0** | Cloud-based team messaging platform. |
 
 ---
 
