@@ -13,7 +13,7 @@ Three structural criteria. Five diagnostic questions. Open-mode architecture. Pr
 **[Read the full documentation](https://revenue7-eng.github.io/the-autonomous-stack/)**
 
 - [Infrastructure Audit](https://revenue7-eng.github.io/the-autonomous-stack/docs/how-to-choose/) -- 8 questions to evaluate any technology
-- [Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/) -- 65 technologies rated A0--A3
+- [Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/) -- 66 technologies rated A0--A3
 - [Recipes](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/) -- three tested stacks: minimal server, privacy homelab, developer workstation
 
 ## Quick deploy

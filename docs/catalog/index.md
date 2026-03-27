@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*65 technologies evaluated.*
+*66 technologies evaluated.*
 
 ---
 
@@ -134,6 +134,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 ---
 
 ## Security
+
+### General
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [CrowdSec](crowdsec.md) | **A2** | **T2** | Open-source intrusion detection and prevention system with crowdsourced threat intelligence. |
 
 ### Password Manager
 
