@@ -16,7 +16,7 @@ TAS gives you three things: a way to **evaluate** any technology, a **catalog** 
 
 **→ [Does your infrastructure pass the TAS test?](test.html)** — 30 seconds, no account needed.
 
-**→ [Explore the Autonomy Map](autonomy-map.html)** — 27 technologies, 12 constellations.
+**→ [Explore the Autonomy Map](autonomy-map.html)** — 62 technologies, 12 constellations.
 
 ---
 
