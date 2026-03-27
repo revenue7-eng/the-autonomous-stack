@@ -4,6 +4,7 @@ title: "Catalog Index"
 nav_order: 6
 permalink: /docs/catalog-index.html
 ---
+{% raw %}
 <div style="padding:1rem 0;font-family:var(--font-sans);">
 
 <p style="font-size:14px;color:#666;line-height:1.65;margin-bottom:1.5rem;max-width:640px;">
@@ -33,19 +34,11 @@ Every technology in the catalog — by category, autonomy, transparency, and tra
   </select>
 </div>
 
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;">
-  <button id="btn-opening" data-traj="opening" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #22c55e44;background:#dcfce7;color:#22c55e;transition:all .15s;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening
-  </button>
-  <button id="btn-stable" data-traj="stable" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #3b82f644;background:#dbeafe;color:#3b82f6;transition:all .15s;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable
-  </button>
-  <button id="btn-mixed" data-traj="mixed" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #f59e0b44;background:#fef3c7;color:#f59e0b;transition:all .15s;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed
-  </button>
-  <button id="btn-closing" data-traj="closing" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #ef444444;background:#fee2e2;color:#ef4444;transition:all .15s;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing
-  </button>
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#888;">
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed</span>
+  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing</span>
 </div>
 
 <div id="board"></div>
@@ -82,7 +75,7 @@ const CARDS=[
   {name:'Jenkins',a:3,t:2,cat:'Applications',traj:'stable',url:'jenkins',desc:'The most widely deployed open-source CI/CD server.'},
   {name:'Joplin',a:3,t:2,cat:'Applications',traj:'stable',url:'joplin',desc:'Open-source note-taking app with end-to-end encryption.'},
   {name:'K3s',a:3,t:2,cat:'Compute',traj:'stable',url:'k3s',desc:'Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environm'},
-  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass',desc:'Free, open source password manager that stores credentials in a locally encrypted database file (`.k'},
+  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass',desc:'Free, open source password manager that stores credentials in a locally encrypted database file (.kd'},
   {name:'Kopia',a:3,t:2,cat:'Storage',traj:'mixed',url:'kopia',desc:'Fast and secure open-source backup/restore tool with snapshots, deduplication, compression, and clie'},
   {name:'Logseq',a:3,t:2,cat:'Applications',traj:'mixed',url:'logseq',desc:'Local-first outliner and knowledge graph.'},
   {name:'Loki',a:3,t:2,cat:'Observability',traj:'mixed',url:'loki',desc:'Log aggregation system by Grafana Labs.'},
@@ -191,29 +184,7 @@ document.getElementById('closeBtn').onclick=()=>{document.getElementById('overla
 document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')document.getElementById('overlay').style.display='none';};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
 
-
-const TC_BG_INACTIVE={opening:'#f0f0f0',stable:'#f0f0f0',mixed:'#f0f0f0',closing:'#f0f0f0'};
-const TC_COL_INACTIVE='#aaa';
-let activeTraj=null;
-
-function toggleTraj(traj){
-  activeTraj = activeTraj===traj ? null : traj;
-  // Обновить вид кнопок
-  ['opening','stable','mixed','closing'].forEach(t=>{
-    const btn=document.getElementById('btn-'+t);
-    const isActive = activeTraj===null || activeTraj===t;
-    btn.style.opacity = isActive ? '1' : '0.35';
-    btn.style.transform = activeTraj===t ? 'scale(1.05)' : 'scale(1)';
-  });
-  // Перерисовать с фильтром
-  const trajF=document.getElementById('trajF');
-  trajF.value = activeTraj || 'all';
-  render();
-}
+['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+render();
 </script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  ['trajF','aF','tF'].forEach(function(id){document.getElementById(id).addEventListener('change',render);});
-  render();
-});
-</script>
+{% endraw %}
