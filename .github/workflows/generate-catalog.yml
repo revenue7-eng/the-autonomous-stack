@@ -2,6 +2,8 @@ name: Generate Catalog Index
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'docs/catalog/**.md'
   workflow_dispatch:
