@@ -168,6 +168,16 @@ def load_cards():
         a_num = int(autonomy[1]) if autonomy.startswith('A') else 0
         t_num = int(transparency[1]) if transparency.startswith('T') else 0
 
+        # Parse dependency lists from frontmatter
+        def parse_yaml_list(raw_text, field):
+            m = re.search(rf'^{field}:\s*\[([^\]]*)\]', raw_text, re.MULTILINE)
+            if not m or not m.group(1).strip():
+                return []
+            return [x.strip().strip('"\'\'') for x in m.group(1).split(',') if x.strip().strip('"\'\'')]
+
+        depends_on = parse_yaml_list(body, 'depends_on')
+        optional_deps = parse_yaml_list(body, 'optional_deps')
+
         cards.append({
             'title': title,
             'slug': slug,
@@ -181,6 +191,8 @@ def load_cards():
             'subsection': subsection,
             'group': group,
             'category': category,
+            'depends_on': depends_on,
+            'optional_deps': optional_deps,
         })
 
     return cards
@@ -353,6 +365,50 @@ COUNT_REPLACEMENTS = [
 ]
 
 
+
+
+# ── Generator: docs/dependency-graph.html ──────────────────────────────────
+
+def generate_dependency_graph(cards):
+    """Generate DATA JSON for the dependency graph visualization."""
+    import json as _json
+
+    nodes = []
+    for card in sorted(cards, key=lambda c: c['title'].lower()):
+        nodes.append({
+            'id': card['slug'],
+            'n': card['title'],
+            'g': card['category'].split('/')[0] if card['category'] else 'other',
+            'a': card['a_num'],
+            't': card['t_num'],
+            'tr': card['trajectory'],
+            'deps': len(card.get('depends_on', [])),
+            'opts': len(card.get('optional_deps', [])),
+        })
+
+    edges_req = []
+    edges_opt = []
+    all_slugs = {c['slug'] for c in cards}
+
+    for card in cards:
+        for dep in card.get('depends_on', []):
+            if dep in all_slugs:
+                edges_req.append({'from': card['slug'], 'to': dep})
+        for dep in card.get('optional_deps', []):
+            if dep in all_slugs:
+                edges_opt.append({'from': card['slug'], 'to': dep})
+
+    data = _json.dumps({'nodes': nodes, 'req': edges_req, 'opt': edges_opt}, separators=(',', ':'))
+
+    replace_between_markers(
+        'docs/dependency-graph.html',
+        '/* AUTO:DEPENDENCY_GRAPH_DATA:START */',
+        '/* AUTO:DEPENDENCY_GRAPH_DATA:END */',
+        'const DATA=' + data + ';'
+    )
+    print(f'  dependency-graph.html: {len(nodes)} nodes, {len(edges_req)}+{len(edges_opt)} edges')
+
+
 def update_technology_counts(cards):
     n = len(cards)
     updated_files = set()
@@ -385,6 +441,7 @@ def main():
     generate_audit_options(cards)
     generate_catalog_cards_js(cards)
     generate_map_cards_js(cards)
+    generate_dependency_graph(cards)
     update_technology_counts(cards)
 
     print(f'\nDone. All outputs generated from {len(cards)} cards.')

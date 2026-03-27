@@ -1,0 +1,239 @@
+---
+layout: default
+title: "Dependency Graph"
+nav_order: 8
+---
+{% raw %}
+<style>
+.graph-wrap { position:relative; width:100%; height:70vh; min-height:500px; background:#0a0e14; border-radius:12px; overflow:hidden; border:1px solid #1a1f2e; }
+.graph-wrap svg { width:100%; height:100%; }
+.graph-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:1rem; }
+.graph-desc { font-size:14px; color:#666; line-height:1.65; max-width:640px; margin-bottom:1.25rem; }
+.legend-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:1rem; }
+.leg { display:flex; align-items:center; gap:5px; font-size:11px; color:#888; }
+.leg-line { width:20px; height:2px; }
+.leg-dot { width:10px; height:10px; border-radius:50%; }
+.filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:1rem; }
+.fbtn { font-size:11px; padding:3px 10px; border-radius:14px; cursor:pointer; border:1px solid #333; background:#1a1f2e; color:#888; transition:all .15s; }
+.fbtn:hover { border-color:#555; color:#ccc; }
+.fbtn.active { border-color:#60a5fa; color:#60a5fa; background:#1e293b; }
+.tooltip-box { position:absolute; display:none; background:#141820; border:1px solid #2a3040; border-radius:8px; padding:12px 16px; font-size:12px; color:#c8d0e0; pointer-events:none; z-index:10; max-width:280px; line-height:1.5; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+.tooltip-box .tt-name { font-size:14px; font-weight:600; color:#e8ecf4; margin-bottom:4px; }
+.tooltip-box .tt-meta { font-size:11px; color:#6b7a90; margin-bottom:6px; }
+.tooltip-box .tt-deps { font-size:11px; }
+.tooltip-box .tt-deps span { color:#60a5fa; }
+.tooltip-box .tt-deps .opt { color:#f59e0b; }
+.stats-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:1rem; }
+.stat { font-size:12px; color:#666; }
+.stat b { color:#999; }
+</style>
+
+<h1>Dependency Graph</h1>
+
+<p class="graph-desc">
+How the catalog's technologies depend on each other. Solid lines are required dependencies; dashed lines are optional integrations. Larger nodes are depended on by more technologies. Hover for details, drag to explore.
+</p>
+
+<div class="filter-row" id="filters"></div>
+
+<div class="legend-row">
+  <div class="leg"><div class="leg-line" style="background:#60a5fa;"></div> Required</div>
+  <div class="leg"><div class="leg-line" style="background:#f59e0b; border-top:2px dashed #f59e0b; height:0;"></div> Optional</div>
+  <div class="leg"><div class="leg-dot" style="background:#22c55e;"></div> Opening</div>
+  <div class="leg"><div class="leg-dot" style="background:#60a5fa;"></div> Stable</div>
+  <div class="leg"><div class="leg-dot" style="background:#f59e0b;"></div> Mixed</div>
+  <div class="leg"><div class="leg-dot" style="background:#f87171;"></div> Closing</div>
+</div>
+
+<div class="graph-wrap" id="graph-container">
+  <div class="tooltip-box" id="tooltip"></div>
+</div>
+
+<div class="stats-row" id="stats"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+/* AUTO:DEPENDENCY_GRAPH_DATA:START */
+const DATA={"nodes":[{"id":"1password","n":"1Password","g":"security","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"adguard-home","n":"AdGuard Home","g":"network","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"authentik","n":"Authentik","g":"identity","a":3,"t":2,"tr":"stable","deps":2,"opts":1},{"id":"bitwarden","n":"Bitwarden","g":"security","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"bookstack","n":"BookStack","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"caddy","n":"Caddy","g":"network","a":3,"t":2,"tr":"opening","deps":0,"opts":0},{"id":"confluence","n":"Confluence","g":"applications","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"crowdsec","n":"CrowdSec","g":"security","a":2,"t":2,"tr":"mixed","deps":0,"opts":1},{"id":"docker","n":"Docker","g":"compute","a":3,"t":2,"tr":"mixed","deps":0,"opts":0},{"id":"docmost","n":"Docmost","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"forgejo","n":"Forgejo","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":1},{"id":"gitea-actions","n":"Gitea Actions","g":"applications","a":3,"t":2,"tr":"opening","deps":2,"opts":1},{"id":"gmail","n":"Gmail","g":"communication","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"google-analytics","n":"Google Analytics","g":"analytics","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"google-drive","n":"Google Drive","g":"storage","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"grafana","n":"Grafana","g":"observability","a":3,"t":2,"tr":"mixed","deps":1,"opts":1},{"id":"headscale","n":"Headscale","g":"network","a":3,"t":2,"tr":"opening","deps":2,"opts":1},{"id":"home-assistant","n":"Home Assistant","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"homepage","n":"Homepage","g":"applications","a":3,"t":2,"tr":"opening","deps":1,"opts":0},{"id":"immich","n":"Immich","g":"applications","a":3,"t":2,"tr":"stable","deps":2,"opts":0},{"id":"jellyfin","n":"Jellyfin","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"jenkins","n":"Jenkins","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":1},{"id":"joplin","n":"Joplin","g":"applications","a":3,"t":2,"tr":"stable","deps":1,"opts":2},{"id":"k3s","n":"K3s","g":"compute","a":3,"t":2,"tr":"stable","deps":0,"opts":1},{"id":"keepass","n":"KeePass","g":"security","a":3,"t":2,"tr":"stable","deps":0,"opts":1},{"id":"kopia","n":"Kopia","g":"storage","a":3,"t":2,"tr":"mixed","deps":0,"opts":1},{"id":"logseq","n":"Logseq","g":"applications","a":3,"t":2,"tr":"mixed","deps":0,"opts":1},{"id":"loki","n":"Loki","g":"observability","a":3,"t":2,"tr":"mixed","deps":2,"opts":1},{"id":"mailcow","n":"Mailcow","g":"communication","a":3,"t":2,"tr":"opening","deps":1,"opts":0},{"id":"mariadb","n":"MariaDB","g":"storage","a":3,"t":2,"tr":"mixed","deps":1,"opts":1},{"id":"matrix","n":"Matrix / Element","g":"communication","a":3,"t":2,"tr":"stable","deps":1,"opts":1},{"id":"minio","n":"MinIO","g":"storage","a":3,"t":2,"tr":"mixed","deps":0,"opts":0},{"id":"mysql","n":"MySQL","g":"storage","a":3,"t":1,"tr":"mixed","deps":1,"opts":1},{"id":"n8n","n":"n8n","g":"applications","a":3,"t":2,"tr":"mixed","deps":1,"opts":1},{"id":"netdata","n":"Netdata","g":"observability","a":3,"t":2,"tr":"mixed","deps":1,"opts":2},{"id":"nextcloud","n":"Nextcloud","g":"applications","a":3,"t":2,"tr":"stable","deps":2,"opts":1},{"id":"nginx-proxy-manager","n":"Nginx Proxy Manager","g":"network","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"node-red","n":"Node-RED","g":"applications","a":3,"t":2,"tr":"stable","deps":0,"opts":1},{"id":"notion","n":"Notion","g":"applications","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"obsidian","n":"Obsidian","g":"applications","a":2,"t":0,"tr":"mixed","deps":0,"opts":1},{"id":"openvpn","n":"OpenVPN","g":"network","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"paperless-ngx","n":"Paperless-ngx","g":"applications","a":3,"t":2,"tr":"stable","deps":2,"opts":1},{"id":"photoprism","n":"PhotoPrism","g":"applications","a":3,"t":2,"tr":"mixed","deps":1,"opts":1},{"id":"pi-hole","n":"Pi-hole","g":"network","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"plausible","n":"Plausible Analytics","g":"analytics","a":3,"t":2,"tr":"stable","deps":1,"opts":1},{"id":"plex","n":"Plex","g":"applications","a":1,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"portainer","n":"Portainer","g":"compute","a":3,"t":2,"tr":"mixed","deps":1,"opts":0},{"id":"postgresql","n":"PostgreSQL","g":"storage","a":3,"t":2,"tr":"opening","deps":1,"opts":1},{"id":"prometheus","n":"Prometheus","g":"observability","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"protonmail","n":"Proton Mail","g":"communication","a":0,"t":1,"tr":"closing","deps":0,"opts":0},{"id":"redis","n":"Redis","g":"storage","a":2,"t":1,"tr":"closing","deps":1,"opts":1},{"id":"slack","n":"Slack","g":"communication","a":0,"t":0,"tr":"closing","deps":0,"opts":0},{"id":"sqlite","n":"SQLite","g":"storage","a":3,"t":1,"tr":"stable","deps":0,"opts":0},{"id":"stalwart","n":"Stalwart","g":"communication","a":3,"t":2,"tr":"stable","deps":0,"opts":0},{"id":"syncthing","n":"Syncthing","g":"storage","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"tailscale","n":"Tailscale","g":"network","a":2,"t":1,"tr":"mixed","deps":0,"opts":0},{"id":"telegram","n":"Telegram","g":"communication","a":1,"t":0,"tr":"mixed","deps":0,"opts":0},{"id":"traefik","n":"Traefik","g":"network","a":3,"t":2,"tr":"mixed","deps":1,"opts":0},{"id":"tuta","n":"Tuta (Tutanota)","g":"communication","a":0,"t":1,"tr":"mixed","deps":0,"opts":0},{"id":"umami","n":"Umami","g":"analytics","a":3,"t":2,"tr":"mixed","deps":1,"opts":1},{"id":"uptime-kuma","n":"Uptime Kuma","g":"observability","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"vault","n":"Vault","g":"security","a":3,"t":2,"tr":"closing","deps":1,"opts":0},{"id":"vaultwarden","n":"Vaultwarden","g":"security","a":3,"t":2,"tr":"stable","deps":1,"opts":0},{"id":"wireguard","n":"WireGuard","g":"network","a":3,"t":2,"tr":"stable","deps":0,"opts":0},{"id":"woodpecker","n":"Woodpecker CI","g":"applications","a":3,"t":2,"tr":"opening","deps":2,"opts":1},{"id":"zabbix","n":"Zabbix","g":"observability","a":3,"t":2,"tr":"stable","deps":1,"opts":2},{"id":"zapier","n":"Zapier","g":"applications","a":0,"t":0,"tr":"closing","deps":0,"opts":0}],"req":[{"from":"adguard-home","to":"docker"},{"from":"authentik","to":"docker"},{"from":"authentik","to":"postgresql"},{"from":"bitwarden","to":"docker"},{"from":"bookstack","to":"docker"},{"from":"docmost","to":"docker"},{"from":"forgejo","to":"docker"},{"from":"gitea-actions","to":"docker"},{"from":"gitea-actions","to":"forgejo"},{"from":"grafana","to":"docker"},{"from":"headscale","to":"docker"},{"from":"headscale","to":"wireguard"},{"from":"home-assistant","to":"docker"},{"from":"homepage","to":"docker"},{"from":"immich","to":"docker"},{"from":"immich","to":"postgresql"},{"from":"jellyfin","to":"docker"},{"from":"jenkins","to":"docker"},{"from":"joplin","to":"docker"},{"from":"loki","to":"docker"},{"from":"loki","to":"grafana"},{"from":"mailcow","to":"docker"},{"from":"mariadb","to":"docker"},{"from":"matrix","to":"docker"},{"from":"mysql","to":"docker"},{"from":"n8n","to":"docker"},{"from":"netdata","to":"docker"},{"from":"nextcloud","to":"docker"},{"from":"nextcloud","to":"postgresql"},{"from":"nginx-proxy-manager","to":"docker"},{"from":"openvpn","to":"docker"},{"from":"paperless-ngx","to":"docker"},{"from":"paperless-ngx","to":"postgresql"},{"from":"photoprism","to":"docker"},{"from":"pi-hole","to":"docker"},{"from":"plausible","to":"docker"},{"from":"portainer","to":"docker"},{"from":"postgresql","to":"docker"},{"from":"prometheus","to":"docker"},{"from":"redis","to":"docker"},{"from":"syncthing","to":"docker"},{"from":"traefik","to":"docker"},{"from":"umami","to":"docker"},{"from":"uptime-kuma","to":"docker"},{"from":"vault","to":"docker"},{"from":"vaultwarden","to":"docker"},{"from":"woodpecker","to":"docker"},{"from":"woodpecker","to":"forgejo"},{"from":"zabbix","to":"docker"}],"opt":[{"from":"authentik","to":"redis"},{"from":"crowdsec","to":"docker"},{"from":"forgejo","to":"postgresql"},{"from":"gitea-actions","to":"prometheus"},{"from":"grafana","to":"prometheus"},{"from":"headscale","to":"prometheus"},{"from":"jenkins","to":"prometheus"},{"from":"joplin","to":"syncthing"},{"from":"joplin","to":"nextcloud"},{"from":"k3s","to":"docker"},{"from":"keepass","to":"syncthing"},{"from":"kopia","to":"docker"},{"from":"logseq","to":"syncthing"},{"from":"loki","to":"prometheus"},{"from":"mariadb","to":"prometheus"},{"from":"matrix","to":"postgresql"},{"from":"mysql","to":"prometheus"},{"from":"n8n","to":"postgresql"},{"from":"netdata","to":"prometheus"},{"from":"netdata","to":"grafana"},{"from":"nextcloud","to":"redis"},{"from":"node-red","to":"docker"},{"from":"obsidian","to":"syncthing"},{"from":"paperless-ngx","to":"redis"},{"from":"photoprism","to":"prometheus"},{"from":"plausible","to":"prometheus"},{"from":"postgresql","to":"prometheus"},{"from":"redis","to":"prometheus"},{"from":"umami","to":"prometheus"},{"from":"woodpecker","to":"prometheus"},{"from":"zabbix","to":"prometheus"},{"from":"zabbix","to":"grafana"}]};
+/* AUTO:DEPENDENCY_GRAPH_DATA:END */
+
+const TC = {opening:'#22c55e', stable:'#60a5fa', mixed:'#f59e0b', closing:'#f87171'};
+const GC = {network:'#818cf8', storage:'#34d399', security:'#f472b6', observability:'#a78bfa', compute:'#fb923c', communication:'#38bdf8', analytics:'#facc15', applications:'#94a3b8', identity:'#e879f9'};
+const GL = {network:'Network', storage:'Storage', security:'Security', observability:'Observability', compute:'Compute', communication:'Communication', analytics:'Analytics', applications:'Applications', identity:'Identity'};
+
+const BASE = 'https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/';
+
+/* Count inbound edges for node sizing */
+const inbound = {};
+DATA.req.forEach(e => { inbound[e.to] = (inbound[e.to]||0) + 1; });
+DATA.opt.forEach(e => { inbound[e.to] = (inbound[e.to]||0) + 0.5; });
+
+/* Build filter buttons */
+const groups = [...new Set(DATA.nodes.map(n => n.g))].sort();
+const filtersDiv = document.getElementById('filters');
+const allBtn = document.createElement('button');
+allBtn.className = 'fbtn active';
+allBtn.textContent = 'All';
+allBtn.onclick = () => setFilter(null);
+filtersDiv.appendChild(allBtn);
+groups.forEach(g => {
+  const btn = document.createElement('button');
+  btn.className = 'fbtn';
+  btn.textContent = GL[g] || g;
+  btn.style.borderColor = GC[g] || '#555';
+  btn.onclick = () => setFilter(g);
+  btn.dataset.group = g;
+  filtersDiv.appendChild(btn);
+});
+
+let activeFilter = null;
+function setFilter(g) {
+  activeFilter = g;
+  filtersDiv.querySelectorAll('.fbtn').forEach(b => {
+    if (g === null) b.classList.toggle('active', b.textContent === 'All');
+    else b.classList.toggle('active', b.dataset.group === g);
+  });
+  updateVisibility();
+}
+
+/* Stats */
+const statsDiv = document.getElementById('stats');
+statsDiv.innerHTML = `<span class="stat"><b>${DATA.nodes.length}</b> technologies</span><span class="stat"><b>${DATA.req.length}</b> required deps</span><span class="stat"><b>${DATA.opt.length}</b> optional integrations</span>`;
+
+/* D3 setup */
+const container = document.getElementById('graph-container');
+const W = container.clientWidth;
+const H = container.clientHeight;
+
+const svg = d3.select('#graph-container').append('svg')
+  .attr('viewBox', `0 0 ${W} ${H}`)
+  .attr('preserveAspectRatio', 'xMidYMid meet');
+
+const g = svg.append('g');
+
+/* Zoom */
+const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+
+/* Arrow markers */
+const defs = svg.append('defs');
+defs.append('marker').attr('id','arrow-req').attr('viewBox','0 0 10 6').attr('refX',10).attr('refY',3)
+  .attr('markerWidth',8).attr('markerHeight',6).attr('orient','auto')
+  .append('path').attr('d','M0,0 L10,3 L0,6').attr('fill','#60a5fa').attr('opacity',0.4);
+defs.append('marker').attr('id','arrow-opt').attr('viewBox','0 0 10 6').attr('refX',10).attr('refY',3)
+  .attr('markerWidth',8).attr('markerHeight',6).attr('orient','auto')
+  .append('path').attr('d','M0,0 L10,3 L0,6').attr('fill','#f59e0b').attr('opacity',0.3);
+
+/* Build simulation data */
+const nodes = DATA.nodes.map(n => ({...n, r: 4 + (inbound[n.id]||0) * 1.2}));
+const links = [
+  ...DATA.req.map(e => ({source:e.from, target:e.to, type:'req'})),
+  ...DATA.opt.map(e => ({source:e.from, target:e.to, type:'opt'})),
+];
+
+/* Draw edges */
+const linkG = g.append('g');
+const linkEls = linkG.selectAll('line').data(links).join('line')
+  .attr('stroke', d => d.type==='req' ? '#60a5fa' : '#f59e0b')
+  .attr('stroke-opacity', d => d.type==='req' ? 0.25 : 0.12)
+  .attr('stroke-width', d => d.type==='req' ? 1.2 : 0.8)
+  .attr('stroke-dasharray', d => d.type==='opt' ? '4,3' : 'none')
+  .attr('marker-end', d => d.type==='req' ? 'url(#arrow-req)' : 'url(#arrow-opt)');
+
+/* Draw nodes */
+const nodeG = g.append('g');
+const nodeEls = nodeG.selectAll('g').data(nodes).join('g')
+  .attr('cursor','pointer')
+  .call(d3.drag()
+    .on('start', (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+    .on('drag', (e,d) => { d.fx=e.x; d.fy=e.y; })
+    .on('end', (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; })
+  );
+
+nodeEls.append('circle')
+  .attr('r', d => d.r)
+  .attr('fill', d => TC[d.tr])
+  .attr('stroke', d => GC[d.g] || '#555')
+  .attr('stroke-width', 1.5)
+  .attr('opacity', 0.85);
+
+nodeEls.append('text')
+  .text(d => d.n)
+  .attr('x', d => d.r + 4)
+  .attr('y', 3)
+  .attr('font-size', d => Math.max(8, Math.min(11, 7 + (inbound[d.id]||0)*0.5)))
+  .attr('fill', '#8899aa')
+  .attr('font-family', "'IBM Plex Mono', monospace")
+  .attr('pointer-events', 'none');
+
+/* Tooltip */
+const tooltip = document.getElementById('tooltip');
+
+nodeEls.on('mouseenter', (e, d) => {
+  const reqDeps = DATA.req.filter(l => l.from === d.id).map(l => nodes.find(n => n.id === l.to)?.n);
+  const optDeps = DATA.opt.filter(l => l.from === d.id).map(l => nodes.find(n => n.id === l.to)?.n);
+  const usedBy = DATA.req.filter(l => l.to === d.id).map(l => nodes.find(n => n.id === l.from)?.n);
+
+  let html = `<div class="tt-name">${d.n}</div>`;
+  html += `<div class="tt-meta">A${d.a}/T${d.t} · ${d.tr} · ${GL[d.g]||d.g}</div>`;
+  if (reqDeps.length) html += `<div class="tt-deps">Requires: <span>${reqDeps.join(', ')}</span></div>`;
+  if (optDeps.length) html += `<div class="tt-deps">Optional: <span class="opt">${optDeps.join(', ')}</span></div>`;
+  if (usedBy.length) html += `<div class="tt-deps" style="margin-top:4px;">Used by: <span>${usedBy.join(', ')}</span></div>`;
+
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+
+  /* Highlight connections */
+  const connected = new Set([d.id]);
+  links.forEach(l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    if (sid === d.id || tid === d.id) { connected.add(sid); connected.add(tid); }
+  });
+  nodeEls.select('circle').attr('opacity', n => connected.has(n.id) ? 1 : 0.15);
+  nodeEls.select('text').attr('opacity', n => connected.has(n.id) ? 1 : 0.15);
+  linkEls.attr('stroke-opacity', l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    return (sid === d.id || tid === d.id) ? (l.type==='req' ? 0.7 : 0.4) : 0.03;
+  });
+}).on('mousemove', (e) => {
+  const rect = container.getBoundingClientRect();
+  tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+}).on('mouseleave', () => {
+  tooltip.style.display = 'none';
+  updateVisibility();
+}).on('click', (e, d) => {
+  window.open(BASE + d.id + '.html', '_blank');
+});
+
+/* Force simulation */
+const sim = d3.forceSimulation(nodes)
+  .force('link', d3.forceLink(links).id(d => d.id).distance(d => d.type==='opt' ? 120 : 80).strength(d => d.type==='opt' ? 0.15 : 0.3))
+  .force('charge', d3.forceManyBody().strength(d => -50 - (inbound[d.id]||0)*15))
+  .force('center', d3.forceCenter(W/2, H/2))
+  .force('collision', d3.forceCollide().radius(d => d.r + 8))
+  .force('x', d3.forceX(W/2).strength(0.04))
+  .force('y', d3.forceY(H/2).strength(0.04))
+  .on('tick', () => {
+    linkEls
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    nodeEls.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+
+function updateVisibility() {
+  nodeEls.select('circle').attr('opacity', d => (!activeFilter || d.g === activeFilter) ? 0.85 : 0.1);
+  nodeEls.select('text').attr('opacity', d => (!activeFilter || d.g === activeFilter) ? 1 : 0.1);
+  linkEls.attr('stroke-opacity', d => {
+    const sid = typeof d.source === 'object' ? d.source.id : d.source;
+    const tid = typeof d.target === 'object' ? d.target.id : d.target;
+    const sn = nodes.find(n => n.id === sid);
+    const tn = nodes.find(n => n.id === tid);
+    if (activeFilter && sn?.g !== activeFilter && tn?.g !== activeFilter) return 0.02;
+    return d.type === 'req' ? 0.25 : 0.12;
+  });
+}
+</script>
+{% endraw %}
