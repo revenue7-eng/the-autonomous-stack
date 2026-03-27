@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*62 technologies evaluated.*
+*65 technologies evaluated.*
 
 ---
 
@@ -34,6 +34,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Caddy](caddy.md) | **A3** | **T2** | Fast, extensible, cross-platform web server with automatic HTTPS. |
 | [Nginx Proxy Manager](nginx-proxy-manager.md) | **A3** | **T2** | GUI-based reverse proxy built on Nginx. |
 | [Traefik](traefik.md) | **A3** | **T2** | Modern reverse proxy and load balancer designed for microservices and container environments. |
 
@@ -69,6 +70,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Redis](redis.md) | **A2** | **T1** | In-memory data structure store. |
+
+### Cloud
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [MinIO](minio.md) | **A3** | **T2** | High-performance, S3-compatible object storage. |
 
 ### Database
 
@@ -122,6 +129,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
 | [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
+| [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
 
 ---
 
