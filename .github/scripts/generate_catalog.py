@@ -40,6 +40,18 @@ CATEGORY_LABELS = {
     'applications/automation':  ('Applications', 'Automation'),
     'applications':             ('Applications', 'General'),
     'cloud':                    ('Cloud', ''),
+    'communication/email':      ('Communication', 'Email'),
+    'communication/messaging':  ('Communication', 'Messaging'),
+    'communication':            ('Communication', 'General'),
+    'analytics/web':            ('Analytics', ''),
+    'analytics':                ('Analytics', ''),
+    'applications/ci-cd':       ('Applications', 'CI/CD'),
+    'applications/version-control': ('Applications', 'Version Control'),
+    'applications/wiki':        ('Applications', 'Documents & Wiki'),
+    'applications/photos':      ('Applications', 'Photos'),
+    'storage/database':         ('Storage', 'Database'),
+    'storage/cache':            ('Storage', 'Cache'),
+    'identity/auth':            ('Identity', ''),
 }
 
 def parse_frontmatter(filepath):
@@ -125,7 +137,7 @@ def generate_index():
             grouped[section][subsection].sort(key=lambda c: autonomy_sort_key(c['autonomy']))
     
     # Define section order
-    section_order = ['Network', 'Identity', 'Storage', 'Observability', 'Compute', 'Security', 'Applications', 'Cloud', 'Other']
+    section_order = ['Network', 'Identity', 'Storage', 'Observability', 'Compute', 'Security', 'Communication', 'Analytics', 'Applications', 'Cloud', 'Other']
     
     lines = []
     lines.append('---')
