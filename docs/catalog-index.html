@@ -35,16 +35,16 @@ Every technology in the catalog — by category, autonomy, transparency, and tra
 </div>
 
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;">
-  <button onclick="toggleTraj('opening')" id="btn-opening" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #22c55e44;background:#dcfce7;color:#22c55e;transition:all .15s;">
+  <button id="btn-opening" data-traj="opening" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #22c55e44;background:#dcfce7;color:#22c55e;transition:all .15s;">
     <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening
   </button>
-  <button onclick="toggleTraj('stable')" id="btn-stable" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #3b82f644;background:#dbeafe;color:#3b82f6;transition:all .15s;">
+  <button id="btn-stable" data-traj="stable" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #3b82f644;background:#dbeafe;color:#3b82f6;transition:all .15s;">
     <span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable
   </button>
-  <button onclick="toggleTraj('mixed')" id="btn-mixed" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #f59e0b44;background:#fef3c7;color:#f59e0b;transition:all .15s;">
+  <button id="btn-mixed" data-traj="mixed" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #f59e0b44;background:#fef3c7;color:#f59e0b;transition:all .15s;">
     <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed
   </button>
-  <button onclick="toggleTraj('closing')" id="btn-closing" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #ef444444;background:#fee2e2;color:#ef4444;transition:all .15s;">
+  <button id="btn-closing" data-traj="closing" onclick="toggleTraj(this.dataset.traj)" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #ef444444;background:#fee2e2;color:#ef4444;transition:all .15s;">
     <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing
   </button>
 </div>
