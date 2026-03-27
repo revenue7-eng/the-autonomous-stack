@@ -10,6 +10,12 @@ services:
       - ./config/adguard/work:/opt/adguardhome/work
       - ./config/adguard/conf:/opt/adguardhome/conf
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:80"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
   authentik-postgres:
     image: postgres:15
@@ -21,6 +27,12 @@ services:
     volumes:
       - ./data/authentik-postgres:/var/lib/postgresql/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U authentik"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
 
   authentik-redis:
     image: redis:alpine
@@ -29,6 +41,11 @@ services:
     volumes:
       - ./data/authentik-redis:/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   authentik:
     image: ghcr.io/goauthentik/server:latest
@@ -45,9 +62,17 @@ services:
     volumes:
       - ./data/authentik-media:/media
     depends_on:
-      - authentik-postgres
-      - authentik-redis
+      authentik-postgres:
+        condition: service_healthy
+      authentik-redis:
+        condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "ak", "healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   syncthing:
     image: syncthing/syncthing:latest
@@ -59,6 +84,12 @@ services:
       - ./config/syncthing:/var/syncthing/config
       - ./data/syncthing:/var/syncthing/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8384"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
   uptime-kuma:
     image: louislam/uptime-kuma:1
@@ -68,6 +99,12 @@ services:
     volumes:
       - ./data/uptime-kuma:/app/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
   jellyfin:
     image: jellyfin/jellyfin:latest
@@ -78,6 +115,12 @@ services:
       - ./config/jellyfin:/config
       - ./data/media:/media
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8096/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
 
   forgejo:
     image: codeberg.org/forgejo/forgejo:1.21
@@ -91,3 +134,9 @@ services:
       - FORGEJO__server__DOMAIN=git.local
       - FORGEJO__server__SSH_PORT=222
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/api/v1/version"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s

@@ -1,7 +1,36 @@
 #!/usr/bin/env python3
 """
 Auto-generates docs/catalog/index.md from frontmatter of catalog cards.
+
 Triggered by GitHub Actions on every push to docs/catalog/*.md
+(see .github/workflows/generate-catalog.yml).
+
+Behavior:
+  - Reads all .md files in docs/catalog/ except SKIP_FILES
+  - Parses YAML frontmatter for: title, category, autonomy_level, transparency_level
+  - Extracts first sentence from "## Brief Description" section as card description
+  - Groups cards by category into sections/subsections (see CATEGORY_LABELS)
+  - Sorts cards within each group by autonomy level (A3 first, A0 last)
+  - Outputs a markdown file with tables for each section
+
+Filtering:
+  - Files in SKIP_FILES are always excluded
+  - Cards with nav_exclude: true are excluded (currently only template-card.md)
+  - Cards with nav_exclude: false or no nav_exclude field are INCLUDED
+    (nav_exclude: false is the default for all catalog cards)
+
+Required frontmatter fields:
+  - title: display name
+  - category: hierarchical category string (e.g. "network/vpn", "storage/backup")
+  - autonomy_level: A0, A1, A2, or A3
+  - transparency_level: T0, T1, or T2
+
+Optional frontmatter fields used:
+  - nav_exclude: if "true", card is skipped (default: included)
+
+Frontmatter fields NOT used by this script:
+  - parent, nav_order, status, license, source, repository, etc.
+  - These exist for Jekyll navigation and card metadata but don't affect index generation
 """
 
 import os
