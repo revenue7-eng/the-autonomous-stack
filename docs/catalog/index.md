@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*52 technologies evaluated.*
+*54 technologies evaluated.*
 
 ---
 
@@ -196,6 +196,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Plausible Analytics](plausible.md) | **A3** | **T2** | Lightweight, privacy-friendly web analytics. |
 | [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
 | [Telegram](telegram.md) | **A1** | **T0** | Cloud-based messaging platform. |
+| [Tuta (Tutanota)](tuta.md) | **A0** | **T1** | End-to-end encrypted email and calendar. |
+| [Proton Mail](protonmail.md) | **A0** | **T1** | Encrypted email service with zero-knowledge architecture. |
 | [Google Analytics](google-analytics.md) | **A0** | **T0** | Cloud-only web analytics platform by Google. |
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
 | [Slack](slack.md) | **A0** | **T0** | Cloud-based team messaging platform. |
