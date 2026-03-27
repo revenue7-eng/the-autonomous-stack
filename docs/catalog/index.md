@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*45 technologies evaluated.*
+*47 technologies evaluated.*
 
 ---
 
@@ -42,6 +42,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [WireGuard](wireguard.md) | **A3** | **T2** | Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. |
+| [OpenVPN](openvpn.md) | **A3** | **T2** | Battle-tested open-source VPN protocol and implementation. |
+| [Headscale](headscale.md) | **A3** | **T2** | Self-hosted implementation of the Tailscale coordination server. |
 | [Tailscale](tailscale.md) | **A2** | **T1** | Mesh VPN built on WireGuard. |
 
 ---
