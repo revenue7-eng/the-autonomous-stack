@@ -12,13 +12,6 @@ Every technology in the catalog — by category, autonomy, transparency, and tra
 </p>
 
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.25rem;">
-  <select id="trajF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ddd;">
-    <option value="all">All trajectories</option>
-    <option value="opening">Opening</option>
-    <option value="stable">Stable</option>
-    <option value="mixed">Mixed</option>
-    <option value="closing">Closing</option>
-  </select>
   <select id="aF" style="font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid #ddd;">
     <option value="all">Autonomy: all</option>
     <option value="3">A3</option>
@@ -131,8 +124,10 @@ const TC_BG={opening:'#dcfce7',stable:'#dbeafe',mixed:'#fef3c7',closing:'#fee2e2
 const CATS=['Network','Storage','Security','Observability','Compute','Communication','Analytics','Applications'];
 const BASE='https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/';
 
+let activeTraj=null;
+
 function render(){
-  const trajF=document.getElementById('trajF').value;
+  const trajF=activeTraj || 'all';
   const aF=document.getElementById('aF').value;
   const tF=document.getElementById('tF').value;
   const board=document.getElementById('board');
@@ -192,11 +187,10 @@ document.getElementById('closeBtn').onclick=()=>{document.getElementById('overla
 document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')document.getElementById('overlay').style.display='none';};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
 
-['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+['aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
 
 const TC_BG_INACTIVE={opening:'#f0f0f0',stable:'#f0f0f0',mixed:'#f0f0f0',closing:'#f0f0f0'};
 const TC_COL_INACTIVE='#aaa';
-let activeTraj=null;
 
 function toggleTraj(traj){
   activeTraj = activeTraj===traj ? null : traj;
@@ -207,9 +201,6 @@ function toggleTraj(traj){
     btn.style.opacity = isActive ? '1' : '0.35';
     btn.style.transform = activeTraj===t ? 'scale(1.05)' : 'scale(1)';
   });
-  /* Перерисовать с фильтром */
-  const trajF=document.getElementById('trajF');
-  trajF.value = activeTraj || 'all';
   render();
 }
 render();
