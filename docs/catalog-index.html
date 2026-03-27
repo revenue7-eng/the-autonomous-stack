@@ -34,11 +34,19 @@ Every technology in the catalog — by category, autonomy, transparency, and tra
   </select>
 </div>
 
-<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#888;">
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;">
+  <button onclick="toggleTraj('opening')" id="btn-opening" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #22c55e44;background:#dcfce7;color:#22c55e;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening
+  </button>
+  <button onclick="toggleTraj('stable')" id="btn-stable" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #3b82f644;background:#dbeafe;color:#3b82f6;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable
+  </button>
+  <button onclick="toggleTraj('mixed')" id="btn-mixed" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #f59e0b44;background:#fef3c7;color:#f59e0b;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed
+  </button>
+  <button onclick="toggleTraj('closing')" id="btn-closing" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #ef444444;background:#fee2e2;color:#ef4444;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing
+  </button>
 </div>
 
 <div id="board"></div>
@@ -185,6 +193,25 @@ document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')docume
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
 
 ['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+
+const TC_BG_INACTIVE={opening:'#f0f0f0',stable:'#f0f0f0',mixed:'#f0f0f0',closing:'#f0f0f0'};
+const TC_COL_INACTIVE='#aaa';
+let activeTraj=null;
+
+function toggleTraj(traj){
+  activeTraj = activeTraj===traj ? null : traj;
+  // Обновить вид кнопок
+  ['opening','stable','mixed','closing'].forEach(t=>{
+    const btn=document.getElementById('btn-'+t);
+    const isActive = activeTraj===null || activeTraj===t;
+    btn.style.opacity = isActive ? '1' : '0.35';
+    btn.style.transform = activeTraj===t ? 'scale(1.05)' : 'scale(1)';
+  });
+  // Перерисовать с фильтром
+  const trajF=document.getElementById('trajF');
+  trajF.value = activeTraj || 'all';
+  render();
+}
 render();
 </script>
 {% endraw %}
