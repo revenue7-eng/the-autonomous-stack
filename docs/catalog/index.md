@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*66 technologies evaluated.*
+*67 technologies evaluated.*
 
 ---
 
@@ -213,6 +213,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Homepage](homepage.md) | **A3** | **T2** | Highly customizable, self-hosted application dashboard with Docker auto-discovery and over 100 service integrations. |
 | [Nextcloud](nextcloud.md) | **A3** | **T2** | Self-hosted cloud platform providing file sync, calendar, contacts, email, office documents, video calls, and more -- al... |
 
 ### Documents
