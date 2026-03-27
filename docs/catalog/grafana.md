@@ -15,6 +15,7 @@ depends_on: ["docker"]
 optional_deps: ["prometheus"]
 depended_by: []
 critical_criteria: ["Recoverability"]
+trajectory: "mixed"
 parent: Technology Catalog
 nav_order: 99
 ---

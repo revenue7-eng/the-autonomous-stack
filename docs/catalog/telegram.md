@@ -1,6 +1,7 @@
 ---
 nav_exclude: false
 title: "Telegram"
+trajectory: "mixed"
 parent: "Technology Catalog"
 nav_order: 99
 category: "communication/messaging"

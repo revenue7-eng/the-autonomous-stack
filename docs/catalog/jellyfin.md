@@ -15,6 +15,7 @@ depends_on: ["docker"]
 optional_deps: []
 depended_by: []
 critical_criteria: ["Exit"]
+trajectory: "stable"
 parent: Technology Catalog
 nav_order: 99
 ---

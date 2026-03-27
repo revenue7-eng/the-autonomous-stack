@@ -1,6 +1,7 @@
 ---
 nav_exclude: false
 title: "Mailcow"
+trajectory: "opening"
 parent: "Technology Catalog"
 nav_order: 99
 category: "communication/email"

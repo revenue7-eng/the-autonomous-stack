@@ -15,6 +15,7 @@ depends_on: ["docker", "postgresql"]
 optional_deps: ["redis"]
 depended_by: []
 critical_criteria: ["Pause", "Exit"]
+trajectory: "stable"
 parent: Technology Catalog
 nav_order: 99
 ---

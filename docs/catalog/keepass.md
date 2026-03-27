@@ -15,6 +15,7 @@ depends_on: []
 optional_deps: ["syncthing"]
 depended_by: []
 critical_criteria: ["Exit", "Recoverability"]
+trajectory: "stable"
 parent: Technology Catalog
 nav_order: 99
 ---

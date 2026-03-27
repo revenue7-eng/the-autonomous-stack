@@ -15,6 +15,7 @@ depends_on: []
 optional_deps: ["docker"]
 depended_by: []
 critical_criteria: ["Recoverability"]
+trajectory: "mixed"
 parent: Technology Catalog
 nav_order: 99
 ---

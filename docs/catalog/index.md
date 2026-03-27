@@ -41,9 +41,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [WireGuard](wireguard.md) | **A3** | **T2** | Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. |
-| [OpenVPN](openvpn.md) | **A3** | **T2** | Battle-tested open-source VPN protocol and implementation. |
 | [Headscale](headscale.md) | **A3** | **T2** | Self-hosted implementation of the Tailscale coordination server. |
+| [OpenVPN](openvpn.md) | **A3** | **T2** | Battle-tested open-source VPN protocol and implementation. |
+| [WireGuard](wireguard.md) | **A3** | **T2** | Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. |
 | [Tailscale](tailscale.md) | **A2** | **T1** | Mesh VPN built on WireGuard. |
 
 ---
@@ -64,15 +64,20 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Kopia](kopia.md) | **A3** | **T2** | Fast and secure open-source backup/restore tool with snapshots, deduplication, compression, and client-side encryption. |
 
-### General
+### Cache
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [MySQL](mysql.md) | **A3** | **T1** | The world's most widely deployed open-source relational database. |
+| [Redis](redis.md) | **A2** | **T1** | In-memory data structure store. |
+
+### Database
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
 | [MariaDB](mariadb.md) | **A3** | **T2** | Community-developed fork of MySQL created by MySQL's original author (Monty Widenius) after Oracle's acquisition. |
+| [MySQL](mysql.md) | **A3** | **T1** | The world's most widely deployed open-source relational database. |
 | [PostgreSQL](postgresql.md) | **A3** | **T2** | The world's most advanced open-source relational database. |
 | [SQLite](sqlite.md) | **A3** | **T1** | The most widely deployed database engine in the world — embedded in every smartphone, browser, and operating system. |
-| [Redis](redis.md) | **A2** | **T1** | In-memory data structure store. |
 
 ### Sync
 
@@ -105,9 +110,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Zabbix](zabbix.md) | **A3** | **T2** | Enterprise-grade open-source monitoring platform. |
 | [Netdata](netdata.md) | **A3** | **T2** | Real-time performance monitoring with zero configuration. |
 | [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
+| [Zabbix](zabbix.md) | **A3** | **T2** | Enterprise-grade open-source monitoring platform. |
 
 ---
 
@@ -126,8 +131,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [KeePass](keepass.md) | **A3** | **T2** | Free, open source password manager that stores credentials in a locally encrypted database file (`.kdbx`). |
 | [Bitwarden](bitwarden.md) | **A3** | **T2** | Open-source password manager with end-to-end encryption. |
+| [KeePass](keepass.md) | **A3** | **T2** | Free, open source password manager that stores credentials in a locally encrypted database file (`.kdbx`). |
 | [Vaultwarden](vaultwarden.md) | **A3** | **T2** | Lightweight, self-hosted implementation of the Bitwarden password manager API. |
 | [1Password](1password.md) | **A0** | **T0** | Cloud-based password manager with polished clients for all platforms. |
 
@@ -147,9 +152,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Mailcow](mailcow.md) | **A3** | **T2** | Open-source, Docker-based email server suite. |
 | [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
-| [Tuta (Tutanota)](tuta.md) | **A0** | **T1** | End-to-end encrypted email and calendar. |
-| [Proton Mail](protonmail.md) | **A0** | **T1** | Encrypted email service with zero-knowledge architecture. |
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
+| [Proton Mail](protonmail.md) | **A0** | **T1** | Encrypted email service with zero-knowledge architecture. |
+| [Tuta (Tutanota)](tuta.md) | **A0** | **T1** | End-to-end encrypted email and calendar. |
 
 ### Messaging
 
@@ -165,8 +170,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Umami](umami.md) | **A3** | **T2** | Simple, fast, privacy-focused web analytics. |
 | [Plausible Analytics](plausible.md) | **A3** | **T2** | Lightweight, privacy-friendly web analytics. |
+| [Umami](umami.md) | **A3** | **T2** | Simple, fast, privacy-focused web analytics. |
 | [Google Analytics](google-analytics.md) | **A0** | **T0** | Cloud-only web analytics platform by Google. |
 
 ---
@@ -178,9 +183,17 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Home Assistant](home-assistant.md) | **A3** | **T2** | Open-source home automation platform that puts local control and privacy first. |
-| [Node-RED](node-red.md) | **A3** | **T2** | Flow-based visual automation tool built on Node.js. |
 | [n8n](n8n.md) | **A3** | **T2** | Source-available workflow automation platform. |
+| [Node-RED](node-red.md) | **A3** | **T2** | Flow-based visual automation tool built on Node.js. |
 | [Zapier](zapier.md) | **A0** | **T0** | Cloud-based workflow automation platform. |
+
+### CI/CD
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Gitea Actions](gitea-actions.md) | **A3** | **T2** | Built-in CI/CD for Gitea and Forgejo. |
+| [Jenkins](jenkins.md) | **A3** | **T2** | The most widely deployed open-source CI/CD server. |
+| [Woodpecker CI](woodpecker.md) | **A3** | **T2** | Community fork of Drone CI after Harness acquired it and moved it toward a commercial model. |
 
 ### Cloud Platform
 
@@ -195,16 +208,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Paperless-ngx](paperless-ngx.md) | **A3** | **T2** | Document management system that transforms your physical and digital documents into a searchable, organized archive. |
 | [Notion](notion.md) | **A0** | **T0** | All‑in‑one workspace for notes, documents, databases, wikis, and project management. |
 
-### General
+### Documents & Wiki
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Jenkins](jenkins.md) | **A3** | **T2** | The most widely deployed open-source CI/CD server. |
-| [Docmost](docmost.md) | **A3** | **T2** | Open-source, self-hosted documentation and wiki platform. |
-| [Gitea Actions](gitea-actions.md) | **A3** | **T2** | Built-in CI/CD for Gitea and Forgejo. |
-| [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
-| [Woodpecker CI](woodpecker.md) | **A3** | **T2** | Community fork of Drone CI after Harness acquired it and moved it toward a commercial model. |
 | [BookStack](bookstack.md) | **A3** | **T2** | Open-source, self-hosted wiki platform built with PHP and Laravel. |
+| [Docmost](docmost.md) | **A3** | **T2** | Open-source, self-hosted documentation and wiki platform. |
 | [Confluence](confluence.md) | **A0** | **T0** | Proprietary wiki and collaboration platform by Atlassian. |
 
 ### Media
@@ -226,8 +235,14 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [PhotoPrism](photoprism.md) | **A3** | **T2** | AI-powered self-hosted photo management. |
 | [Immich](immich.md) | **A3** | **T2** | Self-hosted photo and video backup solution with a focus on user experience, automatic organisation, and machine learnin... |
+| [PhotoPrism](photoprism.md) | **A3** | **T2** | AI-powered self-hosted photo management. |
+
+### Version Control
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
 
 ---
 

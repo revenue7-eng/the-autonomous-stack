@@ -15,6 +15,7 @@ depends_on: []
 optional_deps: []
 depended_by: ["authentik", "forgejo", "grafana", "immich", "jellyfin", "kopia", "nextcloud", "nginx-proxy-manager", "paperless-ngx", "pi-hole", "prometheus", "syncthing", "traefik", "uptime-kuma", "vault", "vaultwarden", "wireguard"]
 critical_criteria: ["Recoverability"]
+trajectory: "mixed"
 parent: Technology Catalog
 nav_order: 99
 ---

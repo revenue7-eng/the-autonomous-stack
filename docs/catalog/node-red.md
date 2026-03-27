@@ -1,6 +1,7 @@
 ---
 nav_exclude: false
 title: "Node-RED"
+trajectory: "stable"
 parent: "Technology Catalog"
 nav_order: 99
 category: "applications/automation"

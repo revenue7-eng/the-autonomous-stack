@@ -1,6 +1,7 @@
 ---
 nav_exclude: false
 title: "BookStack"
+trajectory: "stable"
 parent: "Technology Catalog"
 nav_order: 99
 category: "applications/wiki"

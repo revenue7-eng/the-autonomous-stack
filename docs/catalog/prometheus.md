@@ -15,6 +15,7 @@ depends_on: ["docker"]
 optional_deps: []
 depended_by: ["grafana"]
 critical_criteria: ["Recoverability"]
+trajectory: "stable"
 parent: Technology Catalog
 nav_order: 99
 ---

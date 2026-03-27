@@ -1,5 +1,6 @@
 ---
 nav_exclude: false
+trajectory: "stable"
 parent: "Technology Catalog"
 nav_order: 99
 title: "Plausible Analytics"
