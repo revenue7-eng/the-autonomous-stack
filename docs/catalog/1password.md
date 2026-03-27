@@ -1,4 +1,6 @@
 ---
+parent: "Technology Catalog"
+nav_order: 99
 title: "1Password"
 category: "security/passwords"
 status: "stable"

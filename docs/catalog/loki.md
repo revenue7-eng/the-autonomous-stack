@@ -1,4 +1,6 @@
 ---
+parent: "Technology Catalog"
+nav_order: 99
 title: "Loki"
 category: "observability/logs"
 status: "stable"

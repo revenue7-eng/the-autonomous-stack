@@ -1,4 +1,6 @@
 ---
+parent: "Technology Catalog"
+nav_order: 99
 title: "OpenVPN"
 category: "network/vpn"
 status: "stable"

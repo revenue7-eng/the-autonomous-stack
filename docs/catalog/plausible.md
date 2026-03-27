@@ -1,4 +1,6 @@
 ---
+parent: "Technology Catalog"
+nav_order: 99
 title: "Plausible Analytics"
 category: "analytics/web"
 status: "stable"
