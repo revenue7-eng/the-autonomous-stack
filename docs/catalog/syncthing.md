@@ -16,7 +16,7 @@ optional_deps: []
 depended_by: ["keepass", "obsidian"]
 critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
-nav_order: 4
+nav_order: 99
 ---
 
 # Syncthing

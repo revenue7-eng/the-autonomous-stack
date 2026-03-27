@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Matrix / Element"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/messaging"
 status: "stable"
 license: "Apache-2.0 (Synapse), AGPL-3.0 (Element)"

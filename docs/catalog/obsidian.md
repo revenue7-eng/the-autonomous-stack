@@ -16,7 +16,7 @@ optional_deps: ["syncthing"]
 depended_by: []
 critical_criteria: ["Exit"]
 parent: Technology Catalog
-nav_order: 54
+nav_order: 99
 ---
 
 # Obsidian

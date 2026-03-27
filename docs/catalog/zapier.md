@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Zapier"
 parent: "Technology Catalog"
+nav_order: 99
 category: "applications/automation"
 status: "stable"
 license: "Proprietary"

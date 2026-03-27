@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "BookStack"
 parent: "Technology Catalog"
+nav_order: 99
 category: "applications/wiki"
 status: "stable"
 license: "MIT"

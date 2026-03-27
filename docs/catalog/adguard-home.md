@@ -16,7 +16,7 @@ optional_deps: []
 depended_by: ["minimal-server recipe", "privacy-first-homelab recipe"]
 critical_criteria: ["Pause"]
 parent: Technology Catalog
-nav_order: 2
+nav_order: 99
 ---
 
 # AdGuard Home

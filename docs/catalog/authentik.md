@@ -16,7 +16,7 @@ optional_deps: ["redis"]
 depended_by: []
 critical_criteria: ["Pause", "Exit"]
 parent: Technology Catalog
-nav_order: 3
+nav_order: 99
 ---
 
 # Authentik

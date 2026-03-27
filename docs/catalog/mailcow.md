@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Mailcow"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/email"
 status: "stable"
 license: "GPL-3.0"

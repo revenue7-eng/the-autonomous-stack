@@ -16,7 +16,7 @@ optional_deps: []
 depended_by: []
 critical_criteria: ["Pause"]
 parent: Technology Catalog
-nav_order: 20
+nav_order: 99
 ---
 
 # Traefik

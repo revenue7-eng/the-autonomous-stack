@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Docmost"
 parent: "Technology Catalog"
+nav_order: 99
 category: "applications/wiki"
 status: "stable"
 license: "AGPL-3.0"

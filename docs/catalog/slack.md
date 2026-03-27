@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Slack"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/messaging"
 status: "stable"
 license: "Proprietary"

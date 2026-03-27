@@ -16,7 +16,7 @@ optional_deps: ["postgresql"]
 depended_by: []
 critical_criteria: ["Exit", "Recoverability"]
 parent: Technology Catalog
-nav_order: 12
+nav_order: 99
 ---
 
 # Forgejo

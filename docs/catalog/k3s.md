@@ -16,7 +16,7 @@ optional_deps: ["docker"]
 depended_by: []
 critical_criteria: ["Recoverability"]
 parent: Technology Catalog
-nav_order: 9
+nav_order: 99
 ---
 
 # K3s

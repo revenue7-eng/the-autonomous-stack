@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Stalwart"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/email"
 status: "stable"
 license: "AGPL-3.0"

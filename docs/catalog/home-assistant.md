@@ -16,7 +16,7 @@ optional_deps: []
 depended_by: []
 critical_criteria: ["Recoverability"]
 parent: Technology Catalog
-nav_order: 18
+nav_order: 99
 ---
 
 # Home Assistant

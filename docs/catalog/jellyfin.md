@@ -16,7 +16,7 @@ optional_deps: []
 depended_by: []
 critical_criteria: ["Exit"]
 parent: Technology Catalog
-nav_order: 11
+nav_order: 99
 ---
 
 # Jellyfin

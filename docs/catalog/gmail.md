@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Gmail"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/email"
 status: "stable"
 license: "Proprietary"

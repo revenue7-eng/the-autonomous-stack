@@ -16,7 +16,7 @@ optional_deps: ["prometheus"]
 depended_by: []
 critical_criteria: ["Recoverability"]
 parent: Technology Catalog
-nav_order: 17
+nav_order: 99
 ---
 
 # Grafana

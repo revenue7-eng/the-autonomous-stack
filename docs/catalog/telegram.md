@@ -2,6 +2,7 @@
 nav_exclude: false
 title: "Telegram"
 parent: "Technology Catalog"
+nav_order: 99
 category: "communication/messaging"
 status: "stable"
 license: "GPL-2.0 (client), Proprietary (server)"
