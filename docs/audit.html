@@ -8,91 +8,97 @@ nav_order: 3
 
 <p><a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a></p>
 
-<p style="color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not -- submit it for review.</p>
+<p style="color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not — submit it for review.</p>
 
 <hr>
 
-<div style="margin-bottom:1.2rem;">
-  <label for="tool-select"><strong>Step 1: Is it already in our catalog?</strong></label><br>
-  <select id="tool-select" onchange="onSelectTool()" style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
-    <option value="">-- Select from catalog --</option>
-    <option value="1password" data-autonomy="A0" data-transparency="T0">1Password</option>
-    <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
-    <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
-    <option value="bitwarden" data-autonomy="A3" data-transparency="T2">Bitwarden</option>
-    <option value="bookstack" data-autonomy="A3" data-transparency="T2">BookStack</option>
-    <option value="confluence" data-autonomy="A0" data-transparency="T0">Confluence</option>
-    <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
-    <option value="docmost" data-autonomy="A3" data-transparency="T2">Docmost</option>
-    <option value="forgejo" data-autonomy="A3" data-transparency="T2">Forgejo</option>
-    <option value="gitea-actions" data-autonomy="A3" data-transparency="T2">Gitea Actions</option>
-    <option value="gmail" data-autonomy="A0" data-transparency="T0">Gmail</option>
-    <option value="google-analytics" data-autonomy="A0" data-transparency="T0">Google Analytics</option>
-    <option value="google-drive" data-autonomy="A0" data-transparency="T0">Google Drive</option>
-    <option value="grafana" data-autonomy="A3" data-transparency="T2">Grafana</option>
-    <option value="headscale" data-autonomy="A3" data-transparency="T2">Headscale</option>
-    <option value="home-assistant" data-autonomy="A3" data-transparency="T2">Home Assistant</option>
-    <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
-    <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
-    <option value="jenkins" data-autonomy="A3" data-transparency="T2">Jenkins</option>
-    <option value="joplin" data-autonomy="A3" data-transparency="T2">Joplin</option>
-    <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
-    <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
-    <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
-    <option value="logseq" data-autonomy="A3" data-transparency="T2">Logseq</option>
-    <option value="loki" data-autonomy="A3" data-transparency="T2">Loki</option>
-    <option value="mailcow" data-autonomy="A3" data-transparency="T2">Mailcow</option>
-    <option value="mariadb" data-autonomy="A3" data-transparency="T2">MariaDB</option>
-    <option value="matrix" data-autonomy="A3" data-transparency="T2">Matrix / Element</option>
-    <option value="mysql" data-autonomy="A3" data-transparency="T1">MySQL</option>
-    <option value="n8n" data-autonomy="A3" data-transparency="T2">n8n</option>
-    <option value="netdata" data-autonomy="A3" data-transparency="T2">Netdata</option>
-    <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
-    <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
-    <option value="node-red" data-autonomy="A3" data-transparency="T2">Node-RED</option>
-    <option value="notion" data-autonomy="A0" data-transparency="T0">Notion</option>
-    <option value="obsidian" data-autonomy="A2" data-transparency="T0">Obsidian</option>
-    <option value="openvpn" data-autonomy="A3" data-transparency="T2">OpenVPN</option>
-    <option value="paperless-ngx" data-autonomy="A3" data-transparency="T2">Paperless-ngx</option>
-    <option value="photoprism" data-autonomy="A3" data-transparency="T2">PhotoPrism</option>
-    <option value="pi-hole" data-autonomy="A3" data-transparency="T2">Pi-hole</option>
-    <option value="plausible" data-autonomy="A3" data-transparency="T2">Plausible Analytics</option>
-    <option value="plex" data-autonomy="A1" data-transparency="T0">Plex</option>
-    <option value="postgresql" data-autonomy="A3" data-transparency="T2">PostgreSQL</option>
-    <option value="prometheus" data-autonomy="A3" data-transparency="T2">Prometheus</option>
-    <option value="protonmail" data-autonomy="A0" data-transparency="T1">Proton Mail</option>
-    <option value="redis" data-autonomy="A2" data-transparency="T1">Redis</option>
-    <option value="slack" data-autonomy="A0" data-transparency="T0">Slack</option>
-    <option value="sqlite" data-autonomy="A3" data-transparency="T1">SQLite</option>
-    <option value="stalwart" data-autonomy="A3" data-transparency="T2">Stalwart</option>
-    <option value="syncthing" data-autonomy="A3" data-transparency="T2">Syncthing</option>
-    <option value="tailscale" data-autonomy="A2" data-transparency="T1">Tailscale</option>
-    <option value="telegram" data-autonomy="A1" data-transparency="T0">Telegram</option>
-    <option value="traefik" data-autonomy="A3" data-transparency="T2">Traefik</option>
-    <option value="tuta" data-autonomy="A0" data-transparency="T1">Tuta (Tutanota)</option>
-    <option value="umami" data-autonomy="A3" data-transparency="T2">Umami</option>
-    <option value="uptime-kuma" data-autonomy="A3" data-transparency="T2">Uptime Kuma</option>
-    <option value="vault" data-autonomy="A3" data-transparency="T2">Vault</option>
-    <option value="vaultwarden" data-autonomy="A3" data-transparency="T2">Vaultwarden</option>
-    <option value="wireguard" data-autonomy="A3" data-transparency="T2">WireGuard</option>
-    <option value="woodpecker" data-autonomy="A3" data-transparency="T2">Woodpecker CI</option>
-    <option value="zabbix" data-autonomy="A3" data-transparency="T2">Zabbix</option>
-    <option value="zapier" data-autonomy="A0" data-transparency="T0">Zapier</option>
-  <option value="" disabled>---- or enter URL below ----</option>
-  </select>
-</div>
+<p><strong>Step 1: What are you evaluating?</strong></p>
 
-<div id="url-section" style="margin-bottom:1.5rem;">
-  <label for="project-url"><strong>Step 2: Not in the catalog? Enter the project URL:</strong></label><br>
-  <input type="text" id="project-url" placeholder="https://github.com/... or https://example.com"
-    oninput="onTypeUrl()"
-    style="width:100%;max-width:420px;padding:6px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+<div style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;margin-bottom:1.5rem;">
+
+  <div id="select-box" style="flex:1;min-width:200px;max-width:420px;padding:12px 14px;border:2px solid #1a73e8;border-radius:8px;background:#f0f4ff;transition:all .2s;">
+    <label for="tool-select" style="font-size:13px;font-weight:500;color:#1a73e8;display:block;margin-bottom:4px;">From catalog</label>
+    <select id="tool-select" onchange="onSelectTool()" style="width:100%;padding:6px 10px;border:1px solid #ccc;border-radius:4px;font-size:1em;background:white;">
+      <option value="">-- Select technology --</option>
+      <option value="1password" data-autonomy="A0" data-transparency="T0">1Password</option>
+      <option value="adguard-home" data-autonomy="A3" data-transparency="T2">AdGuard Home</option>
+      <option value="authentik" data-autonomy="A3" data-transparency="T2">Authentik</option>
+      <option value="bitwarden" data-autonomy="A3" data-transparency="T2">Bitwarden</option>
+      <option value="bookstack" data-autonomy="A3" data-transparency="T2">BookStack</option>
+      <option value="confluence" data-autonomy="A0" data-transparency="T0">Confluence</option>
+      <option value="docker" data-autonomy="A3" data-transparency="T2">Docker</option>
+      <option value="docmost" data-autonomy="A3" data-transparency="T2">Docmost</option>
+      <option value="forgejo" data-autonomy="A3" data-transparency="T2">Forgejo</option>
+      <option value="gitea-actions" data-autonomy="A3" data-transparency="T2">Gitea Actions</option>
+      <option value="gmail" data-autonomy="A0" data-transparency="T0">Gmail</option>
+      <option value="google-analytics" data-autonomy="A0" data-transparency="T0">Google Analytics</option>
+      <option value="google-drive" data-autonomy="A0" data-transparency="T0">Google Drive</option>
+      <option value="grafana" data-autonomy="A3" data-transparency="T2">Grafana</option>
+      <option value="headscale" data-autonomy="A3" data-transparency="T2">Headscale</option>
+      <option value="home-assistant" data-autonomy="A3" data-transparency="T2">Home Assistant</option>
+      <option value="immich" data-autonomy="A3" data-transparency="T2">Immich</option>
+      <option value="jellyfin" data-autonomy="A3" data-transparency="T2">Jellyfin</option>
+      <option value="jenkins" data-autonomy="A3" data-transparency="T2">Jenkins</option>
+      <option value="joplin" data-autonomy="A3" data-transparency="T2">Joplin</option>
+      <option value="k3s" data-autonomy="A3" data-transparency="T2">K3s</option>
+      <option value="keepass" data-autonomy="A3" data-transparency="T2">KeePass</option>
+      <option value="kopia" data-autonomy="A3" data-transparency="T2">Kopia</option>
+      <option value="logseq" data-autonomy="A3" data-transparency="T2">Logseq</option>
+      <option value="loki" data-autonomy="A3" data-transparency="T2">Loki</option>
+      <option value="mailcow" data-autonomy="A3" data-transparency="T2">Mailcow</option>
+      <option value="mariadb" data-autonomy="A3" data-transparency="T2">MariaDB</option>
+      <option value="matrix" data-autonomy="A3" data-transparency="T2">Matrix / Element</option>
+      <option value="mysql" data-autonomy="A3" data-transparency="T1">MySQL</option>
+      <option value="n8n" data-autonomy="A3" data-transparency="T2">n8n</option>
+      <option value="netdata" data-autonomy="A3" data-transparency="T2">Netdata</option>
+      <option value="nextcloud" data-autonomy="A3" data-transparency="T2">Nextcloud</option>
+      <option value="nginx-proxy-manager" data-autonomy="A3" data-transparency="T2">Nginx Proxy Manager</option>
+      <option value="node-red" data-autonomy="A3" data-transparency="T2">Node-RED</option>
+      <option value="notion" data-autonomy="A0" data-transparency="T0">Notion</option>
+      <option value="obsidian" data-autonomy="A2" data-transparency="T0">Obsidian</option>
+      <option value="openvpn" data-autonomy="A3" data-transparency="T2">OpenVPN</option>
+      <option value="paperless-ngx" data-autonomy="A3" data-transparency="T2">Paperless-ngx</option>
+      <option value="photoprism" data-autonomy="A3" data-transparency="T2">PhotoPrism</option>
+      <option value="pi-hole" data-autonomy="A3" data-transparency="T2">Pi-hole</option>
+      <option value="plausible" data-autonomy="A3" data-transparency="T2">Plausible Analytics</option>
+      <option value="plex" data-autonomy="A1" data-transparency="T0">Plex</option>
+      <option value="postgresql" data-autonomy="A3" data-transparency="T2">PostgreSQL</option>
+      <option value="prometheus" data-autonomy="A3" data-transparency="T2">Prometheus</option>
+      <option value="protonmail" data-autonomy="A0" data-transparency="T1">Proton Mail</option>
+      <option value="redis" data-autonomy="A2" data-transparency="T1">Redis</option>
+      <option value="slack" data-autonomy="A0" data-transparency="T0">Slack</option>
+      <option value="sqlite" data-autonomy="A3" data-transparency="T1">SQLite</option>
+      <option value="stalwart" data-autonomy="A3" data-transparency="T2">Stalwart</option>
+      <option value="syncthing" data-autonomy="A3" data-transparency="T2">Syncthing</option>
+      <option value="tailscale" data-autonomy="A2" data-transparency="T1">Tailscale</option>
+      <option value="telegram" data-autonomy="A1" data-transparency="T0">Telegram</option>
+      <option value="traefik" data-autonomy="A3" data-transparency="T2">Traefik</option>
+      <option value="tuta" data-autonomy="A0" data-transparency="T1">Tuta (Tutanota)</option>
+      <option value="umami" data-autonomy="A3" data-transparency="T2">Umami</option>
+      <option value="uptime-kuma" data-autonomy="A3" data-transparency="T2">Uptime Kuma</option>
+      <option value="vault" data-autonomy="A3" data-transparency="T2">Vault</option>
+      <option value="vaultwarden" data-autonomy="A3" data-transparency="T2">Vaultwarden</option>
+      <option value="wireguard" data-autonomy="A3" data-transparency="T2">WireGuard</option>
+      <option value="woodpecker" data-autonomy="A3" data-transparency="T2">Woodpecker CI</option>
+      <option value="zabbix" data-autonomy="A3" data-transparency="T2">Zabbix</option>
+      <option value="zapier" data-autonomy="A0" data-transparency="T0">Zapier</option>
+    </select>
+  </div>
+
+  <div style="display:flex;align-items:center;font-size:13px;font-weight:500;color:#999;">or</div>
+
+  <div id="url-box" style="flex:1;min-width:200px;max-width:420px;padding:12px 14px;border:2px solid #e0e0e0;border-radius:8px;background:#fafafa;transition:all .2s;">
+    <label for="project-url" style="font-size:13px;font-weight:500;color:#888;display:block;margin-bottom:4px;">Not in catalog — enter URL</label>
+    <input type="text" id="project-url" placeholder="https://github.com/... or https://example.com"
+      oninput="onTypeUrl()"
+      style="width:100%;padding:6px 10px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
+  </div>
+
 </div>
 
 <hr>
 
-<p><strong>Step 3: Answer the questions</strong></p>
-
+<p><strong>Step 2: Answer the questions</strong></p>
 <div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
   <div style="font-weight:bold;margin-bottom:4px;">1. Pause <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
   <div style="margin-bottom:8px;color:#444;">Can you stop this service right now -- and nothing breaks permanently?</div>
@@ -241,6 +247,27 @@ var selectedTasAutonomy = '';
 var selectedTasTransparency = '';
 var selectedName = '';
 
+function highlightSelect() {
+  document.getElementById('select-box').style.border = '2px solid #1a73e8';
+  document.getElementById('select-box').style.background = '#f0f4ff';
+  document.getElementById('url-box').style.border = '2px solid #e0e0e0';
+  document.getElementById('url-box').style.background = '#fafafa';
+}
+
+function highlightUrl() {
+  document.getElementById('url-box').style.border = '2px solid #1a73e8';
+  document.getElementById('url-box').style.background = '#f0f4ff';
+  document.getElementById('select-box').style.border = '2px solid #e0e0e0';
+  document.getElementById('select-box').style.background = '#fafafa';
+}
+
+function highlightNeither() {
+  document.getElementById('select-box').style.border = '2px solid #e0e0e0';
+  document.getElementById('select-box').style.background = '#fafafa';
+  document.getElementById('url-box').style.border = '2px solid #e0e0e0';
+  document.getElementById('url-box').style.background = '#fafafa';
+}
+
 function getProjectName() {
   if (selectedName) return selectedName;
   var url = document.getElementById('project-url').value.trim();
@@ -259,23 +286,29 @@ function onSelectTool() {
     selectedTasAutonomy = opt.getAttribute('data-autonomy') || '';
     selectedTasTransparency = opt.getAttribute('data-transparency') || '';
     selectedName = opt.text;
-    document.getElementById('url-section').style.display = 'none';
+    highlightSelect();
   } else {
     selectedSlug = '';
     selectedTasAutonomy = '';
     selectedTasTransparency = '';
     selectedName = '';
-    document.getElementById('url-section').style.display = 'block';
+    highlightNeither();
   }
   updateResult();
 }
 
 function onTypeUrl() {
+  var url = document.getElementById('project-url').value.trim();
   document.getElementById('tool-select').value = '';
   selectedSlug = '';
   selectedTasAutonomy = '';
   selectedTasTransparency = '';
   selectedName = '';
+  if (url) {
+    highlightUrl();
+  } else {
+    highlightNeither();
+  }
   updateResult();
 }
 
@@ -365,10 +398,11 @@ function updateResult() {
   }
 }
 
+
 function resetAudit() {
   document.getElementById('tool-select').value = '';
   document.getElementById('project-url').value = '';
-  document.getElementById('url-section').style.display = 'block';
+  highlightNeither();
   var radios = document.querySelectorAll('input[type=radio]');
   for (var i = 0; i < radios.length; i++) radios[i].checked = false;
   document.getElementById('audit-result').style.display = 'none';
