@@ -34,11 +34,19 @@ Every technology in the catalog — by category, autonomy, transparency, and tra
   </select>
 </div>
 
-<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:1.25rem;font-size:12px;color:#888;">
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed</span>
-  <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;">
+  <button onclick="toggleTraj('opening')" id="btn-opening" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #22c55e44;background:#dcfce7;color:#22c55e;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Opening
+  </button>
+  <button onclick="toggleTraj('stable')" id="btn-stable" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #3b82f644;background:#dbeafe;color:#3b82f6;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block;"></span>Stable
+  </button>
+  <button onclick="toggleTraj('mixed')" id="btn-mixed" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #f59e0b44;background:#fef3c7;color:#f59e0b;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>Mixed
+  </button>
+  <button onclick="toggleTraj('closing')" id="btn-closing" style="display:flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid #ef444444;background:#fee2e2;color:#ef4444;transition:all .15s;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Closing
+  </button>
 </div>
 
 <div id="board"></div>
@@ -60,7 +68,7 @@ const CARDS=[
   {name:'Bitwarden',a:3,t:2,cat:'Security',traj:'stable',url:'bitwarden',desc:'Open-source password manager with end-to-end encryption.'},
   {name:'BookStack',a:3,t:2,cat:'Applications',traj:'stable',url:'bookstack',desc:'Open-source, self-hosted wiki platform built with PHP and Laravel.'},
   {name:'Confluence',a:0,t:0,cat:'Applications',traj:'closing',url:'confluence',desc:'Proprietary wiki and collaboration platform by Atlassian.'},
-  {name:'Docker',a:3,t:2,cat:'Compute',traj:'mixed',url:'docker',desc:'Platform for developing, shipping, and running applications in lightweight containers.'},
+  {name:'Docker',a:3,t:2,cat:'Applications',traj:'mixed',url:'docker',desc:'Platform for developing, shipping, and running applications in lightweight containers.'},
   {name:'Docmost',a:3,t:2,cat:'Applications',traj:'stable',url:'docmost',desc:'Open-source, self-hosted documentation and wiki platform.'},
   {name:'Forgejo',a:3,t:2,cat:'Applications',traj:'stable',url:'forgejo',desc:'Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD v'},
   {name:'Gitea Actions',a:3,t:2,cat:'Applications',traj:'opening',url:'gitea-actions',desc:'Built-in CI/CD for Gitea and Forgejo.'},
@@ -74,13 +82,13 @@ const CARDS=[
   {name:'Jellyfin',a:3,t:2,cat:'Applications',traj:'stable',url:'jellyfin',desc:'Free software media server that streams your personal media collection without cloud dependencies.'},
   {name:'Jenkins',a:3,t:2,cat:'Applications',traj:'stable',url:'jenkins',desc:'The most widely deployed open-source CI/CD server.'},
   {name:'Joplin',a:3,t:2,cat:'Applications',traj:'stable',url:'joplin',desc:'Open-source note-taking app with end-to-end encryption.'},
-  {name:'K3s',a:3,t:2,cat:'Compute',traj:'stable',url:'k3s',desc:'Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environm'},
-  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass',desc:'Free, open source password manager that stores credentials in a locally encrypted database file (.kd'},
+  {name:'K3s',a:3,t:2,cat:'Applications',traj:'stable',url:'k3s',desc:'Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environm'},
+  {name:'KeePass',a:3,t:2,cat:'Security',traj:'stable',url:'keepass',desc:'Free, open source password manager that stores credentials in a locally encrypted database file (`.k'},
   {name:'Kopia',a:3,t:2,cat:'Storage',traj:'mixed',url:'kopia',desc:'Fast and secure open-source backup/restore tool with snapshots, deduplication, compression, and clie'},
   {name:'Logseq',a:3,t:2,cat:'Applications',traj:'mixed',url:'logseq',desc:'Local-first outliner and knowledge graph.'},
   {name:'Loki',a:3,t:2,cat:'Observability',traj:'mixed',url:'loki',desc:'Log aggregation system by Grafana Labs.'},
   {name:'Mailcow',a:3,t:2,cat:'Communication',traj:'opening',url:'mailcow',desc:'Open-source, Docker-based email server suite.'},
-  {name:'MariaDB',a:3,t:2,cat:'Storage',traj:'mixed',url:'mariadb',desc:'Community-developed fork of MySQL created by MySQL\'s original author (Monty Widenius) after Oracle\'},
+  {name:'MariaDB',a:3,t:2,cat:'Storage',traj:'mixed',url:'mariadb',desc:'Community-developed fork of MySQL created by MySQL\'s original author (Monty Widenius) after Oracle\'s'},
   {name:'Matrix / Element',a:3,t:2,cat:'Communication',traj:'stable',url:'matrix',desc:'Matrix is an open standard for decentralized, end-to-end encrypted communication.'},
   {name:'MySQL',a:3,t:1,cat:'Storage',traj:'mixed',url:'mysql',desc:'The world\'s most widely deployed open-source relational database.'},
   {name:'n8n',a:3,t:2,cat:'Applications',traj:'mixed',url:'n8n',desc:'Source-available workflow automation platform.'},
@@ -185,6 +193,25 @@ document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')docume
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('overlay').style.display='none';});
 
 ['trajF','aF','tF'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+
+const TC_BG_INACTIVE={opening:'#f0f0f0',stable:'#f0f0f0',mixed:'#f0f0f0',closing:'#f0f0f0'};
+const TC_COL_INACTIVE='#aaa';
+let activeTraj=null;
+
+function toggleTraj(traj){
+  activeTraj = activeTraj===traj ? null : traj;
+  // Обновить вид кнопок
+  ['opening','stable','mixed','closing'].forEach(t=>{
+    const btn=document.getElementById('btn-'+t);
+    const isActive = activeTraj===null || activeTraj===t;
+    btn.style.opacity = isActive ? '1' : '0.35';
+    btn.style.transform = activeTraj===t ? 'scale(1.05)' : 'scale(1)';
+  });
+  // Перерисовать с фильтром
+  const trajF=document.getElementById('trajF');
+  trajF.value = activeTraj || 'all';
+  render();
+}
 render();
 </script>
 {% endraw %}
