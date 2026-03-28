@@ -348,8 +348,11 @@ COUNT_REPLACEMENTS = [
     # (filepath, regex_pattern, replacement_template)
     # {n} will be replaced with the actual count
     ('README.md',
-     r'-- \d+ technologies rated',
-     '-- {n} technologies rated'),
+     r'\d+ technologies evaluated on two axes',
+     '{n} technologies evaluated on two axes'),
+    ('README.md',
+     r'how \d+ technologies depend',
+     'how {n} technologies depend'),
     ('index.md',
      r'\d+ technologies, 12 constellations',
      '{n} technologies, 12 constellations'),
