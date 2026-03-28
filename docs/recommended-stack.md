@@ -7,7 +7,7 @@ nav_order: 2
 
 One recommendation per need. These are the technologies we'd start with if building from scratch today — all **A3/T2** (fully autonomous, open source), with **stable** or **opening** trajectory.
 
-This is not the full catalog. This is the shortlist. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
+27 recommendations out of 83 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
 
 ---
 

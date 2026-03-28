@@ -368,6 +368,9 @@ COUNT_REPLACEMENTS = [
     ('docs/recommended-stack.md',
      r'\d+ technologies with detailed',
      '{n} technologies with detailed'),
+    ('docs/recommended-stack.md',
+     r'out of \d+ technologies evaluated',
+     'out of {n} technologies evaluated'),
 ]
 
 
