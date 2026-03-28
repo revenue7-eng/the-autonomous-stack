@@ -7,7 +7,7 @@ nav_order: 2
 
 One recommendation per need. These are the technologies we'd start with if building from scratch today — all **A3/T2** (fully autonomous, open source), with **stable** or **opening** trajectory.
 
-27 recommendations out of 83 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
+36 recommendations out of 83 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
 
 ---
 
@@ -42,6 +42,15 @@ One recommendation per need. These are the technologies we'd start with if build
 | **Dashboard** | [Homepage](catalog/homepage.md) | Landing page for all your services. Docker auto-discovery. | Dashy, Homer |
 | **Security / IDS** | [CrowdSec](catalog/crowdsec.md) | Crowdsourced intrusion detection. Modern Fail2Ban. | Fail2Ban, OSSEC |
 | **Object storage** | [MinIO](catalog/minio.md) | S3-compatible. For backups, media, data lakes. | AWS S3 |
+| **Notifications** | [Ntfy](catalog/ntfy.md) | One curl command to push alerts to your phone. Dead simple. | Pushover, Firebase |
+| **Search** | [SearXNG](catalog/searxng.md) | Privacy-respecting metasearch. No tracking, no profiling. | Google Search |
+| **LLM runtime** | [Ollama](catalog/ollama.md) | Run open-weight models locally. OpenAI-compatible API. | ChatGPT, Claude API |
+| **RSS reader** | [FreshRSS](catalog/freshrss.md) | Read what you choose, in order, no algorithm. | Google News, Feedly |
+| **Recipes** | [Mealie](catalog/mealie.md) | Family cookbook, meal planner, shopping lists. | Yummly, Paprika |
+| **Remote desktop** | [RustDesk](catalog/rustdesk.md) | Self-hosted TeamViewer. Peer-to-peer, works on all platforms. | TeamViewer, AnyDesk |
+| **Budgeting** | [Actual Budget](catalog/actual-budget.md) | Local-first personal finance. Was paid SaaS, now open source. | YNAB, Mint |
+| **Read later** | [Wallabag](catalog/wallabag.md) | Save articles, read offline, strip ads. Your personal archive. | Pocket, Instapaper |
+| **Container updates** | [Watchtower](catalog/watchtower.md) | Auto-updates your Docker containers. Set and forget. | Manual docker pull |
 
 ---
 
