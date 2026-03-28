@@ -365,6 +365,9 @@ COUNT_REPLACEMENTS = [
     ('docs/autonomy-map.html',
      r'Today \d+ stars',
      'Today {n} stars'),
+    ('docs/recommended-stack.md',
+     r'\d+ technologies with detailed',
+     '{n} technologies with detailed'),
 ]
 
 
