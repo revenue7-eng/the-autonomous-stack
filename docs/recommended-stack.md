@@ -5,13 +5,26 @@ nav_order: 2
 
 # Recommended Stack
 
-One recommendation per need. These are the technologies we'd start with if building from scratch today — all **A3/T2** (fully autonomous, open source), with **stable** or **opening** trajectory.
-
-39 recommendations out of 88 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
+4 ready-to-deploy recipes and 39 individual recommendations out of 88 technologies evaluated.
 
 ---
 
-## The Stack
+## Start Here: Recommended Recipes
+
+Complete stacks you can deploy in one afternoon. Docker Compose, step-by-step instructions, failure modes, and cost comparison included.
+
+| Recipe | What it solves | What it replaces | Key components |
+|--------|---------------|-----------------|----------------|
+| [Minimal Server](recipes/minimal-server.md) | Foundation for everything else | Cloud VPS + basic services | WireGuard, AdGuard Home, Syncthing, Kopia, Forgejo |
+| [Family Cloud](recipes/family-cloud.md) | Family photos, files, passwords | Google Photos + Drive + iCloud + LastPass | Immich, Nextcloud, Vaultwarden, Syncthing |
+| [Media Server](recipes/media-server.md) | Movies and TV, automated | Netflix + Disney+ + HBO ($63/mo) | Jellyfin, Radarr, Sonarr, Prowlarr, qBittorrent |
+| [Home Office](recipes/home-office.md) | Remote work tools | Google Workspace + ChatGPT ($35/mo) | Nextcloud, Ollama, SearXNG, Joplin, FreshRSS |
+
+All 8 recipes (including Monitoring, Communication, Privacy Homelab, Developer Workstation) are in the [Recipes](recipes/) section.
+
+---
+
+## Individual Recommendations
 
 | Need | We recommend | Why this one | Replaces |
 |------|-------------|-------------|----------|
