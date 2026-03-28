@@ -81,15 +81,42 @@ CATEGORY_TO_GROUP = {
     'storage':        'Storage',
     'observability':  'Observability',
     'compute':        'Compute',
+    'compute/container':     'Compute',
+    'compute/inference':     'Compute',
+    'compute/os':            'Compute',
+    'compute/virtualization':'Compute',
     'security':       'Security',
+    'applications/media':         'Media & Content',
+    'applications/photos':        'Media & Content',
+    'applications/downloads':     'Media & Content',
+    'applications/news':          'Media & Content',
+    'applications/reading':       'Media & Content',
+    'applications/cloud':         'Productivity',
+    'applications/documents':     'Productivity',
+    'applications/wiki':          'Productivity',
+    'applications/notes':         'Productivity',
+    'applications/finance':       'Productivity',
+    'applications/household':     'Productivity',
+    'applications/bookmarks':     'Productivity',
+    'applications/search':        'Productivity',
+    'applications/files':         'Productivity',
+    'applications/version-control': 'Development',
+    'applications/ci-cd':         'Development',
+    'applications/automation':    'Automation & Home',
+    'applications/remote-access': 'Remote Access',
     'applications':   'Applications',
     'cloud':          'Applications',
     'communication':  'Communication',
+    'communication/email':        'Communication',
+    'communication/messaging':    'Communication',
+    'communication/notifications':'Communication',
     'analytics':      'Analytics',
+    'analytics/web':  'Analytics',
 }
 
-SECTION_ORDER = ['Network', 'Identity', 'Storage', 'Observability', 'Compute',
-                 'Security', 'Communication', 'Analytics', 'Applications', 'Cloud', 'Other']
+SECTION_ORDER = ['Network', 'Storage', 'Compute', 'Security', 'Observability',
+                 'Communication', 'Analytics', 'Productivity', 'Media & Content',
+                 'Development', 'Automation & Home', 'Remote Access', 'Applications', 'Other']
 
 
 # ── Frontmatter parser ─────────────────────────────────────────────────────
@@ -121,7 +148,12 @@ def get_section(category):
 
 def get_group(category):
     """Map detailed category to high-level group for catalog-index."""
-    top = category.lower().split('/')[0]
+    cat = category.lower().strip()
+    # Try exact match first (e.g. applications/media -> Media & Content)
+    if cat in CATEGORY_TO_GROUP:
+        return CATEGORY_TO_GROUP[cat]
+    # Then top-level (e.g. applications -> Applications)
+    top = cat.split('/')[0]
     return CATEGORY_TO_GROUP.get(top, 'Applications')
 
 
