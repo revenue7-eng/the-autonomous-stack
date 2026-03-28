@@ -100,7 +100,9 @@ TAS evaluates itself: **A2/T2**. Code and content are fully open (MIT + CC BY-SA
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+**[Card Builder](https://revenue7-eng.github.io/the-autonomous-stack/docs/card-builder.html)** — create a technology card in your browser. No GitHub account needed.
+
+For code contributions, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

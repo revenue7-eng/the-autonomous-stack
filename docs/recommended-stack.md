@@ -71,4 +71,6 @@ The "Replaces" column shows what most people are switching from. It's not a judg
 
 **Want the full picture?** Browse the [Technology Catalog](catalog/) — 78 technologies with detailed assessments.
 
+**Missing a technology?** [Add it yourself →](card-builder.html) — no GitHub account needed.
+
 **Want to see relationships?** Open the [Dependency Graph](dependency-graph.html) — how everything connects.

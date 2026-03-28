@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: "Card Builder"
+    url: "https://revenue7-eng.github.io/the-autonomous-stack/docs/card-builder.html"
+    about: "Create a technology card without a GitHub account"
   - name: "Browse the catalog"
     url: "https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/"
     about: "See all evaluated technologies"

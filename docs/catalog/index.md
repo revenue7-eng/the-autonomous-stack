@@ -282,4 +282,4 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ---
 
-*The catalog grows. Contributions welcome — see [CONTRIBUTING](../../CONTRIBUTING.md).*
+*The catalog grows. [Add a technology →](../card-builder.html) or see [CONTRIBUTING](../../CONTRIBUTING.md).*
