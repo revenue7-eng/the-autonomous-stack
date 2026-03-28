@@ -7,7 +7,7 @@ nav_order: 2
 
 One recommendation per need. These are the technologies we'd start with if building from scratch today — all **A3/T2** (fully autonomous, open source), with **stable** or **opening** trajectory.
 
-36 recommendations out of 88 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
+39 recommendations out of 88 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
 
 ---
 
@@ -51,6 +51,9 @@ One recommendation per need. These are the technologies we'd start with if build
 | **Budgeting** | [Actual Budget](catalog/actual-budget.md) | Local-first personal finance. Was paid SaaS, now open source. | YNAB, Mint |
 | **Read later** | [Wallabag](catalog/wallabag.md) | Save articles, read offline, strip ads. Your personal archive. | Pocket, Instapaper |
 | **Container updates** | [Watchtower](catalog/watchtower.md) | Auto-updates your Docker containers. Set and forget. | Manual docker pull |
+| **Media automation** | [Radarr](catalog/radarr.md) + [Sonarr](catalog/sonarr.md) + [Prowlarr](catalog/prowlarr.md) | Automated movie and TV collection. Prowlarr manages indexers for both. | Manual downloads |
+| **Download client** | [qBittorrent](catalog/qbittorrent.md) | Open-source, no ads, web UI. The engine behind the *arr stack. | uTorrent, Transmission |
+| **Backup (CLI)** | [Restic](catalog/restic.md) | Encrypted, deduplicated, scriptable. For cron jobs and automation. | Duplicati, CrashPlan |
 
 ---
 
