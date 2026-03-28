@@ -1,0 +1,519 @@
+---
+layout: default
+title: "Card Builder"
+nav_order: 9
+---
+{% raw %}
+<style>
+.cb-wrap { max-width:680px; }
+.cb-steps { display:flex; gap:4px; margin-bottom:2rem; }
+.cb-step { flex:1; height:4px; background:#e0e0e0; border-radius:2px; transition:background .3s; }
+.cb-step.active { background:#1a73e8; }
+.cb-step.done { background:#22c55e; }
+.cb-label { font-size:12px; color:#999; margin-bottom:4px; }
+.cb-title { font-size:18px; font-weight:600; margin-bottom:1.25rem; }
+
+.cb-panel { display:none; }
+.cb-panel.visible { display:block; }
+
+.cb-field { margin-bottom:1.25rem; }
+.cb-field label { display:block; font-size:13px; font-weight:500; margin-bottom:4px; }
+.cb-field input, .cb-field select, .cb-field textarea {
+  width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:6px; font-size:14px; font-family:inherit;
+}
+.cb-field textarea { min-height:60px; resize:vertical; }
+.cb-field .hint { font-size:11px; color:#999; margin-top:3px; }
+
+.cb-q { padding:14px 16px; background:#fafafa; border-radius:8px; border:1px solid #eee; margin-bottom:12px; }
+.cb-q .q-text { font-size:14px; font-weight:500; margin-bottom:8px; }
+.cb-q .q-opts { display:flex; gap:8px; }
+.cb-q .q-opt { padding:6px 14px; border-radius:16px; border:1px solid #ddd; font-size:12px; cursor:pointer; transition:all .15s; }
+.cb-q .q-opt:hover { border-color:#888; }
+.cb-q .q-opt.sel-yes { background:#dcfce7; border-color:#22c55e; color:#166534; }
+.cb-q .q-opt.sel-partial { background:#fef9c3; border-color:#f59e0b; color:#92400e; }
+.cb-q .q-opt.sel-no { background:#fee2e2; border-color:#f87171; color:#991b1b; }
+.cb-q textarea { margin-top:8px; width:100%; padding:6px 8px; border:1px solid #ddd; border-radius:4px; font-size:12px; font-family:inherit; min-height:36px; }
+
+.cb-signal { display:flex; align-items:center; gap:10px; padding:10px 14px; background:#fafafa; border-radius:8px; border:1px solid #eee; margin-bottom:8px; }
+.cb-signal .sig-name { width:120px; font-size:13px; font-weight:500; }
+.cb-signal select { flex:1; padding:4px 8px; border:1px solid #ccc; border-radius:4px; font-size:12px; }
+
+.cb-score { display:inline-block; padding:6px 14px; border-radius:6px; font-family:monospace; font-size:15px; font-weight:600; margin:8px 0; }
+
+.cb-preview { background:#04090f; color:#c8d4e0; padding:20px 24px; border-radius:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; line-height:1.7; white-space:pre-wrap; overflow-x:auto; max-height:500px; overflow-y:auto; }
+
+.cb-btn { padding:10px 20px; border-radius:6px; font-size:13px; font-weight:500; cursor:pointer; border:none; transition:all .15s; }
+.cb-btn-primary { background:#1a73e8; color:white; }
+.cb-btn-primary:hover { background:#1557b0; }
+.cb-btn-secondary { background:#f0f0f0; color:#333; }
+.cb-btn-secondary:hover { background:#e0e0e0; }
+.cb-btn-green { background:#22c55e; color:white; }
+.cb-btn-green:hover { background:#16a34a; }
+.cb-actions { display:flex; gap:10px; margin-top:1.5rem; flex-wrap:wrap; }
+
+.cb-result { padding:12px 16px; border-radius:6px; margin-top:12px; font-size:13px; }
+.cb-result.success { background:#dcfce7; color:#166534; border:1px solid #22c55e; }
+</style>
+
+<div class="cb-wrap">
+
+<h1>Card Builder</h1>
+<p style="color:#555;font-size:14px;line-height:1.6;margin-bottom:1.5rem;">
+Create a technology card for the TAS catalog. Answer the questions below — the card will be generated for you. No GitHub account needed.
+</p>
+
+<div class="cb-steps" id="steps">
+  <div class="cb-step active"></div>
+  <div class="cb-step"></div>
+  <div class="cb-step"></div>
+  <div class="cb-step"></div>
+  <div class="cb-step"></div>
+  <div class="cb-step"></div>
+</div>
+
+<!-- ── Step 1: Basics ────────────────────────────────── -->
+<div class="cb-panel visible" id="panel-1">
+  <div class="cb-label">Step 1 of 6</div>
+  <div class="cb-title">What technology are you evaluating?</div>
+
+  <div class="cb-field">
+    <label>Technology name *</label>
+    <input type="text" id="f-name" placeholder="e.g. Gitea, Actual Budget, Ntfy">
+  </div>
+  <div class="cb-field">
+    <label>Website or repository URL *</label>
+    <input type="text" id="f-url" placeholder="https://...">
+  </div>
+  <div class="cb-field">
+    <label>Brief description (1-2 sentences) *</label>
+    <textarea id="f-desc" placeholder="What does it do? What does it replace?"></textarea>
+  </div>
+  <div class="cb-field">
+    <label>Category</label>
+    <select id="f-category">
+      <option value="">-- Select --</option>
+      <option value="network/vpn">Network / VPN</option>
+      <option value="network/dns">Network / DNS</option>
+      <option value="network/proxy">Network / Proxy</option>
+      <option value="storage/database">Storage / Database</option>
+      <option value="storage/backup">Storage / Backup</option>
+      <option value="storage/sync">Storage / Sync</option>
+      <option value="storage/cache">Storage / Cache</option>
+      <option value="security/passwords">Security / Passwords</option>
+      <option value="security/secrets">Security / Secrets</option>
+      <option value="security">Security / Other</option>
+      <option value="compute/container">Compute / Container</option>
+      <option value="compute/inference">Compute / Inference</option>
+      <option value="observability/monitoring">Observability / Monitoring</option>
+      <option value="observability/metrics">Observability / Metrics</option>
+      <option value="observability/logs">Observability / Logs</option>
+      <option value="communication/email">Communication / Email</option>
+      <option value="communication/messaging">Communication / Messaging</option>
+      <option value="communication/notifications">Communication / Notifications</option>
+      <option value="identity/auth">Identity / Auth</option>
+      <option value="analytics">Analytics</option>
+      <option value="applications/photos">Applications / Photos</option>
+      <option value="applications/media">Applications / Media</option>
+      <option value="applications/documents">Applications / Documents</option>
+      <option value="applications/notes">Applications / Notes</option>
+      <option value="applications/automation">Applications / Automation</option>
+      <option value="applications/finance">Applications / Finance</option>
+      <option value="applications/household">Applications / Household</option>
+      <option value="applications/search">Applications / Search</option>
+      <option value="applications/reading">Applications / Reading</option>
+      <option value="applications/bookmarks">Applications / Bookmarks</option>
+      <option value="applications/remote-access">Applications / Remote Access</option>
+      <option value="applications/version-control">Applications / Version Control</option>
+      <option value="applications/cloud">Applications / Cloud</option>
+      <option value="applications">Applications / Other</option>
+    </select>
+  </div>
+  <div class="cb-field">
+    <label>Docker image (if available)</label>
+    <input type="text" id="f-docker" placeholder="e.g. linuxserver/nextcloud">
+  </div>
+
+  <div class="cb-actions">
+    <button class="cb-btn cb-btn-primary" onclick="goStep(2)">Next: Autonomy →</button>
+  </div>
+</div>
+
+<!-- ── Step 2: Structural Questions ──────────────────── -->
+<div class="cb-panel" id="panel-2">
+  <div class="cb-label">Step 2 of 6</div>
+  <div class="cb-title">Three structural questions</div>
+  <p style="font-size:13px;color:#666;margin-bottom:1rem;">These determine the Autonomy level (A0–A3).</p>
+
+  <div class="cb-q" id="q-pause">
+    <div class="q-text">1. Pause — Can you stop it without losing anything?</div>
+    <div class="q-opts">
+      <span class="q-opt" onclick="setQ(this,'pause','yes')">Yes</span>
+      <span class="q-opt" onclick="setQ(this,'pause','partial')">Partial</span>
+      <span class="q-opt" onclick="setQ(this,'pause','no')">No</span>
+    </div>
+    <textarea id="q-pause-note" placeholder="Optional: explain..."></textarea>
+  </div>
+
+  <div class="cb-q" id="q-exit">
+    <div class="q-text">2. Exit — Can you leave and take all your data?</div>
+    <div class="q-opts">
+      <span class="q-opt" onclick="setQ(this,'exit','yes')">Yes</span>
+      <span class="q-opt" onclick="setQ(this,'exit','partial')">Partial</span>
+      <span class="q-opt" onclick="setQ(this,'exit','no')">No</span>
+    </div>
+    <textarea id="q-exit-note" placeholder="Optional: explain..."></textarea>
+  </div>
+
+  <div class="cb-q" id="q-recover">
+    <div class="q-text">3. Recover — If something breaks, can you go back?</div>
+    <div class="q-opts">
+      <span class="q-opt" onclick="setQ(this,'recover','yes')">Yes</span>
+      <span class="q-opt" onclick="setQ(this,'recover','partial')">Partial</span>
+      <span class="q-opt" onclick="setQ(this,'recover','no')">No</span>
+    </div>
+    <textarea id="q-recover-note" placeholder="Optional: explain..."></textarea>
+  </div>
+
+  <div style="margin-top:1rem;padding:12px;background:#f0f4ff;border-radius:6px;">
+    <strong>Autonomy level: <span id="a-level" style="font-family:monospace;">—</span></strong>
+    <div style="font-size:12px;color:#666;margin-top:4px;" id="a-explain"></div>
+  </div>
+
+  <div class="cb-actions">
+    <button class="cb-btn cb-btn-secondary" onclick="goStep(1)">← Back</button>
+    <button class="cb-btn cb-btn-primary" onclick="goStep(3)">Next: Transparency →</button>
+  </div>
+</div>
+
+<!-- ── Step 3: Transparency ──────────────────────────── -->
+<div class="cb-panel" id="panel-3">
+  <div class="cb-label">Step 3 of 6</div>
+  <div class="cb-title">Transparency</div>
+
+  <div class="cb-q">
+    <div class="q-text">What type of license does it have?</div>
+    <div class="q-opts">
+      <span class="q-opt" onclick="setT(this,'t2')">Open source (MIT, Apache, GPL, AGPL, BSD...)</span>
+      <span class="q-opt" onclick="setT(this,'t1')">Source-available (BSL, SSPL, Sustainable Use...)</span>
+      <span class="q-opt" onclick="setT(this,'t0')">Proprietary / Closed</span>
+    </div>
+  </div>
+
+  <div class="cb-field">
+    <label>License name (if known)</label>
+    <input type="text" id="f-license" placeholder="e.g. MIT, AGPL-3.0, BSL-1.1, Proprietary">
+  </div>
+
+  <div class="cb-field">
+    <label>Repository URL (if open source)</label>
+    <input type="text" id="f-repo" placeholder="https://github.com/...">
+  </div>
+
+  <div style="margin-top:1rem;padding:12px;background:#f0f4ff;border-radius:6px;">
+    <strong>Transparency level: <span id="t-level" style="font-family:monospace;">—</span></strong>
+  </div>
+
+  <div class="cb-actions">
+    <button class="cb-btn cb-btn-secondary" onclick="goStep(2)">← Back</button>
+    <button class="cb-btn cb-btn-primary" onclick="goStep(4)">Next: Trajectory →</button>
+  </div>
+</div>
+
+<!-- ── Step 4: Trajectory ────────────────────────────── -->
+<div class="cb-panel" id="panel-4">
+  <div class="cb-label">Step 4 of 6</div>
+  <div class="cb-title">Where is this project heading?</div>
+  <p style="font-size:13px;color:#666;margin-bottom:1rem;">Four signals that reveal whether a project is becoming more open or more closed.</p>
+
+  <div class="cb-signal">
+    <div class="sig-name">License</div>
+    <select id="sig-license">
+      <option value="">-- select --</option>
+      <option value="opening">✅ Opening — became more permissive</option>
+      <option value="neutral">➖ Neutral — no changes</option>
+      <option value="closing">⚠️ Closing — became more restrictive</option>
+    </select>
+  </div>
+  <div class="cb-signal">
+    <div class="sig-name">Feature gating</div>
+    <select id="sig-features">
+      <option value="">-- select --</option>
+      <option value="opening">✅ Opening — more features in free tier</option>
+      <option value="neutral">➖ Neutral — no changes</option>
+      <option value="closing">⚠️ Closing — features moving to paid</option>
+    </select>
+  </div>
+  <div class="cb-signal">
+    <div class="sig-name">Self-hosting</div>
+    <select id="sig-selfhost">
+      <option value="">-- select --</option>
+      <option value="opening">✅ Opening — easier to self-host</option>
+      <option value="neutral">➖ Neutral — unchanged</option>
+      <option value="closing">⚠️ Closing — harder to self-host</option>
+    </select>
+  </div>
+  <div class="cb-signal">
+    <div class="sig-name">Governance</div>
+    <select id="sig-governance">
+      <option value="">-- select --</option>
+      <option value="opening">✅ Opening — growing community</option>
+      <option value="neutral">➖ Neutral — stable</option>
+      <option value="closing">⚠️ Closing — corporate control / single maintainer</option>
+    </select>
+  </div>
+
+  <div class="cb-field" style="margin-top:1rem;">
+    <label>Any additional context on trajectory?</label>
+    <textarea id="f-traj-note" placeholder="e.g. License changed from MIT to BSL in 2023..."></textarea>
+  </div>
+
+  <div style="margin-top:1rem;padding:12px;background:#f0f4ff;border-radius:6px;">
+    <strong>Trajectory: <span id="traj-dir" style="font-family:monospace;">—</span></strong>
+  </div>
+
+  <div class="cb-actions">
+    <button class="cb-btn cb-btn-secondary" onclick="goStep(3)">← Back</button>
+    <button class="cb-btn cb-btn-primary" onclick="goStep(5)">Next: Preview →</button>
+  </div>
+</div>
+
+<!-- ── Step 5: Preview ───────────────────────────────── -->
+<div class="cb-panel" id="panel-5">
+  <div class="cb-label">Step 5 of 6</div>
+  <div class="cb-title">Preview your card</div>
+  <p style="font-size:13px;color:#666;margin-bottom:1rem;">This is the Markdown that will become a catalog card. Review it before sending.</p>
+
+  <div class="cb-score" id="score-display" style="background:#f0f4ff;color:#1a73e8;"></div>
+
+  <div class="cb-preview" id="preview-md"></div>
+
+  <div class="cb-actions">
+    <button class="cb-btn cb-btn-secondary" onclick="goStep(4)">← Back to edit</button>
+    <button class="cb-btn cb-btn-primary" onclick="goStep(6)">Looks good → Send</button>
+  </div>
+</div>
+
+<!-- ── Step 6: Send ──────────────────────────────────── -->
+<div class="cb-panel" id="panel-6">
+  <div class="cb-label">Step 6 of 6</div>
+  <div class="cb-title">Send your card</div>
+  <p style="font-size:13px;color:#666;margin-bottom:1rem;">Choose how to submit your card for review.</p>
+
+  <div class="cb-actions" style="flex-direction:column;gap:12px;">
+    <button class="cb-btn cb-btn-green" onclick="copyToClipboard()" style="width:100%;text-align:left;padding:14px 20px;">
+      📋 Copy Markdown to clipboard<br><span style="font-size:11px;font-weight:400;opacity:0.8;">Then send it however you like — email, forum, paste anywhere</span>
+    </button>
+    <button class="cb-btn cb-btn-primary" onclick="openGitHubIssue()" style="width:100%;text-align:left;padding:14px 20px;">
+      🐙 Submit via GitHub Issue<br><span style="font-size:11px;font-weight:400;opacity:0.8;">Requires a GitHub account — opens a pre-filled issue</span>
+    </button>
+    <button class="cb-btn cb-btn-secondary" onclick="sendEmail()" style="width:100%;text-align:left;padding:14px 20px;">
+      ✉️ Send by email<br><span style="font-size:11px;font-weight:400;opacity:0.8;">Opens your email client with the card attached</span>
+    </button>
+  </div>
+
+  <div id="send-result"></div>
+
+  <div class="cb-actions" style="margin-top:2rem;">
+    <button class="cb-btn cb-btn-secondary" onclick="goStep(5)">← Back to preview</button>
+    <button class="cb-btn cb-btn-secondary" onclick="resetAll()">Start over</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+var answers = { pause:'', exit:'', recover:'', tLevel:'' };
+var sigIcons = { opening:'\u2705', neutral:'\u2796', closing:'\u26a0\ufe0f' };
+
+function setQ(el, q, val) {
+  answers[q] = val;
+  el.parentElement.querySelectorAll('.q-opt').forEach(function(o) {
+    o.className = 'q-opt';
+  });
+  el.className = 'q-opt sel-' + val;
+  calcA();
+}
+
+function calcA() {
+  var yeses = 0;
+  ['pause','exit','recover'].forEach(function(q) {
+    if (answers[q] === 'yes') yeses++;
+  });
+  var anyNo = ['pause','exit','recover'].some(function(q) { return answers[q] === 'no'; });
+  var allNo = ['pause','exit','recover'].every(function(q) { return answers[q] === 'no'; });
+
+  var level, explain;
+  if (yeses === 3) { level = 'A3'; explain = 'Full autonomy — all three criteria met.'; }
+  else if (yeses === 2) { level = 'A2'; explain = 'High autonomy — one criterion partially met or missing.'; }
+  else if (yeses >= 1 && !allNo) { level = 'A1'; explain = 'Partial autonomy — significant dependencies remain.'; }
+  else if (allNo) { level = 'A0'; explain = 'No autonomy — fully dependent on external provider.'; }
+  else { level = 'A1'; explain = 'Partial autonomy.'; }
+
+  document.getElementById('a-level').textContent = level;
+  document.getElementById('a-explain').textContent = explain;
+}
+
+function setT(el, val) {
+  answers.tLevel = val;
+  el.parentElement.querySelectorAll('.q-opt').forEach(function(o) { o.className = 'q-opt'; });
+  var cls = val === 't2' ? 'sel-yes' : val === 't1' ? 'sel-partial' : 'sel-no';
+  el.className = 'q-opt ' + cls;
+  var labels = { t2:'T2 — Open source', t1:'T1 — Source available', t0:'T0 — Proprietary' };
+  document.getElementById('t-level').textContent = labels[val] || '—';
+}
+
+function calcTrajectory() {
+  var sigs = [
+    document.getElementById('sig-license').value,
+    document.getElementById('sig-features').value,
+    document.getElementById('sig-selfhost').value,
+    document.getElementById('sig-governance').value,
+  ];
+  var opening = sigs.filter(function(s) { return s === 'opening'; }).length;
+  var closing = sigs.filter(function(s) { return s === 'closing'; }).length;
+  var filled = sigs.filter(function(s) { return s !== ''; }).length;
+
+  if (filled === 0) return 'unknown';
+  if (closing >= 2) return 'closing';
+  if (opening >= 3) return 'opening';
+  if (opening > closing) return 'opening';
+  if (closing > 0 && opening > 0) return 'mixed';
+  return 'stable';
+}
+
+function goStep(n) {
+  if (n === 5) generatePreview();
+  for (var i = 1; i <= 6; i++) {
+    var panel = document.getElementById('panel-' + i);
+    panel.className = i === n ? 'cb-panel visible' : 'cb-panel';
+  }
+  var steps = document.querySelectorAll('.cb-step');
+  for (var i = 0; i < steps.length; i++) {
+    if (i < n - 1) steps[i].className = 'cb-step done';
+    else if (i === n - 1) steps[i].className = 'cb-step active';
+    else steps[i].className = 'cb-step';
+  }
+  window.scrollTo(0, 0);
+
+  var dir = calcTrajectory();
+  document.getElementById('traj-dir').textContent = dir;
+}
+
+function getSlug() {
+  return (document.getElementById('f-name').value || 'unknown')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function generatePreview() {
+  var name = document.getElementById('f-name').value || 'Unknown';
+  var url = document.getElementById('f-url').value || '-';
+  var desc = document.getElementById('f-desc').value || '';
+  var cat = document.getElementById('f-category').value || 'applications';
+  var docker = document.getElementById('f-docker').value || '-';
+  var license = document.getElementById('f-license').value || 'Unknown';
+  var repo = document.getElementById('f-repo').value || '-';
+  var aLevel = (document.getElementById('a-level').textContent || 'A0');
+  var tNum = answers.tLevel === 't2' ? '2' : answers.tLevel === 't1' ? '1' : '0';
+  var tLevel = 'T' + tNum;
+  var traj = calcTrajectory();
+
+  var sYes = 0;
+  ['pause','exit','recover'].forEach(function(q) { if (answers[q] === 'yes') sYes++; });
+  var sScore = sYes;
+
+  var pauseStatus = answers.pause === 'yes' ? '\u2705' : answers.pause === 'partial' ? '\u26a0\ufe0f' : '\u274c';
+  var exitStatus = answers.exit === 'yes' ? '\u2705' : answers.exit === 'partial' ? '\u26a0\ufe0f' : '\u274c';
+  var recoverStatus = answers.recover === 'yes' ? '\u2705' : answers.recover === 'partial' ? '\u26a0\ufe0f' : '\u274c';
+
+  var pauseNote = document.getElementById('q-pause-note').value || '';
+  var exitNote = document.getElementById('q-exit-note').value || '';
+  var recoverNote = document.getElementById('q-recover-note').value || '';
+  var trajNote = document.getElementById('f-traj-note').value || '';
+
+  var sigL = document.getElementById('sig-license').value;
+  var sigF = document.getElementById('sig-features').value;
+  var sigS = document.getElementById('sig-selfhost').value;
+  var sigG = document.getElementById('sig-governance').value;
+
+  function sigIcon(v) { return v === 'opening' ? '\u2705' : v === 'closing' ? '\u26a0\ufe0f' : '\u2796'; }
+
+  var md = '---\n';
+  md += 'title: "' + name + '"\n';
+  md += 'category: "' + cat + '"\n';
+  md += 'license: "' + license + '"\n';
+  md += 'source: "' + url + '"\n';
+  md += 'repository: "' + repo + '"\n';
+  md += 'docker_image: "' + docker + '"\n';
+  md += 'autonomy_level: "' + aLevel + '"\n';
+  md += 'transparency_level: "' + tLevel + '"\n';
+  md += 'depends_on: []\n';
+  md += 'optional_deps: []\n';
+  md += 'trajectory: "' + traj + '"\n';
+  md += '---\n\n';
+  md += '# ' + name + '\n\n';
+  md += '> **TAS Score: S' + sScore + '/3** \u2014 ' + aLevel + ' / ' + tLevel + '\n\n';
+  md += '## Brief Description\n\n' + desc + '\n\n';
+  md += '## Philosophical Assessment\n\n';
+  md += '| Criterion | Status | Comments |\n';
+  md += '|-----------|--------|----------|\n';
+  md += '| Pause | ' + pauseStatus + ' | ' + pauseNote + ' |\n';
+  md += '| Exit | ' + exitStatus + ' | ' + exitNote + ' |\n';
+  md += '| Recoverability | ' + recoverStatus + ' | ' + recoverNote + ' |\n\n';
+  md += '## Trajectory\n\n';
+  md += '**Direction: ' + traj + '**\n\n';
+  if (trajNote) md += trajNote + '\n\n';
+  md += '| Signal | Status | Evidence |\n';
+  md += '|--------|--------|----------|\n';
+  md += '| License | ' + sigIcon(sigL) + ' | |\n';
+  md += '| Feature gating | ' + sigIcon(sigF) + ' | |\n';
+  md += '| Self-hosting | ' + sigIcon(sigS) + ' | |\n';
+  md += '| Governance | ' + sigIcon(sigG) + ' | |\n\n';
+  md += '---\n\n';
+  md += '## Sources\n\n';
+  md += '- **Website:** ' + url + '\n';
+  if (repo && repo !== '-') md += '- **Repository:** ' + repo + '\n';
+  if (docker && docker !== '-') md += '- **Docker image:** `' + docker + '`\n';
+
+  document.getElementById('preview-md').textContent = md;
+  document.getElementById('score-display').textContent = 'S' + sScore + '/3 \u2014 ' + aLevel + ' / ' + tLevel + ' \u2014 ' + traj;
+
+  window._generatedMd = md;
+  window._techName = name;
+}
+
+function copyToClipboard() {
+  if (!window._generatedMd) generatePreview();
+  navigator.clipboard.writeText(window._generatedMd).then(function() {
+    document.getElementById('send-result').innerHTML = '<div class="cb-result success">\u2705 Copied to clipboard! Paste it in an email, forum post, or anywhere you like.</div>';
+  });
+}
+
+function openGitHubIssue() {
+  if (!window._generatedMd) generatePreview();
+  var title = encodeURIComponent('[Card]: ' + (window._techName || ''));
+  var body = encodeURIComponent('## Suggested card\n\n```markdown\n' + window._generatedMd + '\n```\n\nGenerated via Card Builder on the TAS website.');
+  var url = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + title + '&body=' + body + '&labels=new-card';
+  window.open(url, '_blank');
+}
+
+function sendEmail() {
+  if (!window._generatedMd) generatePreview();
+  var subject = encodeURIComponent('TAS Card Suggestion: ' + (window._techName || ''));
+  var body = encodeURIComponent(window._generatedMd);
+  window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+}
+
+function resetAll() {
+  answers = { pause:'', exit:'', recover:'', tLevel:'' };
+  document.querySelectorAll('.q-opt').forEach(function(o) { o.className = 'q-opt'; });
+  document.querySelectorAll('input, textarea').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('select').forEach(function(el) { el.selectedIndex = 0; });
+  document.getElementById('a-level').textContent = '\u2014';
+  document.getElementById('a-explain').textContent = '';
+  document.getElementById('t-level').textContent = '\u2014';
+  document.getElementById('traj-dir').textContent = '\u2014';
+  document.getElementById('send-result').innerHTML = '';
+  goStep(1);
+}
+</script>
+{% endraw %}
