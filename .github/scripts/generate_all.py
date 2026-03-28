@@ -252,7 +252,7 @@ def generate_catalog_index(cards):
         lines.append('---')
         lines.append('')
 
-    lines.append('*The catalog grows. Contributions welcome \u2014 see [CONTRIBUTING](../../CONTRIBUTING.md).*')
+    lines.append('*The catalog grows. [Add a technology \u2192](../card-builder.html) or see [CONTRIBUTING](../../CONTRIBUTING.md).*')
     lines.append('')
 
     output = os.path.join(CATALOG_DIR, 'index.md')
