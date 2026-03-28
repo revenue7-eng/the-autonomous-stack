@@ -155,7 +155,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Vault](vault.md) | **A3** | **T2** | Secure, encrypted storage for secrets, API keys, certificates, and other sensitive data. |
+| [Vault](vault.md) | **A3** | **T1** | Secure, encrypted storage for secrets, API keys, certificates, and other sensitive data. |
 
 ---
 
@@ -204,7 +204,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Home Assistant](home-assistant.md) | **A3** | **T2** | Open-source home automation platform that puts local control and privacy first. |
-| [n8n](n8n.md) | **A3** | **T2** | Source-available workflow automation platform. |
+| [n8n](n8n.md) | **A3** | **T1** | Source-available workflow automation platform. |
 | [Node-RED](node-red.md) | **A3** | **T2** | Flow-based visual automation tool built on Node.js. |
 | [Zapier](zapier.md) | **A0** | **T0** | Cloud-based workflow automation platform. |
 
