@@ -5,7 +5,7 @@ nav_order: 2
 
 # Recommended Stack
 
-4 ready-to-deploy recipes and 39 individual recommendations out of 91 technologies evaluated.
+4 ready-to-deploy recipes and 41 individual recommendations out of 91 technologies evaluated.
 
 ---
 
@@ -28,6 +28,8 @@ All 8 recipes (including Monitoring, Communication, Privacy Homelab, Developer W
 
 | Need | We recommend | Why this one | Replaces |
 |------|-------------|-------------|----------|
+| **Server OS** | [Debian](catalog/debian.md) | 30+ years of stability. Community-governed, no commercial pressure. The default for selfhosting. | Ubuntu Server |
+| **Virtualization** | [Proxmox VE](catalog/proxmox.md) | Run multiple VMs on one machine. Snapshots, backups, isolation. Free and open source. | VMware ESXi |
 | **VPN** | [WireGuard](catalog/wireguard.md) | Fastest, simplest, most audited. Built into Linux kernel. | Tailscale, OpenVPN |
 | **DNS filtering** | [AdGuard Home](catalog/adguard-home.md) | Blocks ads and trackers network-wide. Better UI than Pi-hole, DoH/DoT support. | Pi-hole, NextDNS |
 | **Reverse proxy** | [Caddy](catalog/caddy.md) | Automatic HTTPS, zero-config. Single binary. | Nginx, Traefik, NPM |
