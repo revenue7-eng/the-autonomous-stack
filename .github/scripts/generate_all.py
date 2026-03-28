@@ -331,7 +331,19 @@ def generate_catalog_cards_js(cards):
         '/* AUTO:CATALOG_CARDS:END */',
         '\n'.join(lines)
     )
-    print(f'  catalog-index.html: {len(sorted_cards)} cards')
+
+    # Generate CATS list from SECTION_ORDER, filtered to groups that have cards
+    used_groups = set(card['group'] for card in sorted_cards)
+    cats_list = [g for g in SECTION_ORDER if g in used_groups]
+    cats_js = "const CATS=" + str(cats_list).replace('"', "'") + ";"
+    replace_between_markers(
+        'docs/catalog-index.html',
+        '/* AUTO:CATALOG_CATS:START */',
+        '/* AUTO:CATALOG_CATS:END */',
+        cats_js
+    )
+
+    print(f'  catalog-index.html: {len(sorted_cards)} cards, {len(cats_list)} groups')
 
 
 # ── Generator 4: map.html ─────────────────────────────────────────────────
