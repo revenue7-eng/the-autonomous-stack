@@ -28,6 +28,7 @@ Build a communication server that:
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. VPS or dedicated server with static IP. |
 | **Stalwart** | [`communication/email`](../catalog/stalwart.md) | All-in-one email server (SMTP, IMAP, JMAP) |
 | **Matrix / Element** | [`communication/messaging`](../catalog/matrix.md) | Encrypted messaging and calls |
 | **Caddy** | [`network/proxy`](../catalog/caddy.md) | Reverse proxy with automatic HTTPS |

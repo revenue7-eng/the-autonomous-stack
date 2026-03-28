@@ -33,7 +33,7 @@ All of this on a single machine. No cloud accounts required after initial setup.
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
-| **Debian 12** | (OS) | Base operating system |
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. [Ubuntu Server](../catalog/ubuntu-server.md) also works. |
 | **Docker** | [`compute/container`](../catalog/docker.md) | Container runtime |
 | **Caddy** | [`network/proxy`](../catalog/caddy.md) | Reverse proxy with automatic HTTPS |
 | **WireGuard** | [`network/vpn`](../catalog/wireguard.md) | Secure remote access |
@@ -49,6 +49,9 @@ All of this on a single machine. No cloud accounts required after initial setup.
 *All are A3/T2.*
 
 ---
+
+
+> **Running Proxmox?** Create a VM (Debian, 4+ GB RAM), install Docker inside it, then follow this recipe. Benefit: VM-level snapshots before updates, isolation from other stacks, easy backup via vzdump. See [Proxmox VE](../catalog/proxmox.md).
 
 ## Who is this for?
 

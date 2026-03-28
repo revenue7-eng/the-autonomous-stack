@@ -29,7 +29,7 @@ Create a homelab that:
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
-| **Debian 12** | (OS) | Base operating system |
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. [Ubuntu Server](../catalog/ubuntu-server.md) also works. |
 | **Docker** | [compute/container](../catalog/docker.md) | Container runtime |
 | **WireGuard** | [network/vpn](../catalog/wireguard.md) | Secure remote access |
 | **Pi-hole** | [network/dns](../catalog/pi-hole.md) | Network-wide ad blocking |

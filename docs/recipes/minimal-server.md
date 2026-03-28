@@ -34,7 +34,7 @@ You will end up with a solid foundation for your autonomous digital infrastructu
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
-| **Debian 12** | (OS) | Base operating system |
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. [Ubuntu Server](../catalog/ubuntu-server.md) also works. |
 | **Docker** | [`compute/container`](../catalog/docker.md) | Container runtime |
 | **WireGuard** | [`network/vpn`](../catalog/wireguard.md) | Secure remote access |
 | **AdGuard Home** | [`network/dns`](../catalog/adguard-home.md) | DNS filtering and ad blocking |
@@ -48,6 +48,9 @@ You will end up with a solid foundation for your autonomous digital infrastructu
 *All are A3/T2 unless specified.*
 
 ---
+
+
+> **Running Proxmox?** Create a VM (Debian, 4+ GB RAM), install Docker inside it, then follow this recipe. Benefit: VM-level snapshots before updates, isolation from other stacks, easy backup via vzdump. See [Proxmox VE](../catalog/proxmox.md).
 
 ## Step‑by‑Step Instructions
 

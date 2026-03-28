@@ -29,6 +29,7 @@ Build a monitoring stack that:
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system (or any Linux with Docker) |
 | **Prometheus** | [`observability/metrics`](../catalog/prometheus.md) | Metrics collection and storage |
 | **Grafana** | [`observability/dashboards`](../catalog/grafana.md) | Dashboards and visualization |
 | **Loki** | [`observability/metrics`](../catalog/loki.md) | Log aggregation |

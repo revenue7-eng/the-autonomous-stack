@@ -28,7 +28,7 @@ Create a development setup that:
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
-| **Debian 12** | (OS) | Base operating system |
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. [Ubuntu Server](../catalog/ubuntu-server.md) also works. |
 | **Docker** | [compute/container](../catalog/docker.md) | Container runtime |
 | **Forgejo** | [applications/version-control](../catalog/forgejo.md) | Git hosting + CI/CD (Actions) |
 | **Vaultwarden** | [security/passwords](../catalog/vaultwarden.md) | Credentials and API keys |

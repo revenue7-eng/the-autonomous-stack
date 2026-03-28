@@ -27,6 +27,7 @@ Create a media server that:
 
 | Component | Catalog Card | Role |
 |-----------|--------------|------|
+| **Debian** | [`compute/os`](../catalog/debian.md) | Base operating system. [Ubuntu Server](../catalog/ubuntu-server.md) also works. |
 | **Docker** | [`compute/container`](../catalog/docker.md) | Container runtime |
 | **Jellyfin** | [`applications/media`](../catalog/jellyfin.md) | Media server — stream to all devices |
 | **Radarr** | [`applications/media`](../catalog/radarr.md) | Movie collection manager |
@@ -39,6 +40,9 @@ Create a media server that:
 *All are A3/T2.*
 
 ---
+
+
+> **Running Proxmox?** Create a VM (Debian, 4+ GB RAM), install Docker inside it, then follow this recipe. Benefit: VM-level snapshots before updates, isolation from other stacks, easy backup via vzdump. See [Proxmox VE](../catalog/proxmox.md).
 
 ## Who is this for?
 
