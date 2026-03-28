@@ -1,0 +1,121 @@
+name: "Suggest a technology"
+description: "Propose a technology for evaluation in the TAS catalog"
+title: "[Card]: "
+labels: ["new-card"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a technology! Answer what you can — you don't need to fill everything. We'll research and verify before adding.
+
+  - type: input
+    id: name
+    attributes:
+      label: Technology name
+      placeholder: "e.g. Gitea, Actual Budget, Ntfy"
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Website / Repository
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - network (VPN, DNS, proxy)
+        - storage (database, backup, sync, cache)
+        - security (passwords, secrets, IDS)
+        - compute (containers, orchestration)
+        - observability (monitoring, logs, metrics)
+        - communication (email, messaging, notifications)
+        - identity (SSO, authentication)
+        - analytics (web analytics)
+        - applications (other)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+      description: One or two sentences.
+      placeholder: "Self-hosted X that replaces Y..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: structural
+    attributes:
+      label: "The three structural questions"
+      description: "Answer what you know. It's okay to leave blanks."
+      value: |
+        **Pause** — Can you stop it without losing anything?
+
+
+        **Exit** — Can you leave and take all your data?
+
+
+        **Recover** — If something breaks, can you go back?
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License type
+      options:
+        - Open source (MIT, Apache, GPL, AGPL, BSD, etc.)
+        - Source-available (BSL, SSPL, Sustainable Use, etc.)
+        - Proprietary / closed
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: selfhost
+    attributes:
+      label: Can it be self-hosted?
+      options:
+        - "Yes — fully self-hosted, works offline"
+        - "Partially — self-hosted but depends on cloud services"
+        - "No — cloud only"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: replaces
+    attributes:
+      label: What does it replace?
+      description: "Which mainstream/cloud service does this technology replace?"
+      placeholder: "Replaces Google Photos, iCloud, etc."
+
+  - type: textarea
+    id: concerns
+    attributes:
+      label: Any concerns or trade-offs?
+      description: "License changes, single maintainer, telemetry, cloud dependencies, etc."
+
+  - type: dropdown
+    id: trajectory
+    attributes:
+      label: "Where is the project heading?"
+      options:
+        - "Opening — becoming more autonomous/open"
+        - "Stable — no significant changes"
+        - "Mixed — some signals opening, some closing"
+        - "Closing — becoming more restricted/commercial"
+        - "Not sure"
+
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: "Would you like to write the card yourself?"
+      options:
+        - label: "Yes — I'll submit a PR using the template"
+        - label: "No — I'd like the maintainers to evaluate it"

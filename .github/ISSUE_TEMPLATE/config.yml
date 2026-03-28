@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Browse the catalog"
+    url: "https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/"
+    about: "See all evaluated technologies"
+  - name: "Take the test"
+    url: "https://revenue7-eng.github.io/the-autonomous-stack/test.html"
+    about: "Evaluate any technology in 30 seconds"

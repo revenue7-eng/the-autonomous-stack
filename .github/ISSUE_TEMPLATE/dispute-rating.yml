@@ -1,0 +1,72 @@
+name: "Dispute a rating"
+description: "Challenge the Autonomy or Transparency level of a technology card"
+title: "[Dispute]: "
+labels: ["rating-disputed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Disputes are welcome — they make the catalog more accurate. Please provide evidence for your proposed change.
+
+  - type: input
+    id: technology
+    attributes:
+      label: Technology name
+      placeholder: "e.g. Docker, Redis, n8n"
+    validations:
+      required: true
+
+  - type: input
+    id: current_rating
+    attributes:
+      label: Current rating
+      placeholder: "e.g. A3/T2, trajectory: mixed"
+    validations:
+      required: true
+
+  - type: input
+    id: proposed_rating
+    attributes:
+      label: Proposed rating
+      placeholder: "e.g. A2/T1, trajectory: closing"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: what_changed
+    attributes:
+      label: What is incorrect?
+      options:
+        - Autonomy level (A0-A3)
+        - Transparency level (T0-T2)
+        - Trajectory direction
+        - TAS Score (S or D)
+        - Multiple fields
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: "Which of the 8 questions does the current rating get wrong? Link to changelogs, license changes, documentation, or announcements."
+      placeholder: |
+        Example:
+        - License changed from Apache-2.0 to BSL 1.1 in August 2023 (link)
+        - Self-hosting documentation removed in v4.0 (link)
+        - New cloud-only features gated behind enterprise tier (link)
+    validations:
+      required: true
+
+  - type: textarea
+    id: signal_assessment
+    attributes:
+      label: "Trajectory signals (if disputing trajectory)"
+      description: "Fill in what you know."
+      value: |
+        | Signal | Your assessment | Evidence |
+        |--------|----------------|----------|
+        | License | ✅ / ➖ / ⚠️ | |
+        | Feature gating | ✅ / ➖ / ⚠️ | |
+        | Self-hosting | ✅ / ➖ / ⚠️ | |
+        | Governance | ✅ / ➖ / ⚠️ | |
