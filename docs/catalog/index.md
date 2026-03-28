@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*73 technologies evaluated.*
+*78 technologies evaluated.*
 
 ---
 
@@ -131,6 +131,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
+| [Watchtower](watchtower.md) | **A3** | **T2** | Automated Docker container updater. |
 
 ---
 
@@ -243,9 +244,13 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Actual Budget](actual-budget.md) | **A3** | **T2** | Local-first personal finance and budgeting app. |
 | [FreshRSS](freshrss.md) | **A3** | **T2** | Self-hosted RSS/Atom feed aggregator. |
+| [Linkding](linkding.md) | **A3** | **T2** | Minimal self-hosted bookmark manager. |
 | [Mealie](mealie.md) | **A3** | **T2** | Self-hosted recipe manager and meal planner. |
+| [RustDesk](rustdesk.md) | **A3** | **T2** | Self-hosted remote desktop application written in Rust. |
 | [SearXNG](searxng.md) | **A3** | **T2** | Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking users. |
+| [Wallabag](wallabag.md) | **A3** | **T2** | Self-hosted read-it-later service. |
 
 ### Media
 

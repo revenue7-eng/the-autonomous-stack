@@ -69,6 +69,6 @@ The "Replaces" column shows what most people are switching from. It's not a judg
 - [Privacy-First Homelab](recipes/privacy-first-homelab.md) — maximum privacy
 - [Developer Workstation](recipes/developer-workstation.md) — Git + CI/CD + tools
 
-**Want the full picture?** Browse the [Technology Catalog](catalog/) — 68 technologies with detailed assessments.
+**Want the full picture?** Browse the [Technology Catalog](catalog/) — 78 technologies with detailed assessments.
 
 **Want to see relationships?** Open the [Dependency Graph](dependency-graph.html) — how everything connects.
