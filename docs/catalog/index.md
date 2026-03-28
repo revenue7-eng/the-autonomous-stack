@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*68 technologies evaluated.*
+*73 technologies evaluated.*
 
 ---
 
@@ -129,6 +129,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
 | [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
+| [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
 
 ---
@@ -169,6 +170,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
 | [Proton Mail](protonmail.md) | **A0** | **T1** | Encrypted email service with zero-knowledge architecture. |
 | [Tuta (Tutanota)](tuta.md) | **A0** | **T1** | End-to-end encrypted email and calendar. |
+
+### General
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Ntfy](ntfy.md) | **A3** | **T2** | Simple HTTP-based pub-sub notification service. |
 
 ### Messaging
 
@@ -231,6 +238,14 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [BookStack](bookstack.md) | **A3** | **T2** | Open-source, self-hosted wiki platform built with PHP and Laravel. |
 | [Docmost](docmost.md) | **A3** | **T2** | Open-source, self-hosted documentation and wiki platform. |
 | [Confluence](confluence.md) | **A0** | **T0** | Proprietary wiki and collaboration platform by Atlassian. |
+
+### General
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [FreshRSS](freshrss.md) | **A3** | **T2** | Self-hosted RSS/Atom feed aggregator. |
+| [Mealie](mealie.md) | **A3** | **T2** | Self-hosted recipe manager and meal planner. |
+| [SearXNG](searxng.md) | **A3** | **T2** | Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking users. |
 
 ### Media
 
