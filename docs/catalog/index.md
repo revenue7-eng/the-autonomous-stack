@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*78 technologies evaluated.*
+*83 technologies evaluated.*
 
 ---
 
@@ -128,6 +128,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
+| [Dockge](dockge.md) | **A3** | **T2** | Simple, reactive Docker Compose manager with a web UI. |
 | [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
@@ -245,7 +246,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Actual Budget](actual-budget.md) | **A3** | **T2** | Local-first personal finance and budgeting app. |
+| [File Browser](filebrowser.md) | **A3** | **T2** | Web-based file manager. |
 | [FreshRSS](freshrss.md) | **A3** | **T2** | Self-hosted RSS/Atom feed aggregator. |
+| [Grocy](grocy.md) | **A3** | **T2** | Self-hosted grocery and household management. |
+| [Apache Guacamole](guacamole.md) | **A3** | **T2** | Clientless remote desktop gateway. |
 | [Linkding](linkding.md) | **A3** | **T2** | Minimal self-hosted bookmark manager. |
 | [Mealie](mealie.md) | **A3** | **T2** | Self-hosted recipe manager and meal planner. |
 | [RustDesk](rustdesk.md) | **A3** | **T2** | Self-hosted remote desktop application written in Rust. |
@@ -279,7 +283,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
+| [Gitea](gitea.md) | **A3** | **T2** | Lightweight self-hosted Git service. |
 
 ---
 
-*The catalog grows. Contributions welcome — see [CONTRIBUTING](../../CONTRIBUTING.md).*
+*The catalog grows. [Add a technology →](../card-builder.html) or see [CONTRIBUTING](../../CONTRIBUTING.md).*
