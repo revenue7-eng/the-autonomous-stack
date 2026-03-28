@@ -7,7 +7,7 @@ nav_order: 2
 
 One recommendation per need. These are the technologies we'd start with if building from scratch today — all **A3/T2** (fully autonomous, open source), with **stable** or **opening** trajectory.
 
-36 recommendations out of 83 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
+36 recommendations out of 88 technologies evaluated. This is the shortlist, not the full catalog. For alternatives, trade-offs, and the full picture — see the [Technology Catalog](catalog/).
 
 ---
 
@@ -78,7 +78,7 @@ The "Replaces" column shows what most people are switching from. It's not a judg
 - [Privacy-First Homelab](recipes/privacy-first-homelab.md) — maximum privacy
 - [Developer Workstation](recipes/developer-workstation.md) — Git + CI/CD + tools
 
-**Want the full picture?** Browse the [Technology Catalog](catalog/) — 83 technologies with detailed assessments.
+**Want the full picture?** Browse the [Technology Catalog](catalog/) — 88 technologies with detailed assessments.
 
 **Missing a technology?** [Add it yourself →](card-builder.html) — no GitHub account needed.
 

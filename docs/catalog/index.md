@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*83 technologies evaluated.*
+*88 technologies evaluated.*
 
 ---
 
@@ -64,6 +64,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Kopia](kopia.md) | **A3** | **T2** | Fast and secure open-source backup/restore tool with snapshots, deduplication, compression, and client-side encryption. |
+| [Restic](restic.md) | **A3** | **T2** | Fast, secure, and efficient backup program. |
 
 ### Cache
 
@@ -252,6 +253,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Apache Guacamole](guacamole.md) | **A3** | **T2** | Clientless remote desktop gateway. |
 | [Linkding](linkding.md) | **A3** | **T2** | Minimal self-hosted bookmark manager. |
 | [Mealie](mealie.md) | **A3** | **T2** | Self-hosted recipe manager and meal planner. |
+| [qBittorrent](qbittorrent.md) | **A3** | **T2** | Open-source BitTorrent client with a web UI. |
 | [RustDesk](rustdesk.md) | **A3** | **T2** | Self-hosted remote desktop application written in Rust. |
 | [SearXNG](searxng.md) | **A3** | **T2** | Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking users. |
 | [Wallabag](wallabag.md) | **A3** | **T2** | Self-hosted read-it-later service. |
@@ -261,6 +263,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Jellyfin](jellyfin.md) | **A3** | **T2** | Free software media server that streams your personal media collection without cloud dependencies. |
+| [Prowlarr](prowlarr.md) | **A3** | **T2** | Indexer manager for the *arr stack. |
+| [Radarr](radarr.md) | **A3** | **T2** | Automated movie collection manager. |
+| [Sonarr](sonarr.md) | **A3** | **T2** | Automated TV series collection manager. |
 | [Plex](plex.md) | **A1** | **T0** | Media server that organises and streams your personal media collection. |
 
 ### Notes
