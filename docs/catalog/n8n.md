@@ -13,7 +13,7 @@ documentation: "https://docs.n8n.io"
 docker_image: "n8nio/n8n"
 community: "https://community.n8n.io"
 autonomy_level: "A3"
-transparency_level: "T2"
+transparency_level: "T1"
 depends_on: ["docker"]
 optional_deps: ["postgresql"]
 depended_by: []
@@ -22,7 +22,7 @@ critical_criteria: ["Trajectory"]
 
 # n8n
 
-> **TAS Score: S3/3 — D4/5** — A3 / T2
+> **TAS Score: S3/3 — D4/5** — A3 / T1
 > D4 not D5: "Sustainable Use License" is source-available but not OSI-approved — commercial use restricted without paid license (Q7, Q8). Self-hosting for personal/internal use is free.
 
 ## Brief Description

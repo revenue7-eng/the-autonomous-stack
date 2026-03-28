@@ -3,14 +3,14 @@ nav_exclude: false
 title: "Vault"
 category: "security/secrets"
 status: "stable"
-license: "MPL-2.0"
+license: "BSL-1.1"
 source: "https://www.vaultproject.io"
 repository: "https://github.com/hashicorp/vault"
 documentation: "https://www.vaultproject.io/docs"
 docker_image: "https://hub.docker.com/r/hashicorp/vault"
 community: "https://discuss.hashicorp.com/c/vault/"
 autonomy_level: "A3"
-transparency_level: "T2"
+transparency_level: "T1"
 depends_on: ["docker"]
 optional_deps: []
 depended_by: []
@@ -22,7 +22,7 @@ nav_order: 99
 
 # Vault
 
-> **TAS Score: S3/3 -- D3/5** -- A3 / T2
+> **TAS Score: S3/3 — D3/5** — A3 / T1
 > D3 (not D5): license changed from MPL-2.0 to BSL 1.1 in 2023 — no longer OSI-approved (Q8 trajectory closing); IBM acquisition adds governance uncertainty (Q8). Community fork OpenBao (MPL-2.0) is the open alternative.
 > **Critical criteria for this category:** Exit, Recoverability.
 
