@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*91 technologies evaluated.*
+*96 technologies evaluated.*
 
 ---
 
@@ -46,14 +46,6 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [OpenVPN](openvpn.md) | **A3** | **T2** | Battle-tested open-source VPN protocol and implementation. |
 | [WireGuard](wireguard.md) | **A3** | **T2** | Extremely simple yet fast and modern VPN that utilizes state‑of‑the‑art cryptography. |
 | [Tailscale](tailscale.md) | **A2** | **T1** | Mesh VPN built on WireGuard. |
-
----
-
-## Identity
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Authentik](authentik.md) | **A3** | **T2** | Open-source identity provider focused on flexibility and security. |
 
 ---
 
@@ -96,34 +88,6 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ---
 
-## Observability
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Loki](loki.md) | **A3** | **T2** | Log aggregation system by Grafana Labs. |
-
-### Dashboards
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Grafana](grafana.md) | **A3** | **T2** | Open-source observability and data visualisation platform. |
-
-### Metrics
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Prometheus](prometheus.md) | **A3** | **T2** | Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, al... |
-
-### Monitoring
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Netdata](netdata.md) | **A3** | **T2** | Real-time performance monitoring with zero configuration. |
-| [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
-| [Zabbix](zabbix.md) | **A3** | **T2** | Enterprise-grade open-source monitoring platform. |
-
----
-
 ## Compute
 
 | Technology | Autonomy | Transparency | Description |
@@ -133,6 +97,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Dockge](dockge.md) | **A3** | **T2** | Simple, reactive Docker Compose manager with a web UI. |
 | [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
+| [Podman](podman.md) | **A3** | **T2** | Daemonless, rootless container engine compatible with Docker CLI. |
 | [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
 | [Proxmox VE](proxmox.md) | **A3** | **T2** | Open-source server virtualization platform. |
 | [Ubuntu Server](ubuntu-server.md) | **A3** | **T2** | The most widely deployed Linux server distribution. |
@@ -162,6 +127,34 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Vault](vault.md) | **A3** | **T1** | Secure, encrypted storage for secrets, API keys, certificates, and other sensitive data. |
+
+---
+
+## Observability
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Loki](loki.md) | **A3** | **T2** | Log aggregation system by Grafana Labs. |
+
+### Dashboards
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Grafana](grafana.md) | **A3** | **T2** | Open-source observability and data visualisation platform. |
+
+### Metrics
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Prometheus](prometheus.md) | **A3** | **T2** | Open‑source monitoring system that collects metrics from targets, stores them locally, and enables powerful querying, al... |
+
+### Monitoring
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Netdata](netdata.md) | **A3** | **T2** | Real-time performance monitoring with zero configuration. |
+| [Uptime Kuma](uptime-kuma.md) | **A3** | **T2** | Self-hosted monitoring tool that tracks the availability of websites, services, and network endpoints. |
+| [Zabbix](zabbix.md) | **A3** | **T2** | Enterprise-grade open-source monitoring platform. |
 
 ---
 
@@ -265,10 +258,13 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Bazarr](bazarr.md) | **A3** | **T2** | Automated subtitle manager for Radarr and Sonarr. |
 | [Jellyfin](jellyfin.md) | **A3** | **T2** | Free software media server that streams your personal media collection without cloud dependencies. |
+| [Overseerr](overseerr.md) | **A3** | **T2** | Media request and discovery tool. |
 | [Prowlarr](prowlarr.md) | **A3** | **T2** | Indexer manager for the *arr stack. |
 | [Radarr](radarr.md) | **A3** | **T2** | Automated movie collection manager. |
 | [Sonarr](sonarr.md) | **A3** | **T2** | Automated TV series collection manager. |
+| [Piped](piped.md) | **A2** | **T2** | Privacy-friendly YouTube frontend. |
 | [Plex](plex.md) | **A1** | **T0** | Media server that organises and streams your personal media collection. |
 
 ### Notes

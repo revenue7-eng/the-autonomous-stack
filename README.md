@@ -30,7 +30,7 @@ Five more diagnostic questions reveal what's pulling at you: personalisation, ur
 
 **[Recommended Stack](https://revenue7-eng.github.io/the-autonomous-stack/docs/recommended-stack.html)** — one recommendation per need. VPN, passwords, photos, email, monitoring — 27 best-in-class picks, all A3/T2.
 
-**[Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/)** — 91 technologies evaluated on two axes: Autonomy (A0–A3) and Transparency (T0–T2). Includes both autonomous alternatives and the mainstream services they replace.
+**[Technology Catalog](https://revenue7-eng.github.io/the-autonomous-stack/docs/catalog/)** — 96 technologies evaluated on two axes: Autonomy (A0–A3) and Transparency (T0–T2). Includes both autonomous alternatives and the mainstream services they replace.
 
 **[Recipes](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/)** — six deployment guides:
 - [Minimal Autonomous Server](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/minimal-server.html) — the foundation
@@ -40,7 +40,7 @@ Five more diagnostic questions reveal what's pulling at you: personalisation, ur
 - [Privacy-First Homelab](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/privacy-first-homelab.html)
 - [Developer Workstation](https://revenue7-eng.github.io/the-autonomous-stack/docs/recipes/developer-workstation.html)
 
-**[Dependency Graph](https://revenue7-eng.github.io/the-autonomous-stack/docs/dependency-graph.html)** — interactive map of how 91 technologies depend on each other.
+**[Dependency Graph](https://revenue7-eng.github.io/the-autonomous-stack/docs/dependency-graph.html)** — interactive map of how 96 technologies depend on each other.
 
 **[Autonomy Map](https://revenue7-eng.github.io/the-autonomous-stack/docs/autonomy-map.html)** — star chart: every technology plotted by autonomy × transparency.
 

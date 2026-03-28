@@ -5,7 +5,7 @@ nav_order: 2
 
 # Recommended Stack
 
-4 ready-to-deploy recipes and 41 individual recommendations out of 91 technologies evaluated.
+4 ready-to-deploy recipes and 41 individual recommendations out of 96 technologies evaluated.
 
 ---
 
@@ -96,7 +96,7 @@ The "Replaces" column shows what most people are switching from. It's not a judg
 - [Privacy-First Homelab](recipes/privacy-first-homelab.md) — maximum privacy
 - [Developer Workstation](recipes/developer-workstation.md) — Git + CI/CD + tools
 
-**Want the full picture?** Browse the [Technology Catalog](catalog/) — 91 technologies with detailed assessments.
+**Want the full picture?** Browse the [Technology Catalog](catalog/) — 96 technologies with detailed assessments.
 
 **Missing a technology?** [Add it yourself →](card-builder.html) — no GitHub account needed.
 
