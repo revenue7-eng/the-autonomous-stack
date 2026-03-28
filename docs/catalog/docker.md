@@ -5,7 +5,7 @@ category: "compute/container"
 status: "stable"
 license: "Apache-2.0"
 source: "https://www.docker.com"
-repository: "https://github.com/docker/docker-ce"
+repository: "https://github.com/moby/moby"
 documentation: "https://docs.docker.com/engine/"
 docker_image: "https://hub.docker.com/_/docker"
 community: "https://forums.docker.com"
@@ -22,36 +22,55 @@ nav_order: 99
 
 # Docker
 
-> **TAS Score: S3/3 -- D4/5** -- A3 / T2
-> D4 (not D5): Docker Desktop requires a paid subscription for large organisations (250+ employees); Docker Engine itself has no such restriction (Q6 hidden cost).
+> **TAS Score: S3/3 — D3/5** — A3 / T2
+> D3 not D5: Docker Engine is A3/T2 but almost every `docker compose up` depends on Docker Hub (A0/T0) for pulling images — a centralized registry controlled by Docker Inc. that can enforce rate limits, restrict regions, or change terms at any time (Q5, Q6). Docker Desktop requires a paid subscription for organizations with 250+ employees (Q6). Engagement pressure through Docker Hub's login requirements and pull rate limits nudges users toward paid accounts (Q5).
 > **Critical criteria for this category:** Recoverability.
+
+**Why this matters:** Docker is the most depended-upon technology in the TAS catalog. 43 out of 73 technologies require it. A failure or policy change in Docker's ecosystem affects everything built on top of it. Understanding this dependency honestly is critical.
 
 
 ## Brief Description
 
-Platform for developing, shipping, and running applications in lightweight containers. Works fully offline after images are downloaded.
+Platform for developing, shipping, and running applications in lightweight containers. Docker Engine (the runtime) is open source and works fully offline after images are downloaded. But the ecosystem around it — Docker Hub, Docker Desktop, Docker Scout — is increasingly commercial.
 
 ## Architectural Role
 
-Compute layer: provides container runtime and orchestration for services. The foundation for running autonomous stacks.
+Compute layer: the foundation that nearly everything else runs on. Docker is to the autonomous stack what an operating system is to applications — invisible when working, catastrophic when broken. Its position as a single point of failure for 43+ technologies makes it the most critical dependency in any self-hosted infrastructure.
 
 ## Technical Autonomy
 
-- ✅ Works without internet (after images are cached)
+- ✅ Works without internet (after images are cached locally)
 - ✅ Stores data locally (images, volumes, configuration)
-- ✅ Does not require external accounts
-- ✅ Allows data export (images, volumes, configs can be saved)
-- ✅ Provides offline updates (manual via packages)
+- ✅ Does not require external accounts (for Engine)
+- ✅ Allows data export (images via `docker save`, volumes via tar)
+- ⚠️ Image pulls depend on Docker Hub by default — a centralized, rate-limited registry
+- ⚠️ Docker Desktop requires login and commercial license for large orgs
+
+## The Docker Hub problem
+
+Docker Engine is autonomous. Docker Hub is not. This distinction matters:
+
+| Component | Autonomy | Transparency | Notes |
+|-----------|----------|-------------|-------|
+| Docker Engine | A3 | T2 | Open source (Apache-2.0), runs anywhere, fully offline |
+| Docker CLI | A3 | T2 | Open source, part of Moby project |
+| Docker Hub | A0 | T0 | Centralized registry, proprietary, rate limits, login required for higher limits |
+| Docker Desktop | A1 | T0 | Proprietary GUI, requires login, commercial license for large orgs |
+| Docker Scout | A0 | T0 | Cloud-only vulnerability scanning |
+
+When you run `docker compose up`, the runtime is A3 but the image source is A0. This is the dependency that didn't disappear — it moved.
+
+**Mitigation:** Use a self-hosted registry (Harbor, Gitea Container Registry, or `registry:2`) to mirror images locally. Pull once, serve from your own infrastructure. This moves image distribution from A0 to A3.
 
 ## Philosophical Assessment (whose.world criteria)
 
 | Criterion | Status | Comments |
 |-----------|--------|----------|
-| Pause | Yes | Containers can be stopped, started, or paused at any time. |
-| Exit | Yes | No lock-in; containers can be moved, exported, or replaced. |
-| Recoverability | Yes | Volumes can be backed up; containers can be recreated from images. |
-| Visibility | Yes | Open source, fully transparent. |
-| External Dependencies | Yes | No cloud dependencies after setup; can run entirely offline. |
+| Pause | ✅ | Containers can be stopped, started, or paused at any time. All data persists in volumes. |
+| Exit | ✅ | No lock-in to Docker specifically. Images are OCI-standard, compatible with Podman, containerd, CRI-O. |
+| Recoverability | ✅ | Volumes can be backed up. Containers are ephemeral by design — recreate from images anytime. |
+| Visibility | ✅ | Engine is open source (Moby project). Fully transparent. |
+| External Dependencies | ⚠️ | Docker Hub is the default and implicit dependency for almost every Docker workflow. Rate limits (100 pulls/6h anonymous, 200 authenticated) enforce this dependency. |
 
 ## Configuration (Minimal)
 
@@ -63,48 +82,66 @@ sudo apt install docker.io docker-compose -y
 sudo systemctl enable docker
 ```
 
-Verify offline functionality:
+Self-hosted registry (eliminate Docker Hub dependency):
+
+```yaml
+services:
+  registry:
+    image: registry:2
+    container_name: registry
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data/registry:/var/lib/registry
+    restart: unless-stopped
+```
+
+Mirror an image locally:
 
 ```bash
-# After downloading images, disconnect network and test:
-docker run hello-world
+docker pull nginx:latest
+docker tag nginx:latest localhost:5000/nginx:latest
+docker push localhost:5000/nginx:latest
 ```
 
 ## Related Recipes
 
-- [Minimal Autonomous Server](../recipes/minimal-server.md) – uses Docker to run all services.
+- [Minimal Autonomous Server](../recipes/minimal-server.md) — uses Docker to run all services
+- [Family Cloud](../recipes/family-cloud.md) — all services containerized
+- [Monitoring Stack](../recipes/monitoring-stack.md) — monitoring for Docker containers
 
 ## Alternatives
 
-- Podman – daemonless, rootless, compatible with Docker CLI  
-- containerd – lower-level runtime, used by Kubernetes  
-- LXC/LXD – system containers, not application containers  
+| Alternative | Autonomy | Notes |
+|-------------|----------|-------|
+| Podman | A3 / T2 | Daemonless, rootless, Docker CLI-compatible. No commercial licensing. Red Hat-backed. |
+| containerd | A3 / T2 | Lower-level runtime. Used by Kubernetes. No desktop/hub commercial layer. |
+| LXC/LXD | A3 / T2 | System containers, not application containers. Different use case. |
+
+---
 
 ## Trajectory
 
 **Direction: mixed.**
 
-Docker Engine remains open source (Apache-2.0) and is the foundation for the container ecosystem. However, Docker Inc. introduced a paid subscription requirement for Docker Desktop in large organisations (250+ employees or $10M+ revenue) in 2021. The engine itself is stable and open. If you use Docker Engine and CLI — trajectory is stable. If you depend on Docker Desktop — watch the licensing terms.
+Docker Engine (Moby project) remains open source and stable. But Docker Inc. is increasingly monetizing the ecosystem around it: Docker Desktop licensing (2021), Docker Hub rate limits (2020), login requirements, Docker Scout (cloud-only). The engine is opening; the ecosystem is closing.
 
 **Signal assessment:**
 
 | Signal | Status | Evidence |
 |--------|--------|----------|
-| License | ➖ | Docker Engine: Apache-2.0, unchanged. Docker Desktop: commercial licence introduced 2021 for large orgs. |
-| Feature gating | ⚠️ | Docker Desktop features (Dev Environments, Docker Extensions) are commercial-first. |
-| Self-hosting | ✅ | Docker Engine self-hosting unchanged; Podman/containerd are credible alternatives. |
-| Governance | ➖ | Moby project (upstream) is community-governed; Docker Inc. controls the Desktop product. |
+| License | ➖ | Docker Engine: Apache-2.0, unchanged. Docker Desktop: commercial licence for large orgs since 2021. |
+| Feature gating | ⚠️ | Docker Desktop features (Dev Environments, Extensions, Scout) are commercial. Docker Hub free tier increasingly restricted. |
+| Self-hosting | ✅ | Docker Engine self-hosting unchanged. Podman is a credible drop-in replacement. |
+| Governance | ➖ | Moby project (upstream) is community-governed. Docker Inc. controls Desktop, Hub, and commercial products. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
 
+---
+
 ## Sources
 
-- [Website](https://www.docker.com)
-
-- [Documentation](https://docs.docker.com/engine/)
-
-- [Repository](https://github.com/docker/docker-ce)
-
-- [Docker image](https://hub.docker.com/_/docker)
-
-- [Community](https://forums.docker.com)
+- **Website:** [docker.com](https://www.docker.com)
+- **Documentation:** [docs.docker.com](https://docs.docker.com/engine/)
+- **Repository:** [github.com/moby/moby](https://github.com/moby/moby)
+- **Community:** [forums.docker.com](https://forums.docker.com)
