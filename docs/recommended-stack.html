@@ -1,0 +1,205 @@
+---
+layout: default
+title: "Recommended Stack"
+nav_order: 2
+---
+{% raw %}
+<style>
+.rs-hero { margin-bottom:2rem; }
+.rs-hero h1 { font-size:24px; margin-bottom:8px; }
+.rs-hero .rs-sub { font-size:14px; color:#666; line-height:1.6; }
+.rs-hero .rs-count { font-size:13px; color:#999; margin-top:6px; }
+
+.rs-section-title { font-size:13px; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.08em; margin:2rem 0 1rem; padding-bottom:6px; border-bottom:1px solid #eee; }
+
+/* Recipe cards */
+.rs-recipes { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; margin-bottom:2rem; }
+.rs-recipe { padding:16px 18px; border-radius:10px; border:1px solid #e8e8e8; background:#fafbfc; transition:all .15s; cursor:pointer; text-decoration:none; color:inherit; display:block; }
+.rs-recipe:hover { border-color:#1a73e8; background:#f0f4ff; transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+.rs-recipe .rr-name { font-size:16px; font-weight:600; color:#111; margin-bottom:4px; }
+.rs-recipe .rr-desc { font-size:12px; color:#666; line-height:1.5; margin-bottom:8px; }
+.rs-recipe .rr-replaces { font-size:11px; color:#999; }
+.rs-recipe .rr-replaces b { color:#d44; font-weight:500; }
+.rs-recipe .rr-components { display:flex; flex-wrap:wrap; gap:4px; margin-top:8px; }
+.rs-recipe .rr-comp { font-size:10px; padding:2px 7px; border-radius:10px; background:#e8f0fe; color:#1a5fb4; }
+
+/* Recommendation groups */
+.rs-group { margin-bottom:1.5rem; }
+.rs-group-title { font-size:12px; font-weight:600; color:#555; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+.rs-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.rs-chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:8px; border:1px solid #e0e0e0; background:#fff; font-size:12px; cursor:pointer; transition:all .15s; text-decoration:none; color:#333; }
+.rs-chip:hover { border-color:#1a73e8; background:#f0f4ff; transform:translateY(-1px); }
+.rs-chip .rc-name { font-weight:500; }
+.rs-chip .rc-replaces { font-size:10px; color:#999; }
+
+/* Tooltip on hover */
+.rs-chip[data-why]:hover::after { content:attr(data-why); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:#111; color:#eee; font-size:11px; padding:6px 10px; border-radius:6px; white-space:nowrap; max-width:300px; white-space:normal; z-index:10; pointer-events:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+.rs-chip { position:relative; }
+
+/* All recipes link */
+.rs-all-recipes { font-size:13px; color:#1a73e8; margin-top:8px; display:inline-block; }
+
+/* Footer */
+.rs-footer { margin-top:2rem; padding-top:1.5rem; border-top:1px solid #eee; }
+.rs-footer-links { display:flex; flex-wrap:wrap; gap:16px; }
+.rs-footer-link { font-size:13px; color:#1a73e8; text-decoration:none; }
+.rs-footer-link:hover { text-decoration:underline; }
+
+/* A3/T2 badge */
+.rs-badge { display:inline-block; font-size:9px; padding:1px 5px; border-radius:4px; font-family:monospace; font-weight:600; vertical-align:middle; margin-left:4px; }
+.rs-badge-green { background:#dcfce7; color:#166534; }
+</style>
+
+<div class="rs-hero">
+  <h1>Recommended Stack</h1>
+  <div class="rs-sub">The tools we'd use if building from scratch today. Every recommendation is A3/T2 — fully autonomous, open source. You can stop it, leave it, recover from it, and see how it works.</div>
+  <div class="rs-count">4 recipes · 41 recommendations · out of 96 technologies evaluated</div>
+</div>
+
+<div class="rs-section-title">Start Here — Ready-to-Deploy Recipes</div>
+
+<div class="rs-recipes">
+  <a class="rs-recipe" href="recipes/minimal-server.html">
+    <div class="rr-name">Minimal Server</div>
+    <div class="rr-desc">The foundation. VPN, DNS filtering, file sync, backups, Git hosting — everything you need to start.</div>
+    <div class="rr-replaces">Replaces: <b>cloud VPS + scattered services</b></div>
+    <div class="rr-components"><span class="rr-comp">WireGuard</span><span class="rr-comp">AdGuard Home</span><span class="rr-comp">Syncthing</span><span class="rr-comp">Kopia</span><span class="rr-comp">Forgejo</span></div>
+  </a>
+  <a class="rs-recipe" href="recipes/family-cloud.html">
+    <div class="rr-name">Family Cloud</div>
+    <div class="rr-desc">Photos, files, passwords for the whole family. Auto-backup from every phone.</div>
+    <div class="rr-replaces">Replaces: <b>Google Photos + Drive + iCloud + LastPass</b></div>
+    <div class="rr-components"><span class="rr-comp">Immich</span><span class="rr-comp">Nextcloud</span><span class="rr-comp">Vaultwarden</span><span class="rr-comp">Syncthing</span></div>
+  </a>
+  <a class="rs-recipe" href="recipes/media-server.html">
+    <div class="rr-name">Media Server</div>
+    <div class="rr-desc">Automated movies and TV. Find, download, organize, stream — all hands-free.</div>
+    <div class="rr-replaces">Replaces: <b>Netflix + Disney+ + HBO ($63/mo)</b></div>
+    <div class="rr-components"><span class="rr-comp">Jellyfin</span><span class="rr-comp">Radarr</span><span class="rr-comp">Sonarr</span><span class="rr-comp">Prowlarr</span><span class="rr-comp">qBittorrent</span></div>
+  </a>
+  <a class="rs-recipe" href="recipes/home-office.html">
+    <div class="rr-name">Home Office</div>
+    <div class="rr-desc">Files, notes, AI, search, news — a complete workspace without cloud subscriptions.</div>
+    <div class="rr-replaces">Replaces: <b>Google Workspace + ChatGPT ($35/mo)</b></div>
+    <div class="rr-components"><span class="rr-comp">Nextcloud</span><span class="rr-comp">Ollama</span><span class="rr-comp">SearXNG</span><span class="rr-comp">Joplin</span><span class="rr-comp">FreshRSS</span></div>
+  </a>
+</div>
+
+<a class="rs-all-recipes" href="recipes/">All 8 recipes →</a>
+
+<div class="rs-section-title">Individual Recommendations</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Infrastructure</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/debian.html" data-why="30+ years of stability. Community-governed."><span class="rc-name">Debian</span><span class="rc-replaces">→ Ubuntu</span></a>
+    <a class="rs-chip" href="catalog/proxmox.html" data-why="Multiple VMs on one machine. Snapshots, isolation."><span class="rc-name">Proxmox VE</span><span class="rc-replaces">→ VMware</span></a>
+    <a class="rs-chip" href="catalog/docker.html" data-why="The foundation. Everything runs on it."><span class="rc-name">Docker</span><span class="rc-replaces">→ Podman</span></a>
+    <a class="rs-chip" href="catalog/watchtower.html" data-why="Auto-updates containers. Set and forget."><span class="rc-name">Watchtower</span><span class="rc-replaces">→ manual pull</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Network</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/wireguard.html" data-why="Fastest, simplest VPN. Built into Linux kernel."><span class="rc-name">WireGuard</span><span class="rc-replaces">→ Tailscale</span></a>
+    <a class="rs-chip" href="catalog/adguard-home.html" data-why="Network-wide ad blocking. Better UI than Pi-hole."><span class="rc-name">AdGuard Home</span><span class="rc-replaces">→ Pi-hole</span></a>
+    <a class="rs-chip" href="catalog/caddy.html" data-why="Automatic HTTPS, zero-config. Single binary."><span class="rc-name">Caddy</span><span class="rc-replaces">→ Nginx</span></a>
+    <a class="rs-chip" href="catalog/authentik.html" data-why="Full identity provider. One login for all services."><span class="rc-name">Authentik</span><span class="rc-replaces">→ Keycloak</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Data</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/postgresql.html" data-why="Most advanced open-source database."><span class="rc-name">PostgreSQL</span><span class="rc-replaces">→ MySQL</span></a>
+    <a class="rs-chip" href="catalog/syncthing.html" data-why="P2P file sync. No server needed."><span class="rc-name">Syncthing</span><span class="rc-replaces">→ Google Drive</span></a>
+    <a class="rs-chip" href="catalog/kopia.html" data-why="Encrypted, deduplicated backups. Fast."><span class="rc-name">Kopia</span><span class="rc-replaces">→ Borg</span></a>
+    <a class="rs-chip" href="catalog/restic.html" data-why="CLI backup. Scriptable, cron-friendly."><span class="rc-name">Restic</span><span class="rc-replaces">→ Duplicati</span></a>
+    <a class="rs-chip" href="catalog/minio.html" data-why="S3-compatible object storage."><span class="rc-name">MinIO</span><span class="rc-replaces">→ AWS S3</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Security</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/vaultwarden.html" data-why="Bitwarden-compatible. Family sharing built in."><span class="rc-name">Vaultwarden</span><span class="rc-replaces">→ 1Password</span></a>
+    <a class="rs-chip" href="catalog/crowdsec.html" data-why="Crowdsourced intrusion detection. Modern Fail2Ban."><span class="rc-name">CrowdSec</span><span class="rc-replaces">→ Fail2Ban</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Productivity</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/nextcloud.html" data-why="Files + calendar + contacts + office. The all-in-one."><span class="rc-name">Nextcloud</span><span class="rc-replaces">→ Google Workspace</span></a>
+    <a class="rs-chip" href="catalog/joplin.html" data-why="Markdown notes with E2E encryption."><span class="rc-name">Joplin</span><span class="rc-replaces">→ Notion</span></a>
+    <a class="rs-chip" href="catalog/paperless-ngx.html" data-why="Scan, OCR, tag, search all documents."><span class="rc-name">Paperless-ngx</span><span class="rc-replaces">→ filing cabinets</span></a>
+    <a class="rs-chip" href="catalog/homepage.html" data-why="Dashboard for all your services. Docker auto-discovery."><span class="rc-name">Homepage</span><span class="rc-replaces">→ Dashy</span></a>
+    <a class="rs-chip" href="catalog/searxng.html" data-why="Private metasearch. No tracking."><span class="rc-name">SearXNG</span><span class="rc-replaces">→ Google</span></a>
+    <a class="rs-chip" href="catalog/ollama.html" data-why="Run LLMs locally. OpenAI-compatible API."><span class="rc-name">Ollama</span><span class="rc-replaces">→ ChatGPT</span></a>
+    <a class="rs-chip" href="catalog/actual-budget.html" data-why="Local-first budgeting. Was paid SaaS, now open source."><span class="rc-name">Actual Budget</span><span class="rc-replaces">→ YNAB</span></a>
+    <a class="rs-chip" href="catalog/n8n.html" data-why="Visual workflow automation. Self-hosted."><span class="rc-name">n8n</span><span class="rc-replaces">→ Zapier</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Media & Content</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/jellyfin.html" data-why="Stream your library. No account, no telemetry."><span class="rc-name">Jellyfin</span><span class="rc-replaces">→ Plex</span></a>
+    <a class="rs-chip" href="catalog/immich.html" data-why="Google Photos replacement. Auto-backup, face recognition."><span class="rc-name">Immich</span><span class="rc-replaces">→ Google Photos</span></a>
+    <a class="rs-chip" href="catalog/radarr.html" data-why="Automated movie collection."><span class="rc-name">Radarr</span></a>
+    <a class="rs-chip" href="catalog/sonarr.html" data-why="Automated TV series."><span class="rc-name">Sonarr</span></a>
+    <a class="rs-chip" href="catalog/prowlarr.html" data-why="Indexer manager for the *arr stack."><span class="rc-name">Prowlarr</span></a>
+    <a class="rs-chip" href="catalog/qbittorrent.html" data-why="Open-source torrent client. No ads."><span class="rc-name">qBittorrent</span><span class="rc-replaces">→ uTorrent</span></a>
+    <a class="rs-chip" href="catalog/freshrss.html" data-why="RSS reader. Your feed, your order, no algorithm."><span class="rc-name">FreshRSS</span><span class="rc-replaces">→ Feedly</span></a>
+    <a class="rs-chip" href="catalog/wallabag.html" data-why="Save articles, read offline, strip ads."><span class="rc-name">Wallabag</span><span class="rc-replaces">→ Pocket</span></a>
+    <a class="rs-chip" href="catalog/mealie.html" data-why="Family cookbook, meal planner."><span class="rc-name">Mealie</span><span class="rc-replaces">→ Paprika</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Communication</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/stalwart.html" data-why="All-in-one mail server in Rust."><span class="rc-name">Stalwart</span><span class="rc-replaces">→ Gmail</span></a>
+    <a class="rs-chip" href="catalog/matrix.html" data-why="Decentralized, encrypted messaging."><span class="rc-name">Matrix / Element</span><span class="rc-replaces">→ Slack</span></a>
+    <a class="rs-chip" href="catalog/ntfy.html" data-why="Push notifications with one curl command."><span class="rc-name">Ntfy</span><span class="rc-replaces">→ Pushover</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Observability</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/uptime-kuma.html" data-why="Simple, beautiful uptime monitoring."><span class="rc-name">Uptime Kuma</span><span class="rc-replaces">→ Pingdom</span></a>
+    <a class="rs-chip" href="catalog/prometheus.html" data-why="Industry standard metrics."><span class="rc-name">Prometheus</span><span class="rc-replaces">→ Datadog</span></a>
+    <a class="rs-chip" href="catalog/grafana.html" data-why="Dashboards for everything."><span class="rc-name">Grafana</span><span class="rc-replaces">→ New Relic</span></a>
+    <a class="rs-chip" href="catalog/loki.html" data-why="Log aggregation. Pairs with Grafana."><span class="rc-name">Loki</span><span class="rc-replaces">→ Splunk</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Development</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/forgejo.html" data-why="Community-governed Git hosting. Lightweight."><span class="rc-name">Forgejo</span><span class="rc-replaces">→ GitHub</span></a>
+    <a class="rs-chip" href="catalog/woodpecker.html" data-why="Container-native CI. Pairs with Forgejo."><span class="rc-name">Woodpecker CI</span><span class="rc-replaces">→ GitHub Actions</span></a>
+    <a class="rs-chip" href="catalog/plausible.html" data-why="Privacy-friendly analytics. No cookies."><span class="rc-name">Plausible</span><span class="rc-replaces">→ Google Analytics</span></a>
+  </div>
+</div>
+
+<div class="rs-group">
+  <div class="rs-group-title">Home</div>
+  <div class="rs-chips">
+    <a class="rs-chip" href="catalog/home-assistant.html" data-why="Local-first smart home. 2000+ integrations."><span class="rc-name">Home Assistant</span><span class="rc-replaces">→ Google Home</span></a>
+    <a class="rs-chip" href="catalog/rustdesk.html" data-why="Self-hosted remote desktop. P2P."><span class="rc-name">RustDesk</span><span class="rc-replaces">→ TeamViewer</span></a>
+  </div>
+</div>
+
+<div class="rs-footer">
+  <div class="rs-footer-links">
+    <a class="rs-footer-link" href="catalog/">Full catalog (96 technologies) →</a>
+    <a class="rs-footer-link" href="dependency-graph.html">Dependency graph →</a>
+    <a class="rs-footer-link" href="autonomy-map.html">Autonomy map →</a>
+    <a class="rs-footer-link" href="card-builder.html">Add a technology →</a>
+  </div>
+</div>
+
+{% endraw %}
