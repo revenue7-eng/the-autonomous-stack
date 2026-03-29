@@ -207,6 +207,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Node-RED](node-red.md) | **A3** | **T2** | Flow-based visual automation tool built on Node.js. |
 | [Zapier](zapier.md) | **A0** | **T0** | Cloud-based workflow automation platform. |
 
+### Bookmarks
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Linkding](linkding.md) | **A3** | **T2** | Minimal self-hosted bookmark manager. |
+
 ### CI/CD
 
 | Technology | Autonomy | Transparency | Description |
@@ -238,21 +244,30 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Docmost](docmost.md) | **A3** | **T2** | Open-source, self-hosted documentation and wiki platform. |
 | [Confluence](confluence.md) | **A0** | **T0** | Proprietary wiki and collaboration platform by Atlassian. |
 
-### General
+### Downloads
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [qBittorrent](qbittorrent.md) | **A3** | **T2** | Open-source BitTorrent client with a web UI. |
+
+### Files
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [File Browser](filebrowser.md) | **A3** | **T2** | Web-based file manager. |
+
+### Finance
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Actual Budget](actual-budget.md) | **A3** | **T2** | Local-first personal finance and budgeting app. |
-| [File Browser](filebrowser.md) | **A3** | **T2** | Web-based file manager. |
-| [FreshRSS](freshrss.md) | **A3** | **T2** | Self-hosted RSS/Atom feed aggregator. |
+
+### Household
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
 | [Grocy](grocy.md) | **A3** | **T2** | Self-hosted grocery and household management. |
-| [Apache Guacamole](guacamole.md) | **A3** | **T2** | Clientless remote desktop gateway. |
-| [Linkding](linkding.md) | **A3** | **T2** | Minimal self-hosted bookmark manager. |
 | [Mealie](mealie.md) | **A3** | **T2** | Self-hosted recipe manager and meal planner. |
-| [qBittorrent](qbittorrent.md) | **A3** | **T2** | Open-source BitTorrent client with a web UI. |
-| [RustDesk](rustdesk.md) | **A3** | **T2** | Self-hosted remote desktop application written in Rust. |
-| [SearXNG](searxng.md) | **A3** | **T2** | Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking users. |
-| [Wallabag](wallabag.md) | **A3** | **T2** | Self-hosted read-it-later service. |
 
 ### Media
 
@@ -266,6 +281,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Sonarr](sonarr.md) | **A3** | **T2** | Automated TV series collection manager. |
 | [Piped](piped.md) | **A2** | **T2** | Privacy-friendly YouTube frontend. |
 | [Plex](plex.md) | **A1** | **T0** | Media server that organises and streams your personal media collection. |
+
+### News & RSS
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [FreshRSS](freshrss.md) | **A3** | **T2** | Self-hosted RSS/Atom feed aggregator. |
 
 ### Notes
 
@@ -281,6 +302,25 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Immich](immich.md) | **A3** | **T2** | Self-hosted photo and video backup solution with a focus on user experience, automatic organisation, and machine learnin... |
 | [PhotoPrism](photoprism.md) | **A3** | **T2** | AI-powered self-hosted photo management. |
+
+### Reading
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Wallabag](wallabag.md) | **A3** | **T2** | Self-hosted read-it-later service. |
+
+### Remote Access
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Apache Guacamole](guacamole.md) | **A3** | **T2** | Clientless remote desktop gateway. |
+| [RustDesk](rustdesk.md) | **A3** | **T2** | Self-hosted remote desktop application written in Rust. |
+
+### Search
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [SearXNG](searxng.md) | **A3** | **T2** | Privacy-respecting metasearch engine that aggregates results from 70+ search engines without tracking users. |
 
 ### Version Control
 
