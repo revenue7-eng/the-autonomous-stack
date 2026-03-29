@@ -90,18 +90,40 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 ## Compute
 
+### Containers
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
+| [Dockge](dockge.md) | **A3** | **T2** | Simple, reactive Docker Compose manager with a web UI. |
+| [Podman](podman.md) | **A3** | **T2** | Daemonless, rootless container engine compatible with Docker CLI. |
+| [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
+| [Watchtower](watchtower.md) | **A3** | **T2** | Automated Docker container updater. |
+
+### Inference
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
+
+### Operating System
+
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Debian](debian.md) | **A3** | **T2** | The universal operating system. |
-| [Docker](docker.md) | **A3** | **T2** | Platform for developing, shipping, and running applications in lightweight containers. |
-| [Dockge](dockge.md) | **A3** | **T2** | Simple, reactive Docker Compose manager with a web UI. |
-| [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
-| [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
-| [Podman](podman.md) | **A3** | **T2** | Daemonless, rootless container engine compatible with Docker CLI. |
-| [Portainer](portainer.md) | **A3** | **T2** | Web-based GUI for managing Docker, Kubernetes, and Swarm environments. |
-| [Proxmox VE](proxmox.md) | **A3** | **T2** | Open-source server virtualization platform. |
 | [Ubuntu Server](ubuntu-server.md) | **A3** | **T2** | The most widely deployed Linux server distribution. |
-| [Watchtower](watchtower.md) | **A3** | **T2** | Automated Docker container updater. |
+
+### Orchestration
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [K3s](k3s.md) | **A3** | **T2** | Lightweight certified Kubernetes distribution built for edge, IoT, and resource‑constrained environments. |
+
+### Virtualization
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Proxmox VE](proxmox.md) | **A3** | **T2** | Open-source server virtualization platform. |
 
 ---
 
