@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Mull"
 category: "mobile/browser"
 status: "stable"

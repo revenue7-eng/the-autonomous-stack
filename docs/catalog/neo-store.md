@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Neo Store"
 category: "mobile/app-store"
 status: "stable"

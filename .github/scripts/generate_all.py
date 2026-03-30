@@ -200,9 +200,6 @@ def load_cards():
         if not fm:
             continue
 
-        if fm.get('nav_exclude', '').lower() == 'true':
-            continue
-
         title = fm.get('title', filename.replace('.md', '').replace('-', ' ').title())
         category = fm.get('category', 'other')
         autonomy = fm.get('autonomy_level', '—')

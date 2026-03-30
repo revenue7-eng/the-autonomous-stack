@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Aegis Authenticator"
 category: "security/2fa"
 status: "stable"

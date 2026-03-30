@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "F-Droid"
 category: "mobile/app-store"
 status: "stable"

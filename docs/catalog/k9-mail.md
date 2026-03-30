@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "K-9 Mail / Thunderbird"
 category: "communication/email"
 status: "stable"

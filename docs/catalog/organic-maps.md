@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Organic Maps"
 category: "mobile/navigation"
 status: "stable"

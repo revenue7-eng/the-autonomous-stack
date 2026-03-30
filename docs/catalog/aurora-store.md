@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Aurora Store"
 category: "mobile/app-store"
 status: "stable"

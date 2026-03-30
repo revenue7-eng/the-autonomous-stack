@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "LineageOS"
 category: "compute/os"
 status: "stable"

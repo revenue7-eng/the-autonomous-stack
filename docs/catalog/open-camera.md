@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Open Camera"
 category: "mobile/camera"
 status: "stable"

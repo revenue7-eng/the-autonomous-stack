@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Firefox"
 category: "mobile/browser"
 status: "stable"

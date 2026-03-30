@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "OsmAnd"
 category: "mobile/navigation"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "HeliBoard"
 category: "mobile/keyboard"
 status: "stable"

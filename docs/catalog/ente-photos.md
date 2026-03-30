@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Ente Photos"
 category: "applications/photos"
 status: "stable"

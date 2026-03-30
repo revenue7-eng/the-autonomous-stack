@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "FairEmail"
 category: "communication/email"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Briar"
 category: "communication/messaging"
 status: "stable"

@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "ente Auth"
 category: "security/2fa"
 status: "stable"

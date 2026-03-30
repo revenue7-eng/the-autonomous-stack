@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Brave"
 category: "mobile/browser"
 status: "stable"

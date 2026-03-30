@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "AntennaPod"
 category: "applications/media"
 status: "stable"

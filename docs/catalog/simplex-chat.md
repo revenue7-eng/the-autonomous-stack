@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "SimpleX Chat"
 category: "communication/messaging"
 status: "stable"

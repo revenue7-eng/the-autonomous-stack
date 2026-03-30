@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "NewPipe"
 category: "applications/media"
 status: "stable"

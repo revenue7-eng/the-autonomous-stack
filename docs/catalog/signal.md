@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Signal"
 category: "communication/messaging"
 status: "stable"

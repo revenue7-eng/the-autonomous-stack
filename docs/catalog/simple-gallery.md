@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Simple Gallery"
 category: "applications/photos"
 status: "stable"

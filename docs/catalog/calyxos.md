@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "CalyxOS"
 category: "compute/os"
 status: "stable"

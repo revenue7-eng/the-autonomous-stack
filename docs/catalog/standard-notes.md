@@ -1,4 +1,5 @@
 ---
+nav_exclude: true
 title: "Standard Notes"
 category: "applications/notes"
 status: "stable"
