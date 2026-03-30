@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*123 technologies evaluated.*
+*122 technologies evaluated.*
 
 ---
 
@@ -75,7 +75,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [MariaDB](mariadb.md) | **A3** | **T2** | Community-developed fork of MySQL created by MySQL's original author (Monty Widenius) after Oracle's acquisition. |
-| [MySQL](mysql.md) | **A3** | **T1** | The world's most widely deployed open-source relational database. |
+| [MySQL](mysql.md) | **A3** | **T2** | The world's most widely deployed open-source relational database. |
 | [PostgreSQL](postgresql.md) | **A3** | **T2** | The world's most advanced open-source relational database. |
 | [SQLite](sqlite.md) | **A3** | **T1** | The most widely deployed database engine in the world — embedded in every smartphone, browser, and operating system. |
 
@@ -202,7 +202,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
 | [Proton Mail](protonmail.md) | **A0** | **T1** | Encrypted email service with zero-knowledge architecture. |
-| [Tuta (Tutanota)](tuta.md) | **A0** | **T1** | End-to-end encrypted email and calendar. |
+| [Tuta (Tutanota)](tuta.md) | **A0** | **T2** | End-to-end encrypted email and calendar. |
 
 ### General
 
@@ -214,11 +214,11 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Briar](briar.md) | **A3** | **T2** | Peer-to-peer encrypted messenger that works over Tor, Wi-Fi, or Bluetooth. |
 | [Matrix / Element](matrix.md) | **A3** | **T2** | Matrix is an open standard for decentralized, end-to-end encrypted communication. |
 | [SimpleX Chat](simplex-chat.md) | **A3** | **T2** | Decentralized messenger with no user identifiers — no phone number, no username, no account. |
 | [Signal](signal.md) | **A2** | **T2** | End-to-end encrypted messenger with voice and video calls. |
 | [Telegram](telegram.md) | **A1** | **T0** | Cloud-based messaging platform. |
+| [Briar](briar.md) | **A0** | **T2** | Peer-to-peer encrypted messenger that works over Tor, Wi-Fi, or Bluetooth. |
 | [Slack](slack.md) | **A0** | **T0** | Cloud-based team messaging platform. |
 
 ---
@@ -410,14 +410,6 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
 | [Gitea](gitea.md) | **A3** | **T2** | Lightweight self-hosted Git service. |
-
----
-
-## Other
-
-| Technology | Autonomy | Transparency | Description |
-|------------|----------|--------------|-------------|
-| [Assessment Criteria (Formal)](assessment-criteria.md) | **—** | **—** | — |
 
 ---
 
