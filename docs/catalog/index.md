@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*122 technologies evaluated.*
+*123 technologies evaluated.*
 
 ---
 
@@ -83,7 +83,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
-| [Syncthing](syncthing.md) | **A3** | **T2** | Peer‑to‑peer file synchronisation tool that keeps folders in sync across multiple devices — without a central server, wi... |
+| [Syncthing](syncthing.md) | **A3** | **T2** | Peer-to-peer file synchronisation tool that keeps folders in sync across multiple devices — without a central server, wi... |
 | [Google Drive](google-drive.md) | **A0** | **T0** | Cloud file storage and synchronisation service by Google. |
 
 ---
@@ -303,7 +303,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
 | [Homepage](homepage.md) | **A3** | **T2** | Highly customizable, self-hosted application dashboard with Docker auto-discovery and over 100 service integrations. |
-| [Nextcloud](nextcloud.md) | **A3** | **T2** | Self-hosted cloud platform providing file sync, calendar, contacts, email, office documents, video calls, and more -- al... |
+| [Nextcloud](nextcloud.md) | **A3** | **T2** | Self-hosted cloud platform providing file sync, calendar, contacts, email, office documents, video calls, and more — all... |
 
 ### Documents
 
@@ -410,6 +410,14 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Forgejo](forgejo.md) | **A3** | **T2** | Self-hosted Git service with a focus on lightweight operation, open governance, and built-in CI/CD via Actions. |
 | [Gitea](gitea.md) | **A3** | **T2** | Lightweight self-hosted Git service. |
+
+---
+
+## Other
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Assessment Criteria (Formal)](assessment-criteria.md) | **—** | **—** | — |
 
 ---
 
