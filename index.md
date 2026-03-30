@@ -6,7 +6,11 @@ nav_order: 1
 
 # The Autonomous Stack
 
-**A simple, reproducible score for one specific question --- how much you actually control your data and infrastructure. Not security, not quality, not compliance --- autonomy. A formal checklist, not an expert opinion.**
+**A simple, reproducible score for one specific question --- how much you actually control your data and infrastructure.**
+
+Not security, not quality, not compliance --- autonomy. A formal checklist, not an expert opinion.
+
+Three yes/no questions --- can you stop it? can you leave with your data? can you roll back? --- determine your Autonomy Level (A0--A3). A separate check on source code openness determines Transparency (T0--T2). Five more questions reveal what the score doesn't show.
 
 TAS gives you three things: a way to **evaluate** any technology, a **catalog** of evaluated tools, and **recipes** to deploy them.
 
@@ -40,7 +44,7 @@ Read [whose.world](https://whose.world). Or see the [Philosophy](docs/philosophy
 
 *If your system requires an external account to function --- you don't control it.*
 
-TAS measures **autonomy** --- how much you control your data and infrastructure. Not quality, not security, not usability. A tool can be excellent and score A0. A low score is not a criticism --- it is a measurement.
+A tool can be excellent and score A0. A low score is not a criticism --- it is a measurement.
 
 ---
 
