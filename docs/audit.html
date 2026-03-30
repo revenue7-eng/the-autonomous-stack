@@ -3,23 +3,74 @@ layout: default
 title: "Run the Audit"
 nav_order: 3
 ---
+{% raw %}
+<style>
+.audit-hero { margin-bottom:2rem; }
+.audit-hero h1 { font-size:24px; margin-bottom:8px; }
+.audit-hero .audit-sub { font-size:14px; color:#666; line-height:1.6; }
 
-<h1>Run the Audit</h1>
+.audit-step { margin-bottom:2rem; }
+.audit-step-label { font-size:13px; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; padding-bottom:6px; border-bottom:1px solid #eee; }
 
-<p><a href="how-to-choose.html">&larr; Back to Infrastructure Audit framework</a></p>
+.audit-select-wrap { margin-bottom:12px; }
+.audit-select-wrap select { width:100%; max-width:500px; padding:8px 12px; border:1px solid #ccc; border-radius:6px; font-size:14px; background:white; }
+.audit-or { font-size:12px; color:#999; margin:8px 0; }
+.audit-url-wrap input { width:100%; max-width:500px; padding:8px 12px; border:1px solid #ddd; border-radius:6px; font-size:14px; background:#fafafa; }
+.audit-url-wrap input:focus { border-color:#1a73e8; background:white; outline:none; }
 
-<p style="color:#555;">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly. If the tool is in our catalog, compare with our rating. If not — submit it for review.</p>
+.audit-group { margin-bottom:1.5rem; }
+.audit-group-hint { font-size:12px; color:#888; margin-bottom:12px; }
 
-<hr>
+.audit-q { padding:12px 16px; border:1px solid #e8e8e8; border-radius:8px; background:white; margin-bottom:8px; transition:border-color .15s; }
+.audit-q:hover { border-color:#ccc; }
+.audit-q-head { display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.audit-q-num { font-size:14px; font-weight:600; color:#111; }
+.audit-q-tag { font-size:10px; padding:1px 6px; border-radius:3px; font-weight:500; }
+.audit-q-tag-s { background:#e8f0fe; color:#1a5fb4; }
+.audit-q-tag-d { background:#f3f4f6; color:#666; }
+.audit-q-text { font-size:13px; color:#555; margin-bottom:8px; line-height:1.5; }
+.audit-q-options { display:flex; gap:12px; flex-wrap:wrap; }
+.audit-q-options label { font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; }
 
-<p><strong>Step 1: What are you evaluating?</strong></p>
+.audit-live { position:sticky; top:16px; padding:16px; border-radius:10px; border:1px solid #e8e8e8; background:#fafbfc; margin-bottom:1.5rem; transition:all .2s; }
+.audit-live.has-data { border-color:#1a73e8; background:#f0f4ff; }
+.audit-live-label { font-size:11px; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+.audit-live-score { font-size:28px; font-weight:700; margin-bottom:4px; }
+.audit-live-meaning { font-size:12px; color:#555; line-height:1.4; }
+.audit-live-placeholder { font-size:13px; color:#bbb; }
 
-<div style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;margin-bottom:1.5rem;">
+.audit-rec { padding:12px 16px; border-radius:8px; margin-top:12px; font-size:13px; line-height:1.5; }
+.audit-rec-green { background:#f0f7f0; border-left:4px solid #1a8a4a; }
+.audit-rec-yellow { background:#fff8e1; border-left:4px solid #f09000; }
+.audit-rec-red { background:#fff0f0; border-left:4px solid #d32f2f; }
 
-  <div id="select-box" style="flex:1;min-width:200px;max-width:420px;padding:12px 14px;border:2px solid #1a73e8;border-radius:8px;background:#f0f4ff;transition:all .2s;">
-    <label for="tool-select" style="font-size:13px;font-weight:500;color:#1a73e8;display:block;margin-bottom:4px;">From catalog</label>
-    <select id="tool-select" onchange="onSelectTool()" style="width:100%;padding:6px 10px;border:1px solid #ccc;border-radius:4px;font-size:1em;background:white;">
-      <option value="">-- Select technology --</option>
+.audit-compare { padding:12px 16px; border-radius:8px; background:#f0f7f0; border-left:4px solid #1a8a4a; margin-top:12px; font-size:13px; }
+.audit-compare-score { font-size:20px; font-weight:700; margin:6px 0; }
+
+.audit-submit { padding:12px 16px; border-radius:8px; background:#fff8e1; border-left:4px solid #f09000; margin-top:12px; font-size:13px; }
+.audit-submit a { display:inline-block; margin-top:8px; padding:6px 14px; background:#f09000; color:white; border-radius:4px; text-decoration:none; font-size:13px; }
+.audit-submit a:hover { background:#d07800; }
+
+.audit-actions { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
+.audit-actions button { padding:6px 14px; border-radius:4px; font-size:13px; cursor:pointer; }
+.audit-btn-reset { background:#f8f8f8; border:1px solid #ccc; color:#555; }
+.audit-btn-copy { background:#f0f4ff; border:1px solid #1a73e8; color:#1a73e8; }
+
+.audit-layout { display:grid; grid-template-columns:1fr 280px; gap:24px; align-items:start; }
+@media (max-width:768px) { .audit-layout { grid-template-columns:1fr; } .audit-live { position:static; } }
+</style>
+
+<div class="audit-hero">
+  <h1>Run the Audit</h1>
+  <div class="audit-sub">Evaluate any technology in 8 questions. Get your autonomy and transparency levels instantly.<br>
+  <a href="how-to-choose.html" style="color:#1a73e8;font-size:13px;">&larr; Read the full framework</a></div>
+</div>
+
+<div class="audit-step">
+  <div class="audit-step-label">Step 1 — What are you evaluating?</div>
+  <div class="audit-select-wrap">
+    <select id="tool-select" onchange="onSelectTool()">
+      <option value="">Choose from catalog...</option>
 <!-- AUTO:AUDIT_OPTIONS:START -->
       <option value="1password" data-autonomy="A0" data-transparency="T0">1Password</option>
       <option value="actual-budget" data-autonomy="A3" data-transparency="T2">Actual Budget</option>
@@ -146,150 +197,153 @@ nav_order: 3
 <!-- AUTO:AUDIT_OPTIONS:END -->
     </select>
   </div>
-
-  <div style="display:flex;align-items:center;font-size:13px;font-weight:500;color:#999;">or</div>
-
-  <div id="url-box" style="flex:1;min-width:200px;max-width:420px;padding:12px 14px;border:2px solid #e0e0e0;border-radius:8px;background:#fafafa;transition:all .2s;">
-    <label for="project-url" style="font-size:13px;font-weight:500;color:#888;display:block;margin-bottom:4px;">Not in catalog — enter URL</label>
-    <input type="text" id="project-url" placeholder="https://github.com/... or https://example.com"
-      oninput="onTypeUrl()"
-      style="width:100%;padding:6px 10px;border:1px solid #ccc;border-radius:4px;font-size:1em;">
-  </div>
-
-</div>
-
-<hr>
-
-<p><strong>Step 2: Answer the questions</strong></p>
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">1. Pause <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
-  <div style="margin-bottom:8px;color:#444;">Can you stop this service right now -- and nothing breaks permanently?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="pause" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="pause" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="pause" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="pause" value="unknown" onchange="updateResult()"> Unknown</label>
+  <div class="audit-or">Not in the catalog? Enter the project URL:</div>
+  <div class="audit-url-wrap">
+    <input type="text" id="project-url" placeholder="https://github.com/... or https://example.com" oninput="onTypeUrl()">
   </div>
 </div>
 
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">2. Exit <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
-  <div style="margin-bottom:8px;color:#444;">Can you leave this service and take everything with you?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="exit" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="exit" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="exit" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="exit" value="unknown" onchange="updateResult()"> Unknown</label>
+<div class="audit-layout">
+<div>
+
+<div class="audit-step">
+  <div class="audit-step-label">Step 2 — Structural questions</div>
+  <div class="audit-group">
+    <div class="audit-group-hint">These three determine your Autonomy Level (A0–A3).</div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">1. Pause</span><span class="audit-q-tag audit-q-tag-s">structural</span></div>
+      <div class="audit-q-text">Can you stop this service right now — and nothing breaks permanently?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="pause" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="pause" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="pause" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="pause" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">2. Exit</span><span class="audit-q-tag audit-q-tag-s">structural</span></div>
+      <div class="audit-q-text">Can you leave this service and take everything with you?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="exit" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="exit" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="exit" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="exit" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">3. Recoverability</span><span class="audit-q-tag audit-q-tag-s">structural</span></div>
+      <div class="audit-q-text">If something goes wrong, can you go back?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="recovery" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="recovery" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="recovery" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="recovery" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
   </div>
 </div>
 
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">3. Recoverability <span style="font-size:0.75em;color:#1a73e8;font-weight:normal;margin-left:6px;">structural</span></div>
-  <div style="margin-bottom:8px;color:#444;">If something goes wrong, can you go back?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="recovery" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="recovery" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="recovery" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="recovery" value="unknown" onchange="updateResult()"> Unknown</label>
+<div class="audit-step">
+  <div class="audit-step-label">Step 3 — Diagnostic questions</div>
+  <div class="audit-group">
+    <div class="audit-group-hint">These reveal what the rating doesn't show — what pulls at you.</div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">4. Personalisation</span><span class="audit-q-tag audit-q-tag-d">diagnostic</span></div>
+      <div class="audit-q-text">Does this service collect data about you to shape your experience?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="personal" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="personal" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="personal" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="personal" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">5. Urgency</span><span class="audit-q-tag audit-q-tag-d">diagnostic</span></div>
+      <div class="audit-q-text">Does this service pressure you to act before you are ready?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="urgency" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="urgency" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="urgency" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="urgency" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">6. Hidden cost</span><span class="audit-q-tag audit-q-tag-d">diagnostic</span></div>
+      <div class="audit-q-text">What do you pay besides money? (attention, data, lock-in)</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="hidden" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="hidden" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="hidden" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="hidden" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">7. Transparency fragility</span><span class="audit-q-tag audit-q-tag-d">diagnostic</span></div>
+      <div class="audit-q-text">Would you still use it if you saw everything about how it works?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="transfrag" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="transfrag" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="transfrag" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="transfrag" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">8. Trajectory</span><span class="audit-q-tag audit-q-tag-d">diagnostic</span></div>
+      <div class="audit-q-text">Is this project moving toward openness — or away from it?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="trajectory" value="yes" onchange="updateResult()"> Yes</label>
+        <label><input type="radio" name="trajectory" value="partial" onchange="updateResult()"> Partial</label>
+        <label><input type="radio" name="trajectory" value="no" onchange="updateResult()"> No</label>
+        <label><input type="radio" name="trajectory" value="unknown" onchange="updateResult()"> Unknown</label>
+      </div>
+    </div>
   </div>
 </div>
 
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">4. Personalisation</div>
-  <div style="margin-bottom:8px;color:#444;">Does this service collect data about you to shape your experience?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="personal" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="personal" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="personal" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="personal" value="unknown" onchange="updateResult()"> Unknown</label>
+<div class="audit-step">
+  <div class="audit-step-label">Step 4 — Transparency</div>
+  <div class="audit-group">
+    <div class="audit-group-hint">A separate axis. Not about control — about visibility.</div>
+    <div class="audit-q">
+      <div class="audit-q-head"><span class="audit-q-num">Transparency level</span></div>
+      <div class="audit-q-text">Is the source code publicly available?</div>
+      <div class="audit-q-options">
+        <label><input type="radio" name="tlevel" value="T2" onchange="updateResult()"> T2 — Open source (OSI license)</label>
+        <label><input type="radio" name="tlevel" value="T1" onchange="updateResult()"> T1 — Documented but closed</label>
+        <label><input type="radio" name="tlevel" value="T0" onchange="updateResult()"> T0 — Closed, no source</label>
+      </div>
+    </div>
   </div>
 </div>
 
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">5. Urgency</div>
-  <div style="margin-bottom:8px;color:#444;">Does this service pressure you to act before you are ready?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="urgency" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="urgency" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="urgency" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="urgency" value="unknown" onchange="updateResult()"> Unknown</label>
-  </div>
+<div class="audit-actions">
+  <button class="audit-btn-reset" onclick="resetAudit()">Reset</button>
+  <button class="audit-btn-copy" id="copy-btn" style="display:none;" onclick="copyResult()">Copy result</button>
 </div>
 
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">6. Hidden cost</div>
-  <div style="margin-bottom:8px;color:#444;">What do you pay besides money? (attention, data, lock-in)</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="hidden" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="hidden" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="hidden" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="hidden" value="unknown" onchange="updateResult()"> Unknown</label>
+</div>
+<div>
+  <div class="audit-live" id="audit-live">
+    <div class="audit-live-label">Your assessment</div>
+    <div id="live-placeholder" class="audit-live-placeholder">Answer the structural questions to see your score.</div>
+    <div id="live-score" style="display:none;">
+      <div class="audit-live-score" id="user-level"></div>
+      <div class="audit-live-meaning" id="user-detail"></div>
+    </div>
+    <div id="recommendation" style="display:none;" class="audit-rec"></div>
+    <div id="tas-comparison" style="display:none;" class="audit-compare">
+      <strong>TAS catalog rating</strong>
+      <div class="audit-compare-score" id="tas-level"></div>
+      <div id="tas-detail" style="font-size:12px;"></div>
+    </div>
+    <div id="submit-box" style="display:none;" class="audit-submit">
+      <strong>Not in the catalog yet</strong>
+      <p style="margin:6px 0;">Think it should be? This opens a GitHub Issue with your answers pre-filled — you review before publishing.</p>
+      <a id="submit-link" href="" target="_blank">Open GitHub Issue with your results &rarr;</a>
+      <p style="margin-top:6px;font-size:11px;color:#888;">No data is collected by our site.</p>
+    </div>
   </div>
 </div>
-
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">7. Transparency fragility</div>
-  <div style="margin-bottom:8px;color:#444;">Would you still use it if you saw everything about how it works?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="transfrag" value="unknown" onchange="updateResult()"> Unknown</label>
-  </div>
-</div>
-
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">8. Trajectory</div>
-  <div style="margin-bottom:8px;color:#444;">Is this project moving toward openness -- or away from it?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="yes" onchange="updateResult()"> Yes</label>
-    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="partial" onchange="updateResult()"> Partial</label>
-    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="no" onchange="updateResult()"> No</label>
-    <label style="cursor:pointer;"><input type="radio" name="trajectory" value="unknown" onchange="updateResult()"> Unknown</label>
-  </div>
-</div>
-
-<div style="margin-bottom:1rem;padding:0.8rem;border:1px solid #e0e0e0;border-radius:6px;background:white;">
-  <div style="font-weight:bold;margin-bottom:4px;">Transparency level</div>
-  <div style="margin-bottom:8px;color:#444;">Is the source code publicly available?</div>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;">
-    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T2" onchange="updateResult()"> T2 -- Open source (OSI license)</label>
-    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T1" onchange="updateResult()"> T1 -- Documented but closed</label>
-    <label style="cursor:pointer;"><input type="radio" name="tlevel" value="T0" onchange="updateResult()"> T0 -- Closed, no source</label>
-  </div>
-</div>
-
-<div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap;">
-  <button onclick="resetAudit()" style="padding:8px 16px;background:#f8f8f8;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.95em;">Reset</button>
-  <button onclick="copyResult()" id="copy-btn" style="display:none;padding:8px 16px;background:#f0f4ff;border:1px solid #1a73e8;color:#1a73e8;border-radius:4px;cursor:pointer;font-size:0.95em;">Copy result</button>
-</div>
-
-<div id="audit-result" style="display:none;margin-top:1.5rem;">
-
-  <div style="padding:1rem;background:#f8f9fa;border-left:4px solid #1a73e8;border-radius:4px;margin-bottom:1rem;">
-    <strong>Your assessment</strong>
-    <div id="user-level" style="font-size:1.5em;font-weight:bold;margin:8px 0;"></div>
-    <div id="user-detail" style="font-size:0.9em;color:#555;"></div>
-  </div>
-
-  <div id="recommendation" style="display:none;padding:1rem;border-radius:4px;margin-bottom:1rem;"></div>
-
-  <div id="tas-comparison" style="display:none;padding:1rem;background:#f0f7f0;border-left:4px solid #1a8a4a;border-radius:4px;margin-bottom:1rem;">
-    <strong>TAS catalog rating</strong>
-    <div id="tas-level" style="font-size:1.5em;font-weight:bold;margin:8px 0;"></div>
-    <div id="tas-detail" style="font-size:0.9em;"></div>
-  </div>
-
-  <div id="submit-box" style="display:none;padding:1rem;background:#fff8e1;border-left:4px solid #f09000;border-radius:4px;margin-bottom:1rem;">
-    <strong>Not in the catalog yet</strong>
-    <p style="margin:8px 0;font-size:0.9em;">Think it should be? Share your audit results with us. This opens a GitHub Issue with your answers pre-filled -- you review it before publishing.</p>
-    <a id="submit-link" href="" target="_blank"
-      style="display:inline-block;padding:8px 16px;background:#f09000;color:white;border-radius:4px;text-decoration:none;font-size:0.95em;">
-      Open GitHub Issue with your results &rarr;
-    </a>
-    <p style="margin-top:8px;font-size:0.8em;color:#888;">No data is collected by our site. The issue is created by you on GitHub.</p>
-  </div>
-
 </div>
 
 <script>
@@ -298,44 +352,17 @@ var qLabels = ['1. Pause','2. Exit','3. Recoverability','4. Personalisation','5.
 var levelColors = { A3:'#1a8a4a', A2:'#1a73e8', A1:'#f09000', A0:'#d32f2f' };
 var tLevelColors = { T2:'#1a8a4a', T1:'#1a73e8', T0:'#d32f2f' };
 var levelMeaning = {
-  A3:'Fully autonomous -- you control it completely',
-  A2:'Mostly autonomous -- minor dependencies remain',
-  A1:'Partial dependency -- significant cloud or vendor reliance',
-  A0:'Cloud-bound -- you are renting, not owning'
+  A3:'Fully autonomous — you control it completely',
+  A2:'Mostly autonomous — minor dependencies remain',
+  A1:'Partial dependency — significant cloud or vendor reliance',
+  A0:'Cloud-bound — you are renting, not owning'
 };
-
-var selectedSlug = '';
-var selectedTasAutonomy = '';
-var selectedTasTransparency = '';
-var selectedName = '';
-
-function highlightSelect() {
-  document.getElementById('select-box').style.border = '2px solid #1a73e8';
-  document.getElementById('select-box').style.background = '#f0f4ff';
-  document.getElementById('url-box').style.border = '2px solid #e0e0e0';
-  document.getElementById('url-box').style.background = '#fafafa';
-}
-
-function highlightUrl() {
-  document.getElementById('url-box').style.border = '2px solid #1a73e8';
-  document.getElementById('url-box').style.background = '#f0f4ff';
-  document.getElementById('select-box').style.border = '2px solid #e0e0e0';
-  document.getElementById('select-box').style.background = '#fafafa';
-}
-
-function highlightNeither() {
-  document.getElementById('select-box').style.border = '2px solid #e0e0e0';
-  document.getElementById('select-box').style.background = '#fafafa';
-  document.getElementById('url-box').style.border = '2px solid #e0e0e0';
-  document.getElementById('url-box').style.background = '#fafafa';
-}
+var selectedSlug = '', selectedTasAutonomy = '', selectedTasTransparency = '', selectedName = '';
 
 function getProjectName() {
   if (selectedName) return selectedName;
   var url = document.getElementById('project-url').value.trim();
-  if (url) {
-    try { return new URL(url).hostname.replace('www.',''); } catch(e) { return url; }
-  }
+  if (url) { try { return new URL(url).hostname.replace('www.',''); } catch(e) { return url; } }
   return '';
 }
 
@@ -343,136 +370,111 @@ function onSelectTool() {
   var sel = document.getElementById('tool-select');
   var opt = sel.options[sel.selectedIndex];
   if (opt.value) {
-    document.getElementById('project-url').value = '';
     selectedSlug = opt.value;
-    selectedTasAutonomy = opt.getAttribute('data-autonomy') || '';
-    selectedTasTransparency = opt.getAttribute('data-transparency') || '';
-    selectedName = opt.text;
-    highlightSelect();
+    selectedTasAutonomy = opt.getAttribute('data-autonomy');
+    selectedTasTransparency = opt.getAttribute('data-transparency');
+    selectedName = opt.textContent;
+    document.getElementById('project-url').value = '';
   } else {
-    selectedSlug = '';
-    selectedTasAutonomy = '';
-    selectedTasTransparency = '';
-    selectedName = '';
-    highlightNeither();
+    selectedSlug = ''; selectedTasAutonomy = ''; selectedTasTransparency = ''; selectedName = '';
   }
   updateResult();
 }
 
 function onTypeUrl() {
-  var url = document.getElementById('project-url').value.trim();
-  document.getElementById('tool-select').value = '';
-  selectedSlug = '';
-  selectedTasAutonomy = '';
-  selectedTasTransparency = '';
-  selectedName = '';
-  if (url) {
-    highlightUrl();
-  } else {
-    highlightNeither();
+  if (document.getElementById('project-url').value.trim()) {
+    document.getElementById('tool-select').value = '';
+    selectedSlug = ''; selectedTasAutonomy = ''; selectedTasTransparency = ''; selectedName = '';
   }
   updateResult();
 }
 
 function updateResult() {
-  var structural = [];
-  var answered = 0;
-  var answers = {};
-
+  var answers = {}, structural = [], answered = 0;
   for (var i = 0; i < qNames.length; i++) {
     var sel = document.querySelector('input[name="' + qNames[i] + '"]:checked');
-    if (sel) {
-      answered++;
-      answers[qNames[i]] = sel.value;
-      if (i < 3) structural.push(sel.value);
-    } else {
-      answers[qNames[i]] = null;
-      if (i < 3) structural.push(null);
-    }
+    if (sel) { answered++; answers[qNames[i]] = sel.value; if (i < 3) structural.push(sel.value); }
+    else { answers[qNames[i]] = null; if (i < 3) structural.push(null); }
   }
-
   var tsel = document.querySelector('input[name="tlevel"]:checked');
   var tLevel = tsel ? tsel.value : '?';
+  var sAnswered = structural.filter(function(s) { return s !== null; }).length;
 
-  if (answered === 0) {
-    document.getElementById('audit-result').style.display = 'none';
+  if (sAnswered === 0) {
+    document.getElementById('live-placeholder').style.display = 'block';
+    document.getElementById('live-score').style.display = 'none';
+    document.getElementById('recommendation').style.display = 'none';
     document.getElementById('copy-btn').style.display = 'none';
+    document.getElementById('tas-comparison').style.display = 'none';
+    document.getElementById('submit-box').style.display = 'none';
+    document.getElementById('audit-live').classList.remove('has-data');
     return;
   }
 
   var yes = 0;
-  for (var i = 0; i < structural.length; i++) {
-    if (structural[i] === 'yes') yes++;
-  }
+  for (var i = 0; i < structural.length; i++) { if (structural[i] === 'yes') yes++; }
   var aLevel = yes === 3 ? 'A3' : yes === 2 ? 'A2' : yes === 1 ? 'A1' : 'A0';
 
-  document.getElementById('audit-result').style.display = 'block';
-  document.getElementById('copy-btn').style.display = 'inline-block';
+  document.getElementById('live-placeholder').style.display = 'none';
+  document.getElementById('live-score').style.display = 'block';
+  document.getElementById('audit-live').classList.add('has-data');
 
   var levelHtml = '<span style="color:' + levelColors[aLevel] + '">' + aLevel + '</span>';
-  if (tLevel !== '?') {
-    levelHtml += ' / <span style="color:' + (tLevelColors[tLevel] || '#888') + '">' + tLevel + '</span>';
-  }
+  if (tLevel !== '?') levelHtml += ' / <span style="color:' + (tLevelColors[tLevel] || '#888') + '">' + tLevel + '</span>';
   document.getElementById('user-level').innerHTML = levelHtml;
-  document.getElementById('user-detail').textContent = levelMeaning[aLevel];
+  document.getElementById('user-detail').textContent = sAnswered < 3 ? 'Answer all 3 structural questions for final A-level.' : levelMeaning[aLevel];
+
+  if (sAnswered === 3) document.getElementById('copy-btn').style.display = 'inline-block';
 
   var rec = document.getElementById('recommendation');
-  if (aLevel === 'A3' && tLevel === 'T2') {
+  if (sAnswered === 3) {
     rec.style.display = 'block';
-    rec.style.background = '#f0f7f0';
-    rec.style.borderLeft = '4px solid #1a8a4a';
-    rec.innerHTML = '<strong style="color:#1a8a4a;">Fully autonomous and transparent.</strong><br><span style="font-size:0.9em;color:#555;">This tool passes all structural criteria and is open source. Maintain it -- backups, updates, monitoring.</span>';
-  } else if (aLevel === 'A0' || aLevel === 'A1') {
-    rec.style.display = 'block';
-    rec.style.background = '#fff0f0';
-    rec.style.borderLeft = '4px solid #d32f2f';
-    rec.innerHTML = '<strong style="color:#d32f2f;">Significant dependencies detected.</strong><br><span style="font-size:0.9em;color:#555;">Consider autonomous alternatives from the <a href="catalog/" style="color:#1a73e8;">Technology Catalog</a>.</span>';
-  } else {
-    rec.style.display = 'block';
-    rec.style.background = '#fff8e1';
-    rec.style.borderLeft = '4px solid #f09000';
-    rec.innerHTML = '<strong style="color:#f09000;">Partial autonomy.</strong><br><span style="font-size:0.9em;color:#555;">Some dependencies remain. Review the diagnostic questions to understand what is pulling at you.</span>';
-  }
+    if (aLevel === 'A3' && tLevel === 'T2') {
+      rec.className = 'audit-rec audit-rec-green';
+      rec.innerHTML = '<strong style="color:#1a8a4a;">Fully autonomous and transparent.</strong><br>This tool passes all structural criteria and is open source. Maintain it — backups, updates, monitoring.';
+    } else if (aLevel === 'A0' || aLevel === 'A1') {
+      rec.className = 'audit-rec audit-rec-red';
+      rec.innerHTML = '<strong style="color:#d32f2f;">Significant dependencies detected.</strong><br>Consider autonomous alternatives from the <a href="catalog/" style="color:#1a73e8;">Technology Catalog</a>.';
+    } else {
+      rec.className = 'audit-rec audit-rec-yellow';
+      rec.innerHTML = '<strong style="color:#f09000;">Partial autonomy.</strong><br>Some dependencies remain. Review the diagnostic questions to understand what is pulling at you.';
+    }
+  } else { rec.style.display = 'none'; }
 
-  if (selectedSlug && selectedTasAutonomy) {
-    var tasLevel = selectedTasAutonomy;
+  if (sAnswered === 3 && selectedSlug && selectedTasAutonomy) {
     document.getElementById('tas-comparison').style.display = 'block';
-    document.getElementById('tas-level').innerHTML = '<span style="color:' + levelColors[tasLevel] + '">' + tasLevel + ' / ' + selectedTasTransparency + '</span>';
-    var commentary = (tasLevel === aLevel) ? 'Your assessment matches our catalog rating.' : 'Your assessment differs from ours (' + aLevel + ' vs ' + tasLevel + '). The difference may reflect your specific setup or use case.';
-    document.getElementById('tas-detail').innerHTML = commentary + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
+    document.getElementById('tas-level').innerHTML = '<span style="color:' + levelColors[selectedTasAutonomy] + '">' + selectedTasAutonomy + ' / ' + selectedTasTransparency + '</span>';
+    var cmt = (selectedTasAutonomy === aLevel) ? 'Your assessment matches our catalog rating.' : 'Your assessment differs from ours (' + aLevel + ' vs ' + selectedTasAutonomy + '). The difference may reflect your specific setup or use case.';
+    document.getElementById('tas-detail').innerHTML = cmt + ' <a href="catalog/' + selectedSlug + '.html" style="color:#1a73e8;">Read our full analysis &rarr;</a>';
     document.getElementById('submit-box').style.display = 'none';
-  } else {
+  } else if (sAnswered === 3) {
     document.getElementById('tas-comparison').style.display = 'none';
     var url = document.getElementById('project-url').value.trim();
     if (url) {
       var name = getProjectName();
       var body = '## Catalog submission\n\n**Project URL:** ' + url + '\n**Assessment:** ' + aLevel + ' / ' + tLevel + '\n\n### Answers\n\n';
-      for (var i = 0; i < qNames.length; i++) {
-        body += '- **' + qLabels[i] + ':** ' + (answers[qNames[i]] || 'not answered') + '\n';
-      }
+      for (var i = 0; i < qNames.length; i++) body += '- **' + qLabels[i] + ':** ' + (answers[qNames[i]] || 'not answered') + '\n';
       body += '- **Transparency level:** ' + tLevel + '\n\n**Why it should be in the catalog:**\n\n(please add your reasoning)\n';
       var issueUrl = 'https://github.com/revenue7-eng/the-autonomous-stack/issues/new?title=' + encodeURIComponent('Catalog submission: ' + (name || url)) + '&body=' + encodeURIComponent(body) + '&labels=catalog-submission';
       document.getElementById('submit-link').href = issueUrl;
       document.getElementById('submit-box').style.display = 'block';
-    } else {
-      document.getElementById('submit-box').style.display = 'none';
-    }
+    } else { document.getElementById('submit-box').style.display = 'none'; }
   }
 }
-
 
 function resetAudit() {
   document.getElementById('tool-select').value = '';
   document.getElementById('project-url').value = '';
-  highlightNeither();
   var radios = document.querySelectorAll('input[type=radio]');
   for (var i = 0; i < radios.length; i++) radios[i].checked = false;
-  document.getElementById('audit-result').style.display = 'none';
+  selectedSlug = ''; selectedTasAutonomy = ''; selectedTasTransparency = ''; selectedName = '';
+  document.getElementById('live-placeholder').style.display = 'block';
+  document.getElementById('live-score').style.display = 'none';
+  document.getElementById('recommendation').style.display = 'none';
   document.getElementById('copy-btn').style.display = 'none';
-  selectedSlug = '';
-  selectedTasAutonomy = '';
-  selectedTasTransparency = '';
-  selectedName = '';
+  document.getElementById('tas-comparison').style.display = 'none';
+  document.getElementById('submit-box').style.display = 'none';
+  document.getElementById('audit-live').classList.remove('has-data');
 }
 
 function copyResult() {
@@ -488,16 +490,11 @@ function copyResult() {
   var aLevel = structural.length === 3 ? 'A3' : structural.length === 2 ? 'A2' : structural.length === 1 ? 'A1' : 'A0';
   var name = selectedName || getProjectName() || 'Unknown';
   var url = document.getElementById('project-url').value.trim();
-
   var text = 'TAS Audit: ' + name + '\n';
   if (url) text += 'URL: ' + url + '\n';
   text += 'Result: ' + aLevel + ' / ' + tLevel + '\n\n';
-  for (var i = 0; i < qNames.length; i++) {
-    text += qLabels[i] + ': ' + answers[qNames[i]] + '\n';
-  }
-  text += 'Transparency: ' + tLevel + '\n';
-  text += '\nhttps://revenue7-eng.github.io/the-autonomous-stack/docs/audit.html';
-
+  for (var i = 0; i < qNames.length; i++) text += qLabels[i] + ': ' + answers[qNames[i]] + '\n';
+  text += 'Transparency: ' + tLevel + '\n\nhttps://revenue7-eng.github.io/the-autonomous-stack/audit.html';
   if (navigator.clipboard) {
     navigator.clipboard.writeText(text);
     document.getElementById('copy-btn').textContent = 'Copied!';
@@ -505,3 +502,4 @@ function copyResult() {
   }
 }
 </script>
+{% endraw %}
