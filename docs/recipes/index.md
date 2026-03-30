@@ -15,3 +15,7 @@ Tested configurations that combine multiple technologies into working autonomous
 - [Privacy-First Homelab](privacy-first-homelab.md) -- extends the Minimal Server with password management, reverse proxy, cloud platform, and smart home automation. Replaces Google Drive, LastPass, Alexa, and ISP DNS with fully autonomous alternatives.
 
 - [Developer Workstation](developer-workstation.md) -- self-hosted development environment with Git, CI/CD, container registry, secrets management, metrics, and dotfile sync. Replaces GitHub, Docker Hub, 1Password, and Datadog.
+
+## Mobile Recipes
+
+- [GrapheneOS Mobile Stack](grapheneos-mobile.md) -- a fully autonomous phone. OS, app store, messaging, email, photos, maps, passwords, 2FA — no Google account needed. Start here if servers feel too far away.
