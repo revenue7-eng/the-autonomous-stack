@@ -83,33 +83,33 @@ nav_order: 3
 <div class="mob-section-title">Operating Systems</div>
 
 <div class="mob-os-cards">
-  <div class="mob-os">
+  <a class="mob-os" href="catalog/grapheneos.html">
     <div class="mo-name">GrapheneOS <span class="mob-badge mob-badge-green">A3/T2</span></div>
     <div class="mo-desc">Hardened Android without Google. Sandboxed Play Services available if needed. Pixel devices only.</div>
     <div class="mo-replaces">Replaces: <b>Stock Android + Google Play Services</b></div>
     <div class="mo-tags"><span class="mo-tag">Pixel only</span><span class="mo-tag">No Google by default</span><span class="mo-tag">Verified boot</span></div>
-  </div>
-  <div class="mob-os">
+  </a>
+  <a class="mob-os" href="catalog/calyxos.html">
     <div class="mo-name">CalyxOS <span class="mob-badge mob-badge-green">A3/T2</span></div>
     <div class="mo-desc">Privacy-focused Android with microG. Easier transition from stock Android — some Google compatibility built in.</div>
     <div class="mo-replaces">Replaces: <b>Stock Android</b></div>
     <div class="mo-tags"><span class="mo-tag">Pixel + some others</span><span class="mo-tag">microG included</span><span class="mo-tag">F-Droid built in</span></div>
-  </div>
-  <div class="mob-os">
+  </a>
+  <a class="mob-os" href="catalog/lineageos.html">
     <div class="mo-name">LineageOS <span class="mob-badge mob-badge-green">A3/T2</span></div>
     <div class="mo-desc">The longest-running custom Android. Supports 200+ devices. No Google services by default.</div>
     <div class="mo-replaces">Replaces: <b>Stock Android</b></div>
     <div class="mo-tags"><span class="mo-tag">200+ devices</span><span class="mo-tag">Mature community</span><span class="mo-tag">Optional GApps</span></div>
-  </div>
+  </a>
 </div>
 
 <div class="mob-section-title">App Store</div>
 
 <div class="mob-group">
   <div class="mob-chips">
-    <span class="mob-chip" data-why="Open-source app catalogue. No account required, no tracking. The gateway to autonomous mobile."><span class="mc-name">F-Droid</span><span class="mc-replaces">→ Google Play</span></span>
-    <span class="mob-chip" data-why="Faster, more modern F-Droid client. Better UX, same repos."><span class="mc-name">Neo Store</span><span class="mc-replaces">→ F-Droid app</span></span>
-    <span class="mob-chip" data-why="Get Play Store apps without a Google account. Use when F-Droid doesn't have it."><span class="mc-name">Aurora Store</span><span class="mc-replaces">→ Google Play</span></span>
+    <a class="mob-chip" href="catalog/f-droid.html" data-why="Open-source app catalogue. No account required, no tracking. The gateway to autonomous mobile."><span class="mc-name">F-Droid</span><span class="mc-replaces">→ Google Play</span></a>
+    <a class="mob-chip" href="catalog/neo-store.html" data-why="Faster, more modern F-Droid client. Better UX, same repos."><span class="mc-name">Neo Store</span><span class="mc-replaces">→ F-Droid app</span></a>
+    <a class="mob-chip" href="catalog/aurora-store.html" data-why="Get Play Store apps without a Google account. Use when F-Droid doesn't have it."><span class="mc-name">Aurora Store</span><span class="mc-replaces">→ Google Play</span></a>
   </div>
 </div>
 
@@ -118,10 +118,10 @@ nav_order: 3
 <div class="mob-group">
   <div class="mob-group-title">Messaging</div>
   <div class="mob-chips">
-    <span class="mob-chip" data-why="End-to-end encrypted by default. Phone number required but no message storage on server."><span class="mc-name">Signal</span><span class="mc-replaces">→ WhatsApp</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/signal.html" data-why="End-to-end encrypted by default. Phone number required but no message storage on server."><span class="mc-name">Signal</span><span class="mc-replaces">→ WhatsApp</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
     <a class="mob-chip" href="catalog/matrix.html" data-why="Federated, encrypted. Self-host your server or pick one. Bridges to other networks."><span class="mc-name">Element (Matrix)</span><span class="mc-replaces">→ Slack / Discord</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
-    <span class="mob-chip" data-why="No phone number, no identity. Decentralized with double-ratchet encryption. Most private option."><span class="mc-name">SimpleX Chat</span><span class="mc-replaces">→ Telegram</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Decentralized, peer-to-peer messaging over Tor. No servers at all."><span class="mc-name">Briar</span><span class="mc-replaces">→ Messenger</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/simplex-chat.html" data-why="No phone number, no identity. Decentralized with double-ratchet encryption. Most private option."><span class="mc-name">SimpleX Chat</span><span class="mc-replaces">→ Telegram</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/briar.html" data-why="Decentralized, peer-to-peer messaging over Tor. No servers at all."><span class="mc-name">Briar</span><span class="mc-replaces">→ Messenger</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
@@ -130,8 +130,8 @@ nav_order: 3
   <div class="mob-chips">
     <a class="mob-chip" href="catalog/tuta.html" data-why="End-to-end encrypted email. Based in Germany. Own encryption protocol."><span class="mc-name">Tuta</span><span class="mc-replaces">→ Gmail</span><span class="mob-badge mob-badge-yellow">A2/T2</span></a>
     <a class="mob-chip" href="catalog/protonmail.html" data-why="Encrypted email from Switzerland. Bridge available for desktop clients."><span class="mc-name">Proton Mail</span><span class="mc-replaces">→ Gmail</span><span class="mob-badge mob-badge-yellow">A2/T1</span></a>
-    <span class="mob-chip" data-why="Full-featured Android email client. No tracking, no cloud, GPL licensed."><span class="mc-name">FairEmail</span><span class="mc-replaces">→ Gmail app</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Open-source email client. Works with any IMAP/POP3 provider."><span class="mc-name">K-9 Mail / Thunderbird</span><span class="mc-replaces">→ Gmail app</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/fairemail.html" data-why="Full-featured Android email client. No tracking, no cloud, GPL licensed."><span class="mc-name">FairEmail</span><span class="mc-replaces">→ Gmail app</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/k9-mail.html" data-why="Open-source email client. Works with any IMAP/POP3 provider."><span class="mc-name">K-9 Mail / Thunderbird</span><span class="mc-replaces">→ Gmail app</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
@@ -139,8 +139,8 @@ nav_order: 3
   <div class="mob-group-title">Photos & Gallery</div>
   <div class="mob-chips">
     <a class="mob-chip" href="catalog/immich.html" data-why="Self-hosted Google Photos. Auto-backup, face recognition, maps. Mobile app included."><span class="mc-name">Immich</span><span class="mc-replaces">→ Google Photos</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
-    <span class="mob-chip" data-why="End-to-end encrypted photo storage. Works without self-hosting. Family plans available."><span class="mc-name">Ente Photos</span><span class="mc-replaces">→ Google Photos</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Simple offline gallery. No cloud, no tracking. Just view your photos."><span class="mc-name">Simple Gallery</span><span class="mc-replaces">→ Google Gallery</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/ente-photos.html" data-why="End-to-end encrypted photo storage. Works without self-hosting. Family plans available."><span class="mc-name">Ente Photos</span><span class="mc-replaces">→ Google Photos</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/simple-gallery.html" data-why="Simple offline gallery. No cloud, no tracking. Just view your photos."><span class="mc-name">Simple Gallery</span><span class="mc-replaces">→ Google Gallery</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
@@ -149,24 +149,24 @@ nav_order: 3
   <div class="mob-chips">
     <a class="mob-chip" href="catalog/joplin.html" data-why="Markdown notes with E2E encryption. Sync via Nextcloud, Dropbox, or self-hosted."><span class="mc-name">Joplin</span><span class="mc-replaces">→ Evernote</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
     <a class="mob-chip" href="catalog/obsidian.html" data-why="Powerful knowledge base. Local-first, Markdown files. Plugin ecosystem."><span class="mc-name">Obsidian</span><span class="mc-replaces">→ Notion</span><span class="mob-badge mob-badge-yellow">A3/T1</span></a>
-    <span class="mob-chip" data-why="Simple, encrypted notes. No account required for local use."><span class="mc-name">Standard Notes</span><span class="mc-replaces">→ Apple Notes</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/standard-notes.html" data-why="Simple, encrypted notes. No account required for local use."><span class="mc-name">Standard Notes</span><span class="mc-replaces">→ Apple Notes</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
 <div class="mob-group">
   <div class="mob-group-title">Browser</div>
   <div class="mob-chips">
-    <span class="mob-chip" data-why="Open-source browser. Enhanced Tracking Protection, extensions support on Android."><span class="mc-name">Firefox</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Firefox fork hardened for privacy. Removed telemetry, stricter defaults. Android only."><span class="mc-name">Mull</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Chromium-based with built-in ad blocking. Some telemetry concerns (opt-out available)."><span class="mc-name">Brave</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-yellow">A3/T1</span></span>
+    <a class="mob-chip" href="catalog/firefox.html" data-why="Open-source browser. Enhanced Tracking Protection, extensions support on Android."><span class="mc-name">Firefox</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/mull.html" data-why="Firefox fork hardened for privacy. Removed telemetry, stricter defaults. Android only."><span class="mc-name">Mull</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/brave.html" data-why="Chromium-based with built-in ad blocking. Some telemetry concerns (opt-out available)."><span class="mc-name">Brave</span><span class="mc-replaces">→ Chrome</span><span class="mob-badge mob-badge-yellow">A3/T1</span></a>
   </div>
 </div>
 
 <div class="mob-group">
   <div class="mob-group-title">Navigation & Maps</div>
   <div class="mob-chips">
-    <span class="mob-chip" data-why="Offline maps based on OpenStreetMap. Detailed hiking, cycling, ski maps. Completely offline."><span class="mc-name">OsmAnd</span><span class="mc-replaces">→ Google Maps</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Fast, beautiful offline maps. Fork of Maps.me without the telemetry. Lightweight."><span class="mc-name">Organic Maps</span><span class="mc-replaces">→ Google Maps</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/osmand.html" data-why="Offline maps based on OpenStreetMap. Detailed hiking, cycling, ski maps. Completely offline."><span class="mc-name">OsmAnd</span><span class="mc-replaces">→ Google Maps</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/organic-maps.html" data-why="Fast, beautiful offline maps. Fork of Maps.me without the telemetry. Lightweight."><span class="mc-name">Organic Maps</span><span class="mc-replaces">→ Google Maps</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
@@ -183,16 +183,16 @@ nav_order: 3
   <div class="mob-chips">
     <a class="mob-chip" href="catalog/vaultwarden.html" data-why="Bitwarden-compatible password manager. Self-hosted, family sharing."><span class="mc-name">Bitwarden / Vaultwarden</span><span class="mc-replaces">→ 1Password</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
     <a class="mob-chip" href="catalog/keepass.html" data-why="Offline password database. KeePassDX on Android. Your file, your control."><span class="mc-name">KeePassDX</span><span class="mc-replaces">→ LastPass</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
-    <span class="mob-chip" data-why="Open-source 2FA. Encrypted backups. No cloud account needed."><span class="mc-name">Aegis</span><span class="mc-replaces">→ Google Authenticator</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="End-to-end encrypted 2FA with cloud backup. Cross-platform. By the Ente team."><span class="mc-name">ente Auth</span><span class="mc-replaces">→ Authy</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/aegis.html" data-why="Open-source 2FA. Encrypted backups. No cloud account needed."><span class="mc-name">Aegis</span><span class="mc-replaces">→ Google Authenticator</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/ente-auth.html" data-why="End-to-end encrypted 2FA with cloud backup. Cross-platform. By the Ente team."><span class="mc-name">ente Auth</span><span class="mc-replaces">→ Authy</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
 <div class="mob-group">
   <div class="mob-group-title">Keyboard</div>
   <div class="mob-chips">
-    <span class="mob-chip" data-why="Open-source keyboard. No internet permission. No data collection. Based on AOSP keyboard."><span class="mc-name">HeliBoard</span><span class="mc-replaces">→ Gboard</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Predecessor to HeliBoard. Still maintained, simpler."><span class="mc-name">OpenBoard</span><span class="mc-replaces">→ Gboard</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/heliboard.html" data-why="Open-source keyboard. No internet permission. No data collection. Based on AOSP keyboard."><span class="mc-name">HeliBoard</span><span class="mc-replaces">→ Gboard</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/openboard.html" data-why="Predecessor to HeliBoard. Still maintained, simpler."><span class="mc-name">OpenBoard</span><span class="mc-replaces">→ Gboard</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
@@ -200,15 +200,15 @@ nav_order: 3
   <div class="mob-group-title">Media</div>
   <div class="mob-chips">
     <a class="mob-chip" href="catalog/jellyfin.html" data-why="Stream your media library. No account, no telemetry. Mobile client available."><span class="mc-name">Jellyfin</span><span class="mc-replaces">→ Netflix / Plex</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
-    <span class="mob-chip" data-why="YouTube frontend without ads, tracking, or Google account. Connects to Piped/Invidious."><span class="mc-name">NewPipe</span><span class="mc-replaces">→ YouTube</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
-    <span class="mob-chip" data-why="Podcast player with no tracking, no account. Import/export OPML."><span class="mc-name">AntennaPod</span><span class="mc-replaces">→ Spotify Podcasts</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/newpipe.html" data-why="YouTube frontend without ads, tracking, or Google account. Connects to Piped/Invidious."><span class="mc-name">NewPipe</span><span class="mc-replaces">→ YouTube</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
+    <a class="mob-chip" href="catalog/antennapod.html" data-why="Podcast player with no tracking, no account. Import/export OPML."><span class="mc-name">AntennaPod</span><span class="mc-replaces">→ Spotify Podcasts</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
 <div class="mob-group">
   <div class="mob-group-title">Camera</div>
   <div class="mob-chips">
-    <span class="mob-chip" data-why="Open-source camera app. No network access. Photo and video with manual controls."><span class="mc-name">Open Camera</span><span class="mc-replaces">→ Google Camera</span><span class="mob-badge mob-badge-green">A3/T2</span></span>
+    <a class="mob-chip" href="catalog/open-camera.html" data-why="Open-source camera app. No network access. Photo and video with manual controls."><span class="mc-name">Open Camera</span><span class="mc-replaces">→ Google Camera</span><span class="mob-badge mob-badge-green">A3/T2</span></a>
   </div>
 </div>
 
