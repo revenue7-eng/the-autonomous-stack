@@ -216,8 +216,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Briar](briar.md) | **A3** | **T2** | Peer-to-peer encrypted messenger that works over Tor, Wi-Fi, or Bluetooth. |
 | [Matrix / Element](matrix.md) | **A3** | **T2** | Matrix is an open standard for decentralized, end-to-end encrypted communication. |
-| [Signal](signal.md) | **A3** | **T2** | End-to-end encrypted messenger with voice and video calls. |
 | [SimpleX Chat](simplex-chat.md) | **A3** | **T2** | Decentralized messenger with no user identifiers — no phone number, no username, no account. |
+| [Signal](signal.md) | **A2** | **T2** | End-to-end encrypted messenger with voice and video calls. |
 | [Telegram](telegram.md) | **A1** | **T0** | Cloud-based messaging platform. |
 | [Slack](slack.md) | **A0** | **T0** | Cloud-based team messaging platform. |
 
