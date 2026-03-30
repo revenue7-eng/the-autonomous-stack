@@ -49,7 +49,7 @@ Read [whose.world](https://whose.world). Or see the [Philosophy](docs/philosophy
 
 Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.0](docs/catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
 
-**→ [Validate the Model](docs/validate.md)** --- pick a technology, evaluate it independently, tell us if our scores hold up.
+**→ [Validate the Model](docs/validate.html)** --- pick a technology, evaluate it independently, tell us if our scores hold up.
 
 ---
 
