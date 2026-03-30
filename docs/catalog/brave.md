@@ -20,6 +20,7 @@ critical_criteria: ["Visibility", "External Dependencies"]
 # Brave
 
 > **TAS Score: S3/3 — D3/5** — A3 / T1
+> _T1 not T2: browser core is open (MPL-2.0 + Chromium BSD), but Brave Rewards, crypto wallet, and some network services are not fully open-source. The product as a whole is not completely auditable._
 > _D3 not D5: BAT crypto token and Brave Rewards create opt-in monetization layer (Q6). Chromium dependency (Q7). Some telemetry concerns (Q4)._
 
 ## Brief Description
