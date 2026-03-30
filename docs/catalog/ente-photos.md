@@ -1,7 +1,7 @@
 ---
 nav_exclude: true
 title: "Ente Photos"
-category: "media/photos"
+category: "applications/photos"
 status: "stable"
 license: "AGPL-3.0"
 source: "https://ente.io"

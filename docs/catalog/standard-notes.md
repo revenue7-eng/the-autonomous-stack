@@ -1,7 +1,7 @@
 ---
 nav_exclude: true
 title: "Standard Notes"
-category: "productivity/notes"
+category: "applications/notes"
 status: "stable"
 license: "AGPL-3.0"
 source: "https://standardnotes.com"

@@ -57,6 +57,7 @@ CATEGORY_LABELS = {
     'security/password-manager':('Security', 'Password Manager'),
     'security/passwords':       ('Security', 'Password Manager'),
     'security/secrets':         ('Security', 'Secrets'),
+    'security/2fa':             ('Security', '2FA'),
     'security':                 ('Security', 'General'),
     'applications/media':       ('Applications', 'Media'),
     'applications/git':         ('Applications', 'Version Control'),
@@ -82,6 +83,12 @@ CATEGORY_LABELS = {
     'communication/email':      ('Communication', 'Email'),
     'communication/messaging':  ('Communication', 'Messaging'),
     'communication':            ('Communication', 'General'),
+    'mobile/app-store':         ('Mobile', 'App Store'),
+    'mobile/browser':           ('Mobile', 'Browser'),
+    'mobile/navigation':        ('Mobile', 'Navigation'),
+    'mobile/keyboard':          ('Mobile', 'Keyboard'),
+    'mobile/camera':            ('Mobile', 'Camera'),
+    'mobile':                   ('Mobile', 'General'),
     'analytics/web':            ('Analytics', ''),
     'analytics':                ('Analytics', ''),
 }
@@ -122,12 +129,18 @@ CATEGORY_TO_GROUP = {
     'communication/email':        'Communication',
     'communication/messaging':    'Communication',
     'communication/notifications':'Communication',
+    'mobile':         'Mobile',
+    'mobile/app-store':           'Mobile',
+    'mobile/browser':             'Mobile',
+    'mobile/navigation':          'Mobile',
+    'mobile/keyboard':            'Mobile',
+    'mobile/camera':              'Mobile',
     'analytics':      'Analytics',
     'analytics/web':  'Analytics',
 }
 
 SECTION_ORDER = ['Network', 'Storage', 'Compute', 'Security', 'Observability',
-                 'Communication', 'Analytics', 'Productivity', 'Media & Content',
+                 'Communication', 'Mobile', 'Analytics', 'Productivity', 'Media & Content',
                  'Development', 'Automation & Home', 'Remote Access', 'Applications', 'Other']
 
 

@@ -1,7 +1,7 @@
 ---
 nav_exclude: true
 title: "Simple Gallery"
-category: "media/photos"
+category: "applications/photos"
 status: "stable"
 license: "GPL-3.0"
 source: "https://github.com/SimpleMobileTools/Simple-Gallery"

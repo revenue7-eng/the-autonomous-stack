@@ -1,7 +1,7 @@
 ---
 nav_exclude: true
 title: "AntennaPod"
-category: "media/podcasts"
+category: "applications/media"
 status: "stable"
 license: "GPL-3.0"
 source: "https://antennapod.org"
