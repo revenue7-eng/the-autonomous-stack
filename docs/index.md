@@ -34,6 +34,10 @@ Browse the [Technology Catalog](catalog/). Each card shows Autonomy Level (A0--A
 
 Follow the [Minimal Autonomous Server](recipes/minimal-server.md) recipe. A complete stack --- VPN, DNS filtering, identity, file sync, backups, monitoring, media, Git hosting --- deployed in a few hours.
 
+### I want to start with my phone
+
+Go to [Mobile Apps](mobile.html). Replace one app at a time — messaging, photos, passwords — or go all the way and replace the OS. No server required.
+
 ### I want to understand the philosophy behind this
 
 Read [whose.world](https://whose.world). TAS is a practical application of its framework. Or see our [Philosophy](philosophy.md) page for a short bridge.
