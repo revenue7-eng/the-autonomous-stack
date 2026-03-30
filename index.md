@@ -50,7 +50,7 @@ A tool can be excellent and score A0. A low score is not a criticism --- it is a
 
 ## Can you break the model?
 
-Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.0](docs/catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
+Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.1](docs/catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
 
 **→ [Validate the Model](docs/validate.html)** --- pick a technology, evaluate it independently, tell us if our scores hold up.
 

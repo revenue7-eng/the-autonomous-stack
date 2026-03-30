@@ -16,7 +16,7 @@ TAS gives you three things: a way to **evaluate** any technology, a **catalog** 
 
 **→ [Does your infrastructure pass the TAS test?](https://revenue7-eng.github.io/the-autonomous-stack/test.html)** — 30 seconds, no account needed.
 
-**→ [Explore the Autonomy Map](autonomy-map.html)** — 122 technologies, 12 constellations.
+**→ [Explore the Autonomy Map](autonomy-map.html)** — 123 technologies, 12 constellations.
 
 ---
 
@@ -145,7 +145,7 @@ This framework is built on the philosophy of [whose.world](https://whose.world).
 
 ## Can you break the model?
 
-Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.0](catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
+Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.1](catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
 
 **→ [Validate the Model](validate.html)** --- pick a technology, evaluate it independently, tell us if our scores hold up.
 

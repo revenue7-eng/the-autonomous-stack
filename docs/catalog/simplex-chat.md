@@ -74,7 +74,7 @@ services:
 | Alternative | Autonomy | Notes |
 |-------------|----------|-------|
 | [Signal](signal.md) | A3 / T2 | More mainstream. Requires phone number. Centralized servers. |
-| [Briar](briar.md) | A3 / T2 | P2P over Tor. No servers at all, but Android only. |
+| [Briar](briar.md) | A0 / T2 | P2P over Tor. Maximum security, but no export or backup by design → A0. |
 | [Element (Matrix)](matrix.md) | A3 / T2 | Federated. Richer features (rooms, bridges). |
 
 ---

@@ -5,14 +5,14 @@ title: "Assessment Template"
 
 # TAS Assessment Template
 
-Use this template to evaluate any technology against [TAS Assessment Criteria v1.0](catalog/assessment-criteria.md). Copy, fill in, and submit as a PR or GitHub Issue.
+Use this template to evaluate any technology against [TAS Assessment Criteria v1.1](catalog/assessment-criteria.md). Copy, fill in, and submit as a PR or GitHub Issue.
 
 ---
 
 **Technology:** _[name]_
 **Evaluated by:** _[your name or handle]_
 **Date:** _[YYYY-MM]_
-**Criteria version:** v1.0
+**Criteria version:** v1.1
 
 ---
 
