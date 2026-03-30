@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*96 technologies evaluated.*
+*122 technologies evaluated.*
 
 ---
 
@@ -110,7 +110,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [CalyxOS](calyxos.md) | **A3** | **T2** | Privacy-focused Android OS with microG for basic Google service compatibility. |
 | [Debian](debian.md) | **A3** | **T2** | The universal operating system. |
+| [GrapheneOS](grapheneos.md) | **A3** | **T2** | Hardened Android-based mobile OS focused on privacy and security. |
+| [LineageOS](lineageos.md) | **A3** | **T2** | The longest-running custom Android distribution. |
 | [Ubuntu Server](ubuntu-server.md) | **A3** | **T2** | The most widely deployed Linux server distribution. |
 
 ### Orchestration
@@ -128,6 +131,13 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 ---
 
 ## Security
+
+### 2FA
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Aegis Authenticator](aegis.md) | **A3** | **T2** | Open-source 2FA authenticator for Android. |
+| [ente Auth](ente-auth.md) | **A3** | **T2** | Cross-platform 2FA authenticator with end-to-end encrypted cloud backup. |
 
 ### General
 
@@ -186,6 +196,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [FairEmail](fairemail.md) | **A3** | **T2** | Full-featured Android email client. |
+| [K-9 Mail / Thunderbird](k9-mail.md) | **A3** | **T2** | Open-source Android email client, now part of the Thunderbird project (Mozilla). |
 | [Mailcow](mailcow.md) | **A3** | **T2** | Open-source, Docker-based email server suite. |
 | [Stalwart](stalwart.md) | **A3** | **T2** | All-in-one mail and collaboration server written in Rust. |
 | [Gmail](gmail.md) | **A0** | **T0** | Google's cloud email service. |
@@ -202,9 +214,52 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Briar](briar.md) | **A3** | **T2** | Peer-to-peer encrypted messenger that works over Tor, Wi-Fi, or Bluetooth. |
 | [Matrix / Element](matrix.md) | **A3** | **T2** | Matrix is an open standard for decentralized, end-to-end encrypted communication. |
+| [Signal](signal.md) | **A3** | **T2** | End-to-end encrypted messenger with voice and video calls. |
+| [SimpleX Chat](simplex-chat.md) | **A3** | **T2** | Decentralized messenger with no user identifiers — no phone number, no username, no account. |
 | [Telegram](telegram.md) | **A1** | **T0** | Cloud-based messaging platform. |
 | [Slack](slack.md) | **A0** | **T0** | Cloud-based team messaging platform. |
+
+---
+
+## Mobile
+
+### App Store
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Aurora Store](aurora-store.md) | **A3** | **T2** | Open-source client for Google Play Store. |
+| [F-Droid](f-droid.md) | **A3** | **T2** | Catalogue of free and open-source Android applications. |
+| [Neo Store](neo-store.md) | **A3** | **T2** | Modern F-Droid client with Material Design 3 UI. |
+
+### Browser
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Brave](brave.md) | **A3** | **T1** | Chromium-based browser with built-in ad and tracker blocking. |
+| [Firefox](firefox.md) | **A3** | **T2** | Open-source web browser by Mozilla. |
+| [Mull](mull.md) | **A3** | **T2** | Firefox fork with telemetry removed and privacy hardened. |
+
+### Camera
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Open Camera](open-camera.md) | **A3** | **T2** | Open-source camera app for Android. |
+
+### Keyboard
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [HeliBoard](heliboard.md) | **A3** | **T2** | Open-source keyboard for Android. |
+| [OpenBoard](openboard.md) | **A3** | **T2** | Open-source Android keyboard based on AOSP keyboard. |
+
+### Navigation
+
+| Technology | Autonomy | Transparency | Description |
+|------------|----------|--------------|-------------|
+| [Organic Maps](organic-maps.md) | **A3** | **T2** | Fast, lightweight offline maps. |
+| [OsmAnd](osmand.md) | **A3** | **T2** | Offline maps and navigation based on OpenStreetMap. |
 
 ---
 
@@ -295,8 +350,10 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [AntennaPod](antennapod.md) | **A3** | **T2** | Open-source podcast player for Android. |
 | [Bazarr](bazarr.md) | **A3** | **T2** | Automated subtitle manager for Radarr and Sonarr. |
 | [Jellyfin](jellyfin.md) | **A3** | **T2** | Free software media server that streams your personal media collection without cloud dependencies. |
+| [NewPipe](newpipe.md) | **A3** | **T2** | Lightweight YouTube frontend for Android. |
 | [Overseerr](overseerr.md) | **A3** | **T2** | Media request and discovery tool. |
 | [Prowlarr](prowlarr.md) | **A3** | **T2** | Indexer manager for the *arr stack. |
 | [Radarr](radarr.md) | **A3** | **T2** | Automated movie collection manager. |
@@ -316,14 +373,17 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [Joplin](joplin.md) | **A3** | **T2** | Open-source note-taking app with end-to-end encryption. |
 | [Logseq](logseq.md) | **A3** | **T2** | Local-first outliner and knowledge graph. |
+| [Standard Notes](standard-notes.md) | **A3** | **T2** | End-to-end encrypted notes app. |
 | [Obsidian](obsidian.md) | **A2** | **T0** | Local-first knowledge management app based on plain Markdown files stored on your device. |
 
 ### Photos
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [Ente Photos](ente-photos.md) | **A3** | **T2** | End-to-end encrypted photo storage and backup. |
 | [Immich](immich.md) | **A3** | **T2** | Self-hosted photo and video backup solution with a focus on user experience, automatic organisation, and machine learnin... |
 | [PhotoPrism](photoprism.md) | **A3** | **T2** | AI-powered self-hosted photo management. |
+| [Simple Gallery](simple-gallery.md) | **A3** | **T2** | Offline photo and video gallery for Android. |
 
 ### Reading
 
