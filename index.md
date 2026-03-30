@@ -6,16 +6,13 @@ nav_order: 1
 
 # The Autonomous Stack
 
-**Eight questions that reveal who controls your infrastructure.**
-
-If your infrastructure requires an external account to function --- you don't control it.
-If it can't be stopped, exited, or recovered --- you're renting, not owning.
+**A simple, reproducible score for one specific question --- how much you actually control your data and infrastructure. Not security, not quality, not compliance --- autonomy. A formal checklist, not an expert opinion.**
 
 TAS gives you three things: a way to **evaluate** any technology, a **catalog** of evaluated tools, and **recipes** to deploy them.
 
 **→ [Does your infrastructure pass the TAS test?](https://revenue7-eng.github.io/the-autonomous-stack/test.html)** — 30 seconds, no account needed.
 
-**→ [Explore the Autonomy Map](https://revenue7-eng.github.io/the-autonomous-stack/docs/autonomy-map.html)** — 122 technologies, 12 constellations.
+**→ [Explore the Autonomy Map](https://revenue7-eng.github.io/the-autonomous-stack/docs/autonomy-map.html)** — 123 technologies, 12 constellations.
 
 ---
 
@@ -27,7 +24,7 @@ Start with the [Infrastructure Audit](docs/how-to-choose.md). Eight questions --
 
 ### I need to choose a specific tool
 
-Browse the [Technology Catalog](docs/catalog/). 122 technologies rated by Autonomy (A0--A3) and Transparency (T0--T2).
+Browse the [Technology Catalog](docs/catalog/). 123 technologies rated by Autonomy (A0--A3) and Transparency (T0--T2).
 
 ### I need to build from scratch
 
