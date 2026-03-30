@@ -55,6 +55,23 @@ nav_order: 10
 /* Quote */
 .val-quote { padding:16px 20px; border-left:4px solid #ddd; margin:1.5rem 0; font-size:14px; color:#555; font-style:italic; line-height:1.6; }
 
+/* Details / Accordion */
+.val-details { margin-top:-4px; margin-bottom:0; border:1px solid #e8e8e8; border-top:none; border-radius:0 0 10px 10px; background:white; }
+.val-details summary { padding:10px 18px; font-size:13px; font-weight:500; color:#1a73e8; cursor:pointer; user-select:none; }
+.val-details summary:hover { background:#f8faff; }
+.val-details[open] summary { border-bottom:1px solid #f0f0f0; }
+.val-details-body { padding:14px 18px; }
+.val-details-section { font-size:12px; font-weight:600; color:#333; margin-top:12px; margin-bottom:4px; border-bottom:1px solid #f0f0f0; padding-bottom:3px; }
+.val-details-section:first-child { margin-top:0; }
+.val-test { font-size:12px; color:#555; padding:2px 0 2px 12px; line-height:1.6; }
+.val-test code { font-size:11px; background:#f3f4f6; padding:1px 4px; border-radius:3px; }
+.val-test strong { color:#111; }
+.val-test-fail { color:#991b1b; }
+.val-test-fail strong { color:#991b1b; }
+.val-highlight-partial { color:#854d0e; background:#fef9c3; padding:1px 6px; border-radius:3px; }
+.val-details-link { display:inline-block; margin-top:12px; font-size:12px; color:#1a73e8; text-decoration:none; }
+.val-details-link:hover { text-decoration:underline; }
+
 /* Footer links */
 .val-footer { margin-top:2rem; padding-top:1.5rem; border-top:1px solid #eee; }
 .val-footer-links { display:flex; flex-wrap:wrap; gap:16px; }
@@ -71,7 +88,7 @@ nav_order: 10
 <div class="val-challenge">
   <div class="val-challenge-title">The reproducibility test</div>
   <div class="val-challenge-text">
-    Pick any technology. Evaluate it using our <a href="catalog/assessment-criteria.html" style="color:#1a73e8;">Assessment Criteria v1.0</a>. Compare your result with ours.<br><br>
+    Pick any technology. Evaluate it using our <a href="catalog/assessment-criteria.html" style="color:#1a73e8;">Assessment Criteria v1.1</a>. Compare your result with ours.<br><br>
     <strong>If your score matches</strong> — the model works.<br>
     <strong>If it doesn't</strong> — tell us where the criteria are ambiguous. That's more valuable than agreement.
   </div>
@@ -79,35 +96,172 @@ nav_order: 10
 
 <div class="val-section">We went first — 4 pilot assessments</div>
 
-<div class="val-pilots">
-  <a class="val-pilot" href="catalog/syncthing.html">
+<div style="margin-bottom:12px;">
+  <div class="val-pilot" style="cursor:default;">
     <div class="val-pilot-name">Syncthing</div>
     <div class="val-pilot-score">S3/3 — D5/5 — A3/T2</div>
     <div class="val-pilot-type">P2P file sync · no server, no account, no cloud</div>
     <span class="val-pilot-diff val-diff-clean">clean case</span>
-  </a>
-  <a class="val-pilot" href="catalog/keepass.html">
+  </div>
+  <details class="val-details">
+    <summary>Show assessment details</summary>
+    <div class="val-details-body">
+      <div class="val-details-section">S1: Pause — <strong>Yes</strong></div>
+      <div class="val-test">1a. Stop process? → <strong>Yes</strong> — <code>docker stop</code> works cleanly</div>
+      <div class="val-test">1b. Data on disk? → <strong>Yes</strong> — ordinary files on filesystem, unchanged when stopped</div>
+      <div class="val-test">1c. Restart continues? → <strong>Yes</strong> — resumes sync, no re-registration</div>
+
+      <div class="val-details-section">S2: Exit — <strong>Yes</strong></div>
+      <div class="val-test">2a. Export mechanism? → <strong>Yes</strong> — files ARE your data, no export needed</div>
+      <div class="val-test">2b. All data included? → <strong>Yes</strong> — all files always on disk</div>
+      <div class="val-test">2c. Non-proprietary format? → <strong>Yes</strong> — original file formats preserved</div>
+      <div class="val-test">2d. Another tool can consume? → <strong>Yes</strong> — any tool reads the files</div>
+
+      <div class="val-details-section">S3: Recoverability — <strong>Yes</strong></div>
+      <div class="val-test">3a. Backup possible? → <strong>Yes</strong> — regular files, any backup tool works</div>
+      <div class="val-test">3b. Restore works? → <strong>Yes</strong> — copy files back, reinstall, add folder</div>
+      <div class="val-test">3c. Same state? → <strong>Yes</strong> — all data restored</div>
+
+      <div class="val-details-section">Transparency — <strong>T2</strong></div>
+      <div class="val-test">Source: github.com/syncthing/syncthing · License: MPL-2.0 (OSI-approved)</div>
+
+      <div class="val-details-section">Counterarguments</div>
+      <div class="val-test"><strong>A3 challenge:</strong> relies on discovery servers → Resolution: self-hostable, LAN works without them</div>
+      <div class="val-test"><strong>D5 challenge:</strong> usage reporting exists → Resolution: opt-in, anonymous, disabled by default in Docker</div>
+
+      <a href="catalog/syncthing.html" class="val-details-link">Full assessment →</a>
+    </div>
+  </details>
+</div>
+
+<div style="margin-bottom:12px;">
+  <div class="val-pilot" style="cursor:default;">
     <div class="val-pilot-name">KeePass</div>
     <div class="val-pilot-score">S3/3 — D5/5 — A3/T2</div>
     <div class="val-pilot-type">Local password vault · one encrypted file, zero cloud</div>
     <span class="val-pilot-diff val-diff-clean">clean case</span>
-  </a>
-  <a class="val-pilot" href="catalog/nextcloud.html">
+  </div>
+  <details class="val-details">
+    <summary>Show assessment details</summary>
+    <div class="val-details-body">
+      <div class="val-details-section">S1: Pause — <strong>Yes</strong></div>
+      <div class="val-test">1a. Stop process? → <strong>Yes</strong> — close application</div>
+      <div class="val-test">1b. Data on disk? → <strong>Yes</strong> — <code>.kdbx</code> file on disk, encrypted</div>
+      <div class="val-test">1c. Restart continues? → <strong>Yes</strong> — open app, open file, all entries present</div>
+
+      <div class="val-details-section">S2: Exit — <strong>Yes</strong></div>
+      <div class="val-test">2a. Export mechanism? → <strong>Yes</strong> — CSV, XML, or copy .kdbx file</div>
+      <div class="val-test">2b. All data included? → <strong>Yes</strong> — all entries, groups, attachments, history</div>
+      <div class="val-test">2c. Non-proprietary format? → <strong>Yes</strong> — .kdbx is open format with published spec</div>
+      <div class="val-test">2d. Another tool can consume? → <strong>Yes</strong> — KeePassXC, KeePassDX, KeeWeb, Bitwarden all read .kdbx</div>
+
+      <div class="val-details-section">S3: Recoverability — <strong>Yes</strong></div>
+      <div class="val-test">3a. Backup possible? → <strong>Yes</strong> — single file, any backup tool. Auto .kdbx.bak on save</div>
+      <div class="val-test">3b. Restore works? → <strong>Yes</strong> — copy file back, open in KeePass</div>
+      <div class="val-test">3c. Same state? → <strong>Yes</strong> — file is self-contained</div>
+
+      <div class="val-details-section">Transparency — <strong>T2</strong></div>
+      <div class="val-test">Source: sourceforge.net/projects/keepass · License: GPL-2.0 (OSI-approved)</div>
+
+      <div class="val-details-section">Counterarguments</div>
+      <div class="val-test"><strong>A3 challenge:</strong> no built-in sync → Resolution: by design, sync delegated to Syncthing/USB</div>
+      <div class="val-test"><strong>D5 challenge:</strong> single maintainer (since 2003) → Resolution: KDBX format is open, 10+ independent implementations</div>
+
+      <a href="catalog/keepass.html" class="val-details-link">Full assessment →</a>
+    </div>
+  </details>
+</div>
+
+<div style="margin-bottom:12px;">
+  <div class="val-pilot" style="cursor:default;">
     <div class="val-pilot-name">Nextcloud</div>
     <div class="val-pilot-score">S3/3 — D4/5 — A3/T2</div>
-    <div class="val-pilot-type">Self-hosted cloud platform · push server is the catch</div>
+    <div class="val-pilot-type">Self-hosted cloud platform · push notification server is the catch</div>
     <span class="val-pilot-diff val-diff-moderate">moderate</span>
-  </a>
-  <a class="val-pilot" href="catalog/signal.html">
+  </div>
+  <details class="val-details">
+    <summary>Show assessment details</summary>
+    <div class="val-details-body">
+      <div class="val-details-section">S1: Pause — <strong>Yes</strong></div>
+      <div class="val-test">1a. Stop process? → <strong>Yes</strong> — <code>docker stop nextcloud</code></div>
+      <div class="val-test">1b. Data on disk? → <strong>Yes</strong> — files in volume, database in PostgreSQL volume</div>
+      <div class="val-test">1c. Restart continues? → <strong>Yes</strong> — all files, calendar, contacts intact</div>
+
+      <div class="val-details-section">S2: Exit — <strong>Yes</strong></div>
+      <div class="val-test">2a. Export mechanism? → <strong>Yes</strong> — files: copy volume. Calendar: CalDAV (.ics). Contacts: CardDAV (.vcf). DB: pg_dump</div>
+      <div class="val-test">2b. All data included? → <strong>Yes</strong> — files, calendar, contacts, notes, bookmarks</div>
+      <div class="val-test">2c. Non-proprietary format? → <strong>Yes</strong> — iCalendar, vCard, standard files</div>
+      <div class="val-test">2d. Another tool can consume? → <strong>Yes</strong> — any CalDAV/CardDAV client</div>
+
+      <div class="val-details-section">S3: Recoverability — <strong>Yes</strong></div>
+      <div class="val-test">3a. Backup possible? → <strong>Yes</strong> — file volume + database dump, documented</div>
+      <div class="val-test">3b. Restore works? → <strong>Yes</strong> — restore volume + import DB → working instance</div>
+      <div class="val-test">3c. Same state? → <strong>Yes</strong> — all data restored, sessions regenerated (expected)</div>
+
+      <div class="val-details-section">Transparency — <strong>T2</strong></div>
+      <div class="val-test">Source: github.com/nextcloud/server · License: AGPL-3.0 (OSI-approved)</div>
+
+      <div class="val-details-section">Diagnostic: D4/5 — one concern</div>
+      <div class="val-test"><strong>D3 Hidden cost ⚠️:</strong> Push notification server (<code>push-notifications.nextcloud.com</code>) routes through Nextcloud GmbH by default. Self-hosting the push proxy is possible but underdocumented.</div>
+
+      <div class="val-details-section">Counterarguments</div>
+      <div class="val-test"><strong>A3 challenge:</strong> depends on Docker + PostgreSQL → Resolution: both are A3/T2 open-source infrastructure</div>
+      <div class="val-test"><strong>A3 challenge:</strong> push notifications route through Nextcloud GmbH → Resolution: all features work without push, only mobile notifications delayed. Captured as D3.</div>
+      <div class="val-test"><strong>T2 challenge:</strong> enterprise apps have CLA → Resolution: core server is AGPL-3.0, community apps don't require CLA</div>
+
+      <a href="catalog/nextcloud.html" class="val-details-link">Full assessment →</a>
+    </div>
+  </details>
+</div>
+
+<div style="margin-bottom:12px;">
+  <div class="val-pilot" style="cursor:default;">
     <div class="val-pilot-name">Signal</div>
     <div class="val-pilot-score">S2/3 — D4/5 — A2/T2</div>
-    <div class="val-pilot-type">E2E messaging · phone number required, proprietary backup format → A2</div>
+    <div class="val-pilot-type">E2E messaging · proprietary backup format caps Exit at Partial → A2</div>
     <span class="val-pilot-diff val-diff-hard">borderline</span>
-  </a>
+  </div>
+  <details class="val-details">
+    <summary>Show assessment details — this is the interesting one</summary>
+    <div class="val-details-body">
+      <div class="val-details-section">S1: Pause — <strong>Yes</strong></div>
+      <div class="val-test">1a. Stop process? → <strong>Yes</strong> — close app, force-stop in Android</div>
+      <div class="val-test">1b. Data on disk? → <strong>Yes</strong> — local encrypted SQLite database</div>
+      <div class="val-test">1c. Restart continues? → <strong>Yes</strong> — all messages, contacts, settings intact</div>
+
+      <div class="val-details-section">S2: Exit — <strong class="val-highlight-partial">Partial-E1</strong> (proprietary format)</div>
+      <div class="val-test">2a. Export mechanism? → <strong>Yes</strong> — Settings → Chats → Chat backups</div>
+      <div class="val-test">2b. All data included? → <strong>Yes</strong> — messages, media, group info</div>
+      <div class="val-test val-test-fail">2c. Non-proprietary format? → <strong>No</strong> — encrypted proprietary format, only Signal can read it</div>
+      <div class="val-test val-test-fail">2d. Another tool can consume? → <strong>No</strong> — no third-party parser exists</div>
+
+      <div class="val-details-section">S3: Recoverability — <strong>Yes</strong></div>
+      <div class="val-test">3a. Backup possible? → <strong>Yes</strong> — built-in encrypted backup to local storage</div>
+      <div class="val-test">3b. Restore works? → <strong>Yes</strong> — new device, install Signal, restore from backup</div>
+      <div class="val-test">3c. Same state? → <strong>Yes</strong> — messages and media restored</div>
+
+      <div class="val-details-section">Aggregation (mechanical, no overrides)</div>
+      <div class="val-test">S1=Yes, S2=Partial-E1, S3=Yes → table lookup → <strong>A2</strong></div>
+      <div class="val-test" style="color:#888;">Under v1.0 we rated this A3 with a judgment note. v1.1 removed overrides: Partial-E1 = A2, no exceptions. The model corrected itself.</div>
+
+      <div class="val-details-section">Transparency — <strong>T2</strong></div>
+      <div class="val-test">Source: github.com/signalapp (client + server) · License: AGPL-3.0</div>
+
+      <div class="val-details-section">Diagnostic: D4/5 — one concern</div>
+      <div class="val-test"><strong>D3 Hidden cost ⚠️:</strong> Requires phone number for registration. Links identity to telecom infrastructure.</div>
+
+      <div class="val-details-section">Counterarguments</div>
+      <div class="val-test"><strong>A2 challenge:</strong> "but you CAN migrate all data to a new device" → Yes, but only to another Signal instance. Partial-E1 is clear: proprietary format.</div>
+      <div class="val-test"><strong>A2 challenge:</strong> most messaging apps are A0, isn't A2 unfair? → A2 is not a penalty. It accurately describes: you can pause and recover, but cannot exit to a non-Signal tool.</div>
+      <div class="val-test"><strong>What would make Signal A3?</strong> Document the backup format publicly + one third-party parser, OR adopt open export format (JSON message archive).</div>
+
+      <a href="catalog/signal.html" class="val-details-link">Full assessment →</a>
+    </div>
+  </details>
 </div>
 
 <div class="val-quote">
-  Each pilot card includes a <strong>Formal Assessment</strong> section with every test result and evidence, plus a <strong>Counterarguments</strong> table listing reasons the rating might be wrong — and why we chose it anyway.
+  Signal went from A3 to A2 when we tightened the criteria in v1.1. That's the model working as intended — no sacred cows.
 </div>
 
 <div class="val-section">How to participate</div>
@@ -115,7 +269,7 @@ nav_order: 10
 <div class="val-steps">
   <div class="val-step">
     <div class="val-step-num">1</div>
-    <div class="val-step-text">Read the <a href="catalog/assessment-criteria.html">Assessment Criteria v1.0</a> — 10 structural tests, 5 diagnostic checks, all yes/no.</div>
+    <div class="val-step-text">Read the <a href="catalog/assessment-criteria.html">Assessment Criteria v1.1</a> — 10 structural tests, 5 diagnostic checks, all yes/no.</div>
   </div>
   <div class="val-step">
     <div class="val-step-num">2</div>
@@ -156,7 +310,7 @@ nav_order: 10
 
 <div class="val-footer">
   <div class="val-footer-links">
-    <a class="val-footer-link" href="catalog/assessment-criteria.html">Assessment Criteria v1.0 →</a>
+    <a class="val-footer-link" href="catalog/assessment-criteria.html">Assessment Criteria v1.1 →</a>
     <a class="val-footer-link" href="assessment-template.html">Blank template →</a>
     <a class="val-footer-link" href="catalog/">Full catalog (122 technologies) →</a>
     <a class="val-footer-link" href="recommended-stack.html">Recommended Stack →</a>
