@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "ente Auth"
 category: "security/2fa"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid, App Store, or GitHub. Use standalone or create Ente accoun
 | [Aegis](aegis.md) | A3 / T2 | Android only. No cloud sync. Encrypted local vault. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Part of the Ente ecosystem. Active development. Cross-platform advantage over Aegis. Sustainable business model via Ente Photos subscriptions.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | AGPL-3.0. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Server is self-hostable (shared with Ente Photos). |
 | Governance | ✅ | Ente Technologies. Open development. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

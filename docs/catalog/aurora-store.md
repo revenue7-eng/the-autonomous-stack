@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Aurora Store"
 category: "mobile/app-store"
 status: "stable"
@@ -66,24 +65,17 @@ Install from F-Droid. Open, choose anonymous login, search and install apps.
 | [Neo Store](neo-store.md) | A3 / T2 | Modern F-Droid client. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Active development. Anonymous login may break periodically due to Google's anti-abuse measures. Necessary bridge tool for the foreseeable future.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app — nothing to host. |
 | Governance | ➖ | Small team. Community contributions. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

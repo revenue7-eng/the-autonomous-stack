@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "CalyxOS"
 category: "compute/os"
 status: "stable"
@@ -71,24 +70,17 @@ No server deployment required.
 | [LineageOS](lineageos.md) | A3 / T2 | Widest device support. No microG by default. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Calyx Institute is a nonprofit. Steady development, expanding device support. microG dependency adds complexity but improves usability.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | Apache-2.0 and various open-source licenses. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Nothing to host. |
 | Governance | ✅ | Calyx Institute (501c3 nonprofit). |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

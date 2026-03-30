@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "LineageOS"
 category: "compute/os"
 status: "stable"
@@ -69,24 +68,17 @@ Install via:
 | [CalyxOS](calyxos.md) | A3 / T2 | microG included. Fewer devices. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Over a decade of continuous development. Largest custom ROM community. Volunteer-maintained — no commercial pressure. Steady device support.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | Apache-2.0, unchanged since CyanogenMod. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Nothing to host. |
 | Governance | ✅ | Community-governed. Multiple maintainers per device. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

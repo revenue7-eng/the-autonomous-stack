@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Mull"
 category: "mobile/browser"
 status: "stable"
@@ -65,24 +64,17 @@ Install from F-Droid (DivestOS repo). Works out of the box with hardened default
 | [Brave](brave.md) | A3 / T1 | Chromium-based. Built-in ad blocking. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Maintained by DivestOS project. Follows Firefox ESR releases. Small team but consistent updates.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | MPL-2.0 (inherits from Firefox). |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ⚠️ | Small team (DivestOS). Bus factor risk. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

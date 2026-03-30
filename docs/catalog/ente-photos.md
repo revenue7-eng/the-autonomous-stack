@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Ente Photos"
 category: "applications/photos"
 status: "stable"
@@ -67,24 +66,17 @@ Self-hosted server: see https://github.com/ente-io/ente/tree/main/server
 | [Simple Gallery](simple-gallery.md) | A3 / T2 | Offline only. No cloud backup. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Fully open-sourced server in 2024. Active development. Sustainable business model (paid hosted plans fund open-source development). Growing community.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | AGPL-3.0, all components. |
 | Feature gating | ✅ | Self-hosted has all features. |
 | Self-hosting | ✅ | Server fully open-source and self-hostable. |
 | Governance | ✅ | Ente Technologies. Open development. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

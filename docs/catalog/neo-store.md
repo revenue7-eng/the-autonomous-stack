@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Neo Store"
 category: "mobile/app-store"
 status: "stable"
@@ -65,24 +64,17 @@ Install from F-Droid. Comes pre-configured with default F-Droid repository. Add 
 | [Aurora Store](aurora-store.md) | A3 / T2 | For Play Store apps without Google account. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Active development. Growing as the preferred F-Droid client for users who want a modern UI. Community-driven.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ✅ | NeoApplications community. Open development. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Brave"
 category: "mobile/browser"
 status: "stable"
@@ -66,24 +65,17 @@ Install from brave.com or Play Store. Disable Brave Rewards for maximum autonomy
 | [Mull](mull.md) | A3 / T2 | Hardened Firefox. No telemetry. Android only. |
 
 ---
-
 ## Trajectory
-
 **Direction: mixed**
-
 Active development. Growing user base. But crypto/BAT integration and Chromium dependency create structural tensions with autonomy goals.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | MPL-2.0. |
 | Feature gating | ✅ | Core features free. Rewards optional. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ⚠️ | Brave Software Inc. VC-funded. Crypto business model. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

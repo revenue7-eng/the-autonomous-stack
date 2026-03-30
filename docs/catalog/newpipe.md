@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "NewPipe"
 category: "applications/media"
 status: "stable"
@@ -65,24 +64,17 @@ Install from F-Droid. Open and use — no account or setup needed.
 | [Piped](../catalog/piped.md) | A3 / T2 | Web-based YouTube frontend. Self-hostable. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Active development. Occasional breakage when YouTube changes its API — typically fixed within days. Large contributor community.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ✅ | TeamNewPipe. Community-governed. Multiple contributors. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

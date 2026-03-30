@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "AntennaPod"
 category: "applications/media"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid. Search for podcasts or add RSS feed URLs. Download episode
 | No direct equivalent in catalog. Spotify Podcasts (A0/T0) is what most people use. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Mature project. Active community. Regular releases. Well-established in the F-Droid ecosystem.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ✅ | Community-governed. Multiple maintainers. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "SimpleX Chat"
 category: "communication/messaging"
 status: "stable"
@@ -78,24 +77,17 @@ services:
 | [Element (Matrix)](matrix.md) | A3 / T2 | Federated. Richer features (rooms, bridges). |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Active development, growing user base. Trail of Bits audit completed. Adding group features and file transfer. Fully funded without VC pressure.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | AGPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | SMP/XFTP servers easy to self-host. |
 | Governance | ✅ | SimpleX Chat Ltd, open development. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

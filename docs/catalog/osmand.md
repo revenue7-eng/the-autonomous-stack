@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "OsmAnd"
 category: "mobile/navigation"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid (free, all features) or Play Store (free version limited to
 | [Organic Maps](organic-maps.md) | A3 / T2 | Simpler, faster. Fewer features. Fork of Maps.me. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Long-running project. Active development. F-Droid version has all features for free. Sustainable via Play Store purchases.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ⚠️ | Play Store version has download limits. F-Droid version is unlimited. |
 | Self-hosting | ✅ | Client app. Map data is OpenStreetMap (public). |
 | Governance | ✅ | OsmAnd B.V. Open development. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

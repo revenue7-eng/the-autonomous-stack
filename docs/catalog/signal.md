@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Signal"
 category: "communication/messaging"
 status: "stable"
@@ -71,24 +70,17 @@ No server deployment — Signal is a client application. Install from:
 | [Element (Matrix)](../catalog/matrix.md) | A3 / T2 | Federated. Self-hostable server. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Signal Foundation is a nonprofit. The protocol is widely adopted and audited. No signs of commercial pressure or feature gating. Centralization remains the main philosophical concern.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | AGPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free for all users. |
 | Self-hosting | ⚠️ | Server is open-source but not designed for self-hosting. |
 | Governance | ✅ | Signal Foundation (501c3). Meredith Whittaker as president. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

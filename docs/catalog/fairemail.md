@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "FairEmail"
 category: "communication/email"
 status: "stable"
@@ -68,24 +67,17 @@ No server deployment — Android email client. Install from:
 | [Tuta](tuta.md) | A2 / T2 | E2E encrypted but tied to Tuta servers. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Maintained by single developer (M66B). Very active development. Some concern about bus factor, but codebase is clean and well-documented.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ⚠️ | Some pro features require Play Store purchase, but F-Droid version is fully functional. |
 | Self-hosting | ✅ | Client app — nothing to host. |
 | Governance | ⚠️ | Single maintainer. Bus factor risk. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

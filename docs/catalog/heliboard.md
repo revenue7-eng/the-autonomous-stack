@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "HeliBoard"
 category: "mobile/keyboard"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid. Go to Settings → System → Keyboard → select HeliBoar
 | [OpenBoard](openboard.md) | A3 / T2 | Predecessor. Less actively maintained. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Active development. Growing feature set. Maintained fork of OpenBoard with many improvements. Community contributions welcomed.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | Apache-2.0. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ✅ | Community-maintained. Active contributor base. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

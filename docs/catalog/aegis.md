@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Aegis Authenticator"
 category: "security/2fa"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid. Set up vault password. Import existing 2FA codes or scan n
 | [ente Auth](ente-auth.md) | A3 / T2 | Cross-platform with E2E encrypted cloud backup. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Mature, well-maintained. Android only (no iOS). Active development with regular releases.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Nothing to host. |
 | Governance | ✅ | Beem Development. Open community. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

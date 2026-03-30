@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Standard Notes"
 category: "applications/notes"
 status: "stable"
@@ -76,24 +75,17 @@ services:
 | [Obsidian](obsidian.md) | A3 / T1 | Knowledge graph. Proprietary but local-first. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Sustainable business model (paid hosted plans). All code open-source. Acquired by Proton in 2024 — future direction to watch.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | AGPL-3.0, unchanged. |
 | Feature gating | ✅ | Self-hosted has all features. |
 | Self-hosting | ✅ | Server fully self-hostable. |
 | Governance | ⚠️ | Acquired by Proton. Watch for changes. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

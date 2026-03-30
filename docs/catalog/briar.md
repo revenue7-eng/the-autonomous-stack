@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Briar"
 category: "communication/messaging"
 status: "stable"
@@ -69,24 +68,17 @@ No server deployment. Install from:
 | [Signal](signal.md) | A3 / T2 | More features. Requires phone number and internet. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Mature project backed by academic research. Desktop client expanding platform reach. Development pace is slow but steady.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Nothing to host — fully P2P. |
 | Governance | ✅ | Briar Project, community-governed. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

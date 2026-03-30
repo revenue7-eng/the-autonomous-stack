@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "F-Droid"
 category: "mobile/app-store"
 status: "stable"
@@ -73,24 +72,17 @@ fdroid update
 | [Aurora Store](aurora-store.md) | A3 / T2 | Access Play Store without Google account. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Long-running project. Reproducible builds initiative. Growing catalog. Client app UX improvements ongoing.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | Everything free. |
 | Self-hosting | ✅ | fdroidserver makes custom repos easy. |
 | Governance | ✅ | F-Droid Limited (nonprofit). Community-governed. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

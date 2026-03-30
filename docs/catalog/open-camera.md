@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Open Camera"
 category: "mobile/camera"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid. Use as default camera app.
 | GrapheneOS built-in camera | A3 / T2 | Basic but privacy-respecting. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Long-running project. Single developer but consistent updates. Feature-complete for most use cases.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ⚠️ | Single developer. Bus factor risk. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

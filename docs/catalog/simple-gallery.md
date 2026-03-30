@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Simple Gallery"
 category: "applications/photos"
 status: "stable"
@@ -65,24 +64,17 @@ Install from F-Droid (search "Fossify Gallery" — the maintained fork).
 | [Immich](immich.md) | A3 / T2 | Google Photos replacement with server. |
 
 ---
-
 ## Trajectory
-
 **Direction: mixed**
-
 Original Simple Mobile Tools was acquired by ZipoApps in 2023. Community forked to Fossify. The Fossify fork is actively maintained under GPL-3.0.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0. Fork preserved the license. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app — nothing to host. |
 | Governance | ⚠️ | Original sold; Fossify fork is community-governed. Use Fossify. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

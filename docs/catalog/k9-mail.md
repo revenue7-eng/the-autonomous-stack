@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "K-9 Mail / Thunderbird"
 category: "communication/email"
 status: "stable"
@@ -68,24 +67,17 @@ Android email client. Install from:
 | [Tuta](tuta.md) | A2 / T2 | E2E encrypted but provider-locked. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Acquired by Thunderbird/MZLA. Rebranding to Thunderbird for Android underway. More resources, larger team, active development. Strong trajectory.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | Apache-2.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app — nothing to host. |
 | Governance | ✅ | MZLA Technologies (Mozilla subsidiary). |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

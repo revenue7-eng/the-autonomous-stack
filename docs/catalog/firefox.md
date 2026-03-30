@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Firefox"
 category: "mobile/browser"
 status: "stable"
@@ -71,24 +70,17 @@ Recommended hardening:
 | [Brave](brave.md) | A3 / T1 | Chromium-based. Built-in ad blocking. |
 
 ---
-
 ## Trajectory
-
 **Direction: stable**
-
 Mozilla Foundation is a nonprofit. Market share declining but development active. Google search deal provides funding — a structural tension.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | MPL-2.0, unchanged. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. Sync server (Firefox Sync) is self-hostable. |
 | Governance | ⚠️ | Mozilla Foundation/Corporation. Google revenue dependency. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

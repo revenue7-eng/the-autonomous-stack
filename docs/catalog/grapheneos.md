@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "GrapheneOS"
 category: "compute/os"
 status: "stable"
@@ -72,24 +71,17 @@ No server deployment required.
 | [LineageOS](lineageos.md) | A3 / T2 | Supports 200+ devices. Less security hardening. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Active development. Expanding Pixel device support with each release. Growing community. Funded by donations. No commercial pressure.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | MIT and various open-source licenses. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Nothing to host — it's an OS. |
 | Governance | ✅ | GrapheneOS Foundation. Community-driven. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

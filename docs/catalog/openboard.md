@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "OpenBoard"
 category: "mobile/keyboard"
 status: "stable"
@@ -65,24 +64,17 @@ Install from F-Droid. Select as default keyboard. Consider migrating to HeliBoar
 | [HeliBoard](heliboard.md) | A3 / T2 | Actively maintained fork. More features. Recommended. |
 
 ---
-
 ## Trajectory
-
 **Direction: closing**
-
 Development has largely stopped. HeliBoard has taken over as the maintained fork. Use HeliBoard for new installations.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | GPL-3.0. |
 | Feature gating | ✅ | All features free. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ⚠️ | Unmaintained. HeliBoard is the successor. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources

@@ -1,5 +1,4 @@
 ---
-nav_exclude: true
 title: "Organic Maps"
 category: "mobile/navigation"
 status: "stable"
@@ -64,24 +63,17 @@ Install from F-Droid, App Store, or Play Store. Download maps. Navigate.
 | [OsmAnd](osmand.md) | A3 / T2 | More features (hiking profiles, nautical). Steeper learning curve. |
 
 ---
-
 ## Trajectory
-
 **Direction: opening**
-
 Active development. Growing community. Clean fork of Maps.me with ethical foundation. No ads, no tracking. Funded by donations.
-
 **Signal assessment:**
-
 | Signal | Status | Evidence |
 |--------|--------|----------|
 | License | ✅ | Apache-2.0, unchanged. |
 | Feature gating | ✅ | All features free on all platforms. |
 | Self-hosting | ✅ | Client app. |
 | Governance | ✅ | Community-governed. Multiple core contributors. |
-
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
-
 ---
 
 ## Sources
