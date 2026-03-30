@@ -12,12 +12,19 @@ If they don't — the checklist needs fixing, not the evaluators.
 
 ---
 
+## What TAS Measures
+
+TAS measures **autonomy** — how much you control your data and infrastructure. Not quality. Not security. Not usability. A tool can be excellent and score A0 (Gmail). A tool can be maximally secure and score A0 (Briar — no export by design). A low score is not a criticism. It is a measurement of one specific thing: can you stop it, leave with your data, and roll back?
+
+---
+
 ## Design Principles
 
 1. Every criterion is a **yes/no question about an observable fact**, not an opinion.
 2. "Partial" is not a judgment call — it is a **defined list of specific cases**.
 3. The aggregation table is **mechanical** — no overrides, no "but in context…".
 4. Every assessment declares its **evaluation context** — results are only comparable within the same context.
+5. **A0 is not "bad"** — it means the tool does not give you control over your data portability. This may be an intentional design choice.
 
 ---
 

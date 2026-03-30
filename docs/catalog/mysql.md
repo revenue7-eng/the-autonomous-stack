@@ -13,7 +13,7 @@ documentation: "https://dev.mysql.com/doc"
 docker_image: "mysql"
 community: "https://forums.mysql.com"
 autonomy_level: "A3"
-transparency_level: "T1"
+transparency_level: "T2"
 depends_on: ["docker"]
 optional_deps: ["prometheus"]
 depended_by: []

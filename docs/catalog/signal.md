@@ -145,7 +145,7 @@ No server deployment — Signal is a client application. Install from:
 | Alternative | Autonomy | Notes |
 |-------------|----------|-------|
 | [SimpleX Chat](simplex-chat.md) | A3 / T2 | No phone number. Database export in documented format. |
-| [Briar](briar.md) | A2 / T2 | P2P over Tor. But no export at all (S2 = No → would be A0 under strict reading; reassessment needed). |
+| [Briar](briar.md) | A0 / T2 | P2P over Tor. Maximum security, but no export and no backup by design → A0. |
 | [Element (Matrix)](matrix.md) | A3 / T2 | Federated. Self-hostable. Open export format. |
 
 ---

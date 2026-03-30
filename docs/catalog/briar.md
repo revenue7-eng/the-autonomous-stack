@@ -9,7 +9,7 @@ repository: "https://code.briarproject.org/briar/briar"
 documentation: "https://briarproject.org/manual"
 docker_image: "-"
 community: "https://briarproject.org/get-involved"
-autonomy_level: "A3"
+autonomy_level: "A0"
 transparency_level: "T2"
 depends_on: []
 optional_deps: []
@@ -19,8 +19,14 @@ critical_criteria: ["External Dependencies"]
 
 # Briar
 
-> **TAS Score: S3/3 — D4/5** — A3 / T2
-> _D4 not D5: Android only, limiting platform reach (Q8 — trajectory concern)._
+> **TAS Score: S1/3 — D4/5** — A0 / T2
+> _S2=No (no data export by design), S3=No (no backup/restore). D4 not D5: Android only (Q8)._
+>
+> _Assessment criteria: [v1.1](assessment-criteria.md). Context: mobile app · single-user · Android._
+
+## Why A0 Is Not a Criticism
+
+Briar intentionally prevents data export and backup — this is a security feature for its target audience (journalists, activists under surveillance). Losing your phone means losing your messages, and that's by design. TAS measures autonomy, not security. Briar is an excellent tool that scores A0 because it prioritises security over data portability. These are different axes.
 
 ## Brief Description
 
@@ -66,7 +72,7 @@ No server deployment. Install from:
 | Alternative | Autonomy | Notes |
 |-------------|----------|-------|
 | [SimpleX Chat](simplex-chat.md) | A3 / T2 | Cross-platform. Uses relay servers (self-hostable). |
-| [Signal](signal.md) | A3 / T2 | More features. Requires phone number and internet. |
+| [Signal](signal.md) | A2 / T2 | More features. Requires phone number. Proprietary backup format. |
 
 ---
 ## Trajectory

@@ -43,6 +43,8 @@ Read [whose.world](https://whose.world). Or see the [Philosophy](docs/philosophy
 
 *If your system requires an external account to function --- you don't control it.*
 
+TAS measures **autonomy** --- how much you control your data and infrastructure. Not quality, not security, not usability. A tool can be excellent and score A0. A low score is not a criticism --- it is a measurement.
+
 ---
 
 ## Can you break the model?

@@ -13,7 +13,7 @@ documentation: "https://tuta.com/support"
 docker_image: "-"
 community: "https://github.com/tutao/tutanota/discussions"
 autonomy_level: "A0"
-transparency_level: "T1"
+transparency_level: "T2"
 depends_on: []
 optional_deps: []
 depended_by: []

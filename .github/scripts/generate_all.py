@@ -27,7 +27,7 @@ import re
 from collections import defaultdict
 
 CATALOG_DIR = 'docs/catalog'
-SKIP_FILES = {'index.md', 'assessment-scale.md', 'template-card.md'}
+SKIP_FILES = {'index.md', 'assessment-scale.md', 'assessment-criteria.md', 'template-card.md'}
 
 # ── Category mapping for catalog/index.md ──────────────────────────────────
 
