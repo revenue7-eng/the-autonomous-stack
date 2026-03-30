@@ -143,6 +143,14 @@ This framework is built on the philosophy of [whose.world](https://whose.world).
 
 ---
 
+## Can you break the model?
+
+Every TAS rating should be reproducible: two people, same criteria, same result. We published [Assessment Criteria v1.0](catalog/assessment-criteria.md) with formal, testable checks for every score. Four pilot assessments show exactly how we applied them.
+
+**→ [Validate the Model](validate.md)** --- pick a technology, evaluate it independently, tell us if our scores hold up.
+
+---
+
 ## License
 
 - **Code**: [MIT](../LICENSE)
