@@ -1,10 +1,10 @@
 # The Autonomous Stack (TAS)
 
-**Eight questions that reveal who controls your infrastructure.**
+**A simple, reproducible score for one specific question — how much you actually control your data and infrastructure.**
 
-You switched from Google Drive to Syncthing. Good. But your DNS still goes through Cloudflare, your containers pull from Docker Hub, and your reverse proxy renews certs from Let's Encrypt. The dependency didn't disappear — it moved.
+Not security, not quality, not compliance — autonomy. A formal checklist, not an expert opinion.
 
-TAS gives you a way to see this clearly.
+Three yes/no questions — can you stop it? can you leave with your data? can you roll back? — determine your Autonomy Level (A0–A3). A separate check on source code openness determines Transparency (T0–T2). Five more questions reveal what the score doesn't show.
 
 ---
 
