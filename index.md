@@ -32,7 +32,11 @@ Browse the [Technology Catalog](docs/catalog/). 122 technologies rated by Autono
 
 ### I need to build from scratch
 
-Follow the [Minimal Autonomous Server](docs/recipes/minimal-server.md) recipe. A complete stack deployed in a few hours.
+Follow the [Minimal Autonomous Server](docs/recipes/minimal-server.md) recipe. Or see the [Recommended Stack](docs/recommended-stack.html) for a curated set of tools across every category.
+
+### I need a private phone
+
+Start with the [Mobile Apps](docs/mobile.html) page. GrapheneOS, F-Droid, and 26 evaluated apps --- from messaging to maps.
 
 ### I want to understand the philosophy
 
