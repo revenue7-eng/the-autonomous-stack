@@ -1,6 +1,6 @@
 ---
 title: "AI Tools"
-nav_order: 5
+nav_order: 3
 ---
 
 # AI Tools
