@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*127 technologies evaluated.*
+*139 technologies evaluated.*
 
 ---
 
@@ -104,12 +104,24 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [AUTOMATIC1111](automatic1111.md) | **A3** | **T2** | Web UI for Stable Diffusion image generation. |
+| [ComfyUI](comfyui.md) | **A3** | **T2** | Node-based web interface for Stable Diffusion and other image generation models. |
+| [DeepSeek-R1](deepseek-r1.md) | **A3** | **T2** | Open-weight reasoning model from DeepSeek. |
+| [GPT4All](gpt4all.md) | **A3** | **T2** | Desktop application for running local LLMs by Nomic AI. |
+| [Jan](jan.md) | **A3** | **T2** | Open-source desktop AI assistant. |
 | [llama.cpp](llama-cpp.md) | **A3** | **T2** | C/C++ inference engine for large language models. |
+| [LM Studio](lm-studio.md) | **A3** | **T1** | Desktop application for running local LLMs. |
+| [LocalAI](localai.md) | **A3** | **T2** | Drop-in replacement for the OpenAI API. |
 | [MiroThinker](mirothinker.md) | **A3** | **T2** | Open-weight reasoning model from MiroMind (30B and 235B parameter variants). |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Open WebUI](open-webui.md) | **A3** | **T2** | Self-hosted web interface for local LLMs. |
+| [Piper](piper.md) | **A3** | **T2** | Fast local text-to-speech engine. |
+| [vLLM](vllm.md) | **A3** | **T2** | Production-grade GPU inference engine for large language models. |
 | [Whisper.cpp](whisper-cpp.md) | **A3** | **T2** | C/C++ port of OpenAI's Whisper speech-to-text model. |
 | [ChatGPT](chatgpt.md) | **A0** | **T0** | Cloud-based AI assistant by OpenAI. |
+| [Claude API](claude-api.md) | **A0** | **T0** | Cloud-based AI API by Anthropic. |
+| [Google Gemini](google-gemini.md) | **A0** | **T0** | Cloud-based AI by Google. |
+| [Midjourney](midjourney.md) | **A0** | **T0** | Cloud-based AI image generation. |
 
 ### Operating System
 
