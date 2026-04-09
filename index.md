@@ -16,7 +16,7 @@ TAS gives you three things: a way to **evaluate** any technology, a **catalog** 
 
 **→ [Does your infrastructure pass the TAS test?](https://revenue7-eng.github.io/the-autonomous-stack/test.html)** — 30 seconds, no account needed.
 
-**→ [Explore the Autonomy Map](https://revenue7-eng.github.io/the-autonomous-stack/docs/autonomy-map.html)** — 122 technologies, 12 constellations.
+**→ [Explore the Autonomy Map](https://revenue7-eng.github.io/the-autonomous-stack/docs/autonomy-map.html)** — 127 technologies, 12 constellations.
 
 ---
 
@@ -28,7 +28,7 @@ Start with the [Infrastructure Audit](docs/how-to-choose.md). Eight questions --
 
 ### I need to choose a specific tool
 
-Browse the [Technology Catalog](docs/catalog/). 122 technologies rated by Autonomy (A0--A3) and Transparency (T0--T2).
+Browse the [Technology Catalog](docs/catalog/). 127 technologies rated by Autonomy (A0--A3) and Transparency (T0--T2).
 
 ### I need to build from scratch
 

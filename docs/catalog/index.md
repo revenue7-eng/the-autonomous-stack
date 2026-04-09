@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*122 technologies evaluated.*
+*127 technologies evaluated.*
 
 ---
 
@@ -104,7 +104,12 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
 | Technology | Autonomy | Transparency | Description |
 |------------|----------|--------------|-------------|
+| [llama.cpp](llama-cpp.md) | **A3** | **T2** | C/C++ inference engine for large language models. |
+| [MiroThinker](mirothinker.md) | **A3** | **T2** | Open-weight reasoning model from MiroMind (30B and 235B parameter variants). |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
+| [Open WebUI](open-webui.md) | **A3** | **T2** | Self-hosted web interface for local LLMs. |
+| [Whisper.cpp](whisper-cpp.md) | **A3** | **T2** | C/C++ port of OpenAI's Whisper speech-to-text model. |
+| [ChatGPT](chatgpt.md) | **A0** | **T0** | Cloud-based AI assistant by OpenAI. |
 
 ### Operating System
 
