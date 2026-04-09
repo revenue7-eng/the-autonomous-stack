@@ -18,6 +18,8 @@ Training a model costs millions. Companies need to recoup that investment — ho
 
 ## Choose Your Level
 
+3 levels of commitment · 15+ tool recommendations
+
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0;">
 <div style="border:2px solid #2ea043;border-radius:12px;padding:20px;">
 <div style="font-size:20px;margin-bottom:8px;">🟢 Use Local Models</div>
