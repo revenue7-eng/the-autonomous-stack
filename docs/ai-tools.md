@@ -75,14 +75,14 @@ The runtime that loads and serves models on your hardware.
 <div style="font-size:13px;color:#666;margin-top:6px;">The foundation. C++ inference engine that runs on CPU and GPU. Maximum control, minimum abstraction.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/vllm.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">vLLM</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: hosted inference APIs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Production-grade GPU serving with PagedAttention. High throughput for multi-user deployments.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/localai.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">LocalAI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: OpenAI API</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
@@ -106,21 +106,21 @@ Give your local models a usable frontend.
 <div style="font-size:13px;color:#666;margin-top:6px;">Self-hosted ChatGPT-like UI. Connects to Ollama or any OpenAI-compatible API. Multi-user, RAG, web search built in.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/lm-studio.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">LM Studio</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT desktop</div>
 <div style="font-size:13px;color:#58a6ff;font-weight:600;">A3/T1</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Desktop app for running local models. Beautiful UI, model discovery, chat. Free but closed-source.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/jan.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Jan</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT desktop</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Open-source desktop AI. Runs models locally, no internet needed. AGPL-3.0 licensed.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/gpt4all.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">GPT4All</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
@@ -144,7 +144,7 @@ Open-weight models designed for deep reasoning and agentic research.
 <div style="font-size:13px;color:#666;margin-top:6px;">30B/235B reasoning model from MiroMind. Verification-centric architecture. Open weights on HuggingFace, run via vLLM/SGLang. Hosted app exists but requires account.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/deepseek-r1.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">DeepSeek-R1</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: o1, Claude reasoning</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2 (self-hosted) · A1/T1 (hosted)</div>
@@ -168,7 +168,7 @@ Local speech-to-text and text-to-speech.
 <div style="font-size:13px;color:#666;margin-top:6px;">OpenAI's Whisper model, ported to C++. Runs on CPU. Transcribe audio locally — no data leaves your machine.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/piper.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Piper</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Google TTS, ElevenLabs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
@@ -185,14 +185,14 @@ Local image generation and editing.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/comfyui.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">ComfyUI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Midjourney, DALL-E</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Node-based UI for Stable Diffusion and other image models. Full local workflow — generate, edit, upscale. No cloud.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/automatic1111.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">AUTOMATIC1111</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Midjourney, DALL-E</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
@@ -215,19 +215,19 @@ These are the services that self-hosted AI replaces. Included for contrast — n
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Proprietary models. All prompts and data processed on OpenAI servers. Cannot self-host. Cannot export model.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;">
+<a href="catalog/claude-api.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Claude API</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Proprietary models by Anthropic. No self-hosted option. Data processed on Anthropic/cloud infrastructure.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;">
+<a href="catalog/google-gemini.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Google Gemini</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Google infrastructure. Gemma models are open-weight (A3/T2 when self-hosted), but Gemini API is not.</div>
 </div>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;">
+<a href="catalog/midjourney.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Midjourney</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only image generation. Discord-based interface. No self-hosted option. No open model.</div>
