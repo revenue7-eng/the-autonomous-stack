@@ -38,6 +38,10 @@ Follow the [Minimal Autonomous Server](docs/recipes/minimal-server.md) recipe. O
 
 Start with the [Mobile Apps](docs/mobile.html) page. GrapheneOS, F-Droid, and 26 evaluated apps --- from messaging to maps.
 
+### I need private AI
+
+Start with the [AI Tools](docs/ai-tools.html) page. Local inference, open-weight models, and sovereign AI — 15+ tools evaluated across 6 categories.
+
 ### I want to understand the philosophy
 
 Read [whose.world](https://whose.world). Or see the [Philosophy](docs/philosophy.md) page for a short bridge.
