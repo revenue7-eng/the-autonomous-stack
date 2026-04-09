@@ -266,7 +266,7 @@ def generate_catalog_index(cards):
     lines = []
     lines.append('---')
     lines.append('title: "Technology Catalog"')
-    lines.append('nav_order: 5')
+    lines.append('nav_order: 7')
     lines.append('has_children: true')
     lines.append('---')
     lines.append('')
