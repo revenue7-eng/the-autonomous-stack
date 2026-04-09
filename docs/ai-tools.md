@@ -68,12 +68,12 @@ The runtime that loads and serves models on your hardware.
 <div style="font-size:13px;color:#666;margin-top:6px;">One-command install, OpenAI-compatible API. The Docker of LLMs. Pull a model, run it, done.</div>
 </a>
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/llama-cpp.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">llama.cpp</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: cloud inference APIs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">The foundation. C++ inference engine that runs on CPU and GPU. Maximum control, minimum abstraction.</div>
-</div>
+</a>
 
 <div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
 <div style="font-size:16px;font-weight:600;">vLLM</div>
@@ -99,12 +99,12 @@ Give your local models a usable frontend.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/open-webui.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Open WebUI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT interface</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Self-hosted ChatGPT-like UI. Connects to Ollama or any OpenAI-compatible API. Multi-user, RAG, web search built in.</div>
-</div>
+</a>
 
 <div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
 <div style="font-size:16px;font-weight:600;">LM Studio</div>
@@ -137,12 +137,12 @@ Open-weight models designed for deep reasoning and agentic research.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/mirothinker.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">MiroThinker</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: OpenAI Deep Research</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2 (self-hosted) · A1/T1 (hosted)</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">30B/235B reasoning model from MiroMind. Verification-centric architecture. Open weights on HuggingFace, run via vLLM/SGLang. Hosted app exists but requires account.</div>
-</div>
+</a>
 
 <div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
 <div style="font-size:16px;font-weight:600;">DeepSeek-R1</div>
@@ -161,12 +161,12 @@ Local speech-to-text and text-to-speech.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
+<a href="catalog/whisper-cpp.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Whisper.cpp</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Google Speech-to-Text, Otter.ai</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">OpenAI's Whisper model, ported to C++. Runs on CPU. Transcribe audio locally — no data leaves your machine.</div>
-</div>
+</a>
 
 <div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;">
 <div style="font-size:16px;font-weight:600;">Piper</div>
@@ -209,11 +209,11 @@ These are the services that self-hosted AI replaces. Included for contrast — n
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
 
-<div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;">
+<a href="catalog/chatgpt.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">ChatGPT / OpenAI API</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Proprietary models. All prompts and data processed on OpenAI servers. Cannot self-host. Cannot export model.</div>
-</div>
+</a>
 
 <div style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;">
 <div style="font-size:16px;font-weight:600;">Claude API</div>
