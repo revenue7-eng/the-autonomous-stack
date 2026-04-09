@@ -1,6 +1,6 @@
 ---
 title: "Technology Catalog"
-nav_order: 7
+nav_order: 5
 has_children: true
 ---
 
