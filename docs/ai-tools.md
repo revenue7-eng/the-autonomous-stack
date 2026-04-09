@@ -19,22 +19,18 @@ Training a model costs millions. Companies need to recoup that investment — ho
 ## Choose Your Level
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0;">
-
 <div style="border:2px solid #2ea043;border-radius:12px;padding:20px;">
 <div style="font-size:20px;margin-bottom:8px;">🟢 Use Local Models</div>
 <div style="font-size:14px;color:#666;">Install Ollama or LM Studio. Run open-weight models on your own machine. Your prompts never leave your device. No account needed.</div>
 </div>
-
 <div style="border:2px solid #d29922;border-radius:12px;padding:20px;">
 <div style="font-size:20px;margin-bottom:8px;">🟡 Self-Host the Stack</div>
 <div style="font-size:14px;color:#666;">Run Ollama + Open WebUI on your server. Add Whisper for speech, SearXNG for search. Multi-user, full control, ChatGPT-like experience.</div>
 </div>
-
 <div style="border:2px solid #da3633;border-radius:12px;padding:20px;">
 <div style="font-size:20px;margin-bottom:8px;">🔴 Full Sovereign AI</div>
 <div style="font-size:14px;color:#666;">Air-gapped inference. No internet. Models on local storage, custom fine-tuning, own hardware. Maximum autonomy — requires GPU investment.</div>
 </div>
-
 </div>
 
 ---
@@ -60,35 +56,30 @@ This is not a bug — it's the core insight. **The same intelligence, radically 
 The runtime that loads and serves models on your hardware.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
-<a href="{{ '/docs/catalog/ollama' | relative_url }}.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
+<a href="catalog/ollama.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Ollama</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT, Claude API</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">One-command install, OpenAI-compatible API. The Docker of LLMs. Pull a model, run it, done.</div>
 </a>
-
 <a href="catalog/llama-cpp.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">llama.cpp</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: cloud inference APIs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">The foundation. C++ inference engine that runs on CPU and GPU. Maximum control, minimum abstraction.</div>
 </a>
-
 <a href="catalog/vllm.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">vLLM</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: hosted inference APIs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Production-grade GPU serving with PagedAttention. High throughput for multi-user deployments.</div>
-</div>
-
+</a>
 <a href="catalog/localai.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">LocalAI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: OpenAI API</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Drop-in OpenAI API replacement. Supports text, image, audio generation. One binary, no GPU required.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -98,35 +89,30 @@ The runtime that loads and serves models on your hardware.
 Give your local models a usable frontend.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
 <a href="catalog/open-webui.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Open WebUI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT interface</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Self-hosted ChatGPT-like UI. Connects to Ollama or any OpenAI-compatible API. Multi-user, RAG, web search built in.</div>
 </a>
-
 <a href="catalog/lm-studio.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">LM Studio</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT desktop</div>
 <div style="font-size:13px;color:#58a6ff;font-weight:600;">A3/T1</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Desktop app for running local models. Beautiful UI, model discovery, chat. Free but closed-source.</div>
-</div>
-
+</a>
 <a href="catalog/jan.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Jan</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT desktop</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Open-source desktop AI. Runs models locally, no internet needed. AGPL-3.0 licensed.</div>
-</div>
-
+</a>
 <a href="catalog/gpt4all.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">GPT4All</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: ChatGPT</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Desktop app from Nomic. Local chat, document Q&A. Optimized for consumer hardware.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -136,21 +122,18 @@ Give your local models a usable frontend.
 Open-weight models designed for deep reasoning and agentic research.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
 <a href="catalog/mirothinker.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">MiroThinker</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: OpenAI Deep Research</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2 (self-hosted) · A1/T1 (hosted)</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">30B/235B reasoning model from MiroMind. Verification-centric architecture. Open weights on HuggingFace, run via vLLM/SGLang. Hosted app exists but requires account.</div>
 </a>
-
 <a href="catalog/deepseek-r1.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">DeepSeek-R1</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: o1, Claude reasoning</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2 (self-hosted) · A1/T1 (hosted)</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Open-weight reasoning model. Chain-of-thought visible. Run locally via Ollama (distilled versions) or through DeepSeek API.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -160,21 +143,18 @@ Open-weight models designed for deep reasoning and agentic research.
 Local speech-to-text and text-to-speech.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
 <a href="catalog/whisper-cpp.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Whisper.cpp</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Google Speech-to-Text, Otter.ai</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">OpenAI's Whisper model, ported to C++. Runs on CPU. Transcribe audio locally — no data leaves your machine.</div>
 </a>
-
 <a href="catalog/piper.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Piper</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Google TTS, ElevenLabs</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Fast local text-to-speech. Multiple languages, natural voices. Runs on Raspberry Pi.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -184,21 +164,18 @@ Local speech-to-text and text-to-speech.
 Local image generation and editing.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
 <a href="catalog/comfyui.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">ComfyUI</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Midjourney, DALL-E</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Node-based UI for Stable Diffusion and other image models. Full local workflow — generate, edit, upscale. No cloud.</div>
-</div>
-
+</a>
 <a href="catalog/automatic1111.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">AUTOMATIC1111</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Replaces: Midjourney, DALL-E</div>
 <div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Web UI for Stable Diffusion. The original self-hosted image generation interface. Huge extension ecosystem.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -208,31 +185,26 @@ Local image generation and editing.
 These are the services that self-hosted AI replaces. Included for contrast — not as recommendations.
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:16px 0;">
-
 <a href="catalog/chatgpt.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">ChatGPT / OpenAI API</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Proprietary models. All prompts and data processed on OpenAI servers. Cannot self-host. Cannot export model.</div>
 </a>
-
 <a href="catalog/claude-api.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Claude API</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Proprietary models by Anthropic. No self-hosted option. Data processed on Anthropic/cloud infrastructure.</div>
-</div>
-
+</a>
 <a href="catalog/google-gemini.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Google Gemini</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only. Google infrastructure. Gemma models are open-weight (A3/T2 when self-hosted), but Gemini API is not.</div>
-</div>
-
+</a>
 <a href="catalog/midjourney.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;opacity:0.7;text-decoration:none;color:inherit;">
 <div style="font-size:16px;font-weight:600;">Midjourney</div>
 <div style="font-size:13px;color:#da3633;font-weight:600;">A0/T0</div>
 <div style="font-size:13px;color:#666;margin-top:6px;">Cloud-only image generation. Discord-based interface. No self-hosted option. No open model.</div>
-</div>
-
+</a>
 </div>
 
 ---
@@ -242,32 +214,27 @@ These are the services that self-hosted AI replaces. Included for contrast — n
 Set up local AI? Here's where to go deeper:
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0;">
-
-<a href="{{ '/docs/recommended-stack' | relative_url }}.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
+<a href="recommended-stack.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">Recommended Server Stack</div>
 <div style="font-size:12px;color:#666;">→ build the full backend</div>
 </a>
-
-<a href="{{ '/docs/recipes/' | relative_url }}" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
+<a href="recipes/" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">All Recipes</div>
 <div style="font-size:12px;color:#666;">→ deploy complete stacks</div>
 </a>
-
-<a href="{{ '/docs/audit' | relative_url }}.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
+<a href="audit.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">Audit Your Setup</div>
 <div style="font-size:12px;color:#666;">→ score any technology</div>
 </a>
-
-<a href="{{ '/docs/catalog/' | relative_url }}" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
+<a href="catalog/" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">Full Catalog</div>
-<div style="font-size:12px;color:#666;">→ 122+ technologies evaluated</div>
+<div style="font-size:12px;color:#666;">→ 130+ technologies evaluated</div>
 </a>
-
 </div>
 
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;">
-<a href="{{ '/docs/recommended-stack' | relative_url }}.html" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Recommended Stack →</a>
-<a href="{{ '/docs/recipes/' | relative_url }}" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Recipes →</a>
-<a href="{{ '/docs/catalog/' | relative_url }}" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Full catalog →</a>
-<a href="{{ '/docs/card-builder' | relative_url }}.html" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Suggest a technology →</a>
+<a href="recommended-stack.html" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Recommended Stack →</a>
+<a href="recipes/" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Recipes →</a>
+<a href="catalog/" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Full catalog →</a>
+<a href="card-builder.html" style="font-size:13px;font-weight:500;color:#333;background:#f4f4f2;border:1px solid #e0e0e0;border-radius:6px;padding:8px 16px;text-decoration:none;">Suggest a technology →</a>
 </div>
