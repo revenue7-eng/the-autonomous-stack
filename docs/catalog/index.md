@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*141 technologies evaluated.*
+*142 technologies evaluated.*
 
 ---
 
@@ -118,6 +118,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Open WebUI](open-webui.md) | **A3** | **T2** | Self-hosted web interface for local LLMs. |
 | [Piper](piper.md) | **A3** | **T2** | Fast local text-to-speech engine. |
+| [Qwen3](qwen3.md) | **A3** | **T2** | Open-weight model family from Alibaba's Qwen team — dense models from 0.6B to 32B plus Mixture-of-Experts models (30B-A3... |
 | [vLLM](vllm.md) | **A3** | **T2** | Production-grade GPU inference engine for large language models. |
 | [Whisper.cpp](whisper-cpp.md) | **A3** | **T2** | C/C++ port of OpenAI's Whisper speech-to-text model. |
 | [ChatGPT](chatgpt.md) | **A0** | **T0** | Cloud-based AI assistant by OpenAI. |
