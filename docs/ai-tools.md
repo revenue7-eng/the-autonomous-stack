@@ -44,7 +44,6 @@ Almost every AI product exists in two configurations — and the TAS score chang
 | Tool | Self-hosted | Hosted |
 |------|------------|--------|
 | MiroThinker | A3/T2 (open weights, run locally) | A1/T1 (hosted app, account required) |
-| Ollama models | A3/T2 (your hardware) | — |
 | ChatGPT | — | A0/T0 (cloud-only, proprietary) |
 | Whisper | A3/T2 (run locally) | A0/T0 (OpenAI API) |
 | Stable Diffusion | A3/T2 (ComfyUI local) | A0/T0 (cloud services) |
@@ -230,7 +229,7 @@ Set up local AI? Here's where to go deeper:
 </a>
 <a href="catalog/" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">Full Catalog</div>
-<div style="font-size:12px;color:#666;">→ 141 technologies evaluated</div>
+<div style="font-size:12px;color:#666;">→ 139 technologies evaluated</div>
 </a>
 </div>
 

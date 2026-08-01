@@ -41,6 +41,21 @@ Compute/inference layer: runtime for local LLM inference. Like Docker is to cont
 - ✅ Models are downloadable files — portable to any machine
 - ⚠️ Initial model download from ollama.com registry (one-time)
 
+## The registry problem
+
+The Ollama runtime is autonomous. Its default model registry is not. Same distinction as Docker:
+
+| Component | Autonomy | Transparency | Notes |
+|-----------|----------|-------------|-------|
+| Ollama runtime | A3 | T2 | Open source (MIT), runs anywhere, fully offline after download |
+| Ollama CLI / API | A3 | T2 | Open source, OpenAI-compatible local server |
+| ollama.com registry | A0 | T0 | Centralized default registry, proprietary. Provenance not verifiable beyond SHA checksums |
+| Models (GGUF) | A3 | T2 | Standard GGUF files. Portable to llama.cpp or any compatible runtime |
+
+When you run `ollama pull`, the runtime is A3 but the default model source is A0. Same as Docker: the dependency didn't disappear — it moved.
+
+**Mitigation:** Import from HuggingFace, build from a local GGUF with `ollama create`, or point Ollama at a self-hosted/mirror registry. Pull once, keep the file — this moves model distribution from A0 to A3.
+
 ## Philosophical Assessment (whose.world criteria)
 
 | Criterion             | Status | Comments |
