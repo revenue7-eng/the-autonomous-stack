@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*139 technologies evaluated.*
+*141 technologies evaluated.*
 
 ---
 
@@ -106,7 +106,9 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 |------------|----------|--------------|-------------|
 | [AUTOMATIC1111](automatic1111.md) | **A3** | **T2** | Web UI for Stable Diffusion image generation. |
 | [ComfyUI](comfyui.md) | **A3** | **T2** | Node-based web interface for Stable Diffusion and other image generation models. |
-| [DeepSeek-R1](deepseek-r1.md) | **A3** | **T2** | Open-weight reasoning model from DeepSeek. |
+| [DeepSeek-R1-Distill-Llama](deepseek-r1-distill-llama.md) | **A3** | **T1** | Dense reasoning models distilled from DeepSeek-R1 onto the **Llama-3 series** (Llama-3.1-8B, Llama-3.3-70B). |
+| [DeepSeek-R1-Distill-Qwen](deepseek-r1-distill-qwen.md) | **A3** | **T2** | Dense reasoning models distilled from DeepSeek-R1 onto the **Qwen-2.5 series** (1.5B, 7B, 14B, 32B). |
+| [DeepSeek-R1](deepseek-r1.md) | **A3** | **T2** | Full-size open-weight reasoning model from DeepSeek — 671B parameters (Mixture-of-Experts). |
 | [GPT4All](gpt4all.md) | **A3** | **T2** | Desktop application for running local LLMs by Nomic AI. |
 | [Jan](jan.md) | **A3** | **T2** | Open-source desktop AI assistant. |
 | [llama.cpp](llama-cpp.md) | **A3** | **T2** | C/C++ inference engine for large language models. |
