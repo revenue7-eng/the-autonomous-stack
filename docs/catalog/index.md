@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*147 technologies evaluated.*
+*150 technologies evaluated.*
 
 ---
 
@@ -111,9 +111,11 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [DeepSeek-R1](deepseek-r1.md) | **A3** | **T2** | Full-size open-weight reasoning model from DeepSeek — 671B parameters (Mixture-of-Experts). |
 | [Gemma 4](gemma-4.md) | **A3** | **T2** | Google DeepMind's fourth-generation open-weight family, released April 2, 2026 — four sizes (2B, 4B, 26B MoE, 31B dense)... |
 | [Gemma](gemma.md) | **A3** | **T1** | Google DeepMind's open-weight model family, built on the same research as Gemini. |
+| [gpt-oss](gpt-oss.md) | **A3** | **T2** | OpenAI's open-weight models — gpt-oss-120b and gpt-oss-20b, released August 2025 under Apache 2.0, the company's first o... |
 | [GPT4All](gpt4all.md) | **A3** | **T2** | Desktop application for running local LLMs by Nomic AI. |
 | [Jan](jan.md) | **A3** | **T2** | Open-source desktop AI assistant. |
 | [llama.cpp](llama-cpp.md) | **A3** | **T2** | C/C++ inference engine for large language models. |
+| [Llama](llama.md) | **A3** | **T1** | Meta's open-weight model family — Llama 3.1 (8B/70B/405B), 3.2 (small on-device + multimodal), 3.3 (70B), and Llama 4 (S... |
 | [LM Studio](lm-studio.md) | **A3** | **T1** | Desktop application for running local LLMs. |
 | [LocalAI](localai.md) | **A3** | **T2** | Drop-in replacement for the OpenAI API. |
 | [MiroThinker](mirothinker.md) | **A3** | **T2** | Open-weight reasoning model from MiroMind (30B and 235B parameter variants). |
@@ -121,6 +123,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Mistral](mistral.md) | **A3** | **T2** | Open-weight model family from Mistral AI (Paris) under the Apache-2.0 license — Mistral 7B, Mixtral 8x7B/8x22B, Mistral ... |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Open WebUI](open-webui.md) | **A3** | **T2** | Self-hosted web interface for local LLMs. |
+| [Phi](phi.md) | **A3** | **T2** | Microsoft Research's small-but-capable open-weight family — Phi-4 (14B) and its variants (Phi-4-mini, Phi-4-multimodal, ... |
 | [Piper](piper.md) | **A3** | **T2** | Fast local text-to-speech engine. |
 | [Qwen3](qwen3.md) | **A3** | **T2** | Open-weight model family from Alibaba's Qwen team — dense models from 0.6B to 32B plus Mixture-of-Experts models (30B-A3... |
 | [vLLM](vllm.md) | **A3** | **T2** | Production-grade GPU inference engine for large language models. |
