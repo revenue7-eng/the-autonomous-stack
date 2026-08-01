@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*142 technologies evaluated.*
+*143 technologies evaluated.*
 
 ---
 
@@ -125,6 +125,7 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [Claude API](claude-api.md) | **A0** | **T0** | Cloud-based AI API by Anthropic. |
 | [Google Gemini](google-gemini.md) | **A0** | **T0** | Cloud-based AI by Google. |
 | [Midjourney](midjourney.md) | **A0** | **T0** | Cloud-based AI image generation. |
+| [Qwen-Max](qwen-max.md) | **A0** | **T0** | Alibaba's top-tier proprietary model, available only through the Alibaba Cloud Model Studio / DashScope API — never rele... |
 
 ### Operating System
 

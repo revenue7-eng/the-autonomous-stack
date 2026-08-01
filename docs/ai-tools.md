@@ -229,7 +229,7 @@ Set up local AI? Here's where to go deeper:
 </a>
 <a href="catalog/" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
 <div style="font-size:14px;font-weight:600;">Full Catalog</div>
-<div style="font-size:12px;color:#666;">→ 142 technologies evaluated</div>
+<div style="font-size:12px;color:#666;">→ 143 technologies evaluated</div>
 </a>
 </div>
 
