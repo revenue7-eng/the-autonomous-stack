@@ -131,10 +131,10 @@ Open-weight models designed for deep reasoning and agentic research.
 <div style="font-size:13px;color:#666;margin-top:6px;">30B/235B reasoning model from MiroMind. Verification-centric architecture. Open weights on HuggingFace, run via vLLM/SGLang. Hosted app exists but requires account.</div>
 </a>
 <a href="catalog/deepseek-r1.html" style="display:block;border:1px solid #d0d7de;border-radius:10px;padding:16px;text-decoration:none;color:inherit;">
-<div style="font-size:16px;font-weight:600;">DeepSeek-R1</div>
+<div style="font-size:16px;font-weight:600;">DeepSeek-R1 family</div>
 <div style="font-size:12px;color:#888;margin:4px 0;">→ Local alternative to: cloud reasoning APIs</div>
-<div style="font-size:13px;color:#2ea043;font-weight:600;">A3/T2 (self-hosted) · A1/T1 (hosted)</div>
-<div style="font-size:13px;color:#666;margin-top:6px;">Open-weight reasoning model. Chain-of-thought visible. Run locally via Ollama (distilled versions) or through DeepSeek API.</div>
+<div style="font-size:13px;color:#2ea043;font-weight:600;">A3 · T1–T2 (depends on variant) · hosted API A1/T1</div>
+<div style="font-size:13px;color:#666;margin-top:6px;">Open-weight reasoning, chain-of-thought visible. Three scored variants: full 671B (MIT, T2), Qwen-based distills (Apache base, T2), Llama-based distills (contested license, T1). Distills run on consumer hardware via Ollama.</div>
 </a>
 </div>
 

@@ -12,7 +12,7 @@ community: "https://github.com/deepseek-ai/DeepSeek-R1/discussions"
 autonomy_level: "A3"
 transparency_level: "T2"
 depends_on: []
-optional_deps: ["ollama", "docker"]
+optional_deps: ["vllm", "sglang"]
 depended_by: []
 critical_criteria: ["Exit", "Recoverability"]
 nav_order: 99
@@ -23,15 +23,20 @@ nav_order: 99
 > **TAS Score: S3/3 — D4/5** — A3 / T2
 > _(D4 not D5: hosted API (api.deepseek.com) collects usage data and requires account — trajectory mixed due to Chinese regulatory environment.)_
 
+**Family:** [DeepSeek-R1 (full)](deepseek-r1.md) · [R1-Distill-Qwen](deepseek-r1-distill-qwen.md) · [R1-Distill-Llama](deepseek-r1-distill-llama.md)
+_This card scores the **full 671B model only.** The distilled variants are separate objects with different base licenses — see the family links above._
+
 **⚠️ Two-mode tool.** Self-hosted: A3/T2. Hosted API (api.deepseek.com): A1/T1. This card scores the self-hosted open-weight variant.
 
 ## Brief Description
 
-Open-weight reasoning model from DeepSeek. Chain-of-thought reasoning is visible in output. MIT licensed. Full model (671B MoE) and distilled versions (1.5B to 70B) available. Distilled versions run via Ollama on consumer hardware.
+Full-size open-weight reasoning model from DeepSeek — 671B parameters (Mixture-of-Experts). Trained on DeepSeek-V3-Base (DeepSeek's own base model). Chain-of-thought reasoning is visible in output. MIT licensed — weights and base are both under a permissive, OSI-approved license, so transparency is uncontested.
+
+Running the full model requires server-class hardware (multi-GPU cluster). For consumer-hardware deployment, use the distilled variants — but note they are **different models** with **different base licenses**, scored on their own cards.
 
 ## Architectural Role
 
-Compute/inference layer: reasoning model for complex analysis. Replaces OpenAI o1/o3 and Claude reasoning modes when run locally. Distilled variants (7B, 14B) practical for self-hosted deployment.
+Compute/inference layer: frontier-class reasoning model for complex analysis, run on your own infrastructure. Local alternative to cloud reasoning APIs when you have the hardware to host the full model.
 
 ## Technical Autonomy
 
@@ -48,26 +53,27 @@ Compute/inference layer: reasoning model for complex analysis. Replaces OpenAI o
 | Pause | ✅ | Stop inference. Model weights stay on disk. |
 | Exit | ✅ | Standard model format. MIT licensed — no restrictions on use. |
 | Recoverability | ✅ | Re-download from HuggingFace or restore from backup. |
-| Visibility | ✅ | MIT license. Open weights. Training methodology published. |
+| Visibility | ✅ | MIT license (weights + DeepSeek-V3 base). Open weights. Training methodology published. |
 | External Dependencies | ⚠️ | Self-hosted: none. Hosted API: DeepSeek infrastructure (China-based). |
 
 ## Configuration (Minimal)
 
 ```bash
-# Via Ollama (distilled 7B — runs on consumer hardware)
-ollama pull deepseek-r1:7b
-ollama run deepseek-r1:7b
+# Full 671B model — requires a multi-GPU cluster
+vllm serve deepseek-ai/DeepSeek-R1 --tensor-parallel-size 8
 
-# Via vLLM (full or larger variants — requires GPU cluster)
-vllm serve deepseek-ai/DeepSeek-R1-Distill-Llama-70B --tensor-parallel-size 4
+# Or via SGLang
+python -m sglang.launch_server --model deepseek-ai/DeepSeek-R1 --tp 8
 ```
+
+_For consumer hardware, see [R1-Distill-Qwen](deepseek-r1-distill-qwen.md) (Apache base) or [R1-Distill-Llama](deepseek-r1-distill-llama.md) (Llama base — lower transparency)._
 
 ## Alternatives
 
 | Alternative | Autonomy | Notes |
 | --- | --- | --- |
 | [MiroThinker](mirothinker.md) | A3 / T2 | Verification-centric reasoning. Apache-2.0. |
-| [Ollama](ollama.md) + Qwen3 | A3 / T2 | Simpler reasoning. Easier setup. |
+| [R1-Distill-Qwen](deepseek-r1-distill-qwen.md) | A3 / T2 | Same reasoning, consumer hardware, Apache base. |
 | OpenAI o1 | A0 / T0 | Cloud-only. Proprietary. |
 
 ---
@@ -84,7 +90,7 @@ MIT licensed — maximally permissive. Groundbreaking open release that challeng
 | --- | --- | --- |
 | License | ✅ | MIT. Maximally permissive. |
 | Feature gating | ✅ | Open weights for all variants including full 671B. |
-| Self-hosting | ✅ | Standard formats. Ollama, vLLM, SGLang compatible. |
+| Self-hosting | ✅ | Standard formats. vLLM, SGLang compatible. |
 | Governance | ⚠️ | Corporate (DeepSeek/High-Flyer). Chinese regulatory environment. |
 
 **Signal key:** ✅ opening · ➖ neutral · ⚠️ closing
