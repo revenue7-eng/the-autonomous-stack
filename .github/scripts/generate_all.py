@@ -437,6 +437,9 @@ COUNT_REPLACEMENTS = [
     ('docs/recommended-stack.html',
      r'Full catalog \(\d+ technologies\)',
      'Full catalog ({n} technologies)'),
+    ('docs/ai-tools.md',
+     r'\d+ technologies evaluated',
+     '{n} technologies evaluated'),
 ]
 
 
