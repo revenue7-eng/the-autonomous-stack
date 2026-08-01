@@ -17,7 +17,7 @@ The catalog includes both autonomous alternatives and the mainstream services th
 
 See [Assessment Scale](assessment-scale.md) for detailed definitions.
 
-*143 technologies evaluated.*
+*145 technologies evaluated.*
 
 ---
 
@@ -115,6 +115,8 @@ See [Assessment Scale](assessment-scale.md) for detailed definitions.
 | [LM Studio](lm-studio.md) | **A3** | **T1** | Desktop application for running local LLMs. |
 | [LocalAI](localai.md) | **A3** | **T2** | Drop-in replacement for the OpenAI API. |
 | [MiroThinker](mirothinker.md) | **A3** | **T2** | Open-weight reasoning model from MiroMind (30B and 235B parameter variants). |
+| [Mistral Medium](mistral-medium.md) | **A3** | **T1** | Mistral's Modified-MIT tier — Mistral Medium 3.5 (128B dense, 256K context, multimodal, released April 2026) and Devstra... |
+| [Mistral](mistral.md) | **A3** | **T2** | Open-weight model family from Mistral AI (Paris) under the Apache-2.0 license — Mistral 7B, Mixtral 8x7B/8x22B, Mistral ... |
 | [Ollama](ollama.md) | **A3** | **T2** | Local large language model runtime. |
 | [Open WebUI](open-webui.md) | **A3** | **T2** | Self-hosted web interface for local LLMs. |
 | [Piper](piper.md) | **A3** | **T2** | Fast local text-to-speech engine. |
